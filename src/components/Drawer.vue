@@ -1,5 +1,5 @@
 <template>
-  <v-treeview activatable :items="items"></v-treeview>
+  <v-treeview activatable :items="items" color="#7AF6D0"></v-treeview>
 </template>
 
 <style scoped>

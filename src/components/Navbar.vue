@@ -18,7 +18,7 @@
 
     <v-navigation-drawer v-model="drawer" app>
       <div class="drawer-title">Angelo E De Zoysa</div>
-      <Drawer/>
+      <Drawer />
     </v-navigation-drawer>
   </nav>
 </template>
@@ -49,6 +49,7 @@
 }
 
 .drawer-title {
+  color:#7AF6D0;
   font-size: 150%;
   margin-top: 5%;
   display: flex;
