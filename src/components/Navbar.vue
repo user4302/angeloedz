@@ -1,11 +1,10 @@
 <template>
   <nav>
-    <v-toolbar flat app color="#353535">
-      <v-app-bar-nav-icon color="#7AF6D0" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-toolbar-title class="text-uppercase" color="#7AF6D0">
-        <span class="font-weight-light">Angelo E </span>
-        <span>DZ</span>
+    <v-app-bar app flat color="#121212">
+      <v-app-bar-nav-icon color="#7AF6D0" @click="drawer = !drawer">
+        <v-icon v-if="drawer">mdi-arrow-collapse-left</v-icon>
+      </v-app-bar-nav-icon>
+      <v-toolbar-title class="text-uppercase" style="color: #7af6d0">
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -15,15 +14,18 @@
       <v-btn text color="#7AF6D0"
         >Contact Me<v-icon right>mdi-email</v-icon>
       </v-btn>
-    </v-toolbar>
+    </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app color="#7AF6D0">
-      stuff
+    <v-navigation-drawer v-model="drawer" app>
+      <div class="drawer-title">Angelo E De Zoysa</div>
+      <Drawer/>
     </v-navigation-drawer>
   </nav>
 </template>
 
 <style>
+/* @import './assets/css/main.css'; */
+
 .nav-bar {
   margin-left: 19%;
   width: 60%;
@@ -45,11 +47,19 @@
   text-align: center;
   text-decoration-line: none;
 }
+
+.drawer-title {
+  font-size: 150%;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
 </style>
 
-
 <script>
+import Drawer from "@/components/Drawer";
 export default {
+  components: { Drawer },
   data() {
     return {
       drawer: false,
