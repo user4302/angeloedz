@@ -212,7 +212,7 @@
 }
 .angelo {
   font-size: 2000%;
-  margin-bottom: -9%;
+  /* margin-bottom: -9%; */
 }
 .edz-horizontal {
   font-size: 915%;
@@ -242,3 +242,25 @@
   margin-top: 13%;
 }
 </style>
+
+<script>
+export default {
+  data: () => ({
+    //
+  }),
+  methods: {
+    scrollDown: function () {
+      // var container = this.$el.querySelector(".bio");
+      // container.scrollTop = container.scrollHeight;
+      // console.log(container);
+
+      var container = this.$el.querySelector(".bio");
+
+      if (container) {
+        // Use el.scrollIntoView() to instantly scroll to the element
+        container.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+  },
+};
+</script>
