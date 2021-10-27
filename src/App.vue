@@ -1,55 +1,60 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <router-view/>
+    <v-main class="main">
+      <!-- <div class="nav-bar">
+        <router-link class="nav-option" to="/resume">Resume</router-link>
+        <router-link class="nav-option" to="/about">About</router-link>
+        <router-link class="nav-option" style="font-size: 300%" to="/">Angelo</router-link>
+        <router-link class="nav-option" to="/skills">Skills</router-link>
+        <router-link class="nav-option" to="/fun">Fun</router-link>
+      </div> -->
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  name: "App",
 
   data: () => ({
     //
   }),
 };
 </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+.main{
+  color: #ffffff;
+  background: #353535;
+  text-align: center;
+}
+
+body {
+  background: #353535;
+}
+
+.nav-bar{
+  margin-left: 19%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1%;
+}
+.nav-bar a {
+  font-size: 150%;
+  font-family: 'Oswald', sans-serif;
+  color: #ffffff;
+}
+.nav-bar a.router-link-exact-active {
+  color: #42b983;
+}
+.nav-option {
+  flex: 1;
+  text-align: center;
+  text-decoration-line: none;
+}
+</style>
