@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Navbar />
-    <v-content class="main"><router-view /></v-content>
+    <v-main class="main"><router-view /></v-main>
   </v-app>
 </template>
 
@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 .main {
-  background: #353535;
+  /* background: #353535; */
   text-align: center;
   color: #7af6d0;
 }
