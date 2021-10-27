@@ -1,5 +1,35 @@
 <template>
-  <v-treeview activatable :items="items" color="#7AF6D0"></v-treeview>
+  <div>
+    <v-sheet class="pa-4" color="#363636">
+      <v-text-field
+        v-model="search"
+        label="Search"
+        dark
+        flat
+        hide-details
+        clearable
+        clear-icon="mdi-close"
+      ></v-text-field>
+      <v-checkbox
+        v-model="caseSensitive"
+        dark
+        hide-details
+        label="Case sensitive search"
+      ></v-checkbox>
+    </v-sheet>
+    <v-treeview
+      activatable
+      rounded
+      hoverable
+      dense
+      color="#7AF6D0"
+      :items="items"
+      :search="search"
+      :filter="filter"
+      open-on-click
+    >
+    </v-treeview>
+  </div>
 </template>
 
 <style scoped>
@@ -64,9 +94,9 @@ export default {
             id: 19,
             name: "Graphic Designing",
             children: [
-              { id: 20, name: "Vector Design " },
-              { id: 21, name: "Bitmap Design" },
-              { id: 22, name: "3D Design" },
+              { id: 20, name: "Vector Image Design " },
+              { id: 21, name: "Bitmap Image Design" },
+              { id: 22, name: "3D Image Design" },
             ],
           },
           { id: 23, name: "Video Editing" },
@@ -82,6 +112,16 @@ export default {
         ],
       },
     ],
+    open: [1, 2],
+    search: null,
+    caseSensitive: false,
   }),
+  computed: {
+    filter() {
+      return this.caseSensitive
+        ? (item, search, textKey) => item[textKey].indexOf(search) > -1
+        : undefined;
+    },
+  },
 };
 </script>
