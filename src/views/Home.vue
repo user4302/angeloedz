@@ -1,7 +1,14 @@
 <template>
   <div class="oswald-font">
-    <div class="angelo">ANGELO</div>
-    <div class="edz">EKSITH DE ZOYSA</div>
+    <div class="angelo">
+      ANGELO
+      <div class="edz-vertical">
+        <div>E</div>
+        <div>D</div>
+        <div>Z</div>
+      </div>
+    </div>
+    <!-- <div class="edz-horizontal">EKSITH DE ZOYSA</div> -->
   </div>
 </template>
 
@@ -14,12 +21,18 @@
   font-size: 2000%;
   margin-bottom: -9%;
 }
-.edz {
+.edz-horizontal {
   font-size: 915%;
   align-items: center;
 }
 
-.title{
+.edz-vertical {
+  font-size: 21%;
+  display: inline-block;
+  margin-left: -3%;
+}
+
+.title {
   font-size: 300%;
 }
 </style>
