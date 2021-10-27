@@ -11,9 +11,9 @@
         clear-icon="mdi-close"
       ></v-text-field>
       <v-checkbox
-        v-model="caseSensitive"
         dark
         hide-details
+        v-model="caseSensitive"
         label="Case sensitive search"
       ></v-checkbox>
     </v-sheet>
@@ -22,11 +22,11 @@
       rounded
       hoverable
       dense
+      open-on-click
       color="#7AF6D0"
       :items="items"
       :search="search"
       :filter="filter"
-      open-on-click
     >
     </v-treeview>
   </div>
