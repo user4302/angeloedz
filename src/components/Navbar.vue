@@ -1,6 +1,11 @@
 <template>
   <nav>
-    <v-app-bar app flat color="#121212">
+    <v-app-bar
+      hide-on-scroll
+      app
+      flat
+      color="#121212"
+    >
       <v-app-bar-nav-icon color="#7AF6D0" @click="drawer = !drawer">
         <v-icon v-if="drawer">mdi-arrow-collapse-left</v-icon>
       </v-app-bar-nav-icon>
@@ -49,7 +54,7 @@
 }
 
 .drawer-title {
-  color:#7AF6D0;
+  color: #7af6d0;
   font-size: 150%;
   margin-top: 5%;
   display: flex;
