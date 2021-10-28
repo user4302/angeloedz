@@ -4,7 +4,7 @@
     <v-sheet class="pa-4" color="#363636">
       <v-text-field
         v-model="search"
-        label="Search"
+        label="Whatchya lookin' for?"
         dark
         flat
         hide-details
