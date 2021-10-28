@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="drawer-title">Angelo E De Zoysa</div>
     <v-sheet class="pa-4" color="#363636">
       <v-text-field
         v-model="search"
@@ -33,6 +34,13 @@
 </template>
 
 <style scoped>
+.drawer-title {
+  color: #7af6d0;
+  font-size: 150%;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
 </style>
 
 <script>

@@ -22,7 +22,7 @@
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app>
-      <div class="drawer-title">Angelo E De Zoysa</div>
+      <!-- <div class="drawer-title">Angelo E De Zoysa</div> -->
       <Drawer />
     </v-navigation-drawer>
   </nav>
@@ -53,13 +53,13 @@
   text-decoration-line: none;
 }
 
-.drawer-title {
+/* .drawer-title {
   color: #7af6d0;
   font-size: 150%;
   margin-top: 5%;
   display: flex;
   justify-content: center;
-}
+} */
 </style>
 
 <script>
