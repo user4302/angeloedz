@@ -143,6 +143,7 @@
   margin-left: 18%;
   margin-right: 18%;
   text-align: left;
+  margin-top: 1%;
 }
 
 .resume {
@@ -158,6 +159,7 @@
   overflow: hidden;
   border-radius: 1%;
   margin-left: 25%;
+  margin-top: 1%;
 }
 .resume-embed {
   position: absolute;
