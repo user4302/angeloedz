@@ -130,7 +130,14 @@
 
     <div class="resume">
       <h1>Resume</h1>
-      <p>resume stuff</p>
+      <div class="resume-container">
+        <iframe
+          loading="lazy"
+          class="resume-embed"
+          src="https://www.canva.com/design/DAEiA-6iRf4/view?embed"
+        >
+        </iframe>
+      </div>
     </div>
   </div>
 </template>
@@ -191,10 +198,26 @@
 .resume {
   margin-top: 13%;
 }
-.resume p {
-  margin-left: 18%;
-  margin-right: 18%;
-  text-align: left;
+.resume-container {
+  position: relative;
+  width: 50%;
+  display: flex;
+  height: 57%;
+  padding-top: 70%;
+  padding-bottom: 4%;
+  overflow: hidden;
+  border-radius: 1%;
+  margin-left: 25%;
+}
+.resume-embed {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 </style>
 
