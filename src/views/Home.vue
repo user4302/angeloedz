@@ -11,12 +11,12 @@
     <!-- <div class="edz-horizontal">EKSITH DE ZOYSA</div> -->
 
     <div class="find-out-more">
-      <v-btn class="text-uppercase" color="#7AF6D0" text @click="scrollDown">
-        <div>Get to Know me</div>
-        <div><v-icon>mdi-chevron-down</v-icon></div>
+      <v-btn large class="text-uppercase" color="#7AF6D0" text @click="scrollDown"
+        ><div class="find-out-more-btn">
+          Get to Know me <v-icon>mdi-chevron-down</v-icon>
+        </div>
       </v-btn>
     </div>
-
     <div class="bio">
       <h1>Bio</h1>
       <v-container>
@@ -113,9 +113,13 @@
 .find-out-more {
   font-size: 150%;
 }
+.find-out-more-btn {
+  display: flex;
+  flex-direction: column;
+}
 
 .bio {
-  margin-top: 10%;
+  margin-top: 13%;
 }
 .bio-table-col-1 {
   /* width: 20%; */
