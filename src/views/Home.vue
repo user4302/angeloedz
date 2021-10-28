@@ -115,7 +115,7 @@
 }
 
 .bio {
-  margin-top: 13%;
+  margin-top: 10%;
 }
 .bio-table-col-1 {
   /* width: 20%; */
@@ -128,20 +128,21 @@
   text-align: left;
 }
 .bio-table {
-  margin-left: 2%;
+  margin-left: 3%;
+  margin-right: 6%;
 }
 
 .cover {
-  margin-top: 13%;
+  margin-top: 10%;
 }
-.cover p {
+.cover-content {
   margin-left: 18%;
   margin-right: 18%;
   text-align: left;
 }
 
 .resume {
-  margin-top: 13%;
+  margin-top: 10%;
 }
 .resume-container {
   position: relative;
