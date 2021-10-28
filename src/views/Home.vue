@@ -74,7 +74,7 @@
     </div>
 
     <div class="resume">
-      <h1>Resume</h1>
+      <h1>Resumé</h1>
       <div class="resume-container">
         <iframe
           loading="lazy"
