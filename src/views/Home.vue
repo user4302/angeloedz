@@ -165,11 +165,36 @@
 .bio {
   margin-top: 13%;
 }
+.bio-table-col-1 {
+  /* width: 20%; */
+  /* margin-left: 18%; */
+  text-align: right;
+}
+.bio-table-col-2 {
+  /* width: 20%; */
+  /* margin-left: 18%; */
+  text-align: left;
+}
+.bio-table {
+  margin-left: 2%;
+}
+
 .cover {
   margin-top: 13%;
 }
+.cover p {
+  margin-left: 18%;
+  margin-right: 18%;
+  text-align: left;
+}
+
 .resume {
   margin-top: 13%;
+}
+.resume p {
+  margin-left: 18%;
+  margin-right: 18%;
+  text-align: left;
 }
 </style>
 
