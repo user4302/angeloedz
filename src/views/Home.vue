@@ -134,7 +134,7 @@
         <iframe
           loading="lazy"
           class="resume-embed"
-          src="https://www.canva.com/design/DAEiA-6iRf4/view?embed"
+          src="https://www.canva.com/design/DAEuIgYVMao/view?embed"
         >
         </iframe>
       </div>
