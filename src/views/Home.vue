@@ -57,23 +57,7 @@
               tile
               left
               style="color: #7af6d0; text-align: left"
-            >
-      <p>
-                Born and raised in Sri Lanka, I schooled at St. Josephs College,
-                after which I switched to Asian International School where I
-                completed my secondary and pre university qualifications.
-      </p>
-              <p>
-                I actively participated in multiple sports such as basketball,
-                football, karate and track &#38; field events. I would choose
-                javelin throwing, followed by football and basketball, if I had
-                to rank them in order of my favorite.
-              </p>
-              <p>
-                While I was small, I had a keen interest in exploring, inventing
-                and creating, which lead me to develop an interest in mutiple
-                fields, including software development.
-              </p>
+              ><div v-html="bioContent">{{ bioContent }}</div>
             </v-card>
           </v-col>
         </v-row>
@@ -84,48 +68,9 @@
 
     <div class="cover">
       <h1>Cover Letter</h1>
-      <p>
-        My name is Angelo, I have recently completed my degree and am awaiting
-        graduation and I would like to help your company hit and exceed your
-        development goals as a software engineer. As someone who is attentive to
-        detail and goal driven, I thrive on completing my tasks and delivering
-        results beyond expectations. With a bachelor's degree in software
-        engineering and hands on experience in the industry, I am confident that
-        I will be an asset to your company.
-      </p>
-      <p>
-        I have worked with iTelaSoft for just over 1 year and one of my roles
-        was a fullstack web developer for multiple projects. I was tasked mainly
-        with creating the frontend according to the clients accepted design and
-        was required to make immediate changes upon the client's request which
-        enabled us to create and test our implementations against the client's
-        requirements as soon as possible and reach our goal of completion
-        faster.
-      </p>
-      <p>
-        In addition to fullstack web development, I was also tasked with IoT
-        development primarily in hardware development, and secondarily in
-        programming the hardware, I was additionally tasked with writing the
-        technical documentation for the IoT devices as well as the website
-        associated with the said devices. Managing all the tasks and
-        requirements in a timeline was also assigned to me for some projects, to
-        make sure that all the requirements were completed and were viewable to
-        the entire team as well as the client.
-      </p>
-      <p>
-        I am proficient in a range of skills such as web development, native
-        mobile application development, penetration testing, technical writing,
-        and image editing, and I wish to apply for a full-time software
-        engineering position and will be able to take on specialized tasks in
-        the future as I gauge my performance with time.
-      </p>
-      <p>
-        Thank you for your time and consideration. I am looking forward to
-        learning more about the Software Engineering position at your company. I
-        am excited about the opportunity to leverage my unique range of skills,
-        and I am eager to demonstrate my commitment to developing world-class
-        software solutions for your company.
-      </p>
+      <div class="cover-content" v-html="coverLetterContent">
+        {{ coverLetterContent }}
+      </div>
     </div>
 
     <div class="resume">
@@ -224,7 +169,66 @@
 <script>
 export default {
   data: () => ({
-    //
+    bioContent: `
+      <p>
+        Born and raised in Sri Lanka, I schooled at St. Josephs College,
+        after which I switched to Asian International School where I
+        completed my secondary and pre university qualifications.
+      </p>
+      <p>
+        I actively participated in multiple sports such as basketball,
+        football, karate and track &#38; field events. I would choose
+        javelin throwing, followed by football and basketball, if I had
+        to rank them in order of my favorite.
+      </p>
+      <p>
+        While I was small, I had a keen interest in exploring, inventing
+        and creating, which lead me to develop an interest in mutiple
+        fields, including software development.
+      </p>`,
+    coverLetterContent: `
+      <p>
+        My name is Angelo, I have recently completed my degree and am awaiting
+        graduation and I would like to help your company hit and exceed your
+        development goals as a software engineer. As someone who is attentive to
+        detail and goal driven, I thrive on completing my tasks and delivering
+        results beyond expectations. With a bachelor's degree in software
+        engineering and hands on experience in the industry, I am confident that
+        I will be an asset to your company.
+      </p>
+      <p>
+        I have worked with iTelaSoft for just over 1 year and one of my roles
+        was a fullstack web developer for multiple projects. I was tasked mainly
+        with creating the frontend according to the clients accepted design and
+        was required to make immediate changes upon the client's request which
+        enabled us to create and test our implementations against the client's
+        requirements as soon as possible and reach our goal of completion
+        faster.
+      </p>
+      <p>
+        In addition to fullstack web development, I was also tasked with IoT
+        development primarily in hardware development, and secondarily in
+        programming the hardware, I was additionally tasked with writing the
+        technical documentation for the IoT devices as well as the website
+        associated with the said devices. Managing all the tasks and
+        requirements in a timeline was also assigned to me for some projects, to
+        make sure that all the requirements were completed and were viewable to
+        the entire team as well as the client.
+      </p>
+      <p>
+        I am proficient in a range of skills such as web development, native
+        mobile application development, penetration testing, technical writing,
+        and image editing, and I wish to apply for a full-time software
+        engineering position and will be able to take on specialized tasks in
+        the future as I gauge my performance with time.
+      </p>
+      <p>
+        Thank you for your time and consideration. I am looking forward to
+        learning more about the Software Engineering position at your company. I
+        am excited about the opportunity to leverage my unique range of skills,
+        and I am eager to demonstrate my commitment to developing world-class
+        software solutions for your company.
+      </p>`,
   }),
   methods: {
     scrollDown: function () {
