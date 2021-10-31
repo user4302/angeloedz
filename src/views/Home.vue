@@ -17,7 +17,7 @@
         color="#7AF6D0"
         text
         @click="scrollDown"
-        ><div class="find-out-more-btn">
+        ><div class="find-out-more-btn oswald-font">
           Get to Know me <v-icon>mdi-chevron-down</v-icon>
         </div>
       </v-btn>
@@ -27,7 +27,7 @@
       <h1>Bio</h1>
       <v-container>
         <v-row class="bio-table content-container">
-          <v-col cols="6" class="bio-table-col-1" col="2" lg="2" md="2" sm="6">
+          <v-col class="bio-table-col-1" col="2" lg="2" md="2" sm="6" cols="6">
             <v-card class="pa-2 dark_1" flat tile style="color: #7af6d0"
               >Full Name</v-card
             >
@@ -42,7 +42,7 @@
             >
           </v-col>
 
-          <v-col cols="6" class="bio-table-col-2" col="2" lg="2" md="4" sm="6">
+          <v-col class="bio-table-col-2" col="2" lg="2" md="4" sm="6" cols="6">
             <v-card class="pa-2 dark_1" flat tile style="color: #7af6d0"
               >Angelo Eksith De Zoysa</v-card
             >
@@ -57,7 +57,7 @@
             >
           </v-col>
 
-          <v-col cols="12" col="8" lg="8" md="6" sm="12">
+          <v-col col="8" lg="8" md="6" sm="12" cols="12">
             <v-card
               class="pa-2 dark_1"
               flat
@@ -91,9 +91,6 @@
         </iframe>
       </v-container>
     </div>
-
-
-
   </div>
 </template>
 
@@ -190,6 +187,37 @@
   margin-right: 10%; */
 }
 
+@media (max-width: 1920px) {
+  .oswald-font {
+    font-family: "Oswald", sans-serif;
+    font-size: 140%;
+  }
+  .angelo {
+    font-size: 1200%;
+    margin-top: 13%;
+    /* margin-bottom: -9%; */
+  }
+  .content-container {
+    /* margin-left: 7%;
+  margin-right: 7%; */
+    /* width: 70%; */
+  }
+  .bio-table {
+    margin-left: 11%;
+    margin-right: 13%;
+  }
+  .bio {
+    margin-top: 18%;
+  }
+  .cover-content{
+        width: 67%;
+  }
+  .resume-container{
+    padding-top: 69%;
+
+  }
+}
+
 @media (max-width: 1263px) {
   .angelo {
     font-size: 1500%;
@@ -233,7 +261,7 @@
 
 @media (max-width: 599px) {
   .angelo {
-    /* font-size: 640%; */
+    font-size: 640%;
     margin-top: 68%;
   }
 
@@ -263,30 +291,24 @@
   .bio {
     margin-top: 76%;
   }
-.resume{
-  margin-bottom: 40%;
-}
+  .resume {
+    margin-bottom: 40%;
+  }
 
-
-.resume-container {
+  .resume-container {
     overflow: inherit !important;
     margin-left: 13%;
-}
-
-
-
-  
+  }
 }
 
 @media (max-width: 375px) {
-  .angelo{
+  .angelo {
     font-size: 500%;
   }
-  .bio{
+  .bio {
     margin-top: 87%;
   }
 }
-
 </style>
 
 
