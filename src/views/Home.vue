@@ -11,17 +11,23 @@
     <!-- <div class="edz-horizontal">EKSITH DE ZOYSA</div> -->
 
     <div class="find-out-more">
-      <v-btn large class="text-uppercase" color="#7AF6D0" text @click="scrollDown"
+      <v-btn
+        large
+        class="text-uppercase"
+        color="#7AF6D0"
+        text
+        @click="scrollDown"
         ><div class="find-out-more-btn">
           Get to Know me <v-icon>mdi-chevron-down</v-icon>
         </div>
       </v-btn>
     </div>
+
     <div class="bio">
       <h1>Bio</h1>
       <v-container>
-        <v-row class="bio-table">
-          <v-col class="bio-table-col-1" cols="12" sm="6" md="2">
+        <v-row class="bio-table content-container">
+          <v-col cols="6" class="bio-table-col-1" col="2" lg="2" md="2" sm="6">
             <v-card class="pa-2 dark_1" flat tile style="color: #7af6d0"
               >Full Name</v-card
             >
@@ -36,7 +42,7 @@
             >
           </v-col>
 
-          <v-col class="bio-table-col-2" cols="6" md="2">
+          <v-col cols="6" class="bio-table-col-2" col="2" lg="2" md="4" sm="6">
             <v-card class="pa-2 dark_1" flat tile style="color: #7af6d0"
               >Angelo Eksith De Zoysa</v-card
             >
@@ -50,7 +56,8 @@
               >English, Sinhala</v-card
             >
           </v-col>
-          <v-col cols="6" md="8">
+
+          <v-col cols="12" col="8" lg="8" md="6" sm="12">
             <v-card
               class="pa-2 dark_1"
               flat
@@ -66,23 +73,23 @@
       <p></p>
     </div>
 
-    <div class="cover">
+    <div class="cover content-container">
       <h1>Cover Letter</h1>
-      <div class="cover-content" v-html="coverLetterContent">
+      <v-container class="cover-content" v-html="coverLetterContent">
         {{ coverLetterContent }}
-      </div>
+      </v-container>
     </div>
 
     <div class="resume">
       <h1>Resumé</h1>
-      <div class="resume-container">
+      <v-container class="resume-container">
         <iframe
           loading="lazy"
           class="resume-embed"
           src="https://www.canva.com/design/DAEuIgYVMao/view?embed"
         >
         </iframe>
-      </div>
+      </v-container>
     </div>
   </div>
 </template>
@@ -92,15 +99,16 @@
 .oswald-font {
   font-family: "Oswald", sans-serif;
 }
+
 .angelo {
   font-size: 2000%;
+  margin-top: 11%;
   /* margin-bottom: -9%; */
 }
 .edz-horizontal {
   font-size: 915%;
   align-items: center;
 }
-
 .edz-vertical {
   font-size: 21%;
   display: inline-block;
@@ -119,7 +127,7 @@
 }
 
 .bio {
-  margin-top: 13%;
+  margin-top: 15%;
 }
 .bio-table-col-1 {
   /* width: 20%; */
@@ -132,16 +140,16 @@
   text-align: left;
 }
 .bio-table {
-  margin-left: 3%;
-  margin-right: 6%;
+  /* margin-left: 3%;
+  margin-right: 6%; */
 }
 
 .cover {
   margin-top: 10%;
 }
 .cover-content {
-  margin-left: 18%;
-  margin-right: 18%;
+  /* margin-left: 18%; */
+  /* margin-right: 18%; */
   text-align: left;
   margin-top: 1%;
 }
@@ -151,6 +159,8 @@
 }
 .resume-container {
   position: relative;
+
+  margin-top: 2%;
   width: 50%;
   display: flex;
   height: 57%;
@@ -158,8 +168,8 @@
   padding-bottom: 4%;
   overflow: hidden;
   border-radius: 1%;
-  margin-left: 25%;
-  margin-top: 1%;
+  /* margin-left: 25%; */
+  /* margin-top: 1%; */
 }
 .resume-embed {
   position: absolute;
@@ -170,6 +180,82 @@
   border: none;
   padding: 0;
   margin: 0;
+}
+
+.content-container {
+  /* margin-left: 10%;
+  margin-right: 10%; */
+}
+
+@media (max-width: 1263px) {
+  .angelo {
+    font-size: 1500%;
+    margin-top: 7%;
+    /* margin-bottom: -9%; */
+  }
+  .content-container {
+    /* margin-left: 7%;
+  margin-right: 7%; */
+  }
+  .bio-table {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .bio {
+    margin-top: 12%;
+  }
+}
+
+@media (max-width: 959px) {
+  .angelo {
+    font-size: 940%;
+
+    margin-top: 9%;
+  }
+  .content-container {
+    /* margin-left: 7%;
+  margin-right: 7%; */
+  }
+  .cover-content {
+    width: 77%;
+    /* margin-left: 18%; 
+  margin-right: 18%; */
+    text-align: left;
+    margin-top: 1%;
+  }
+  .bio {
+    margin-top: 13%;
+  }
+}
+
+@media (max-width: 599px) {
+  .angelo {
+    /* font-size: 640%; */
+  }
+
+  .bio-table-col-1 {
+    /* padding: 0; */
+    /* margin-left: -46%; */
+  }
+  .bio-table-col-2 {
+    /* padding: 0; */
+    /* margin-left: -6%; */
+  }
+  .resume-container {
+    width: 90%;
+
+    height: 90%;
+    /* margin-left: 25%; */
+    /* margin-top: 1%; */
+  }
+  .resume-embed {
+    width: 100%;
+    height: 150%;
+  }
+  .bio-table {
+    margin-left: 9%;
+    margin-right: 9%;
+  }
 }
 </style>
 
