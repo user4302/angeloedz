@@ -277,7 +277,18 @@
 
   
 }
+
+@media (max-width: 375px) {
+  .angelo{
+    font-size: 500%;
+  }
+  .bio{
+    margin-top: 87%;
+  }
+}
+
 </style>
+
 
 <script>
 export default {
