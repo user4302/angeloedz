@@ -91,6 +91,9 @@
         </iframe>
       </v-container>
     </div>
+
+
+
   </div>
 </template>
 
@@ -231,6 +234,7 @@
 @media (max-width: 599px) {
   .angelo {
     /* font-size: 640%; */
+    margin-top: 68%;
   }
 
   .bio-table-col-1 {
@@ -249,13 +253,29 @@
     /* margin-top: 1%; */
   }
   .resume-embed {
-    width: 100%;
-    height: 150%;
+    width: 81%;
+    height: 153%;
   }
   .bio-table {
     margin-left: 9%;
     margin-right: 9%;
   }
+  .bio {
+    margin-top: 76%;
+  }
+.resume{
+  margin-bottom: 40%;
+}
+
+
+.resume-container {
+    overflow: inherit !important;
+    margin-left: 13%;
+}
+
+
+
+  
 }
 </style>
 
