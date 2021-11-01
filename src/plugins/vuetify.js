@@ -12,7 +12,8 @@ export default new Vuetify({
             dark: {
                 primary: "#7AF6D0",
                 dark_1: "#121212",
-                dark_2: "#363636"
+                dark_2: "#363636",
+                color: "#7AF6D0",
             },
         }
     }
