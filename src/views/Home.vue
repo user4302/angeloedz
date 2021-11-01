@@ -1,33 +1,37 @@
 <template>
   <div class="oswald-font">
-    <div class="angelo">
-      ANGELO
-      <div class="edz-vertical">
-        <div>E</div>
-        <div>D</div>
-        <div>Z</div>
-      </div>
-    </div>
-    <!-- <div class="edz-horizontal">EKSITH DE ZOYSA</div> -->
-
-    <div class="find-out-more">
-      <v-btn
-        large
-        class="text-uppercase"
-        color="#7AF6D0"
-        text
-        @click="scrollDown"
-        ><div class="find-out-more-btn">
-          Get to Know me <v-icon>mdi-chevron-down</v-icon>
+    <div class="hero">
+      <div class="angelo">
+        ANGELO
+        <div class="edz-vertical">
+          <div>E</div>
+          <div>D</div>
+          <div>Z</div>
         </div>
-      </v-btn>
+      </div>
+
+      <div class="find-out-more">
+        <v-btn
+          large
+          class="text-uppercase"
+          color="#7AF6D0"
+          text
+          @click="scrollDown"
+          ><div class="find-out-more-btn oswald-font">
+            Get to Know me <v-icon>mdi-chevron-down</v-icon>
+          </div>
+        </v-btn>
+      </div>
+
     </div>
+
+    <!-- <div class="edz-horizontal">EKSITH DE ZOYSA</div> -->
 
     <div class="bio">
       <h1>Bio</h1>
       <v-container>
         <v-row class="bio-table content-container">
-          <v-col cols="6" class="bio-table-col-1" col="2" lg="2" md="2" sm="6">
+          <v-col class="bio-table-col-1" col="2" lg="2" md="2" sm="6" cols="6">
             <v-card class="pa-2 dark_1" flat tile style="color: #7af6d0"
               >Full Name</v-card
             >
@@ -42,7 +46,7 @@
             >
           </v-col>
 
-          <v-col cols="6" class="bio-table-col-2" col="2" lg="2" md="4" sm="6">
+          <v-col class="bio-table-col-2" col="3" lg="3" md="3" sm="6" cols="6">
             <v-card class="pa-2 dark_1" flat tile style="color: #7af6d0"
               >Angelo Eksith De Zoysa</v-card
             >
@@ -57,7 +61,7 @@
             >
           </v-col>
 
-          <v-col cols="12" col="8" lg="8" md="6" sm="12">
+          <v-col col="7" lg="7" md="7" sm="12" cols="12">
             <v-card
               class="pa-2 dark_1"
               flat
@@ -91,9 +95,6 @@
         </iframe>
       </v-container>
     </div>
-
-
-
   </div>
 </template>
 
@@ -102,11 +103,19 @@
 .oswald-font {
   font-family: "Oswald", sans-serif;
 }
-
+.hero {
+  min-height: 94vh;
+  height: 94vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column
+}
 .angelo {
-  font-size: 2000%;
-  margin-top: 11%;
-  /* margin-bottom: -9%; */
+  font-size: 15vw;
+  margin-top: -11%;
+  /* padding-top: calc(27vh - 4%); */
+  /* margin-bottom: 20vw; */
 }
 .edz-horizontal {
   font-size: 915%;
@@ -123,6 +132,7 @@
 }
 .find-out-more {
   font-size: 150%;
+  /* padding-bottom: calc(37vh - 4%); */
 }
 .find-out-more-btn {
   display: flex;
@@ -130,7 +140,7 @@
 }
 
 .bio {
-  margin-top: 15%;
+  /* margin-top: 15%; */
 }
 .bio-table-col-1 {
   /* width: 20%; */
@@ -190,10 +200,49 @@
   margin-right: 10%; */
 }
 
-@media (max-width: 1263px) {
+@media (max-width: 1920px) {
+  .oswald-font {
+    font-family: "Oswald", sans-serif;
+    font-size: 140%;
+  }
   .angelo {
-    font-size: 1500%;
-    margin-top: 7%;
+    /* font-size: 1200%; */
+    /* margin-top: 13%; */
+    /* margin-bottom: -9%; */
+  }
+  .content-container {
+    /* margin-left: 7%;
+  margin-right: 7%; */
+    /* width: 70%; */
+  }
+  .bio-table {
+    margin-left: 11%;
+    margin-right: 13%;
+  }
+  .bio {
+    /* margin-top: 18%; */
+  }
+  .cover-content {
+    width: 67%;
+  }
+  .resume-container {
+    padding-top: 69%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .oswald-font {
+    font-family: "Oswald", sans-serif;
+    font-size: 100%;
+  }
+  .edz-vertical {
+    font-size: 21%;
+    display: inline-block;
+    margin-left: -2%;
+  }
+  .angelo {
+    /* font-size: 1000%; */
+    /* margin-top: 11%; */
     /* margin-bottom: -9%; */
   }
   .content-container {
@@ -201,19 +250,28 @@
   margin-right: 7%; */
   }
   .bio-table {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 12%;
+    margin-right: 12%;
   }
   .bio {
-    margin-top: 12%;
+    /* margin-top: 18%; */
   }
+  .resume-container {
+    padding-top: 70%;
+  }
+  .resume-embed {
+    /* height: 101%; */
+  }
+}
+
+@media (max-width: 650px) {
 }
 
 @media (max-width: 959px) {
   .angelo {
-    font-size: 940%;
+    /* font-size: 940%; */
 
-    margin-top: 9%;
+    /* margin-top: 9%; */
   }
   .content-container {
     /* margin-left: 7%;
@@ -227,14 +285,14 @@
     margin-top: 1%;
   }
   .bio {
-    margin-top: 13%;
+    /* margin-top: 13%; */
   }
 }
 
 @media (max-width: 599px) {
   .angelo {
     /* font-size: 640%; */
-    margin-top: 68%;
+    /* margin-top: 68%; */
   }
 
   .bio-table-col-1 {
@@ -261,32 +319,26 @@
     margin-right: 9%;
   }
   .bio {
-    margin-top: 76%;
+    /* margin-top: 76%; */
   }
-.resume{
-  margin-bottom: 40%;
-}
+  .resume {
+    margin-bottom: 40%;
+  }
 
-
-.resume-container {
+  .resume-container {
     overflow: inherit !important;
     margin-left: 13%;
-}
-
-
-
-  
+  }
 }
 
 @media (max-width: 375px) {
-  .angelo{
-    font-size: 500%;
+  .angelo {
+    /* font-size: 500%; */
   }
-  .bio{
-    margin-top: 87%;
+  .bio {
+    /* margin-top: 87%; */
   }
 }
-
 </style>
 
 
@@ -354,6 +406,8 @@ export default {
         software solutions for your company.
       </p>`,
   }),
+  mounted() {},
+
   methods: {
     scrollDown: function () {
       // var container = this.$el.querySelector(".bio");
