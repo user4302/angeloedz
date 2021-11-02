@@ -67,3 +67,56 @@
         info: "English, Sinhala",
       },
     ],
+
+
+
+
+
+
+
+
+
+    <template>
+  <div>
+
+    <div class="drawer-title">Angelo E De Zoysa</div>
+    
+    <v-sheet class="pa-4" color="#363636">
+      <v-text-field
+        v-model="search"
+        label="Whatchya lookin' for?"
+        dark
+        flat
+        hide-details
+        clearable
+        clear-icon="mdi-close"
+      ></v-text-field>
+      <v-checkbox
+        dark
+        hide-details
+        v-model="caseSensitive"
+        label="Case sensitive search"
+      ></v-checkbox>
+    </v-sheet>
+
+    <v-treeview
+      activatable
+      rounded
+      hoverable
+      dense
+      open-on-click
+      color="#7AF6D0"
+      :items="items"
+      :search="search"
+      :filter="filter"
+    >
+    </v-treeview>
+  </div>
+</template>
+
+
+
+
+
+
+
