@@ -14,7 +14,7 @@
       <v-card>
         <form
           ref="form"
-          name="contact-speaker"
+          name="contact-me"
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
@@ -123,11 +123,11 @@ export default {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" },
       };
-      this.form.speaker = this.speaker.name;
+      this.form.name = this.form.name;
       axios.post(
         "/",
         this.encode({
-          "form-name": "contact-speaker",
+          "form-name": "contact-me",
           ...this.form,
         }),
         axiosConfig
