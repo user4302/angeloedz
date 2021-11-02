@@ -84,17 +84,6 @@
       </v-container>
     </div>
 
-    <div class="resume">
-      <h1>Resumé</h1>
-      <v-container class="resume-container">
-        <iframe
-          loading="lazy"
-          class="resume-embed"
-          src="https://www.canva.com/design/DAEuIgYVMao/view?embed"
-        >
-        </iframe>
-      </v-container>
-    </div>
   </div>
 </template>
 
