@@ -15,6 +15,7 @@
           large
           class="text-uppercase"
           color="#7AF6D0"
+          height="120%"
           text
           @click="scrollDown"
           ><div class="find-out-more-btn oswald-font">
@@ -83,7 +84,7 @@
         {{ coverLetterContent }}
       </v-container>
     </div>
-
+    
   </div>
 </template>
 
