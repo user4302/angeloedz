@@ -16,9 +16,7 @@
         <v-btn text color="#7AF6D0"
           >My Resume<v-icon right>mdi-download</v-icon>
         </v-btn>
-        <v-btn text color="#7AF6D0"
-          >Contact Me<v-icon right>mdi-email</v-icon>
-        </v-btn>
+        <ContactMe />
       </v-app-bar>
     </nav>
 
@@ -66,8 +64,9 @@
 
 <script>
 import Drawer from "@/components/Drawer";
+import ContactMe from "@/components/ContactMe";
 export default {
-  components: { Drawer },
+  components: { Drawer, ContactMe },
   data() {
     return {
       drawer: false,
