@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-btn fab class="dark_1" dark fixed @click="drawer = !drawer">
+    <v-btn text fab class="dark_1" dark fixed @click="drawer = !drawer">
       <v-icon color="#7AF6D0">mdi-menu</v-icon>
     </v-btn>
 
