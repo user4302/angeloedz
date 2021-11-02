@@ -1,25 +1,25 @@
 <template>
-  <nav>
-    <v-app-bar
-      hide-on-scroll
-      app
-      flat
-      color="#121212"
-    >
-      <v-app-bar-nav-icon color="#7AF6D0" @click="drawer = !drawer">
-        <v-icon v-if="drawer">mdi-arrow-collapse-left</v-icon>
-      </v-app-bar-nav-icon>
-      <v-toolbar-title class="text-uppercase" style="color: #7af6d0">
-      </v-toolbar-title>
+  <div>
+    <v-btn fab class="dark_1" dark fixed @click="drawer = !drawer">
+      <v-icon color="#7AF6D0">mdi-menu</v-icon>
+    </v-btn>
 
-      <v-spacer></v-spacer>
-      <v-btn text color="#7AF6D0"
-        >My Resume<v-icon right>mdi-download</v-icon>
-      </v-btn>
-      <v-btn text color="#7AF6D0"
-        >Contact Me<v-icon right>mdi-email</v-icon>
-      </v-btn>
-    </v-app-bar>
+    <nav>
+      <v-app-bar hide-on-scroll app flat color="#121212">
+        <v-app-bar-nav-icon color="#7AF6D0" @click="drawer = !drawer">
+          <v-icon v-if="drawer">mdi-arrow-collapse-left</v-icon>
+        </v-app-bar-nav-icon>
+        <v-toolbar-title class="text-uppercase" style="color: #7af6d0">
+        </v-toolbar-title>
+
+        <v-spacer></v-spacer>
+        <v-btn text color="#7AF6D0"
+          >My Resume<v-icon right>mdi-download</v-icon>
+        </v-btn>
+        <v-btn text color="#7AF6D0"
+          >Contact Me<v-icon right>mdi-email</v-icon>
+        </v-btn>
+      </v-app-bar>
     </nav>
 
     <v-navigation-drawer v-model="drawer" app temporary>
@@ -73,5 +73,6 @@ export default {
       drawer: false,
     };
   },
+  // props: ["drawer"],
 };
 </script>
