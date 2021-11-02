@@ -20,12 +20,14 @@
         >Contact Me<v-icon right>mdi-email</v-icon>
       </v-btn>
     </v-app-bar>
+    </nav>
 
-    <v-navigation-drawer v-model="drawer" app>
+    <v-navigation-drawer v-model="drawer" app temporary>
+      <!-- <v-btn @click="drawer = !drawer"><v-icon v-if="drawer">mdi-arrow-collapse-left</v-icon></v-btn> -->
       <!-- <div class="drawer-title">Angelo E De Zoysa</div> -->
       <Drawer />
     </v-navigation-drawer>
-  </nav>
+  </div>
 </template>
 
 <style>
