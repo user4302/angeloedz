@@ -13,9 +13,9 @@
         </v-toolbar-title>
 
         <v-spacer></v-spacer>
-        <v-btn text color="#7AF6D0"
+        <!-- <v-btn text color="#7AF6D0"
           >My Resume<v-icon right>mdi-download</v-icon>
-        </v-btn>
+        </v-btn> -->
         <ContactMe />
       </v-app-bar>
     </nav>
