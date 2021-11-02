@@ -8,6 +8,9 @@ import Fun from "../views/Fun.vue";
 import Resume from "../views/Resume.vue";
 import PageNotFound from '@/views/PageNotFound.vue'
 
+import FormSuccess from '../components/FormSuccess'
+import FormFail from '../components/FormFail'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -40,6 +43,16 @@ const routes = [
     path: '/:catchAll(.*)*',
     name: "PageNotFound",
     component: PageNotFound,
+  },
+  {
+    path: '/thanks',
+    name: 'success',
+    component: FormSuccess
+  },
+  {
+    path: '/404',
+    name: 'fail',
+    component: FormFail
   }
 ];
 
@@ -48,5 +61,6 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
 
 export default router

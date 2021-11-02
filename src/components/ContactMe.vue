@@ -21,7 +21,7 @@
           @submit.prevent="handleSubmit"
           lazy-validation
         >
-          <input type="hidden" name="form-name" value="ask-question" />
+          <input type="hidden" name="form-name" value="contact-me" />
           <TwoDialogButtons
             title="You can contact me using this form! 😄"
             @cancel="$emit('cancel')"
@@ -123,7 +123,6 @@ export default {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" },
       };
-      // this.form.name = this.form.name;
       axios.post(
         "/",
         this.encode({
