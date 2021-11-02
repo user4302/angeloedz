@@ -12,54 +12,84 @@
       </template>
 
       <v-card>
-        <v-form ref="form" v-model="valid" lazy-validation>
-          <v-text-field
-            v-model="name"
-            :rules="nameRules"
-            label="Name"
-            required
-          ></v-text-field>
+        <form
+          ref="form"
+          name="contact-speaker"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          @submit.prevent="handleSubmit"
+          lazy-validation
+        >
+          <input type="hidden" name="form-name" value="ask-question" />
+          <TwoDialogButtons
+            title="You can contact me using this form! 😄"
+            @cancel="$emit('cancel')"
+          >
+            <v-text-field
+              v-model="form.name"
+              :rules="nameRules"
+              label="Name"
+              required
+            ></v-text-field>
 
-          <v-text-field
-            v-model="organization"
-            :rules="organizationRules"
-            label="Organization"
-            required
-          ></v-text-field>
+            <v-text-field
+              v-model="form.organization"
+              :rules="organizationRules"
+              label="Organization"
+              required
+            ></v-text-field>
 
-          <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            label="E-mail"
-            required
-          ></v-text-field>
+            <v-text-field
+              v-model="form.email"
+              :rules="emailRules"
+              label="E-mail"
+              required
+            ></v-text-field>
 
-          <v-btn
+            <v-text-field
+              v-model="form.message"
+              :rules="messageRules"
+              label="Message"
+              required
+            ></v-text-field>
+          </TwoDialogButtons>
+
+          <!-- <v-btn
             :disabled="!valid"
             color="success"
             class="mr-4"
             @click="validate"
           >
             Submit
-          </v-btn>
+          </v-btn> -->
 
-          <v-btn color="error" class="mr-4" @click="reset"> Clear </v-btn>
-        </v-form>
+          <!-- <v-btn color="error" class="mr-4" @click="reset"> Clear </v-btn> -->
+
+          <!-- <TwoDialogButtons title="Send a message" @cancel="$emit('cancel')" /> -->
+        </form>
       </v-card>
     </v-dialog>
   </div>
 </template>
 
 <script>
+import TwoDialogButtons from "@/components/TwoDialogButtons";
+import axios from "axios";
 export default {
+  components: { TwoDialogButtons },
   data: () => ({
     dialog: false,
     valid: true,
-    name: "",
-    organization: "",
+    form: {
+      name: "",
+      organization: "",
+      email: "",
+      message: "",
+    },
     nameRules: [(v) => !!v || "Name is required"],
-    organizationRules: [(v) => !!v || "Name is required"],
-    email: "",
+    organizationRules: [(v) => !!v || "Organization is required"],
+    messageRules: [(v) => !!v || "Message is required"],
     emailRules: [
       (v) => !!v || "E-mail is required",
       (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
@@ -75,6 +105,34 @@ export default {
     },
     resetValidation() {
       this.$refs.form.resetValidation();
+    },
+    resetForm() {
+      this.$set(this.form, "name", "");
+      this.$set(this.form, "organization", "");
+      this.$set(this.form, "email", "");
+      this.$set(this.form, "message", "");
+    },
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
+    handleSubmit() {
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" },
+      };
+      this.form.speaker = this.speaker.name;
+      axios.post(
+        "/",
+        this.encode({
+          "form-name": "contact-speaker",
+          ...this.form,
+        }),
+        axiosConfig
+      );
+      this.resetForm();
     },
   },
   watch: {
