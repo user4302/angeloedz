@@ -1,8 +1,10 @@
-# angelo.ninja-vue
+# angeloedz-vue
+
+- Node: v20.10.0
 
 ## Project setup
 ```
-npm install
+`npm install`
 ```
 
 ### Compiles and hot-reloads for development
