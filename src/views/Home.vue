@@ -23,10 +23,7 @@
           </div>
         </v-btn>
       </div>
-
     </div>
-
-    <!-- <div class="edz-horizontal">EKSITH DE ZOYSA</div> -->
 
     <div class="bio">
       <h1>Bio</h1>
@@ -69,7 +66,7 @@
               tile
               left
               style="color: #7af6d0; text-align: left"
-              ><div v-html="bioContent">{{ bioContent }}</div>
+              ><div v-html="bioContent"></div>
             </v-card>
           </v-col>
         </v-row>
@@ -80,18 +77,17 @@
 
     <div class="cover content-container">
       <h1>Cover Letter</h1>
-      <v-container class="cover-content" v-html="coverLetterContent">
-        {{ coverLetterContent }}
+      <v-container class="cover-content">
+        <div v-html="coverLetterContent"></div>
       </v-container>
     </div>
-    
   </div>
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 .oswald-font {
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 .hero {
   min-height: 94vh;
@@ -99,13 +95,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column
+  flex-direction: column;
 }
 .angelo {
   font-size: 15vw;
   margin-top: -11%;
-  /* padding-top: calc(27vh - 4%); */
-  /* margin-bottom: 20vw; */
 }
 .edz-horizontal {
   font-size: 915%;
@@ -122,37 +116,23 @@
 }
 .find-out-more {
   font-size: 150%;
-  /* padding-bottom: calc(37vh - 4%); */
 }
 .find-out-more-btn {
   display: flex;
   flex-direction: column;
 }
 
-.bio {
-  /* margin-top: 15%; */
-}
 .bio-table-col-1 {
-  /* width: 20%; */
-  /* margin-left: 18%; */
   text-align: right;
 }
 .bio-table-col-2 {
-  /* width: 20%; */
-  /* margin-left: 18%; */
   text-align: left;
-}
-.bio-table {
-  /* margin-left: 3%;
-  margin-right: 6%; */
 }
 
 .cover {
   margin-top: 10%;
 }
 .cover-content {
-  /* margin-left: 18%; */
-  /* margin-right: 18%; */
   text-align: left;
   margin-top: 1%;
 }
@@ -171,8 +151,6 @@
   padding-bottom: 4%;
   overflow: hidden;
   border-radius: 1%;
-  /* margin-left: 25%; */
-  /* margin-top: 1%; */
 }
 .resume-embed {
   position: absolute;
@@ -185,32 +163,14 @@
   margin: 0;
 }
 
-.content-container {
-  /* margin-left: 10%;
-  margin-right: 10%; */
-}
-
 @media (max-width: 1920px) {
   .oswald-font {
-    font-family: "Oswald", sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 140%;
-  }
-  .angelo {
-    /* font-size: 1200%; */
-    /* margin-top: 13%; */
-    /* margin-bottom: -9%; */
-  }
-  .content-container {
-    /* margin-left: 7%;
-  margin-right: 7%; */
-    /* width: 70%; */
   }
   .bio-table {
     margin-left: 11%;
     margin-right: 13%;
-  }
-  .bio {
-    /* margin-top: 18%; */
   }
   .cover-content {
     width: 67%;
@@ -222,7 +182,7 @@
 
 @media (max-width: 1280px) {
   .oswald-font {
-    font-family: "Oswald", sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 100%;
   }
   .edz-vertical {
@@ -230,75 +190,29 @@
     display: inline-block;
     margin-left: -2%;
   }
-  .angelo {
-    /* font-size: 1000%; */
-    /* margin-top: 11%; */
-    /* margin-bottom: -9%; */
-  }
-  .content-container {
-    /* margin-left: 7%;
-  margin-right: 7%; */
-  }
   .bio-table {
     margin-left: 12%;
     margin-right: 12%;
   }
-  .bio {
-    /* margin-top: 18%; */
-  }
   .resume-container {
     padding-top: 70%;
   }
-  .resume-embed {
-    /* height: 101%; */
-  }
-}
-
-@media (max-width: 650px) {
 }
 
 @media (max-width: 959px) {
-  .angelo {
-    /* font-size: 940%; */
-
-    /* margin-top: 9%; */
-  }
-  .content-container {
-    /* margin-left: 7%;
-  margin-right: 7%; */
-  }
   .cover-content {
     width: 77%;
-    /* margin-left: 18%; 
-  margin-right: 18%; */
     text-align: left;
     margin-top: 1%;
-  }
-  .bio {
-    /* margin-top: 13%; */
   }
 }
 
 @media (max-width: 599px) {
-  .angelo {
-    /* font-size: 640%; */
-    /* margin-top: 68%; */
-  }
-
-  .bio-table-col-1 {
-    /* padding: 0; */
-    /* margin-left: -46%; */
-  }
-  .bio-table-col-2 {
-    /* padding: 0; */
-    /* margin-left: -6%; */
-  }
   .resume-container {
     width: 90%;
-
     height: 90%;
-    /* margin-left: 25%; */
-    /* margin-top: 1%; */
+    overflow: inherit !important;
+    margin-left: 13%;
   }
   .resume-embed {
     width: 81%;
@@ -308,29 +222,12 @@
     margin-left: 9%;
     margin-right: 9%;
   }
-  .bio {
-    /* margin-top: 76%; */
-  }
   .resume {
     margin-bottom: 40%;
   }
-
-  .resume-container {
-    overflow: inherit !important;
-    margin-left: 13%;
-  }
 }
 
-@media (max-width: 375px) {
-  .angelo {
-    /* font-size: 500%; */
-  }
-  .bio {
-    /* margin-top: 87%; */
-  }
-}
 </style>
-
 
 <script>
 export default {
@@ -400,15 +297,10 @@ export default {
 
   methods: {
     scrollDown: function () {
-      // var container = this.$el.querySelector(".bio");
-      // container.scrollTop = container.scrollHeight;
-      // console.log(container);
-
-      var container = this.$el.querySelector(".bio");
+      let container = this.$el.querySelector('.bio');
 
       if (container) {
-        // Use el.scrollIntoView() to instantly scroll to the element
-        container.scrollIntoView({ behavior: "smooth" });
+        container.scrollIntoView({ behavior: 'smooth' });
       }
     },
   },
