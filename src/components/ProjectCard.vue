@@ -12,9 +12,9 @@ export default {
   name: 'ProjectCard',
   props: {
     imageSrc: String,
-    iconClass: String
-  }
-}
+    iconClass: String,
+  },
+};
 </script>
 
 <style scoped>
@@ -38,6 +38,12 @@ export default {
 }
 
 .icon-size {
-  font-size: 30px; /* Apply the size directly to the font-awesome-icon */
+  font-size: 30px;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* transition: transform 0.5s ease, box-shadow 0.5s ease; */
 }
 </style>
