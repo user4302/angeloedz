@@ -1,4 +1,4 @@
-# angelo.ninja-vue
+# angeloedz-vue
 
 ## Project setup
 ```

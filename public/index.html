@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
   </head>
   <body>
     <noscript>
@@ -15,15 +13,5 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-
-    <!--dummy form so netlify knows what's coming-->
-    <form name="contact-me" netlify netlify-honeypot="bot-field" hidden>
-      <input type="hidden" name="form-name" value="contact-me" />
-      <input type="text" name="name" />
-      <input type="text" name="email" />
-      <input type="text" name="organization" />
-      <input type="text" name="message" />
-    </form>
-
   </body>
 </html>

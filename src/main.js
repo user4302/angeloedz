@@ -1,15 +1,35 @@
-import Vue from 'vue'
-import App from './App.vue'
-import './registerServiceWorker'
-import router from './router'
-import store from './store'
-import vuetify from './plugins/vuetify'
+import { createApp } from 'vue';
+import App from './App.vue';
+import './global.css';
 
-Vue.config.productionTip = false
+// Import the Font Awesome core
+import { library } from '@fortawesome/fontawesome-svg-core';
 
-new Vue({
-  router,
-  store,
-  vuetify,
-  render: h => h(App)
-}).$mount('#app')
+// Import the Font Awesome icon component
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+// Import specific icons
+import {
+  faVuejs,
+  faPython,
+  faJava,
+  faAndroid,
+  faReact,
+  faNodeJs,
+  faSquareBluesky,
+  faApple
+} from '@fortawesome/free-brands-svg-icons';
+
+// Add the icons to the library
+library.add(
+  faVuejs,
+  faPython,
+  faJava,
+  faAndroid,
+  faReact,
+  faNodeJs,
+  faSquareBluesky,
+  faApple
+);
+
+createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app');

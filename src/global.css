@@ -1,0 +1,80 @@
+:root {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #e0e0e0; /* Updated to dark cyan */
+  --secondary-color: #6ce9ff;
+  --button-bg-color: #1f1f1f;
+  --button-hover-bg-color: #333;
+  --card-bg-color: #2c2c2c;
+  --card-border-color: #444;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+button {
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--card-border-color);
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+.section {
+  padding: 20px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.section-buttons button {
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+}
+
+.section-buttons button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+.card-container {
+  background-color: var(--background-color);
+}
+
+.project-card {
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--card-border-color);
+  border-radius: 8px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  color: var(--primary-color);
+}
+
+p {
+  color: var(--text-color);
+}
