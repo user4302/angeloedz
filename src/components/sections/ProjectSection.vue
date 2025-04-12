@@ -185,7 +185,6 @@ export default {
   margin-right: 10px;
   padding: 10px 20px;
   border: none;
-  background-color: #42b983;
   color: #fff;
   cursor: pointer;
   border-radius: 5px;

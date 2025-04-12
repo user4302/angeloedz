@@ -43,7 +43,6 @@ export default {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   color: #fff;
-  background-color: #42b983;
   border: none;
   border-radius: 5px;
   cursor: pointer;
