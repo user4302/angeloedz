@@ -3,6 +3,7 @@
     <div class="hero-content">
       <h1 class="hero-title">{{ heroTitle }}</h1>
       <p class="hero-description">{{ heroDescription }}</p>
+      <p class="hero-disclaimer"></p>
     </div>
   </section>
 </template>
@@ -19,6 +20,7 @@ export default {
   mounted() {
     this.typeText('.hero-title', 'Angelo EDZ', 0);
     this.typeText('.hero-description', 'Software Engineer', 1500);
+    this.typeText('.hero-disclaimer', 'Work In Progress! 😅', 3500);
   },
   methods: {
     typeText(selector, text, delay) {
