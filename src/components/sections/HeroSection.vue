@@ -1,9 +1,8 @@
 <template>
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">Welcome to My Portfolio</h1>
-      <p class="hero-description"></p>
-      <p class="hero-description"></p>
+      <h1 class="hero-title">{{ heroTitle }}</h1>
+      <p class="hero-description">{{ heroDescription }}</p>
     </div>
   </section>
 </template>
@@ -11,9 +10,15 @@
 <script>
 export default {
   name: 'HeroSection',
+  data() {
+    return {
+      heroTitle: '',
+      heroDescription: ''
+    }
+  },
   mounted() {
-    this.typeText('.hero-description:nth-of-type(1)', 'Angelo EDZ', 0);
-    this.typeText('.hero-description:nth-of-type(2)', 'Software Engineer', 1500);
+    this.typeText('.hero-title', 'Angelo EDZ', 0);
+    this.typeText('.hero-description', 'Software Engineer', 1500);
   },
   methods: {
     typeText(selector, text, delay) {
