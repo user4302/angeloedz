@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section hidden="true">
     <h2>Testimonials</h2>
     <p>If possible, include quotes or feedback from colleagues or supervisors.</p>
     <p>Highlight any recognition or awards received at your company.</p>

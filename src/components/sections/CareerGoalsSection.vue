@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section hidden="true">
     <h2>Career Goals</h2>
     <p>Outline your future aspirations and what you aim to achieve in your career.</p>
     <p>Discuss areas you want to grow in or industries you're interested in.</p>

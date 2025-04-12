@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section hidden="true">
     <h2>Personal Projects</h2>
     <p>If you have any personal or freelance projects, showcase them here.</p>
     <p>Describe the problem you solved and the technologies you used.</p>

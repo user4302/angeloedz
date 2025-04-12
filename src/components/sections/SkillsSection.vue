@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section hidden="true">
     <h2>Skills and Technologies</h2>
     <p>List the programming languages, frameworks, and tools you are proficient in.</p>
     <p>Include any certifications or courses you've completed.</p>

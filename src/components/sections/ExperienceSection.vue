@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section hidden="true">
     <h2>Experience</h2>
     <p>Detail your role and responsibilities at the company.</p>
     <p>Highlight key projects you worked on and your contributions.</p>

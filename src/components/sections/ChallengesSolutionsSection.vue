@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section hidden="true">
     <h2>Challenges and Solutions</h2>
     <p>Discuss any significant challenges you faced and how you overcame them.</p>
     <p>This can demonstrate problem-solving skills and resilience.</p>

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section hidden="true">
     <h2>Community Involvement</h2>
     <p>Mention any involvement in tech communities, meetups, or open-source contributions.</p>
     <p>Highlight any speaking engagements or presentations.</p>

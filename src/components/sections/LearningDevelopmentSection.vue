@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section hidden="true">
     <h2>Learning and Development</h2>
     <p>Share any ongoing learning efforts, such as courses, books, or workshops.</p>
     <p>Mention any new skills or technologies you're currently exploring.</p>
