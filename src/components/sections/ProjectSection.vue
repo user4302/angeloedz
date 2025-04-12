@@ -9,7 +9,7 @@
         {{ category }}
       </button>
     </div>
-    <div class="card-container">
+    <div class="card-container" ref="cardContainer">
       <ProjectCard
         v-for="(card, index) in visibleCards"
         :key="index"
