@@ -1,23 +1,28 @@
 <template>
   <div class="section">
-    <div class="section-buttons">
-      <button
-        v-for="category in categories"
-        :key="category"
-        @click="filterCategory(category)"
-      >
-        {{ category }}
-      </button>
-    </div>
-    <div class="card-container" ref="cardContainer">
-      <ProjectCard
-        v-for="(card, index) in visibleCards"
-        :key="index"
-        :imageSrc="card.imageSrc"
-        :iconClass="card.iconClass"
-        :class="{ 'fade-in': card.fadeIn }"
-      />
-    </div>
+    <button v-if="showButton" @click="toggleVisibility" class="toggle-button">Show Projects</button>
+    <transition name="crt-effect">
+      <div v-if="showProjects">
+        <div class="section-buttons">
+          <button
+            v-for="category in categories"
+            :key="category"
+            @click="filterCategory(category)"
+          >
+            {{ category }}
+          </button>
+        </div>
+        <div class="card-container" ref="cardContainer">
+          <ProjectCard
+            v-for="(card, index) in visibleCards"
+            :key="index"
+            :imageSrc="card.imageSrc"
+            :iconClass="card.iconClass"
+            :class="{ 'fade-in': card.fadeIn }"
+          />
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -32,6 +37,8 @@ export default {
   },
   data() {
     return {
+      showProjects: false, // Visibility state for projects
+      showButton: true, // Visibility state for the button
       categories: ['Frontend', 'Backend', 'Scripting', 'Mobile'],
       allCards: [],
       visibleCards: [],
@@ -40,6 +47,10 @@ export default {
     };
   },
   methods: {
+    toggleVisibility() {
+      this.showProjects = !this.showProjects;
+      this.showButton = false; // Hide the button after the first click
+    },
     filterCategory(category) {
       this.currentCategory = category;
       this.loadCards();
@@ -177,6 +188,53 @@ export default {
   padding: 20px;
 }
 
+.toggle-button {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #42b983;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #369f6b;
+  transform: translateY(-2px);
+}
+
+.crt-effect-enter-active,
+.crt-effect-leave-active {
+  animation: crt-tv 0.8s ease-out;
+}
+
+@keyframes crt-tv {
+  0% {
+    transform: scaleY(0.1);
+    opacity: 0;
+  }
+  20% {
+    transform: scaleY(1.2);
+    opacity: 1;
+  }
+  40% {
+    transform: scaleY(0.9);
+  }
+  60% {
+    transform: scaleY(1.05);
+  }
+  80% {
+    transform: scaleY(0.95);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
 .section-buttons {
   margin-bottom: 20px;
 }
@@ -192,7 +250,7 @@ export default {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.3s ease;
   font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 1000;
+  font-weight: 700;
   font-size: 1.1rem;
 }
 
