@@ -24,6 +24,7 @@ export default {
   margin: 10px;
   width: 100%;
   max-width: 300px;
+  border: none;
 }
 
 .card-image {
