@@ -19,7 +19,6 @@ export default {
 
 <style scoped>
 .project-card {
-  border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
   margin: 10px;

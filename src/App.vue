@@ -48,7 +48,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 body {
   background-color: #121212;
@@ -59,7 +58,6 @@ body {
 }
 
 a {
-  color: #bb86fc;
   text-decoration: none;
 }
 
@@ -112,9 +110,6 @@ button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-h2 {
-  color: #bb86fc;
-}
 
 p {
   color: #e0e0e0;
