@@ -49,6 +49,7 @@ export default {
 }
 
 .hero-button:hover {
-  background-color: #369f6b;
+  background-color: #e0e0e0;
+  color: #121212;
 }
 </style>
