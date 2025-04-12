@@ -9,11 +9,27 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 // Import specific icons
-import { faJs } from '@fortawesome/free-brands-svg-icons';
+import {
+  faVuejs,
+  faPython,
+  faJava,
+  faAndroid,
+  faReact,
+  faNodeJs,
+  faSquareBluesky,
+  faApple
+} from '@fortawesome/free-brands-svg-icons';
 
 // Add the icons to the library
-library.add(faJs);
+library.add(
+  faVuejs,
+  faPython,
+  faJava,
+  faAndroid,
+  faReact,
+  faNodeJs,
+  faSquareBluesky,
+  faApple
+);
 
-createApp(App)
-  .component('font-awesome-icon', FontAwesomeIcon)
-  .mount('#app');
+createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app');
