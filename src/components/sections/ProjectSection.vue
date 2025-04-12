@@ -13,9 +13,7 @@
       <ProjectCard
         v-for="(card, index) in visibleCards"
         :key="index"
-        :imageSrc="card.imageSrc"
-        :iconClass="card.iconClass"
-        :class="{ 'fade-in': card.fadeIn }"
+        :data="card"
       />
     </div>
   </div>
@@ -23,7 +21,7 @@
 
 <script>
 import ProjectCard from '../ProjectCard.vue';
-import vuejsImage from '@/assets/images/projectCardThumbnails/vuejs.png';
+import landingPageThumbnail from '@/assets/images/projectCardThumbnails/landing-page.png'
 
 export default {
   name: 'ProjectSection',
@@ -82,14 +80,16 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
     this.allCards = [
-      { imageSrc: vuejsImage, iconClass: 'fab fa-vuejs', category: 'Frontend' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-python', category: 'Backend' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-java', category: 'Scripting' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-android', category: 'Mobile' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-react', category: 'Frontend' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-node-js', category: 'Backend' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-ruby', category: 'Scripting' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-apple', category: 'Mobile' },
+      {
+        imageSrc: landingPageThumbnail,
+        altText:"langing page",
+        iconClass: 'fab fa-vuejs',
+        category: 'Frontend',
+        title: 'Landing page',
+        description: 'A project built with Vue.js. and Tailwind CSS',
+        gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/react-js/landing-page',
+        liveSiteUrl: 'https://user4302-landing-page.netlify.app/',
+      },
       // Add more card data here
     ];
     this.loadCards();
@@ -143,7 +143,7 @@ export default {
   flex: 0 0 calc(33.33% - 20px);
   max-width: 300px;
   box-sizing: border-box;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
 

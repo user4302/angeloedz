@@ -17,7 +17,7 @@ import {
   faReact,
   faNodeJs,
   faSquareBluesky,
-  faApple
+  faApple,
 } from '@fortawesome/free-brands-svg-icons';
 
 // Add the icons to the library
@@ -29,7 +29,7 @@ library.add(
   faReact,
   faNodeJs,
   faSquareBluesky,
-  faApple
+  faApple,
 );
 
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app');
