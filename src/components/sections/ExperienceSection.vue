@@ -15,20 +15,20 @@ export default {
 
 <style scoped>
 section {
-  max-width: 950px; /* Set a maximum width for the section */
-  margin: 0 auto; /* Center the section horizontally */
+  max-width: 950px;
+  margin: 0 auto;
   padding: 20px;
   border-radius: 8px;
-  color: #e0e0e0; /* Optional: Set text color for readability */
+  color: #e0e0e0;
 }
 
 h2 {
   margin-top: 0;
-  text-align: center; /* Center the heading text */
+  text-align: center;
 }
 
 p {
   margin: 10px 0;
-  text-align: center; /* Center the paragraph text */
+  text-align: center;
 }
 </style>

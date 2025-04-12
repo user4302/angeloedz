@@ -42,14 +42,18 @@ export default {
 .hero-button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
+  background-color: #121212; 
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
 .hero-button:hover {
-  background-color: #e0e0e0;
-  color: #121212;
+  background-color: #e0e0e0; 
+  color: #121212; 
+  transform: translateY(-2px); 
 }
 </style>

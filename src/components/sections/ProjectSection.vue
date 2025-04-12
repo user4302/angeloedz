@@ -185,14 +185,18 @@ export default {
   margin-right: 10px;
   padding: 10px 20px;
   border: none;
+  background-color: #121212;
   color: #fff;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
 .section-buttons button:hover {
   background-color: #e0e0e0;
   color: #121212;
+  transform: translateY(-2px);
 }
 
 .card-container {
