@@ -23,7 +23,7 @@
 
 <script>
 import ProjectCard from '../ProjectCard.vue';
-import baftaImage from '@/assets/images/projectCardThumbnails/bafta.jpg';
+import vuejsImage from '@/assets/images/projectCardThumbnails/vuejs.png';
 
 export default {
   name: 'ProjectSection',
@@ -82,14 +82,14 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
     this.allCards = [
-      { imageSrc: baftaImage, iconClass: 'fab fa-vuejs', category: 'Frontend' },
-      { imageSrc: baftaImage, iconClass: 'fab fa-python', category: 'Backend' },
-      { imageSrc: baftaImage, iconClass: 'fab fa-java', category: 'Scripting' },
-      { imageSrc: baftaImage, iconClass: 'fab fa-android', category: 'Mobile' },
-      { imageSrc: baftaImage, iconClass: 'fab fa-react', category: 'Frontend' },
-      { imageSrc: baftaImage, iconClass: 'fab fa-node-js', category: 'Backend' },
-      { imageSrc: baftaImage, iconClass: 'fab fa-ruby', category: 'Scripting' },
-      { imageSrc: baftaImage, iconClass: 'fab fa-apple', category: 'Mobile' },
+      { imageSrc: vuejsImage, iconClass: 'fab fa-vuejs', category: 'Frontend' },
+      { imageSrc: vuejsImage, iconClass: 'fab fa-python', category: 'Backend' },
+      { imageSrc: vuejsImage, iconClass: 'fab fa-java', category: 'Scripting' },
+      { imageSrc: vuejsImage, iconClass: 'fab fa-android', category: 'Mobile' },
+      { imageSrc: vuejsImage, iconClass: 'fab fa-react', category: 'Frontend' },
+      { imageSrc: vuejsImage, iconClass: 'fab fa-node-js', category: 'Backend' },
+      { imageSrc: vuejsImage, iconClass: 'fab fa-ruby', category: 'Scripting' },
+      { imageSrc: vuejsImage, iconClass: 'fab fa-apple', category: 'Mobile' },
       // Add more card data here
     ];
     this.loadCards();
