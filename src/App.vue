@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <HeroSection />
+    <ProjectSection />
   </div>
 </template>
 
 <script>
 import HeroSection from './components/HeroSection.vue'
+import ProjectSection from './components/ProjectSection.vue'
 
 export default {
   name: 'App',
   components: {
-    HeroSection
+    HeroSection,
+    ProjectSection
   }
 }
 </script>
