@@ -2,7 +2,7 @@
   <div class="project-card">
     <img :src="imageSrc" alt="Project" class="card-image" />
     <div class="card-icon">
-      <i :class="iconClass"></i>
+      <font-awesome-icon :icon="iconClass" class="icon-size" />
     </div>
   </div>
 </template>
@@ -37,8 +37,7 @@ export default {
   padding: 10px;
 }
 
-.card-icon i {
-  font-size: 24px;
-  color: #333;
+.icon-size {
+  font-size: 30px; /* Apply the size directly to the font-awesome-icon */
 }
 </style>
