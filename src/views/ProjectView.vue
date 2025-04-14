@@ -38,13 +38,16 @@ export default {
   width: 100%;
   height: 200px; /* Set a fixed height for the banner */
   overflow: hidden;
+  display: flex;
+  align-items: center; /* Center the image vertically */
+  justify-content: center; /* Center the image horizontally */
 }
 
 .project-banner {
   width: 100%;
   height: auto;
   object-fit: cover;
-  object-position: center;
+  object-position: center; /* Center the image vertically and horizontally */
 }
 
 h1 {
@@ -64,15 +67,12 @@ p {
 }
 
 a {
-  color: #42b983;
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 4px;
-  background-color: #f0f0f0;
 }
 
 a:hover {
   text-decoration: underline;
-  background-color: #e0e0e0;
 }
 </style>
