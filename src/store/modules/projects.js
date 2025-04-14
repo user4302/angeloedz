@@ -1,5 +1,3 @@
-// store/modules/projects.js
-
 import { loadImage } from '@/utils/imageLoader';
 
 const state = {
@@ -7,14 +5,36 @@ const state = {
   projects: [
     {
       id: 1,
-      imageSrc: loadImage('projectCardThumbnails/landing-page.png'),
-      altText: 'langing page',
-      iconClass: 'fab fa-vuejs',
+      imageSrc: loadImage('projects/landing-page.png'),
+      altText: 'landing page',
+      icons: ['siReact', 'siTailwindcss'], 
       category: 'Frontend',
-      title: 'Landing page',
-      description: 'A landing page built with Vue.js. and Tailwind CSS',
+      title: 'Gen Bank',
+      description: 'Landing page',
       gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/react-js/landing-page',
       liveSiteUrl: 'https://user4302-landing-page.netlify.app/',
+    },
+    {
+      id: 2,
+      imageSrc: loadImage('projects/task-tracker.png'),
+      altText: 'task tracker',
+      icons: ['siVuedotjs'], 
+      category: 'Frontend',
+      title: 'Tracker',
+      description: 'Task tracker',
+      gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/vue-js/task-tracker',
+      liveSiteUrl: 'https://user4302-task-tracker.netlify.app/',
+    },
+    {
+      id: 3,
+      imageSrc: loadImage('projects/node-backend.png'),
+      altText: 'Express Post API',
+      icons: ['siNodedotjs'], 
+      category: 'Backend',
+      title: 'Simple Node Server',
+      description: 'JSON Post Handler',
+      gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/node/simple-node-server',
+      liveSiteUrl: '',
     },
   ],
 };

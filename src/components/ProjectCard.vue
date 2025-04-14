@@ -1,9 +1,13 @@
 <template>
   <div class="project-card">
     <img :src="data.imageSrc" alt="Project" class="card-image" />
-    <div class="card-icon">
-      <font-awesome-icon :icon="data.iconClass" class="icon-size" />
-    </div>
+    <span
+      class="card-icon"
+      v-for="icon in data.icons"
+      :key="icon"
+      v-html="getIconSvg(icon)"
+    ></span>
+
     <h3>{{ data.title }}</h3>
     <p>{{ data.description }}</p>
     <div class="link-container">
@@ -35,6 +39,9 @@ export default {
         params: { id: this.data.id },
       });
     },
+    getIconSvg(iconArray) {
+      return this.$icons[iconArray]?.svg || '';
+    },
   },
 };
 </script>
@@ -60,12 +67,10 @@ export default {
 }
 
 .card-icon {
-  text-align: center;
+  display: inline-flex;
   padding: 10px;
-}
-
-.icon-size {
-  font-size: 30px;
+  width: 30px;
+  fill: var(--text-color);
 }
 
 .project-card:hover {
