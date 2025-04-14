@@ -7,7 +7,7 @@ const state = {
   projects: [
     {
       id: 1,
-      imageSrc: loadImage('projectCardThumbnails/landing-page.png'),
+      imageSrc: loadImage('projects/landing-page.png'),
       altText: 'langing page',
       iconClass: 'fab fa-vuejs',
       category: 'Frontend',
