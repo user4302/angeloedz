@@ -47,6 +47,17 @@ const state = {
       gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/powershell/git-repo-manager',
       liveSiteUrl: '',
     },
+    {
+      id: 5,
+      imageSrc: loadImage('projects/winget-upgrade-helper.png'),
+      altText: 'Winget Upgrade Helper',
+      icons: ['siGnometerminal'], 
+      category: 'Scripting',
+      title: 'Winget Upgrade Helper',
+      description: 'Manage winget packages',
+      gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/powershell/winget-upgrade-helper',
+      liveSiteUrl: '',
+    },
   ],
 };
 
