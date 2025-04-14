@@ -6,7 +6,6 @@ const state = {
     {
       id: 1,
       imageSrc: loadImage('projects/landing-page.png'),
-      altText: 'Landing Page',
       icons: ['siReact', 'siTailwindcss'], 
       category: 'Frontend',
       title: 'Gen Bank',
@@ -17,7 +16,6 @@ const state = {
     {
       id: 2,
       imageSrc: loadImage('projects/task-tracker.png'),
-      altText: 'Task Tracker',
       icons: ['siVuedotjs'], 
       category: 'Frontend',
       title: 'Tracker',
@@ -28,18 +26,16 @@ const state = {
     {
       id: 3,
       imageSrc: loadImage('projects/node-backend.png'),
-      altText: 'Express Post API',
       icons: ['siNodedotjs'], 
       category: 'Backend',
       title: 'Simple Node Server',
-      description: 'JSON Post Handler',
+      description: 'JSON Post handler',
       gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/node/simple-node-server',
       liveSiteUrl: '',
     },
     {
       id: 4,
       imageSrc: loadImage('projects/git-repo-manager.png'),
-      altText: 'Git Repo Manager',
       icons: ['siGnometerminal'], 
       category: 'Scripting',
       title: 'Git Repo Manager',
@@ -50,7 +46,6 @@ const state = {
     {
       id: 5,
       imageSrc: loadImage('projects/winget-upgrade-helper.png'),
-      altText: 'Winget Upgrade Helper',
       icons: ['siGnometerminal'], 
       category: 'Scripting',
       title: 'Winget Upgrade Helper',

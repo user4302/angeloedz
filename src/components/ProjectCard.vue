@@ -1,6 +1,6 @@
 <template>
   <div class="project-card">
-    <img :src="data.imageSrc" alt="Project" class="card-image" />
+    <img :src="data.imageSrc" :alt="data.title" class="card-image" />
     <span
       class="card-icon"
       v-for="icon in data.icons"
