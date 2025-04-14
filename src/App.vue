@@ -11,7 +11,6 @@
       <span class="material-icons">description</span>
     </a>
 
-    <!-- Contact Form Component -->
     <ContactForm />
   </div>
 </template>
@@ -40,7 +39,7 @@ export default {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  color: white;
+  color: var(--text-color);
   padding: 10px;
   border-radius: 30%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
