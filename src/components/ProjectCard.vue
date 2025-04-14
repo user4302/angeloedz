@@ -1,7 +1,13 @@
 <template>
   <div class="project-card">
     <img :src="data.imageSrc" alt="Project" class="card-image" />
-    <div class="card-icon" v-html="$icons[data.icon].svg"></div>
+    <span
+      class="card-icon"
+      v-for="icon in data.icons"
+      :key="icon"
+      v-html="getIconSvg(icon)"
+    ></span>
+
     <h3>{{ data.title }}</h3>
     <p>{{ data.description }}</p>
     <div class="link-container">
@@ -32,6 +38,9 @@ export default {
         name: 'ProjectView',
         params: { id: this.data.id },
       });
+    },
+    getIconSvg(iconArray) {
+      return this.$icons[iconArray]?.svg || '';
     },
   },
 };

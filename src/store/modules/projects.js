@@ -7,7 +7,7 @@ const state = {
       id: 1,
       imageSrc: loadImage('projects/landing-page.png'),
       altText: 'landing page',
-      icon: 'siVuedotjs', 
+      icons: ['siVuedotjs', 'siTailwindcss'], 
       category: 'Frontend',
       title: 'Landing page',
       description: 'A landing page built with Vue.js. and Tailwind CSS',
