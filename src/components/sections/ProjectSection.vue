@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import ProjectCard from '../ProjectCard.vue';
-import landingPageThumbnail from '@/assets/images/projectCardThumbnails/landing-page.png'
+import ProjectCard from '@/components/ProjectCard.vue';
+import landingPageThumbnail from '@/assets/images/projectCardThumbnails/landing-page.png';
 
 export default {
   name: 'ProjectSection',
@@ -34,7 +34,7 @@ export default {
       allCards: [],
       visibleCards: [],
       currentCategory: 'Frontend',
-      cardsPerLoad: 6,
+      cardsPerLoad: 3,
     };
   },
   methods: {
@@ -81,13 +81,15 @@ export default {
     window.addEventListener('scroll', this.handleScroll);
     this.allCards = [
       {
+        id: 1,
         imageSrc: landingPageThumbnail,
-        altText:"langing page",
+        altText: 'langing page',
         iconClass: 'fab fa-vuejs',
         category: 'Frontend',
         title: 'Landing page',
-        description: 'A project built with Vue.js. and Tailwind CSS',
-        gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/react-js/landing-page',
+        description: 'A landing page built with Vue.js. and Tailwind CSS',
+        gitRepoUrl:
+          'https://gitlab.com/Angelo_E_DZ/coding/react-js/landing-page',
         liveSiteUrl: 'https://user4302-landing-page.netlify.app/',
       },
       // Add more card data here
