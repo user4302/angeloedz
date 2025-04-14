@@ -1,6 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import router from './router';
 import './global.css';
+import store from './store'; // Import the store
 
 // Import the Font Awesome core
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -17,7 +19,7 @@ import {
   faReact,
   faNodeJs,
   faSquareBluesky,
-  faApple
+  faApple,
 } from '@fortawesome/free-brands-svg-icons';
 
 // Add the icons to the library
@@ -32,4 +34,8 @@ library.add(
   faApple
 );
 
-createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app');
+createApp(App)
+  .component('font-awesome-icon', FontAwesomeIcon)
+  .use(router)
+  .use(store)
+  .mount('#app');

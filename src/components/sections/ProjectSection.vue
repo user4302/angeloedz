@@ -13,17 +13,15 @@
       <ProjectCard
         v-for="(card, index) in visibleCards"
         :key="index"
-        :imageSrc="card.imageSrc"
-        :iconClass="card.iconClass"
-        :class="{ 'fade-in': card.fadeIn }"
+        :data="card"
       />
     </div>
   </div>
 </template>
 
 <script>
-import ProjectCard from '../ProjectCard.vue';
-import vuejsImage from '@/assets/images/projectCardThumbnails/vuejs.png';
+import { mapGetters } from 'vuex';
+import ProjectCard from '@/components/ProjectCard.vue';
 
 export default {
   name: 'ProjectSection',
@@ -33,19 +31,25 @@ export default {
   data() {
     return {
       categories: ['Frontend', 'Backend', 'Scripting', 'Mobile'],
-      allCards: [],
       visibleCards: [],
       currentCategory: 'Frontend',
-      cardsPerLoad: 6,
+      cardsPerLoad: 3, // Adjusted to load 3 projects at a time
     };
   },
+  computed: {
+    ...mapGetters('projects', ['getProjectById', 'getProjects']),
+  },
   methods: {
+    fetchProject(id) {
+      const project = this.getProjectById(id);
+      console.log(project);
+    },
     filterCategory(category) {
       this.currentCategory = category;
       this.loadCards();
     },
     loadCards() {
-      const filteredCards = this.allCards.filter(
+      const filteredCards = this.getProjects.filter(
         (card) => card.category === this.currentCategory
       );
       this.visibleCards = filteredCards
@@ -58,13 +62,14 @@ export default {
 
       const containerBottom = cardContainer.getBoundingClientRect().bottom;
       const windowHeight = window.innerHeight;
+      const threshold = 100;
 
-      if (containerBottom <= windowHeight) {
+      if (containerBottom <= windowHeight + threshold) {
         this.loadMoreCards();
       }
     },
     loadMoreCards() {
-      const filteredCards = this.allCards.filter(
+      const filteredCards = this.getProjects.filter(
         (card) => card.category === this.currentCategory
       );
       const currentLength = this.visibleCards.length;
@@ -73,25 +78,13 @@ export default {
         .map((card) => ({ ...card, fadeIn: false }));
       this.visibleCards = this.visibleCards.concat(moreCards);
 
-      // Trigger fade-in effect
       setTimeout(() => {
         moreCards.forEach((card) => (card.fadeIn = true));
-      }, 100); // Delay to allow CSS transition
+      }, 100);
     },
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
-    this.allCards = [
-      { imageSrc: vuejsImage, iconClass: 'fab fa-vuejs', category: 'Frontend' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-python', category: 'Backend' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-java', category: 'Scripting' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-android', category: 'Mobile' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-react', category: 'Frontend' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-node-js', category: 'Backend' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-ruby', category: 'Scripting' },
-      { imageSrc: vuejsImage, iconClass: 'fab fa-apple', category: 'Mobile' },
-      // Add more card data here
-    ];
     this.loadCards();
   },
   beforeUnmount() {
@@ -113,8 +106,6 @@ export default {
   margin-right: 10px;
   padding: 10px 20px;
   border: none;
-  background-color: #121212;
-  color: #fff;
   cursor: pointer;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -125,8 +116,6 @@ export default {
 }
 
 .section-buttons button:hover {
-  background-color: #e0e0e0;
-  color: #121212;
   transform: translateY(-2px);
 }
 
@@ -143,7 +132,7 @@ export default {
   flex: 0 0 calc(33.33% - 20px);
   max-width: 300px;
   box-sizing: border-box;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
 
