@@ -1,12 +1,13 @@
 // store/modules/projects.js
 
-import landingPageThumbnail from '@/assets/images/projectCardThumbnails/landing-page.png';
+import { loadImage } from '@/utils/imageLoader';
 
 const state = {
+  // Current allowed sections: 'Frontend', 'Backend', 'Scripting', 'Mobile'
   projects: [
     {
       id: 1,
-      imageSrc: landingPageThumbnail,
+      imageSrc: loadImage('projectCardThumbnails/landing-page.png'),
       altText: 'langing page',
       iconClass: 'fab fa-vuejs',
       category: 'Frontend',
