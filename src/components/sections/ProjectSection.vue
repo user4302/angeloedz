@@ -5,6 +5,7 @@
         v-for="category in categories"
         :key="category"
         @click="filterCategory(category)"
+        :class="{ active: category === currentCategory }"
       >
         {{ category }}
       </button>
@@ -111,6 +112,10 @@ export default {
   cursor: pointer;
   border: none;
   border-radius: 4px;
+}
+
+.section-buttons button.active {
+  border: 2px solid white; /* Add a white border to the active button */
 }
 
 .card-container {
