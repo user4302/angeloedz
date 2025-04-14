@@ -25,6 +25,17 @@ const state = {
       gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/vue-js/task-tracker',
       liveSiteUrl: 'https://user4302-task-tracker.netlify.app/',
     },
+    {
+      id: 3,
+      imageSrc: loadImage('projects/node-backend.png'),
+      altText: 'Express Post API',
+      icons: ['siVuedotjs'], 
+      category: 'Backend',
+      title: 'Simple Node Server',
+      description: 'JSON Post Handler',
+      gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/node/simple-node-server',
+      liveSiteUrl: '',
+    },
   ],
 };
 
