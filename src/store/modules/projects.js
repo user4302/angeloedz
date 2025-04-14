@@ -19,7 +19,7 @@ const state = {
       icons: ['siVuedotjs'], 
       category: 'Frontend',
       title: 'Tracker',
-      description: 'Task tracker',
+      description: 'Simple task tracker',
       gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/vue-js/task-tracker',
       liveSiteUrl: 'https://user4302-task-tracker.netlify.app/',
     },
