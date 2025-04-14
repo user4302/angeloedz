@@ -92,3 +92,54 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.section {
+  padding: 20px;
+}
+
+.section-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.section-buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .section-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-buttons button {
+    margin: 5px 0;
+    width: 80%; /* Full width for smaller screens */
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-buttons button {
+    font-size: 0.9rem; /* Smaller font size for very small screens */
+  }
+}
+</style>
