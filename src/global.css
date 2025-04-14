@@ -1,8 +1,8 @@
 :root {
   --background-color: #121212;
   --text-color: #e0e0e0;
-  --primary-color: #e0e0e0; /* Updated to dark cyan */
-  --secondary-color: #6ce9ff;
+  --primary-color: #e0e0e0;
+  --secondary-color: #acacac;
   --button-bg-color: #1f1f1f;
   --button-hover-bg-color: #333;
   --card-bg-color: #2c2c2c;
@@ -37,6 +37,7 @@ button {
 
 button:hover {
   background-color: var(--button-hover-bg-color);
+  color: var(--background-color);
 }
 
 .section {

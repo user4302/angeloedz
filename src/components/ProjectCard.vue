@@ -42,8 +42,6 @@ export default {
   max-width: 300px;
   border: none;
   cursor: pointer;
-  background-color: #fff; /* Ensure a background color is set */
-  color: #000; /* Ensure text color is visible */
 }
 
 .card-image {
@@ -86,11 +84,9 @@ a {
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 4px;
-  background-color: #f0f0f0; /* Optional: Add a background color for links */
 }
 
 a:hover {
   text-decoration: underline;
-  background-color: #e0e0e0; /* Optional: Change background color on hover */
 }
 </style>
