@@ -53,6 +53,16 @@ const state = {
       gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/powershell/winget-upgrade-helper',
       liveSiteUrl: '',
     },
+    {
+      id: 6,
+      imageSrc: loadImage('projects/cron-game-backup.png'),
+      icons: ['siGnubash'], 
+      category: 'Scripting',
+      title: 'Cron game Backup',
+      description: 'Backup game files to git',
+      gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/shell/game-backups',
+      liveSiteUrl: '',
+    },
   ],
 };
 
