@@ -61,7 +61,7 @@ const state = {
       imageSrc: loadImage('projects/cron-game-backup.png'),
       icons: ['siGnubash'],
       category: 'Scripting',
-      title: 'Cron game Backup',
+      title: 'Cron Game Backup',
       description: 'Backup game files to git',
       gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/shell/game-backups',
       liveSiteUrl: '',
