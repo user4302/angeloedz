@@ -32,7 +32,7 @@
           <button type="submit" :disabled="isLoading">Send</button>
           <div v-if="isLoading" class="loader">Loading...</div>
           <div v-if="errorMessage" class="error-message">
-            <p>Error: {{ errorMessage }}</p>
+            <p>{{ errorMessage }}</p>
             <p>{{ errorResponse }}</p>
           </div>
         </form>
@@ -143,7 +143,7 @@ export default {
 }
 
 .contact-form {
-  position: relative; /* Set position to relative to position the close button */
+  position: relative; /* Set position to be relative to the position of the close button */
   background-color: var(--background-color);
   padding: 20px;
   width: 90%;
@@ -161,7 +161,7 @@ export default {
   cursor: pointer;
   background-color: var(--background-color);
   color: var(--text-color);
-  border-radius: 50%; /* Make it circular */
+  border-radius: 50%; 
   padding: 5px;
   width: 30px;
   height: 30px;
@@ -173,8 +173,8 @@ export default {
 }
 
 .close-button:hover {
-  background-color: var(--text-color); /* Change background color on hover */
-  color: var(--background-color); /* Change icon color on hover */
+  background-color: var(--text-color);
+  color: var(--background-color);
 }
 
 form div {
@@ -193,26 +193,25 @@ form textarea {
   box-sizing: border-box;
   background-color: var(--button-hover-bg-color);
   border: 1px solid var(--text-color);
-  border-radius: 4px; /* Add rounded corners */
+  border-radius: 4px; 
   transition: border-color 0.3s ease;
-  color: var(--text-color); /* Set text color to white */
+  color: var(--text-color); 
 }
 
 form input:focus,
 form textarea:focus {
-  border-color: var(--text-color); /* Change border color on focus */
-  outline: none; /* Remove default outline */
+  border-color: var(--text-color);
+  outline: none;
 }
 
 form textarea {
   resize: vertical; /* Allow only vertical resizing */
 }
 
-/* Style for the send button */
 form button[type='submit'] {
   background-color: var(--background-color);
   color: var(--text-color);
-  border-radius: 8px; /* Make it circular */
+  border-radius: 8px;
   padding: 10px;
   width: 100px;
   height: 50px;
@@ -223,12 +222,12 @@ form button[type='submit'] {
   border: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 0 auto; /* Center the button */
+  margin: 0 auto;
 }
 
 form button[type='submit']:hover {
-  background-color: var(--text-color); /* Change background color on hover */
-  color: var(--background-color); /* Change text color on hover */
+  background-color: var(--text-color); 
+  color: var(--background-color); 
 }
 
 .loader {
@@ -237,7 +236,7 @@ form button[type='submit']:hover {
   color: var(--text-color);
 }
 
-.error-message {
+.error-message p {
   margin-top: 10px;
   text-align: center;
   color: red;
@@ -246,10 +245,11 @@ form button[type='submit']:hover {
 .success-message {
   text-align: center;
   color: var(--text-color);
+  font-size: 50px;
 }
 
 .success-icon {
-  font-size: 48px;
+  font-size: 100px;
   color: green;
   animation: fadeIn 0.5s ease-in-out;
 }
