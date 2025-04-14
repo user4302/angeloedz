@@ -29,7 +29,7 @@ const state = {
       id: 3,
       imageSrc: loadImage('projects/node-backend.png'),
       altText: 'Express Post API',
-      icons: ['siVuedotjs'], 
+      icons: ['siNodedotjs'], 
       category: 'Backend',
       title: 'Simple Node Server',
       description: 'JSON Post Handler',
