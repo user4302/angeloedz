@@ -1,5 +1,3 @@
-// src/utils/imageLoader.js
-
 export function loadImage(imagePath) {
   try {
     // Use require.context to dynamically load images from all subdirectories
