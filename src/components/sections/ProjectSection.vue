@@ -20,8 +20,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import ProjectCard from '@/components/ProjectCard.vue';
-import landingPageThumbnail from '@/assets/images/projectCardThumbnails/landing-page.png';
 
 export default {
   name: 'ProjectSection',
@@ -31,19 +31,25 @@ export default {
   data() {
     return {
       categories: ['Frontend', 'Backend', 'Scripting', 'Mobile'],
-      allCards: [],
       visibleCards: [],
       currentCategory: 'Frontend',
-      cardsPerLoad: 3,
+      cardsPerLoad: 3, // Adjusted to load 3 projects at a time
     };
   },
+  computed: {
+    ...mapGetters('projects', ['getProjectById', 'getProjects']),
+  },
   methods: {
+    fetchProject(id) {
+      const project = this.getProjectById(id);
+      console.log(project);
+    },
     filterCategory(category) {
       this.currentCategory = category;
       this.loadCards();
     },
     loadCards() {
-      const filteredCards = this.allCards.filter(
+      const filteredCards = this.getProjects.filter(
         (card) => card.category === this.currentCategory
       );
       this.visibleCards = filteredCards
@@ -56,13 +62,14 @@ export default {
 
       const containerBottom = cardContainer.getBoundingClientRect().bottom;
       const windowHeight = window.innerHeight;
+      const threshold = 100;
 
-      if (containerBottom <= windowHeight) {
+      if (containerBottom <= windowHeight + threshold) {
         this.loadMoreCards();
       }
     },
     loadMoreCards() {
-      const filteredCards = this.allCards.filter(
+      const filteredCards = this.getProjects.filter(
         (card) => card.category === this.currentCategory
       );
       const currentLength = this.visibleCards.length;
@@ -71,29 +78,13 @@ export default {
         .map((card) => ({ ...card, fadeIn: false }));
       this.visibleCards = this.visibleCards.concat(moreCards);
 
-      // Trigger fade-in effect
       setTimeout(() => {
         moreCards.forEach((card) => (card.fadeIn = true));
-      }, 100); // Delay to allow CSS transition
+      }, 100);
     },
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
-    this.allCards = [
-      {
-        id: 1,
-        imageSrc: landingPageThumbnail,
-        altText: 'langing page',
-        iconClass: 'fab fa-vuejs',
-        category: 'Frontend',
-        title: 'Landing page',
-        description: 'A landing page built with Vue.js. and Tailwind CSS',
-        gitRepoUrl:
-          'https://gitlab.com/Angelo_E_DZ/coding/react-js/landing-page',
-        liveSiteUrl: 'https://user4302-landing-page.netlify.app/',
-      },
-      // Add more card data here
-    ];
     this.loadCards();
   },
   beforeUnmount() {

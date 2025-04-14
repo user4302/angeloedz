@@ -24,9 +24,10 @@ export default {
   },
   methods: {
     openLink() {
-      if (this.data.liveSiteUrl) {
-        window.open(this.data.liveSiteUrl, '_blank');
-      }
+      this.$router.push({
+        name: 'ProjectView',
+        params: { id: this.data.id },
+      });
     },
   },
 };
