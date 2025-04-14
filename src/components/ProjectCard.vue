@@ -1,9 +1,7 @@
 <template>
   <div class="project-card">
     <img :src="data.imageSrc" alt="Project" class="card-image" />
-    <div class="card-icon">
-      <font-awesome-icon :icon="data.iconClass" class="icon-size" />
-    </div>
+    <div class="card-icon" v-html="$icons[data.icon].svg"></div>
     <h3>{{ data.title }}</h3>
     <p>{{ data.description }}</p>
     <div class="link-container">
@@ -60,12 +58,9 @@ export default {
 }
 
 .card-icon {
-  text-align: center;
+  display: inline-flex;
   padding: 10px;
-}
-
-.icon-size {
-  font-size: 30px;
+  width: 30px;
 }
 
 .project-card:hover {

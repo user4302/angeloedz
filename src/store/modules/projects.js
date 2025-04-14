@@ -1,5 +1,3 @@
-// store/modules/projects.js
-
 import { loadImage } from '@/utils/imageLoader';
 
 const state = {
@@ -8,8 +6,8 @@ const state = {
     {
       id: 1,
       imageSrc: loadImage('projects/landing-page.png'),
-      altText: 'langing page',
-      iconClass: 'fab fa-vuejs',
+      altText: 'landing page',
+      icon: 'siVuedotjs', 
       category: 'Frontend',
       title: 'Landing page',
       description: 'A landing page built with Vue.js. and Tailwind CSS',
