@@ -1,6 +1,8 @@
 <template>
   <div class="project-view">
-    <img :src="project.imageSrc" alt="Project Banner" class="project-banner" />
+    <div class="project-banner-container">
+      <img :src="project.imageSrc" alt="Project Banner" class="project-banner" />
+    </div>
     <h1>{{ project.title }}</h1>
     <p>{{ project.description }}</p>
     <div class="link-container">
@@ -32,10 +34,17 @@ export default {
   padding: 20px;
 }
 
+.project-banner-container {
+  width: 100%;
+  height: 200px; /* Set a fixed height for the banner */
+  overflow: hidden;
+}
+
 .project-banner {
   width: 100%;
   height: auto;
-  margin-bottom: 20px;
+  object-fit: cover;
+  object-position: center;
 }
 
 h1 {
