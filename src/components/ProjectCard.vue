@@ -70,6 +70,7 @@ export default {
   display: inline-flex;
   padding: 10px;
   width: 30px;
+  fill: var(--text-color);
 }
 
 .project-card:hover {
