@@ -7,8 +7,8 @@
 
     <!-- Contact Form Overlay -->
     <div class="contact-form-overlay" v-if="isVisible">
-      <div class="contact-form">
-        <span class="close-button material-icons" @click="closeForm">
+      <div class="contact-form" v-if="!isSubmitted">
+        <span class="close-button material-icons" @click="closeForm" :disabled="isLoading">
           close
         </span>
         <h2>Contact Me</h2>
@@ -29,8 +29,17 @@
             <label for="message">Message:</label>
             <textarea id="message" v-model="message" required></textarea>
           </div>
-          <button type="submit">Send</button>
+          <button type="submit" :disabled="isLoading">Send</button>
+          <div v-if="isLoading" class="loader">Loading...</div>
+          <div v-if="errorMessage" class="error-message">
+            <p>Error: {{ errorMessage }}</p>
+            <p>{{ errorResponse }}</p>
+          </div>
         </form>
+      </div>
+      <div v-else class="success-message">
+        <span class="material-icons success-icon">check_circle</span>
+        <p>Form submitted</p>
       </div>
     </div>
   </div>
@@ -44,10 +53,14 @@ export default {
   data() {
     return {
       isVisible: false,
+      isLoading: false,
+      isSubmitted: false,
       name: '',
       email: '',
       phone: '',
       message: '',
+      errorMessage: '',
+      errorResponse: '',
     };
   },
   methods: {
@@ -60,6 +73,9 @@ export default {
       document.body.classList.remove('no-scroll'); // Remove class to enable scrolling
     },
     async submitForm() {
+      this.isLoading = true;
+      this.errorMessage = ''; // Clear previous error message
+      this.errorResponse = ''; // Clear previous error response
       try {
         const response = await axios.post(
           process.env.VUE_APP_FORMSPREE_ENDPOINT,
@@ -70,10 +86,21 @@ export default {
             message: this.message,
           }
         );
-        console.log('Form submitted:', response.data);
-        this.closeForm();
+        if (response.status === 200) {
+          this.isSubmitted = true;
+          setTimeout(() => {
+            this.closeForm();
+            this.isSubmitted = false;
+          }, 3000); // Keep the success message for 3 seconds
+        } else {
+          this.errorMessage = 'Error';
+          this.errorResponse = response.data;
+        }
       } catch (error) {
-        console.error('Error submitting form:', error);
+        this.errorMessage = 'Error';
+        this.errorResponse = error.response ? error.response.data : 'An unexpected error occurred';
+      } finally {
+        this.isLoading = false;
       }
     },
   },
@@ -202,5 +229,37 @@ form button[type='submit'] {
 form button[type='submit']:hover {
   background-color: var(--text-color); /* Change background color on hover */
   color: var(--background-color); /* Change text color on hover */
+}
+
+.loader {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.error-message {
+  margin-top: 10px;
+  text-align: center;
+  color: red;
+}
+
+.success-message {
+  text-align: center;
+  color: var(--text-color);
+}
+
+.success-icon {
+  font-size: 48px;
+  color: green;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </style>
