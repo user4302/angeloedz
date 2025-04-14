@@ -11,7 +11,11 @@
     <h3>{{ data.title }}</h3>
     <p>{{ data.description }}</p>
     <div class="link-container">
-      <a :href="data.gitRepoUrl" target="_blank" @click.stop
+      <a
+        v-if="data.gitRepoUrl"
+        :href="data.gitRepoUrl"
+        target="_blank"
+        @click.stop
         >Repo <span class="material-icons">open_in_new</span>
       </a>
       <a
