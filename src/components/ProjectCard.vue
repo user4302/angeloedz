@@ -63,7 +63,9 @@ export default {
 
 .card-image {
   width: 100%;
-  height: auto;
+  height: 150px; 
+  object-fit: cover;
+  object-position: center;
 }
 
 .card-icon {
