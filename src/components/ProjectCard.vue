@@ -7,8 +7,8 @@
     <h3>{{ data.title }}</h3>
     <p>{{ data.description }}</p>
     <div class="link-container">
-      <a :href="data.gitRepoUrl" target="_blank">Repo</a>
-      <a v-if="data.liveSiteUrl" :href="data.liveSiteUrl" target="_blank">Live</a>
+      <a :href="data.gitRepoUrl" target="_blank" @click.stop>Repo</a>
+      <a v-if="data.liveSiteUrl" :href="data.liveSiteUrl" target="_blank" @click.stop>Live</a>
     </div>
   </div>
 </template>
