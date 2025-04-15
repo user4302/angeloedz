@@ -2,7 +2,6 @@
   <a
     href="/docs/ANGELO E DE ZOYSA.pdf"
     class="floating-icon"
-    title="View CV"
     target="_blank"
   >
     <span class="material-icons">description</span>
