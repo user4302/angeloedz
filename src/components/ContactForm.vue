@@ -1,11 +1,9 @@
 <template>
   <div>
-    <!-- Floating Contact Button -->
     <button class="floating-contact-icon" @click="openForm">
-      <span class="material-icons">contact_mail</span>
+      <span class="material-icons">mail</span>
     </button>
 
-    <!-- Contact Form Overlay -->
     <div class="contact-form-overlay" v-if="isVisible">
       <div class="contact-form" v-if="!isSubmitted">
         <span class="close-button material-icons" @click="closeForm" :disabled="isLoading">
@@ -66,16 +64,16 @@ export default {
   methods: {
     openForm() {
       this.isVisible = true;
-      document.body.classList.add('no-scroll'); // Add class to disable scrolling
+      document.body.classList.add('no-scroll');
     },
     closeForm() {
       this.isVisible = false;
-      document.body.classList.remove('no-scroll'); // Remove class to enable scrolling
+      document.body.classList.remove('no-scroll');
     },
     async submitForm() {
       this.isLoading = true;
-      this.errorMessage = ''; // Clear previous error message
-      this.errorResponse = ''; // Clear previous error response
+      this.errorMessage = '';
+      this.errorResponse = '';
       try {
         const response = await axios.post(
           process.env.VUE_APP_FORMSPREE_ENDPOINT,
@@ -91,7 +89,7 @@ export default {
           setTimeout(() => {
             this.closeForm();
             this.isSubmitted = false;
-          }, 3000); // Keep the success message for 3 seconds
+          }, 3000);
         } else {
           this.errorMessage = 'Error';
           this.errorResponse = response.data;
@@ -111,8 +109,8 @@ export default {
 .floating-contact-icon {
   position: fixed;
   bottom: 20px;
-  right: 80px; /* Adjust position to avoid overlap with other icons */
-  color: var(--text-color);
+  right: 80px;
+  color: var(--white-ish);
   padding: 10px;
   border-radius: 30%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -121,12 +119,12 @@ export default {
   cursor: pointer;
   z-index: 1000;
   border: none;
-  background-color: var(--background-color);
+  background-color: var(--more-black);
 }
 
 .floating-contact-icon:hover {
-  background-color: var(--text-color);
-  color: var(--background-color);
+  background-color: var(--white-ish);
+  color: var(--more-black);
 }
 
 .contact-form-overlay {
@@ -143,8 +141,8 @@ export default {
 }
 
 .contact-form {
-  position: relative; /* Set position to be relative to the position of the close button */
-  background-color: var(--background-color);
+  position: relative;
+  background-color: var(--more-black);
   padding: 20px;
   width: 90%;
   max-width: 400px;
@@ -159,8 +157,8 @@ export default {
   top: 10px;
   right: 10px;
   cursor: pointer;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--more-black);
+  color: var(--white-ish);
   border-radius: 50%; 
   padding: 5px;
   width: 30px;
@@ -173,8 +171,8 @@ export default {
 }
 
 .close-button:hover {
-  background-color: var(--text-color);
-  color: var(--background-color);
+  background-color: var(--white-ish);
+  color: var(--more-black);
 }
 
 form div {
@@ -193,27 +191,27 @@ form textarea {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
-  background-color: var(--button-hover-bg-color);
-  border: 1px solid var(--text-color);
+  background-color: var(--more-gray);
+  border: 1px solid var(--white-ish);
   border-radius: 4px; 
-  transition: border-color 0.3s ease, border-width 0.3s ease;
-  color: var(--text-color); 
+  transition: border-color 0.3s ease;
+  color: var(--white-ish); 
 }
 
 form input:focus,
 form textarea:focus {
-  border-color: var(--text-color);
   border-width: 4px;
+  border-color: var(--white-ish);
   outline: none;
 }
 
 form textarea {
-  resize: vertical; /* Allow only vertical resizing */
+  resize: vertical;
 }
 
 form button[type='submit'] {
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--more-black);
+  color: var(--white-ish);
   border-radius: 8px;
   padding: 10px;
   width: 100px;
@@ -230,14 +228,14 @@ form button[type='submit'] {
 }
 
 form button[type='submit']:hover {
-  background-color: var(--text-color); 
-  color: var(--background-color); 
+  background-color: var(--white-ish); 
+  color: var(--more-black); 
 }
 
 .loader {
   margin-top: 10px;
   text-align: center;
-  color: var(--text-color);
+  color: var(--white-ish);
 }
 
 .error-message p {
@@ -248,7 +246,7 @@ form button[type='submit']:hover {
 
 .success-message {
   text-align: center;
-  color: var(--text-color);
+  color: var(--white-ish);
   font-size: 50px;
 }
 

@@ -51,8 +51,8 @@ export default {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #333;
-  color: #fff;
+  background-color: var(--more-gray);
+  color: var(--white-ish);
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -78,12 +78,12 @@ export default {
 }
 
 body.light {
-  background-color: #fff;
-  color: #000;
+  color: var(--white-ish);
+  color:  var(--more-black);
 }
 
 body.dark {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--more-black);
+  color: var(--white-ish);
 }
 </style>

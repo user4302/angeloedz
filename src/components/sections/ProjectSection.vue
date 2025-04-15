@@ -34,7 +34,7 @@ export default {
       categories: ['Frontend', 'Backend', 'Scripting', 'Mobile'],
       visibleCards: [],
       currentCategory: 'Frontend',
-      cardsPerLoad: 3, // Adjusted to load 3 projects at a time
+      cardsPerLoad: 3, 
     };
   },
   computed: {
@@ -115,7 +115,7 @@ export default {
 }
 
 .section-buttons button.active {
-  border: 2px solid white; /* Add a white border to the active button */
+  border: 2px solid white;
 }
 
 .card-container {
@@ -124,7 +124,6 @@ export default {
   justify-content: center;
 }
 
-/* Responsive styles for mobile devices */
 @media (max-width: 768px) {
   .section-buttons {
     flex-direction: column;
@@ -133,7 +132,7 @@ export default {
 
   .section-buttons button {
     margin: 5px 0;
-    width: 80%; /* Full width for smaller screens */
+    width: 80%;
   }
 
   .card-container {
@@ -144,7 +143,7 @@ export default {
 
 @media (max-width: 480px) {
   .section-buttons button {
-    font-size: 0.9rem; /* Smaller font size for very small screens */
+    font-size: 0.9rem;
   }
 }
 </style>

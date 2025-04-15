@@ -61,7 +61,7 @@ const state = {
       imageSrc: loadImage('projects/cron-game-backup.png'),
       icons: ['siGnubash'],
       category: 'Scripting',
-      title: 'Cron game Backup',
+      title: 'Cron Game Backup',
       description: 'Backup game files to git',
       gitRepoUrl: 'https://gitlab.com/Angelo_E_DZ/coding/shell/game-backups',
       liveSiteUrl: '',
@@ -86,18 +86,8 @@ const getters = {
   getProjects: (state) => state.projects,
 };
 
-const mutations = {
-  // Define mutations if you need to modify the card data
-};
-
-const actions = {
-  // Define actions if you need to fetch or update card data asynchronously
-};
-
 export default {
   namespaced: true,
   state,
   getters,
-  mutations,
-  actions,
 };
