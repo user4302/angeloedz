@@ -1,5 +1,5 @@
 <template>
-  <div class="project-card">
+  <div class="project-card" @click="openLink">
     <img :src="data.imageSrc" :alt="data.title" class="card-image" />
     <span
       class="card-icon"
