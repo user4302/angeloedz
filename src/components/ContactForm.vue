@@ -2,7 +2,7 @@
   <div>
     <!-- Floating Contact Button -->
     <button class="floating-contact-icon" @click="openForm">
-      <span class="material-icons">contact_mail</span>
+      <span class="material-icons">mail</span>
     </button>
 
     <!-- Contact Form Overlay -->
