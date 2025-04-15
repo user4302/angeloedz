@@ -19,7 +19,7 @@ export default {
   name: 'ProjectView',
   props: ['id'],
   computed: {
-    ...mapGetters('projects', ['getProjectById']), // Specify the module name
+    ...mapGetters('projects', ['getProjectById']),
     project() {
       return this.getProjectById(Number(this.id));
     },
@@ -36,18 +36,18 @@ export default {
 
 .project-banner-container {
   width: 100%;
-  height: 200px; /* Set a fixed height for the banner */
+  height: 200px;
   overflow: hidden;
   display: flex;
-  align-items: center; /* Center the image vertically */
-  justify-content: center; /* Center the image horizontally */
+  align-items: center;
+  justify-content: center; 
 }
 
 .project-banner {
   width: 100%;
   height: auto;
   object-fit: cover;
-  object-position: center; /* Center the image vertically and horizontally */
+  object-position: center; 
 }
 
 h1 {

@@ -86,18 +86,8 @@ const getters = {
   getProjects: (state) => state.projects,
 };
 
-const mutations = {
-  // Define mutations if you need to modify the card data
-};
-
-const actions = {
-  // Define actions if you need to fetch or update card data asynchronously
-};
-
 export default {
   namespaced: true,
   state,
   getters,
-  mutations,
-  actions,
 };

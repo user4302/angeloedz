@@ -53,7 +53,6 @@ export default {
 </script>
 
 <style scoped>
-/* Base styles for desktop and larger screens */
 .project-card {
   border-radius: 8px;
   overflow: hidden;
@@ -100,7 +99,7 @@ p {
 .link-container {
   display: flex;
   justify-content: space-evenly;
-  align-items: center; /* Align items vertically */
+  align-items: center; 
   margin-top: 10px;
 }
 
@@ -109,7 +108,7 @@ a {
   padding: 5px 10px;
   border-radius: 4px;
   display: inline-flex;
-  align-items: center; /* Align icon and text vertically */
+  align-items: center; 
 }
 
 a:hover {
@@ -117,43 +116,42 @@ a:hover {
 }
 
 .material-icons {
-  font-size: 18px; /* Set icon size to match text */
-  margin-left: 5px; /* Space between text and icon */
+  font-size: 18px;
+  margin-left: 5px;
 }
 
-/* Responsive styles for mobile devices */
 @media (max-width: 768px) {
   .project-card {
-    flex: 0 0 calc(50% - 20px); /* Adjust card width for smaller screens */
+    flex: 0 0 calc(50% - 20px); 
     max-width: 100%;
   }
 
   h3 {
-    font-size: 1rem; /* Adjust font size for smaller screens */
+    font-size: 1rem;
   }
 
   p {
-    font-size: 0.9rem; /* Adjust font size for smaller screens */
+    font-size: 0.9rem;
   }
 
   .link-container {
-    flex-direction: column; /* Stack links vertically on smaller screens */
+    flex-direction: column; 
     align-items: center;
   }
 
   a {
-    margin-bottom: 5px; /* Add spacing between links */
+    margin-bottom: 5px;
   }
 }
 
 @media (max-width: 480px) {
   .project-card {
-    flex: 0 0 100%; /* Full width for very small screens */
+    flex: 0 0 100%; 
     margin: 5px 0;
   }
 
   .card-image {
-    height: 150px; /* Adjust image height for very small screens */
+    height: 150px; 
   }
 
   h3 {

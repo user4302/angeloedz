@@ -8,13 +8,13 @@
 
 <script>
 import ContactForm from './components/ContactForm.vue';
-import DownloadCV from './components/DownloadCV.vue'; // Import the new component
+import DownloadCV from './components/DownloadCV.vue';
 
 export default {
   name: 'App',
   components: {
     ContactForm,
-    DownloadCV, // Register the new component
+    DownloadCV,
   },
 };
 </script>

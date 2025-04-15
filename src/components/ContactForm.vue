@@ -1,11 +1,9 @@
 <template>
   <div>
-    <!-- Floating Contact Button -->
     <button class="floating-contact-icon" @click="openForm">
       <span class="material-icons">mail</span>
     </button>
 
-    <!-- Contact Form Overlay -->
     <div class="contact-form-overlay" v-if="isVisible">
       <div class="contact-form" v-if="!isSubmitted">
         <span class="close-button material-icons" @click="closeForm" :disabled="isLoading">
@@ -66,16 +64,16 @@ export default {
   methods: {
     openForm() {
       this.isVisible = true;
-      document.body.classList.add('no-scroll'); // Add class to disable scrolling
+      document.body.classList.add('no-scroll');
     },
     closeForm() {
       this.isVisible = false;
-      document.body.classList.remove('no-scroll'); // Remove class to enable scrolling
+      document.body.classList.remove('no-scroll');
     },
     async submitForm() {
       this.isLoading = true;
-      this.errorMessage = ''; // Clear previous error message
-      this.errorResponse = ''; // Clear previous error response
+      this.errorMessage = '';
+      this.errorResponse = '';
       try {
         const response = await axios.post(
           process.env.VUE_APP_FORMSPREE_ENDPOINT,
@@ -91,7 +89,7 @@ export default {
           setTimeout(() => {
             this.closeForm();
             this.isSubmitted = false;
-          }, 3000); // Keep the success message for 3 seconds
+          }, 3000);
         } else {
           this.errorMessage = 'Error';
           this.errorResponse = response.data;
@@ -111,7 +109,7 @@ export default {
 .floating-contact-icon {
   position: fixed;
   bottom: 20px;
-  right: 80px; /* Adjust position to avoid overlap with other icons */
+  right: 80px;
   color: var(--text-color);
   padding: 10px;
   border-radius: 30%;
@@ -143,7 +141,7 @@ export default {
 }
 
 .contact-form {
-  position: relative; /* Set position to be relative to the position of the close button */
+  position: relative;
   background-color: var(--background-color);
   padding: 20px;
   width: 90%;
@@ -205,7 +203,7 @@ form textarea:focus {
 }
 
 form textarea {
-  resize: vertical; /* Allow only vertical resizing */
+  resize: vertical;
 }
 
 form button[type='submit'] {
