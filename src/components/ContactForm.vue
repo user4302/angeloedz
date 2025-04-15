@@ -14,19 +14,19 @@
         <h2>Contact Me</h2>
         <form @submit.prevent="submitForm">
           <div>
-            <label for="name">Name:</label>
+            <label for="name">Name</label>
             <input type="text" id="name" v-model="name" required />
           </div>
           <div>
-            <label for="email">Email:</label>
+            <label for="email">Email</label>
             <input type="email" id="email" v-model="email" required />
           </div>
           <div>
-            <label for="phone">Phone (optional):</label>
+            <label for="phone">Phone No. (optional)</label>
             <input type="tel" id="phone" v-model="phone" />
           </div>
           <div>
-            <label for="message">Message:</label>
+            <label for="message">Message</label>
             <textarea id="message" v-model="message" required></textarea>
           </div>
           <button type="submit" :disabled="isLoading">Send</button>
@@ -184,6 +184,8 @@ form div {
 form label {
   display: block;
   margin-bottom: 5px;
+  text-align: left;
+  font-size: 20px;
 }
 
 form input,
@@ -194,13 +196,14 @@ form textarea {
   background-color: var(--button-hover-bg-color);
   border: 1px solid var(--text-color);
   border-radius: 4px; 
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, border-width 0.3s ease;
   color: var(--text-color); 
 }
 
 form input:focus,
 form textarea:focus {
   border-color: var(--text-color);
+  border-width: 4px;
   outline: none;
 }
 
@@ -223,6 +226,7 @@ form button[type='submit'] {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, color 0.3s ease;
   margin: 0 auto;
+  font-size: 20px;
 }
 
 form button[type='submit']:hover {
