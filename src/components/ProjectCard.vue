@@ -99,7 +99,7 @@ p {
 .link-container {
   display: flex;
   justify-content: space-evenly;
-  align-items: center; 
+  align-items: center;
   margin-top: 10px;
 }
 
@@ -108,11 +108,11 @@ a {
   padding: 5px 10px;
   border-radius: 4px;
   display: inline-flex;
-  align-items: center; 
+  align-items: center;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: rgb(0, 185, 185);
 }
 
 .material-icons {
@@ -122,7 +122,7 @@ a:hover {
 
 @media (max-width: 768px) {
   .project-card {
-    flex: 0 0 calc(50% - 20px); 
+    flex: 0 0 calc(50% - 20px);
     max-width: 100%;
   }
 
@@ -135,7 +135,7 @@ a:hover {
   }
 
   .link-container {
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
   }
 
@@ -146,12 +146,12 @@ a:hover {
 
 @media (max-width: 480px) {
   .project-card {
-    flex: 0 0 100%; 
+    flex: 0 0 100%;
     margin: 5px 0;
   }
 
   .card-image {
-    height: 150px; 
+    height: 150px;
   }
 
   h3 {
