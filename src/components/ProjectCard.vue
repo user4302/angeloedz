@@ -64,7 +64,7 @@ export default {
   transition: transform 0.5s ease, box-shadow 0.5s ease;
   flex: 0 0 calc(33.33% - 20px);
   box-sizing: border-box;
-  background-color: var(--card-bg-color);
+  background-color: var(--less-black);
 }
 
 .card-image {
@@ -78,7 +78,7 @@ export default {
   display: inline-flex;
   padding: 10px;
   width: 30px;
-  fill: var(--text-color);
+  fill: var(--white-ish);
 }
 
 .project-card:hover {

@@ -84,8 +84,8 @@ export default {
 .hero-button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  background-color: #121212;
-  color: #fff;
+  background-color: var(--more-black);
+  color: var(--white-ish);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -94,8 +94,8 @@ export default {
 }
 
 .hero-button:hover {
-  background-color: #e0e0e0;
-  color: #121212;
+  background-color: var(--white-ish);
+  color: var(--more-black);
   transform: translateY(-2px);
 }
 </style>

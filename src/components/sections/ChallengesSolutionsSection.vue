@@ -18,7 +18,7 @@ section {
   margin: 0 auto;
   padding: 20px;
   border-radius: 8px;
-  color: #e0e0e0;
+  color: var(--white-ish);
 }
 
 h2 {

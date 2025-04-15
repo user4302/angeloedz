@@ -20,7 +20,7 @@ export default {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  color: var(--text-color);
+  color: var(--white-ish);
   padding: 10px;
   border-radius: 30%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

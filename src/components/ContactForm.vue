@@ -110,7 +110,7 @@ export default {
   position: fixed;
   bottom: 20px;
   right: 80px;
-  color: var(--text-color);
+  color: var(--white-ish);
   padding: 10px;
   border-radius: 30%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -119,12 +119,12 @@ export default {
   cursor: pointer;
   z-index: 1000;
   border: none;
-  background-color: var(--background-color);
+  background-color: var(--more-black);
 }
 
 .floating-contact-icon:hover {
-  background-color: var(--text-color);
-  color: var(--background-color);
+  background-color: var(--white-ish);
+  color: var(--more-black);
 }
 
 .contact-form-overlay {
@@ -142,7 +142,7 @@ export default {
 
 .contact-form {
   position: relative;
-  background-color: var(--background-color);
+  background-color: var(--more-black);
   padding: 20px;
   width: 90%;
   max-width: 400px;
@@ -157,8 +157,8 @@ export default {
   top: 10px;
   right: 10px;
   cursor: pointer;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--more-black);
+  color: var(--white-ish);
   border-radius: 50%; 
   padding: 5px;
   width: 30px;
@@ -171,8 +171,8 @@ export default {
 }
 
 .close-button:hover {
-  background-color: var(--text-color);
-  color: var(--background-color);
+  background-color: var(--white-ish);
+  color: var(--more-black);
 }
 
 form div {
@@ -189,16 +189,16 @@ form textarea {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
-  background-color: var(--button-hover-bg-color);
-  border: 1px solid var(--text-color);
+  background-color: var(--more-gray);
+  border: 1px solid var(--white-ish);
   border-radius: 4px; 
   transition: border-color 0.3s ease;
-  color: var(--text-color); 
+  color: var(--white-ish); 
 }
 
 form input:focus,
 form textarea:focus {
-  border-color: var(--text-color);
+  border-color: var(--white-ish);
   outline: none;
 }
 
@@ -207,8 +207,8 @@ form textarea {
 }
 
 form button[type='submit'] {
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--more-black);
+  color: var(--white-ish);
   border-radius: 8px;
   padding: 10px;
   width: 100px;
@@ -224,14 +224,14 @@ form button[type='submit'] {
 }
 
 form button[type='submit']:hover {
-  background-color: var(--text-color); 
-  color: var(--background-color); 
+  background-color: var(--white-ish); 
+  color: var(--more-black); 
 }
 
 .loader {
   margin-top: 10px;
   text-align: center;
-  color: var(--text-color);
+  color: var(--white-ish);
 }
 
 .error-message p {
@@ -242,7 +242,7 @@ form button[type='submit']:hover {
 
 .success-message {
   text-align: center;
-  color: var(--text-color);
+  color: var(--white-ish);
   font-size: 50px;
 }
 
