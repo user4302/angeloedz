@@ -33,20 +33,30 @@
 export default {
   name: 'ProjectCard',
   props: {
+    /** @type {object} The project data to display. */
     data: {
       type: Object,
       required: true,
     },
   },
   methods: {
+    /**
+     * Navigates to the detailed project view.
+     */
     openLink() {
       this.$router.push({
         name: 'ProjectView',
         params: { id: this.data.id },
       });
     },
-    getIconSvg(iconArray) {
-      return this.$icons[iconArray]?.svg || '';
+    /**
+     * Retrieves the SVG path for a given Simple Icon key.
+     *
+     * @param {string} iconKey - The identifier of the icon (e.g., 'siReact').
+     * @returns {string} The SVG path string.
+     */
+    getIconSvg(iconKey) {
+      return this.$icons[iconKey]?.svg || '';
     },
   },
 };

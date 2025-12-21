@@ -20,5 +20,10 @@ npm run build
 npm run lint
 ```
 
+### Run tests with Vitest
+```
+npx vitest run
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

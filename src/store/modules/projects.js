@@ -1,5 +1,21 @@
 import { loadImage } from '@/utils/imageLoader';
 
+/**
+ * @typedef {object} Project
+ * @property {number} id - Unique identifier for the project.
+ * @property {string} imageSrc - Path or URL to the project's cover image.
+ * @property {string[]} icons - Array of Simple Icons identifiers (e.g., 'siReact').
+ * @property {string} category - Project category (e.g., 'Frontend', 'Terminal').
+ * @property {string} title - Display title of the project.
+ * @property {string} description - Brief summary of the project.
+ * @property {string} gitRepoUrl - URL to the source code repository.
+ * @property {string} liveSiteUrl - URL to the live demonstration or hosted app.
+ */
+
+/**
+ * @type {object}
+ * @property {Project[]} projects - List of all projects displayed on the site.
+ */
 const state = {
   // Current allowed sections: 'Frontend', 'Backend', 'Scripting' 'Terminal', 'Mobile',
   projects: [
@@ -88,6 +104,16 @@ const state = {
     },
     {
       id: 9,
+      imageSrc: loadImage('projects/bdo-shipwright.png'),
+      icons: ['siReact'],
+      category: 'Frontend',
+      title: 'BDO Shipwright',
+      description: 'Black desert ship building tracker',
+      gitRepoUrl: 'https://gitlab.com/user4302_Projects/coding/react-js/black-desert-ship-building-tracker',
+      liveSiteUrl: 'https://user4302-bdo-shipwright.netlify.app/',
+    },
+    {
+      id: 10,
       imageSrc: loadImage('nervous.png'),
       icons: [''],
       category: 'Mobile',
@@ -99,13 +125,31 @@ const state = {
   ],
 };
 
+/**
+ * Projects module getters.
+ */
 const getters = {
+  /**
+   * Returns a function to find a project by its ID.
+   *
+   * @param {object} state - The projects module state.
+   * @returns {function(number): Project|undefined} A function that takes an ID and returns the project.
+   */
   getProjectById: (state) => (id) => {
     return state.projects.find((project) => project.id === id);
   },
+  /**
+   * Returns the array of all projects.
+   *
+   * @param {object} state - The projects module state.
+   * @returns {Project[]} The list of projects.
+   */
   getProjects: (state) => state.projects,
 };
 
+/**
+ * Vuex store module for projects management.
+ */
 export default {
   namespaced: true,
   state,

@@ -29,11 +29,20 @@ export default {
   components: {
     ProjectCard,
   },
+  /**
+   * Component data.
+   *
+   * @returns {object} Initial data state.
+   */
   data() {
     return {
+      /** @type {string[]} List of available project categories. */
       categories: ['Frontend', 'Backend', 'Scripting', 'Terminal', 'Mobile'],
+      /** @type {object[]} List of projects currently visible in the UI. */
       visibleCards: [],
+      /** @type {string} The currently selected filter category. */
       currentCategory: 'Frontend',
+      /** @type {number} Number of cards to load at once. */
       cardsPerLoad: 3, 
     };
   },
@@ -41,14 +50,27 @@ export default {
     ...mapGetters('projects', ['getProjectById', 'getProjects']),
   },
   methods: {
+    /**
+     * Fetches and logs a project by its ID.
+     *
+     * @param {number} id - The ID of the project to fetch.
+     */
     fetchProject(id) {
       const project = this.getProjectById(id);
       console.log(project);
     },
+    /**
+     * Filters the displayed projects by the selected category.
+     *
+     * @param {string} category - The category to filter by.
+     */
     filterCategory(category) {
       this.currentCategory = category;
       this.loadCards();
     },
+    /**
+     * Initially loads the first set of projects for the current category.
+     */
     loadCards() {
       const filteredCards = this.getProjects.filter(
         (card) => card.category === this.currentCategory
@@ -57,6 +79,9 @@ export default {
         .slice(0, this.cardsPerLoad)
         .map((card) => ({ ...card, fadeIn: true }));
     },
+    /**
+     * Window scroll event handler for infinite scrolling.
+     */
     handleScroll() {
       const cardContainer = this.$refs.cardContainer;
       if (!cardContainer) return;
@@ -69,6 +94,9 @@ export default {
         this.loadMoreCards();
       }
     },
+    /**
+     * Loads the next set of projects for the current category.
+     */
     loadMoreCards() {
       const filteredCards = this.getProjects.filter(
         (card) => card.category === this.currentCategory
