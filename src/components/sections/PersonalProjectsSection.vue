@@ -1,0 +1,33 @@
+<template>
+  <section hidden="true">
+    <h2>Personal Projects</h2>
+    <p>If you have any personal or freelance projects, showcase them here.</p>
+    <p>Describe the problem you solved and the technologies you used.</p>
+  </section>
+</template>
+
+<script>
+export default {
+  name: 'PersonalProjectsSection'
+}
+</script>
+
+<style scoped>
+section {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  color: var(--white-ish);
+}
+
+h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+p {
+  margin: 10px 0;
+  text-align: center;
+}
+</style>

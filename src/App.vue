@@ -1,26 +1,30 @@
 <template>
-  <v-app>
-    <Navbar />
-    <v-main class="main"><router-view /></v-main>
-  </v-app>
+  <div id="app">
+    <router-view />
+    <DownloadCV />
+    <ContactForm />
+  </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
+import ContactForm from './components/ContactForm.vue';
+import DownloadCV from './components/DownloadCV.vue';
+
 export default {
-  name: "App",
-  components: { Navbar },
-  data: () => ({
-    //
-  }),
+  name: 'App',
+  components: {
+    ContactForm,
+    DownloadCV,
+  },
 };
 </script>
 
-<style scoped>
-.main {
-  /* background: #353535; */
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #7af6d0;
-  overflow-x: hidden;
+  position: relative;
 }
 </style>

@@ -1,0 +1,34 @@
+<template>
+  <section hidden="true">
+    <h2>Experience</h2>
+    <p>Detail your role and responsibilities at the company.</p>
+    <p>Highlight key projects you worked on and your contributions.</p>
+    <p>Mention any technologies or methodologies you used.</p>
+  </section>
+</template>
+
+<script>
+export default {
+  name: 'ExperienceSection'
+}
+</script>
+
+<style scoped>
+section {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  color: var(--white-ish);
+}
+
+h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+p {
+  margin: 10px 0;
+  text-align: center;
+}
+</style>

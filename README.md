@@ -1,7 +1,5 @@
 # angeloedz-vue
 
-- Node: v20.10.0
-
 ## Project setup
 ```
 `npm install`
@@ -20,6 +18,11 @@ npm run build
 ### Lints and fixes files
 ```
 npm run lint
+```
+
+### Run tests with Vitest
+```
+npx vitest run
 ```
 
 ### Customize configuration

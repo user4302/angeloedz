@@ -1,0 +1,95 @@
+:root {
+  --more-black: #121212;
+  --black-ish: #1f1f1f;
+  --less-black: #2c2c2c;
+
+  --white-ish: #e0e0e0;
+
+  --more-gray: #333;
+  --gray-ish: #444;
+  --less-gray: #acacac;
+}
+
+body {
+  background-color: var(--more-black);
+  color: var(--white-ish);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--white-ish);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--less-gray);
+}
+
+button {
+  background-color: var(--black-ish);
+  color: var(--white-ish);
+  border: 1px solid var(--gray-ish);
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--more-gray);
+  color: var(--more-black);
+}
+
+.section {
+  padding: 20px;
+  background-color: var(--more-black);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.section-buttons {
+  margin-bottom: 20px;
+}
+
+.section-buttons button {
+  background-color: var(--black-ish);
+  color: var(--white-ish);
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: more-black 0.3s ease, transform 0.3s ease;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 1000;
+  font-size: 1.1rem;
+}
+
+.section-buttons button:hover {
+  transform: translateY(-2px);
+  background-color: var(--more-gray);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--more-black);
+}
+
+h2 {
+  color: var(--white-ish);
+}
+
+p {
+  color: var(--white-ish);
+}
+
+.no-scroll {
+  overflow: hidden; /* Disable scrolling */
+}
