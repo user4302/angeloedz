@@ -31,7 +31,7 @@ export default {
   },
   data() {
     return {
-      categories: ['Frontend', 'Backend', 'Scripting', 'Mobile'],
+      categories: ['Frontend', 'Backend', 'Scripting', 'Terminal', 'Mobile'],
       visibleCards: [],
       currentCategory: 'Frontend',
       cardsPerLoad: 3, 

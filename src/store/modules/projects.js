@@ -1,7 +1,7 @@
 import { loadImage } from '@/utils/imageLoader';
 
 const state = {
-  // Current allowed sections: 'Frontend', 'Backend', 'Scripting', 'Mobile'
+  // Current allowed sections: 'Frontend', 'Backend', 'Scripting' 'Terminal', 'Mobile',
   projects: [
     {
       id: 1,
@@ -38,7 +38,7 @@ const state = {
       id: 4,
       imageSrc: loadImage('projects/git-repo-manager.png'),
       icons: ['siGnometerminal'],
-      category: 'Scripting',
+      category: 'Terminal',
       title: 'Git Repo Manager',
       description: 'Manage multiple repos',
       gitRepoUrl:
@@ -49,7 +49,7 @@ const state = {
       id: 5,
       imageSrc: loadImage('projects/winget-upgrade-helper.png'),
       icons: ['siGnometerminal'],
-      category: 'Scripting',
+      category: 'Terminal',
       title: 'Winget Upgrade Helper',
       description: 'Manage winget packages',
       gitRepoUrl:
@@ -69,15 +69,25 @@ const state = {
     {
       id: 7,
       imageSrc: loadImage('projects/multi-language-library.png'),
-      icons: [''],
+      icons: ['siNextdotjs', 'siTailwindcss'],
       category: 'Frontend',
-      title: 'Multi Language Library',
-      description: 'A library featuring books with multiple language options',
+      title: 'Library',
+      description: 'Multiple Language Library',
       gitRepoUrl: 'https://gitlab.com/user4302_Projects/coding/next-js/stardust',
       liveSiteUrl: 'https://user4302-stardust.netlify.app',
     },
     {
       id: 8,
+      imageSrc: loadImage('projects/git-repo-orchestrator.png'),
+      icons: ['siTextual'],
+      category: 'Terminal',
+      title: 'Git Repo Orchestrator',
+      description: 'Manage multiple repos',
+      gitRepoUrl: 'https://gitlab.com/user4302_Projects/coding/python/textual/goro',
+      liveSiteUrl: 'https://pypi.org/project/goro',
+    },
+    {
+      id: 9,
       imageSrc: loadImage('nervous.png'),
       icons: [''],
       category: 'Mobile',
