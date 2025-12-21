@@ -68,6 +68,16 @@ const state = {
     },
     {
       id: 7,
+      imageSrc: loadImage('projects/multi-language-library.png'),
+      icons: [''],
+      category: 'Frontend',
+      title: 'Multi Language Library',
+      description: 'A library featuring books with multiple language options',
+      gitRepoUrl: 'https://gitlab.com/user4302_Projects/coding/next-js/stardust',
+      liveSiteUrl: 'https://user4302-stardust.netlify.app',
+    },
+    {
+      id: 8,
       imageSrc: loadImage('nervous.png'),
       icons: [''],
       category: 'Mobile',
