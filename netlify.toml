@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Specify the newer build image to resolve the Focal deprecation.
+  # Netlify uses 'ubuntu-24.04' for Noble.
+  NETLIFY_BUILD_IMAGE = "ubuntu-24.04"
