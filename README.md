@@ -1,29 +1,173 @@
-# angeloedz-vue
+# Angelo EDZ Portfolio
 
-## Project setup
-```
-`npm install`
+🚀 Personal portfolio website showcasing software engineering projects and skills
+
+![Vue.js](https://img.shields.io/badge/Vue.js-3.2.13-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-22+-339933?style=flat-square&logo=node.js&logoColor=white)
+![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white)
+
+## Features ✨
+
+- **Dynamic Project Showcase**: Display and filter projects by category (Frontend, Backend, Terminal, Scripting, Mobile)
+- **Interactive Hero Section**: Animated typing effects and smooth transitions
+- **Comprehensive Profile Sections**: Experience timeline, skills display, career goals, and testimonials
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Contact Integration**: Built-in contact form and CV download functionality
+- **Technology Icons**: Visual representation of tech stack using Simple Icons
+- **Single Page Application**: Smooth navigation with Vue Router
+- **State Management**: Organized project data with Vuex
+
+## Tech Stack / Built With 🛠️
+
+![Vue.js](https://img.shields.io/badge/Vue.js-3.2.13-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
+![Vuex](https://img.shields.io/badge/Vuex-4.1.0-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
+![Vue Router](https://img.shields.io/badge/Vue%20Router-4.0.13-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-1.8.4-5A29E4?style=flat-square&logo=axios&logoColor=white)
+![Simple Icons](https://img.shields.io/badge/Simple%20Icons-16.2.0-000000?style=flat-square&logo=simpleicons&logoColor=white)
+![Vitest](https://img.shields.io/badge/Vitest-3.2.4-6E9F18?style=flat-square&logo=vitest&logoColor=white)
+
+## Prerequisites
+
+- Node.js 22 or higher
+- npm (comes with Node.js) or yarn
+- Git
+
+## Installation 📥
+
+```bash
+# Clone the repository
+git clone https://gitlab.com/Angelo_E_DZ/coding/vue-js/angeloedz.git angeloedz
+ 
+# Navigate to the project directory
+cd angeloedz
+
+# Install dependencies
+npm install
 ```
 
-### Compiles and hot-reloads for development
-```
+## Usage / Quick Start ⚡
+
+```bash
+# Start development server with hot reload
 npm run serve
+
+# Open your browser and navigate to
+http://localhost:8080
 ```
 
-### Compiles and minifies for production
+The application will automatically reload when you make changes to the source files.
+
+## Project Structure 📂
+
 ```
-npm run build
+angeloedz-vue/
+├── public/                 # Static assets
+├── src/
+│   ├── assets/            # Images and static resources
+│   ├── components/        # Vue components
+│   │   ├── sections/      # Page section components
+│   │   ├── ContactForm.vue
+│   │   ├── DownloadCV.vue
+│   │   ├── NavBar.vue
+│   │   └── ProjectCard.vue
+│   ├── plugins/           # Vue plugins
+│   ├── router/            # Vue Router configuration
+│   ├── store/             # Vuex store modules
+│   │   └── modules/
+│   │       └── projects.js
+│   ├── utils/             # Utility functions
+│   ├── views/             # Page components
+│   ├── App.vue           # Root component
+│   ├── global.css        # Global styles
+│   └── main.js           # Application entry point
+├── tests/                 # Test files
+├── .env                  # Environment variables
+├── netlify.toml          # Netlify deployment configuration
+├── package.json          # Project dependencies and scripts
+└── README.md             # This file
 ```
 
-### Lints and fixes files
+## Configuration 🔧
+
+The project uses environment variables for configuration. Create a `.env` file in the root directory:
+
+```env
+# Add your environment variables here
+VUE_APP_API_BASE_URL=https://your-api-url.com
 ```
+
+## Development / Running Locally 🏗️
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run serve
+
+# Run linting
 npm run lint
-```
 
-### Run tests with Vitest
-```
+# Run tests
 npx vitest run
+
+# Run tests in watch mode
+npx vitest
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Testing 🧪
+
+The project uses Vitest for unit testing with jsdom environment.
+
+```bash
+# Run all tests once
+npx vitest run
+
+# Run tests in watch mode
+npx vitest
+
+# Run tests with coverage
+npx vitest run --coverage
+```
+
+## Building for Production 🏭
+
+```bash
+# Build for production
+npm run build
+
+# The built files will be in the /dist directory
+```
+
+## Deployment 🚀
+
+The project is configured for Netlify deployment:
+
+1. Connect your GitLab repository to Netlify
+2. Set build command: `npm run build`
+3. Set publish directory: `dist`
+4. Set Node.js version: `22`
+
+The `netlify.toml` file contains the deployment configuration.
+
+## Contributing 🤝
+
+Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines.
+
+For any questions, bug reports, feature requests, or security concerns, please open an issue on GitLab: https://gitlab.com/Angelo_E_DZ/coding/vue-js/angeloedz/-/issues
+
+## License 📄
+
+This project is private. All rights reserved.
+
+## Support & Contact 👋
+
+For any questions, bug reports, feature requests, or security concerns, please open an issue on GitLab: https://gitlab.com/Angelo_E_DZ/coding/vue-js/angeloedz/-/issues
+
+No email or direct messaging support is available.
+
+## Acknowledgments 🙏
+
+- Vue.js team for the excellent framework
+- Simple Icons for the comprehensive icon library
+- Netlify for seamless deployment
