@@ -14,6 +14,7 @@
 - **Enhanced Project Cards**: Interactive cards with hover overlays, icon-based navigation, and smooth transitions
 - **Responsive Project Details**: Hero sections, mobile navigation, optimized content layouts, and scroll-to-top behavior
 - **Modern UI/UX**: Micro-interactions, loading states, structured impact lists, and consistent design language
+- **Smart Link Handling**: Dynamic GitLab/GitHub icon detection and consistent navigation across all project components
 
 ## Tech Stack / Built With 🛠️
 

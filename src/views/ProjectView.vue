@@ -6,12 +6,18 @@
         <Icon icon="lucide:arrow-left" /> Back to projects
       </router-link>
       <div class="project-links">
-        <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="btn btn-github">
-          <Icon icon="simple-icons:github" /> Repository
-        </a>
-        <a v-if="project.liveSiteUrl" :href="project.liveSiteUrl" target="_blank" class="btn btn-live">
-          <Icon icon="lucide:external-link" /> Live Demo
-        </a>
+        <div class="link-slot">
+          <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="btn btn-github">
+            <Icon :icon="project.gitRepoUrl.includes('gitlab.com') ? 'simple-icons:gitlab' : 'simple-icons:github'" />
+            Repository
+          </a>
+        </div>
+        <div class="link-slot">
+          <a v-if="project.liveSiteUrl" :href="project.liveSiteUrl" target="_blank" class="btn btn-live">
+            <Icon icon="lucide:link-2" />
+            Live Demo
+          </a>
+        </div>
       </div>
     </div>
 
@@ -92,12 +98,18 @@
 
     <!-- Project Links footer for individual pages -->
     <div class="project-links-footer">
-       <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="btn btn-github large">
-          <Icon icon="simple-icons:github" /> View Repository
+      <div class="link-slot">
+        <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="btn btn-github large">
+          <Icon :icon="project.gitRepoUrl.includes('gitlab.com') ? 'simple-icons:gitlab' : 'simple-icons:github'" />
+          View Repository
         </a>
+      </div>
+      <div class="link-slot">
         <a v-if="project.liveSiteUrl" :href="project.liveSiteUrl" target="_blank" class="btn btn-live large">
-          <Icon icon="lucide:external-link" /> View Live Demo
+          <Icon icon="lucide:link-2" />
+          View Live Demo
         </a>
+      </div>
     </div>
 
     <!-- Sticky Bottom Nav for Mobile -->
@@ -105,12 +117,16 @@
       <router-link to="/" class="mobile-btn">
         <Icon icon="lucide:arrow-left" />
       </router-link>
-      <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="mobile-btn">
-        <Icon icon="simple-icons:github" />
-      </a>
-      <a v-if="project.liveSiteUrl" :href="project.liveSiteUrl" target="_blank" class="mobile-btn primary">
-        <Icon icon="lucide:external-link" />
-      </a>
+      <div class="mobile-slot">
+        <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="mobile-btn">
+          <Icon :icon="project.gitRepoUrl.includes('gitlab.com') ? 'simple-icons:gitlab' : 'simple-icons:github'" />
+        </a>
+      </div>
+      <div class="mobile-slot primary">
+        <a v-if="project.liveSiteUrl" :href="project.liveSiteUrl" target="_blank" class="mobile-btn primary">
+          <Icon icon="lucide:link-2" />
+        </a>
+      </div>
     </div>
   </div>
 
@@ -239,11 +255,18 @@ const leanRemainingContent = computed(() => {
   gap: 12px;
 }
 
+.link-slot {
+  display: flex;
+  align-items: center;
+}
+
 .btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 10px 22px;
+  min-width: 140px;
   border-radius: 99px;
   font-weight: 600;
   text-decoration: none;
@@ -254,6 +277,7 @@ const leanRemainingContent = computed(() => {
 .btn.large {
   padding: 14px 28px;
   font-size: 1.05rem;
+  min-width: 200px;
 }
 
 .btn-github {
@@ -505,6 +529,17 @@ h1 {
   box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
+.mobile-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-slot.primary {
+  flex: 1;
+  max-width: 150px;
+}
+
 .mobile-btn {
   width: 50px;
   height: 50px;
@@ -520,8 +555,7 @@ h1 {
 
 .mobile-btn.primary {
   background: #6366f1;
-  width: calc(100% - 150px);
-  max-width: 150px;
+  width: 100%;
   border-radius: 100px;
 }
 

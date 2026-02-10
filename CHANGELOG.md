@@ -27,6 +27,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implement project links footer with large action buttons
 - Enhance mobile navigation and responsive design consistency
 - Add scroll-to-top behavior for better navigation UX
+- Enhance link handling and UI consistency across project components
+- Add dynamic GitLab/GitHub icon detection based on repository URLs
+- Implement consistent link-2 icon for live demos across all components
+- Enhance projects parser to extract repository and live site URLs from markdown
+- Improve button layouts with slot wrappers and grid systems
 
 ### Changed
 - Converted `ProjectView.vue` to Composition API and added Markdown rendering

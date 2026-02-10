@@ -219,7 +219,7 @@ async function parseProjects() {
     }
 
     // Extract from text if frontmatter is thin
-    if (!data.title || !data.description) {
+    if (!data.title || !data.description || !data.gitRepoUrl || !data.liveSiteUrl) {
       const titleMatch = content.match(/\*\*Project Title:\*\*\s*(.*)/i);
       if (titleMatch && !data.title) {
         title = titleMatch[1].trim();
@@ -228,6 +228,25 @@ async function parseProjects() {
       const descMatch = content.match(/\*\*Short Description:\*\*\s*([\s\S]*?)(?=\n\n|\*\*)/i);
       if (descMatch && !data.description) {
         description = descMatch[1].trim();
+      }
+
+      // Extract Links
+      const linksMatch = content.match(/\*\*Links:\*\*([\s\S]*?)(?=\n\n|\*\*|$)/i);
+      if (linksMatch) {
+        const linksText = linksMatch[1];
+
+        // Find Git Repo (GitHub/GitLab)
+        const gitMatch = linksText.match(/\[(?:GitHub|GitLab)\]\((.*?)\)/i);
+        if (gitMatch && !data.gitRepoUrl) {
+          data.gitRepoUrl = gitMatch[1].trim();
+        }
+
+        // Find Live Site (Netlify/Vercel/others)
+        const liveMatch = linksText.match(/\[(?:Netlify|Vercel|Live|Site|Demo)\]\((.*?)\)/i) ||
+          linksText.match(/-(?:\s+)?(https?:\/\/[^\n\s)]+)/i);
+        if (liveMatch && !data.liveSiteUrl && liveMatch[1] !== data.gitRepoUrl) {
+          data.liveSiteUrl = liveMatch[1].trim();
+        }
       }
     }
 

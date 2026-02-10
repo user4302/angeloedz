@@ -27,30 +27,33 @@
       
       <div class="card-footer">
         <div class="card-actions">
-          <a
-            v-if="data.gitRepoUrl"
-            :href="data.gitRepoUrl"
-            target="_blank"
-            @click.stop
-            class="card-action-btn"
-            title="Repository"
-          >
-            <Icon icon="simple-icons:github" />
-            <span>Repo</span>
-          </a>
-          <a
-            v-if="data.liveSiteUrl"
-            :href="data.liveSiteUrl"
-            target="_blank"
-            @click.stop
-            class="card-action-btn primary"
-            title="Live Demo"
-          >
-            <Icon icon="lucide:external-link" />
-            <span>Live</span>
-          </a>
+          <div class="action-slot">
+            <a
+              v-if="data.gitRepoUrl"
+              :href="data.gitRepoUrl"
+              target="_blank"
+              @click.stop
+              class="card-action-btn"
+              :title="data.gitRepoUrl.includes('gitlab.com') ? 'GitLab Repository' : 'GitHub Repository'"
+            >
+              <Icon :icon="data.gitRepoUrl.includes('gitlab.com') ? 'simple-icons:gitlab' : 'simple-icons:github'" />
+              <span>Repo</span>
+            </a>
+          </div>
+          <div class="action-slot">
+            <a
+              v-if="data.liveSiteUrl"
+              :href="data.liveSiteUrl"
+              target="_blank"
+              @click.stop
+              class="card-action-btn primary"
+              title="Live Demo"
+            >
+              <Icon icon="lucide:link-2" />
+              <span>Live</span>
+            </a>
+          </div>
         </div>
-        <span class="category-tag">{{ data.category }}</span>
       </div>
     </div>
   </div>
@@ -192,15 +195,24 @@ export default {
 }
 
 .card-actions {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
+  width: 100%;
+}
+
+.action-slot {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .card-action-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
-  padding: 6px 14px;
+  padding: 6px 0;
+  width: 100%;
   background: #334155;
   color: #f8fafc;
   border-radius: 8px;
@@ -221,17 +233,6 @@ export default {
   transform: translateY(-2px);
   filter: brightness(1.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.category-tag {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #6366f1;
-  background: rgba(99, 102, 241, 0.1);
-  padding: 4px 10px;
-  border-radius: 6px;
 }
 </style>
 

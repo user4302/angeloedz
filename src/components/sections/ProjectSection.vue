@@ -23,7 +23,8 @@
       />
     </div>
 
-    <div v-if="hasMore" class="load-more-sentinel" ref="loadMoreTrigger">
+    <!-- Infinite Scroll Sentinel -->
+    <div v-show="hasMore" class="scroll-sentinel" ref="loadMoreTrigger">
       <div class="loader-dots" v-if="loadingMore">
         <span></span><span></span><span></span>
       </div>
@@ -47,6 +48,7 @@ export default {
       currentCategory: 'Frontend',
       cardsPerLoad: 8,
       loadingMore: false,
+      observer: null,
     };
   },
   computed: {
@@ -69,13 +71,19 @@ export default {
         .slice(0, this.cardsPerLoad)
         .map((card) => ({ ...card, fadeIn: true }));
     },
-    handleScroll() {
-      const trigger = this.$refs.loadMoreTrigger;
-      if (!trigger || this.loadingMore || !this.hasMore) return;
+    initObserver() {
+      if (this.observer) this.observer.disconnect();
 
-      const rect = trigger.getBoundingClientRect();
-      if (rect.top <= window.innerHeight + 100) {
-        this.loadMoreCards();
+      this.observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !this.loadingMore && this.hasMore) {
+          this.loadMoreCards();
+        }
+      }, {
+        rootMargin: '200px', // Trigger before it actually hits the screen
+      });
+
+      if (this.$refs.loadMoreTrigger) {
+        this.observer.observe(this.$refs.loadMoreTrigger);
       }
     },
     loadMoreCards() {
@@ -87,28 +95,40 @@ export default {
         .slice(currentLength, currentLength + this.cardsPerLoad)
         .map((card) => ({ ...card, fadeIn: false }));
 
+      if (nextBatch.length === 0) {
+        this.loadingMore = false;
+        return;
+      }
+
+      // Small delay for smooth transition feel
       setTimeout(() => {
         this.visibleCards = [...this.visibleCards, ...nextBatch];
         setTimeout(() => {
           nextBatch.forEach(c => c.fadeIn = true);
           this.loadingMore = false;
         }, 50);
-      }, 300); // Subtle delay for feel
+      }, 200);
     },
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
     this.loadInitialCards();
+    this.initObserver();
+  },
+  updated() {
+    // Re-bind observer if sentinel was re-added to DOM
+    if (this.hasMore && this.$refs.loadMoreTrigger) {
+      this.observer.observe(this.$refs.loadMoreTrigger);
+    }
   },
   beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    if (this.observer) this.observer.disconnect();
   },
 };
 </script>
 
 <style scoped>
 .project-section {
-  padding: 60px 20px;
+  padding: 60px 20px 80px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -157,14 +177,17 @@ export default {
   width: 100%;
 }
 
-.load-more-sentinel {
-  height: 100px;
+.scroll-sentinel {
+  height: 1px; /* Minimal height to trigger observer without adding blank space */
+  width: 100%;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .loader-dots {
+  padding: 20px 0;
   display: flex;
   gap: 8px;
 }
