@@ -36,6 +36,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Replace basic title tooltips with custom styled labels across components
 - Add formatTechName function to prettify technology names (Vue.js, Node.js, etc.)
 - Implement smooth hover animations with scaling and color transitions
+- Redesign mobile navigation and enhance component interactions
+- Replace bottom floating nav with top fixed header for better mobile UX
+- Add proper cursor states and interactive feedback across project cards
+- Enhance ContactForm and DownloadCV with modern UI and PDF viewer
+- Improve mobile navigation layout with backdrop blur and better spacing
 
 ### Changed
 - Converted `ProjectView.vue` to Composition API and added Markdown rendering

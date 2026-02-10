@@ -1,6 +1,10 @@
 <template>
   <div>
-    <button class="floating-contact-icon" @click="openForm">
+    <button 
+      :class="['contact-trigger-btn', { 'floating-contact-icon': !isMobileBar, 'mobile-btn-style': isMobileBar }]" 
+      @click="openForm"
+      :title="isMobileBar ? 'Contact Me' : ''"
+    >
       <span class="material-icons">mail</span>
     </button>
 
@@ -48,6 +52,12 @@ import axios from 'axios';
 
 export default {
   name: 'ContactForm',
+  props: {
+    isMobileBar: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       isVisible: false,
@@ -106,25 +116,52 @@ export default {
 </script>
 
 <style scoped>
+.contact-trigger-btn {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  background: transparent;
+  padding: 0;
+}
+
 .floating-contact-icon {
   position: fixed;
   bottom: 20px;
   right: 80px;
-  color: var(--white-ish);
-  padding: 10px;
-  border-radius: 30%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+  color: white;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   text-align: center;
-  cursor: pointer;
   z-index: 1000;
-  border: none;
-  background-color: var(--more-black);
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
 }
 
 .floating-contact-icon:hover {
-  background-color: var(--white-ish);
-  color: var(--more-black);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.6);
+}
+
+.mobile-btn-style {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.mobile-btn-style:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.mobile-btn-style .material-icons {
+  font-size: 24px;
 }
 
 .contact-form-overlay {
@@ -133,127 +170,13 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1001;
-}
-
-.contact-form {
-  position: relative;
-  background-color: var(--more-black);
-  padding: 20px;
-  width: 90%;
-  max-width: 400px;
-  max-height: 80vh; /* Ensure the form does not exceed 80% of the viewport height */
-  overflow-y: auto; /* Allow scrolling if content exceeds max height */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  background-color: var(--more-black);
-  color: var(--white-ish);
-  border-radius: 50%; 
-  padding: 5px;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.close-button:hover {
-  background-color: var(--white-ish);
-  color: var(--more-black);
-}
-
-form div {
-  margin-bottom: 10px;
-}
-
-form label {
-  display: block;
-  margin-bottom: 5px;
-  text-align: left;
-  font-size: 20px;
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  background-color: var(--more-gray);
-  border: 1px solid var(--white-ish);
-  border-radius: 4px; 
-  transition: border-color 0.3s ease;
-  color: var(--white-ish); 
-}
-
-form input:focus,
-form textarea:focus {
-  border-width: 4px;
-  border-color: var(--white-ish);
-  outline: none;
-}
-
-form textarea {
-  resize: vertical;
-}
-
-form button[type='submit'] {
-  background-color: var(--more-black);
-  color: var(--white-ish);
-  border-radius: 8px;
-  padding: 10px;
-  width: 100px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 0 auto;
-  font-size: 20px;
-}
-
-form button[type='submit']:hover {
-  background-color: var(--white-ish); 
-  color: var(--more-black); 
-}
-
-.loader {
-  margin-top: 10px;
-  text-align: center;
-  color: var(--white-ish);
-}
-
-.error-message p {
-  margin-top: 10px;
-  text-align: center;
-  color: red;
-}
-
-.success-message {
-  text-align: center;
-  color: var(--white-ish);
-  font-size: 50px;
-}
-
-.success-icon {
-  font-size: 100px;
-  color: green;
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -263,5 +186,235 @@ form button[type='submit']:hover {
   to {
     opacity: 1;
   }
+}
+
+.contact-form {
+  position: relative;
+  background: #1e293b;
+  padding: 40px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 30px 0;
+  background: linear-gradient(to right, #ffffff 30%, #94a3b8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+  border-radius: 50%;
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close-button:hover {
+  background-color: #ef4444;
+  color: white;
+  transform: rotate(90deg);
+  border-color: #ef4444;
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  background-color: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  color: #f8fafc;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+  border-width: 2px;
+  border-color: #6366f1;
+  outline: none;
+  background-color: #1e293b;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #64748b;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+form button[type='submit'] {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 14px 32px;
+  width: auto;
+  min-width: 140px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  margin: 20px auto 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+form button[type='submit']:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.5);
+  filter: brightness(1.1);
+}
+
+form button[type='submit']:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+form button[type='submit']:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loader {
+  margin-top: 16px;
+  text-align: center;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.error-message {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+}
+
+.error-message p {
+  margin: 4px 0;
+  text-align: center;
+  color: #fca5a5;
+  font-size: 0.9rem;
+}
+
+.success-message {
+  text-align: center;
+  color: #f8fafc;
+  font-size: 1.5rem;
+  font-weight: 700;
+  animation: fadeIn 0.5s ease-in-out;
+  background: #1e293b;
+  padding: 60px 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.success-icon {
+  font-size: 80px;
+  color: #10b981;
+  animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: block;
+  margin-bottom: 20px;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Custom scrollbar for form */
+.contact-form::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contact-form::-webkit-scrollbar-track {
+  background: #0f172a;
+  border-radius: 10px;
+}
+
+.contact-form::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 10px;
+}
+
+.contact-form::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
 }
 </style>

@@ -12,10 +12,11 @@
 - **Image Optimization & Fallbacks**: Lazy-loaded thumbnails with Netlify CDN support and generated fallbacks for missing images
 - **Dynamic Project Showcase**: Display and filter projects by category with modern pill-style filters
 - **Enhanced Project Cards**: Interactive cards with hover overlays, icon-based navigation, and smooth transitions
-- **Responsive Project Details**: Hero sections, mobile navigation, optimized content layouts, and scroll-to-top behavior
+- **Responsive Project Details**: Hero sections, mobile navigation with top fixed header, optimized content layouts, and scroll-to-top behavior
 - **Modern UI/UX**: Micro-interactions, loading states, structured impact lists, and consistent design language
 - **Smart Link Handling**: Dynamic GitLab/GitHub icon detection and consistent navigation across all project components
 - **Enhanced Tooltips**: Custom-styled technology labels with smooth animations and prettified names
+- **Mobile-First Design**: Optimized mobile navigation, PDF viewer integration, and responsive component interactions
 
 ## Tech Stack / Built With 🛠️
 

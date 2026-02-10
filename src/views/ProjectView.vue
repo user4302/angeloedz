@@ -3,7 +3,7 @@
     <!-- Navigation / Top Actions -->
     <div class="top-actions">
       <router-link to="/" class="back-link">
-        <Icon icon="lucide:arrow-left" /> Back to projects
+        <Icon icon="lucide:arrow-left" /> Back
       </router-link>
       <div class="project-links">
         <div class="link-slot">
@@ -112,22 +112,25 @@
       </div>
     </div>
 
-    <!-- Sticky Bottom Nav for Mobile -->
-    <div class="mobile-actions">
-      <router-link to="/" class="mobile-btn">
+    <!-- Sticky Top Nav for Mobile -->
+    <div class="mobile-header">
+      <router-link to="/" class="mobile-nav-btn back-btn" title="Back to projects">
         <Icon icon="lucide:arrow-left" />
       </router-link>
-      <div class="mobile-slot">
-        <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="mobile-btn">
+      
+      <div class="mobile-nav-actions">
+        <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="mobile-nav-btn" title="Repository">
           <Icon :icon="project.gitRepoUrl.includes('gitlab.com') ? 'simple-icons:gitlab' : 'simple-icons:github'" />
         </a>
-      </div>
-      <div class="mobile-slot primary">
-        <a v-if="project.liveSiteUrl" :href="project.liveSiteUrl" target="_blank" class="mobile-btn primary">
+        <a v-if="project.liveSiteUrl" :href="project.liveSiteUrl" target="_blank" class="mobile-nav-btn" title="Live Demo">
           <Icon icon="lucide:link-2" />
         </a>
       </div>
     </div>
+
+    <!-- Floating Actions (restored for mobile) -->
+    <ContactForm />
+    <DownloadCV />
   </div>
 
   <div v-else class="loading-state">
@@ -583,51 +586,50 @@ h1 {
 }
 
 /* Mobile Nav */
-.mobile-actions {
+.mobile-header {
   display: none;
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  background: rgba(15, 23, 42, 0.9);
-  backdrop-filter: blur(12px);
-  padding: 12px;
-  border-radius: 100px;
-  z-index: 100;
-  justify-content: center;
-  gap: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-
-.mobile-slot {
-  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 20px;
+  z-index: 999;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  pointer-events: none;
 }
 
-.mobile-slot.primary {
-  flex: 1;
-  max-width: 150px;
+.mobile-nav-actions {
+  display: flex;
+  gap: 12px;
+  pointer-events: auto;
 }
 
-.mobile-btn {
-  width: 50px;
-  height: 50px;
+.mobile-nav-btn {
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   color: white;
-  background: rgba(255, 255, 255, 0.1);
-  font-size: 1.5rem;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+  pointer-events: auto;
 }
 
-.mobile-btn.primary {
-  background: #6366f1;
-  width: 100%;
-  border-radius: 100px;
+.mobile-nav-btn.back-btn {
+  pointer-events: auto;
+}
+
+.mobile-nav-btn:hover {
+  background: rgba(15, 23, 42, 0.8);
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Loading State */
@@ -681,8 +683,12 @@ h1 {
     font-size: 2.75rem;
   }
 
-  .mobile-actions {
+  .mobile-header {
     display: flex;
+  }
+
+  .back-link {
+    display: none;
   }
 
   .project-links {
@@ -696,6 +702,12 @@ h1 {
 
   .btn.large {
     justify-content: center;
+  }
+
+  /* Hide floating Contact and CV buttons on mobile */
+  :deep(.floating-contact-icon),
+  :deep(.floating-cv-icon) {
+    display: none;
   }
 }
 </style>

@@ -138,6 +138,7 @@ export default {
   width: 100%;
   height: 180px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .card-overlay {
@@ -250,6 +251,7 @@ export default {
   color: #f8fafc;
   margin: 0 0 12px 0;
   line-height: 1.3;
+  cursor: pointer;
 }
 
 .card-description {
@@ -262,6 +264,7 @@ export default {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .card-footer {
@@ -269,6 +272,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: default;
 }
 
 .card-actions {
@@ -298,6 +302,9 @@ export default {
   text-decoration: none;
   transition: all 0.2s;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
 }
 
 .card-action-btn.primary {
@@ -310,6 +317,10 @@ export default {
   transform: translateY(-2px);
   filter: brightness(1.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-action-btn:active {
+  transform: translateY(0);
 }
 </style>
 
