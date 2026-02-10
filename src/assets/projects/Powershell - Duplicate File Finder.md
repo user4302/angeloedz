@@ -33,3 +33,19 @@ I developed a comprehensive PowerShell-based duplicate file detection and manage
 
 **Links:**
 - [Gitlab](https://gitlab.com/user4302_Projects/coding/powershell/duplicate-file-finder)
+
+**Tags:**
+- PowerShell
+- File-Management
+- Duplicate-Detection
+- Hashing
+- SHA-256
+- CSV
+- Caching
+- Parallel-Processing
+- Runspaces
+- Multi-Threading
+- File-System
+- Progress-Tracking
+- Error-Handling
+- Performance

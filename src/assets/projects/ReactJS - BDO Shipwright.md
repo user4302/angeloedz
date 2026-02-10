@@ -36,3 +36,21 @@ I designed and developed this complete React-based web application from scratch,
 **Links:**
 - [Gitlab](https://gitlab.com/user4302_Projects/coding/react-js/bdo-shipwright)
 - [Netlify](https://user4302-bdo-shipwright.netlify.app/)
+
+**Tags:**
+- React
+- TypeScript
+- Vite
+- CSS-Modules
+- Local-Storage
+- JSON
+- Import-Export
+- Responsive-Design
+- Component-Architecture
+- State-Management
+- React-Hooks
+- Gaming
+- Black-Desert-Online
+- Ship-Building
+- Progress-Tracking
+- Web-Application

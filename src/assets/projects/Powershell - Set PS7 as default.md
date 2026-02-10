@@ -31,3 +31,18 @@ I created a comprehensive PowerShell automation script that handles multiple con
 
 **Links:**
 - [Gitlab](https://gitlab.com/user4302_Projects/coding/powershell/set-ps7-as-default)
+
+**Tags:**
+- PowerShell
+- PowerShell-7
+- Windows
+- Configuration
+- Registry
+- Environment-Variables
+- COM-Objects
+- Shortcuts
+- System-Administration
+- File-System
+- User-Profile
+- Automation
+- Shell

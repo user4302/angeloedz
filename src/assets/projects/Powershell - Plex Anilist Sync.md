@@ -34,3 +34,21 @@ I developed a comprehensive PowerShell automation system that intelligently mana
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/powershell/plex-anilist-sync)
+
+**Tags:**
+- PowerShell
+- Automation
+- Plex
+- AniList
+- API-Integration
+- REST-API
+- Python
+- Orchestration
+- File-System
+- State-Management
+- Task-Scheduler
+- XML
+- Git
+- Monitoring
+- Logging
+- Media

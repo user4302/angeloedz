@@ -36,3 +36,21 @@ I designed and built the complete Goro application from scratch, including the T
 - [GitLab](https://gitlab.com/user4302_Projects/coding/python/textual/goro)
 - [GitHub](https://github.com/user4302/goro)
 - [PyPi](https://pypi.org/project/goro)
+
+**Tags:**
+- Python
+- Git
+- Textual
+- TUI
+- Terminal-UI
+- Typer
+- CLI
+- Pydantic
+- Rich
+- Asyncio
+- Git-Automation
+- Repository-Management
+- Bulk-Operations
+- CSS
+- Packaging
+- Hatch

@@ -36,3 +36,21 @@ I was the primary developer for multiple VoLTE test packs, creating extensive te
 
 **Links:**
 - Private project - no public links
+
+**Tags:**
+- Python
+- VoLTE
+- Cellular
+- LTE
+- IMS
+- Testing
+- Test-Automation
+- XG-Module
+- SMS
+- Call-Testing
+- SRVCC
+- Handover
+- Emergency-Calls
+- Network-Validation
+- Test-Framework
+- Protocol-Testing

@@ -35,3 +35,17 @@ I designed and implemented a modular AutoHotkey v2 automation framework with ove
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/autohotkey/v2/tools)
+
+**Tags:**
+- AutoHotkey
+- Windows-API
+- Windows-Scripting
+- Automation
+- Productivity
+- System-Administration
+- GUI-Automation
+- Hardware-Monitoring
+- HWiNFO
+- PowerShell
+- File-Operations
+- CSV

@@ -32,3 +32,19 @@ I developed a complete Express.js REST API with HubSpot CRM integration, impleme
 
 **Links:**
 - [Frontend](obsidian://open?vault=me&file=Projects%2FSE%2FVueJS%20-%20Contact%20Management%20Frontend)
+
+**Tags:**
+- NodeJS
+- Express.js
+- REST-API
+- HubSpot
+- CRM
+- API-Integration
+- CORS
+- Environment-Variables
+- dotenv
+- Error-Handling
+- Authentication
+- Security
+- JSON
+- Backend

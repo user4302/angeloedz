@@ -31,3 +31,18 @@ I developed a concise mathematical algorithm that accurately calculates the tota
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/python/roll-length-calculator)
+
+**Tags:**
+- Python
+- Math
+- Geometry
+- Calculator
+- Spiral
+- Circle
+- Algorithm
+- CLI
+- Mathematical-Functions
+- Manufacturing
+- Material-Processing
+- Iterative-Calculations
+- User-Input

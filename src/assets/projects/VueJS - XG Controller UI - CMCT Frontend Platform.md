@@ -38,3 +38,24 @@ I was a key frontend developer for the XG Controller UI, responsible for impleme
 
 **Links:**
 - Private project - no public links
+
+**Tags:**
+- Vue
+- Vue.js
+- Nuxt.js
+- JavaScript
+- ES6
+- Bootstrap-Vue
+- Vuex
+- State-Management
+- Component-Architecture
+- Environment-Configuration
+- Authentication
+- @nuxtjs/auth
+- CSS
+- SASS
+- Multi-Tenant
+- Branding
+- Test-Automation
+- CMCT
+- Dashboard

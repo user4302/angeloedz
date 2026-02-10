@@ -36,3 +36,19 @@ I built this complete e-commerce platform from scratch, implementing the full sh
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/next-js/panapacks)
 - [Netlify](https://panapacks.netlify.app/)
+
+**Tags:**
+- NextJS
+- React
+- Tailwind-CSS
+- Zustand
+- State-Management
+- E-commerce
+- Static-Site-Generation
+- Netlify
+- Lucide-React
+- JSON
+- ES6
+- Mobile-First
+- Glassmorphism
+- Shopping-Cart

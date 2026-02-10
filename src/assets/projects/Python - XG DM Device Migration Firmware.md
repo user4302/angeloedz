@@ -37,3 +37,21 @@ I was the primary developer for the XG DM Device Migration firmware, responsible
 
 **Links:**
 - Private project - no public links
+
+**Tags:**
+- Python
+- UART
+- Serial-Communication
+- WebSocket
+- HTTP
+- Server
+- Client
+- Multiprocessing
+- Raspberry-Pi
+- NB-IoT
+ IoT
+- Device-Management
+- YAML
+- Configuration
+- Firmware
+- Real-Time

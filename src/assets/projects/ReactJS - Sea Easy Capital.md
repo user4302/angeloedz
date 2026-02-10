@@ -36,3 +36,25 @@ I contributed extensively to bug fixes and feature improvements across the platf
 - Private project - GitLab repository
 - No public demo links available
 - Internal deployment for Lilardia Capital clients
+
+**Tags:**
+- React
+- TypeScript
+- Redux
+- Redux-Saga
+- Reactstrap
+- Bootstrap
+- ApexCharts
+- Data-Visualization
+- Sass
+- i18n
+- Internationalization
+- Jest
+- Testing
+- Supply-Chain
+- Finance
+- Fintech
+- Wise
+- Xero
+- Integration
+- Bug-Fixes

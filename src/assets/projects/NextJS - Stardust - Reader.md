@@ -38,3 +38,19 @@ I designed and built the complete novel reader application from scratch, impleme
 - [GitLab](https://gitlab.com/user4302_Projects/coding/next-js/stardust-reader)
 - [Netlify](https://user4302-stardust.netlify.app/)
 - [Translation](https://gitlab.com/user4302_Projects/coding/python/stardust-books)
+
+**Tags:**
+- NextJS
+- React
+- TypeScript
+- Tailwind-CSS
+- Zustand
+- React-PageFlip
+- React-Markdown
+- Jest
+- React-Testing-Library
+- Responsive-Design
+- Mobile-Optimization
+- Content-Management
+- Bilingual
+- Animations

@@ -40,3 +40,25 @@ I was a key frontend developer responsible for implementing the core interactive
 - Private project – no public links
 - Internal repository with restricted access
 - No live demo URL available due to project confidentiality
+
+**Tags:**
+- Vue
+- Vue.js
+- Vue-2
+- Nuxt.js
+- Vuetify
+- Bootstrap
+- Bootstrap-Vue
+- SVG
+- SVG-Manipulation
+- Axios
+- API-Integration
+- Vuex
+- State-Management
+- Socket.io
+- Real-Time
+- ESLint
+- Responsive-Design
+- Parking
+- IoT
+- Smart-City

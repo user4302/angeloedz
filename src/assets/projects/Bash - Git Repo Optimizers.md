@@ -33,3 +33,17 @@ I developed a collection of specialized Git optimization scripts that handle dif
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/shell/git-repo-optimizer)
+
+**Tags:**
+- Bash
+- Shell-Scripting
+- Git
+- Version-Control
+- Repository-Optimization
+- tmux
+- Linux
+- System-Administration
+- Automation
+- File-System
+- Maintenance
+- Performance

@@ -35,3 +35,19 @@ I designed and implemented a comprehensive PowerShell automation solution that h
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/powershell/apk-signer-and-packager)
 - [Uber APK Signer GitHub](https://github.com/patrickfav/uber-apk-signer) (referenced dependency)
+
+**Tags:**
+- PowerShell
+- Automation
+- APK
+- Android
+- Signing
+- Java
+- Uber-APK-Signer
+- Keystore
+- File-Operations
+- Backup
+- ZIP
+- CLI
+- Error-Handling
+- Packaging

@@ -31,3 +31,19 @@ I designed and implemented a PowerShell automation script that intelligently man
 
 **Links:**
 - [Gitlab](https://gitlab.com/user4302_Projects/coding/powershell/plex-trakt-sync)
+
+**Tags:**
+- PowerShell
+- Automation
+- Plex
+- Trakt
+- API-Integration
+- Media-Server
+- State-Management
+- File-System
+- HTTP-Requests
+- Web-Requests
+- API-Calls
+- CLI
+- Synchronization
+- Media

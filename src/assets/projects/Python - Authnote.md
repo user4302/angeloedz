@@ -35,3 +35,21 @@ I developed a complete full-stack web application implementing user authenticati
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/python/flask/authnote)
 - [YouTube](https://www.youtube.com/watch?v=dam0GPOAvVI)
+
+**Tags:**
+- Python
+- Flask
+- Authentication
+- SQLAlchemy
+- SQLite
+- Flask-Login
+- Werkzeug
+- Bootstrap
+- JavaScript
+- AJAX
+- Jinja2
+- REST-API
+- Web-Development
+- Full-Stack
+- CRUD
+- Session-Management

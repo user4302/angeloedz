@@ -33,3 +33,21 @@ I designed and implemented a complete video transfer automation system that hand
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/python/youtube-transfer)
+
+**Tags:**
+- Python
+- YouTube
+- yt-dlp
+- Google-API
+- YouTube-Data-API
+- OAuth
+- Authentication
+- Cookie-Authentication
+- Video-Download
+- Video-Upload
+- Brand-Account
+- CLI
+- argparse
+- Environment-Variables
+- Automation
+- Video-Transfer

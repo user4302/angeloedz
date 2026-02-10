@@ -35,3 +35,20 @@ I designed and implemented a comprehensive PowerShell-based Git repository manag
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/powershell/git-repo-manager)
+
+**Tags:**
+- PowerShell
+- Git
+- Repository-Management
+- CLI
+- Automation
+- JSON
+- Configuration
+- File-System
+- Environment-Variables
+- Modular-Architecture
+- Logging
+- Error-Handling
+- Syncthing
+- WiFi-Profiles
+- Windows

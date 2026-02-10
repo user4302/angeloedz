@@ -31,3 +31,20 @@ I implemented the complete CannyEdgeDetector class with all five core algorithmi
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/python/university/iit/canny-edge-detector)
 - [Thesis](sasa)
+
+**Tags:**
+- Python
+- NumPy
+- SciPy
+- Matplotlib
+- Computer-Vision
+- Image-Processing
+- Canny-Edge-Detection
+- Gaussian-Filter
+- Sobel
+- Algorithm
+- Jupyter-Notebook
+- Scientific-Computing
+- Object-Oriented
+- Edge-Detection
+- Convolution

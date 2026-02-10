@@ -36,3 +36,19 @@ I developed a full-stack startup directory platform with Next.js 15, implementin
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/next-js/yc-directory)
 - [Netlify](https://user4302-yc-directory.netlify.app/)
+
+**Tags:**
+- NextJS
+- React
+- Sanity-CMS
+- NextAuth
+- GitHub-OAuth
+- TypeScript
+- Tailwind-CSS
+- Server-Components
+- Client-Components
+- Markdown-it
+- Lucide-React
+- Authentication
+- Headless-CMS
+- Startups

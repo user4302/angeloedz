@@ -35,3 +35,23 @@ I developed the complete backend API infrastructure including RESTful endpoints 
 **Links:**
 - Private project - no public links available
 - Internal GitLab repository: git.itelasoft.com.au:iot/mobitel/smart-bin
+
+**Tags:**
+- NodeJS
+- Express.js
+- REST-API
+- SQLite
+- Sequelize
+- JWT
+- Authentication
+- Socket.io
+- Real-Time
+- Twilio
+- SMS
+- IoT
+- Waste-Management
+- Monitoring
+- Analytics
+- Security
+- Error-Handling
+- Logging

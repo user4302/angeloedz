@@ -44,3 +44,21 @@ I made 89 commits to this project, primarily focusing on form system development
 **Links:**
 - Private project - no public links available
 - Internal iTelaSoft corporate website
+
+**Tags:**
+- NextJS
+- Builder.io
+- React
+- TypeScript
+- React-Final-Form
+- Pardot
+- Salesforce
+- API-Integration
+- React-Context
+- Yup
+- Bootstrap
+- Tailwind-CSS
+- ReCAPTCHA
+- REST-API
+- Form-Validation
+- Marketing-Automation

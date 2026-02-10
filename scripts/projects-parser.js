@@ -7,116 +7,123 @@ const OUTPUT_FILE = path.join(__dirname, '../src/data/projects.json');
 const DATA_DIR = path.join(__dirname, '../src/data');
 
 /**
- * Mapping of technology names found in Markdown to Iconify icon keys.
- * Using a mix of logos and skill-icons for a diverse, high-quality look.
+ * Mapping of technology tags to Iconify slugs.
+ * Normalized keys (lowercase, no spaces) to match extracted tags.
  */
 const techMap = {
-  'python': 'logos:python',
-  'vue.js': 'logos:vue',
-  'vue': 'logos:vue',
-  'react.js': 'logos:react',
-  'react': 'logos:react',
-  'next.js': 'logos:nextjs-icon',
-  'nextjs': 'logos:nextjs-icon',
-  'node.js': 'logos:nodejs-icon',
-  'nodejs': 'logos:nodejs-icon',
-  'express.js': 'skill-icons:expressjs-dark',
-  'expressjs': 'skill-icons:expressjs-dark',
-  'tailwindcss': 'logos:tailwindcss-icon',
-  'tailwind css': 'logos:tailwindcss-icon',
-  'typescript': 'logos:typescript-icon',
-  'javascript': 'logos:javascript',
-  'powershell': 'logos:powershell',
-  'bash': 'logos:bash-icon',
-  'shell': 'logos:bash-icon',
-  'mongodb': 'logos:mongodb-icon',
-  'postgresql': 'logos:postgresql',
-  'sqlite': 'logos:sqlite',
-  'mysql': 'logos:mysql-icon',
-  'git': 'logos:git-icon',
-  'github': 'logos:github-icon',
-  'gitlab': 'logos:gitlab',
-  'material-ui': 'logos:material-ui',
-  'mui': 'logos:material-ui',
-  'vuetify': 'logos:vuetifyjs',
-  'bootstrap': 'logos:bootstrap',
-  'sass': 'logos:sass',
-  'css': 'logos:css-3',
-  'html': 'logos:html-5',
-  'docker': 'logos:docker-icon',
-  'netlify': 'logos:netlify-icon',
-  'vercel': 'logos:vercel-icon',
-  'sentry': 'logos:sentry-icon',
-  'grafana': 'logos:grafana',
-  'prometheus': 'logos:prometheus',
-  'ansible': 'logos:ansible',
-  'terraform': 'logos:terraform-icon',
-  'aws': 'logos:aws',
-  'google cloud': 'logos:google-cloud',
-  'azure': 'logos:azure-icon',
-  'firebase': 'logos:firebase',
-  'jest': 'logos:jest',
-  'vitest': 'logos:vitest',
-  'cypress': 'logos:cypress-icon',
-  'playwright': 'logos:playwright',
-  'vite': 'logos:vitejs',
-  'webpack': 'logos:webpack',
-  'babel': 'logos:babel',
-  'eslint': 'logos:eslint',
-  'prettier': 'logos:prettier',
-  'hugging face': 'logos:hugging-face-icon',
-  'openai': 'logos:openai-icon',
-  'mistral': 'logos:mistral-icon',
-  'flask': 'logos:flask',
-  'django': 'logos:django-icon',
-  'fastapi': 'logos:fastapi-icon',
-  'auth0': 'logos:auth0-icon',
-  'clerk': 'logos:clerk-icon',
-  'supabase': 'logos:supabase-icon',
-  'prisma': 'logos:prisma',
-  'drizzle': 'logos:drizzle-icon',
-  'zustand': 'skill-icons:zustand-dark',
-  'redux': 'logos:redux',
-  'tanstack query': 'logos:react-query-icon',
-  'react query': 'logos:react-query-icon',
-  'formik': 'logos:formik',
-  'yup': 'logos:yup',
-  'app router': 'logos:nextjs-icon',
-  'google analytics': 'logos:google-analytics',
-  'hotjar': 'logos:hotjar',
-  'twilio': 'logos:twilio-icon',
-  'sendgrid': 'logos:sendgrid-icon',
-  'mailchimp': 'logos:mailchimp-freddie',
-  'stripe': 'logos:stripe',
-  'paypal': 'logos:paypal',
-  'wisdom': 'logos:wise',
-  'wise': 'logos:wise',
-  'xero': 'logos:xero',
-  'salesforce': 'logos:salesforce',
-  'hubspot': 'logos:hubspot',
-  'notion': 'logos:notion-icon',
-  'slack': 'logos:slack-icon',
-  'discord': 'logos:discord-icon',
-  'figma': 'logos:figma',
-  'adobe xd': 'logos:adobe-xd',
-  'photoshop': 'logos:adobe-photoshop',
-  'illustrator': 'logos:adobe-illustrator',
-  'unity': 'logos:unity',
-  'unreal engine': 'logos:unrealengine-icon',
-  'arduino': 'logos:arduino',
-  'raspberry pi': 'logos:raspberry-pi',
-  'autohotkey': 'logos:autohotkey',
-  'winreg': 'logos:windows',
-  'c#': 'logos:c-sharp',
-  'c++': 'logos:c-plusplus',
-  'c': 'logos:c',
-  'java': 'logos:java',
-  'go': 'logos:go',
-  'rust': 'logos:rust',
-  'php': 'logos:php',
-  'laravel': 'logos:laravel',
-  'symfony': 'logos:symfony',
-  'wordpress': 'logos:wordpress-icon',
+  // Languages
+  'python': 'simple-icons:python',
+  'javascript': 'simple-icons:javascript',
+  'typescript': 'simple-icons:typescript',
+  'bash': 'simple-icons:gnubash',
+  'bash-scripting': 'simple-icons:gnubash',
+  'shell-scripting': 'simple-icons:gnubash',
+  'shell': 'simple-icons:gnubash',
+  'csharp': 'simple-icons:csharp',
+  'cplusplus': 'simple-icons:cplusplus',
+  'java': 'simple-icons:java',
+  'go': 'simple-icons:go',
+  'rust': 'simple-icons:rust',
+  'php': 'simple-icons:php',
+  'powershell': 'simple-icons:powershell',
+
+  // Frameworks/Libraries
+  'vue': 'simple-icons:vuedotjs',
+  'vuejs': 'simple-icons:vuedotjs',
+  'vue-js': 'simple-icons:vuedotjs',
+  'vuedotjs': 'simple-icons:vuedotjs',
+  'react': 'simple-icons:react',
+  'reactjs': 'simple-icons:react',
+  'react-js': 'simple-icons:react',
+  'nextjs': 'simple-icons:nextdotjs',
+  'next-js': 'simple-icons:nextdotjs',
+  'nextdotjs': 'simple-icons:nextdotjs',
+  'angular': 'simple-icons:angular',
+  'angularjs': 'simple-icons:angular',
+  'angular-js': 'simple-icons:angular',
+  'nodejs': 'simple-icons:nodedotjs',
+  'node-js': 'simple-icons:nodedotjs',
+  'nodedotjs': 'simple-icons:nodedotjs',
+  'express': 'simple-icons:express',
+  'expressjs': 'simple-icons:express',
+  'tailwindcss': 'simple-icons:tailwindcss',
+  'tailwind-css': 'simple-icons:tailwindcss',
+  'bootstrap': 'simple-icons:bootstrap',
+  'sass': 'simple-icons:sass',
+  'scss': 'simple-icons:sass',
+  'material-ui': 'simple-icons:mui',
+  'mui': 'simple-icons:mui',
+  'vuetify': 'simple-icons:vuetify',
+  'flask': 'simple-icons:flask',
+  'django': 'simple-icons:django',
+  'fastapi': 'simple-icons:fastapi',
+  'laravel': 'simple-icons:laravel',
+  'symfony': 'simple-icons:symfony',
+  'zustand': 'simple-icons:zustand',
+  'redux': 'simple-icons:redux',
+  'formik': 'simple-icons:formik',
+  'yup': 'simple-icons:yup',
+  'prisma': 'simple-icons:prisma',
+  'drizzle': 'simple-icons:drizzle',
+  'supabase': 'simple-icons:supabase',
+  'sanity-cms': 'simple-icons:sanity',
+  'sanity': 'simple-icons:sanity',
+  'nextauth': 'simple-icons:nextauth',
+  'nextauth-js': 'simple-icons:nextauth',
+  'lucide-react': 'simple-icons:lucide',
+  'lucide': 'simple-icons:lucide',
+
+  // Database
+  'mongodb': 'simple-icons:mongodb',
+  'postgresql': 'simple-icons:postgresql',
+  'mysql': 'simple-icons:mysql',
+  'sqlite': 'simple-icons:sqlite',
+  'firebase': 'simple-icons:firebase',
+
+  // Tools/Platforms
+  'git': 'simple-icons:git',
+  'github': 'simple-icons:github',
+  'gitlab': 'simple-icons:gitlab',
+  'docker': 'simple-icons:docker',
+  'netlify': 'simple-icons:netlify',
+  'vercel': 'simple-icons:vercel',
+  'auth0': 'simple-icons:auth0',
+  'clerk': 'simple-icons:clerk',
+  'stripe': 'simple-icons:stripe',
+  'paypal': 'simple-icons:paypal',
+  'figma': 'simple-icons:figma',
+  'notion': 'simple-icons:notion',
+  'slack': 'simple-icons:slack',
+  'discord': 'simple-icons:discord',
+  'adobe-photoshop': 'simple-icons:adobephotoshop',
+  'photoshop': 'simple-icons:adobephotoshop',
+  'adobe-illustrator': 'simple-icons:adobeillustrator',
+  'illustrator': 'simple-icons:adobeillustrator',
+  'adobe-premiere-pro': 'simple-icons:adobepremierepro',
+  'premiere-pro': 'simple-icons:adobepremierepro',
+  'adobe-after-effects': 'simple-icons:adobeaftereffects',
+  'after-effects': 'simple-icons:adobeaftereffects',
+  'blender': 'simple-icons:blender',
+  'unity': 'simple-icons:unity',
+  'unreal-engine': 'simple-icons:unrealengine',
+  'arduino': 'simple-icons:arduino',
+  'raspberry-pi': 'simple-icons:raspberrypi',
+  'linux': 'simple-icons:linux',
+  'windows': 'simple-icons:windows',
+  'tmux': 'simple-icons:tmux',
+  'grafana': 'simple-icons:grafana',
+  'prometheus': 'simple-icons:prometheus',
+  'yaml': 'simple-icons:yaml',
+  'json': 'simple-icons:json',
+  'minecraft': 'simple-icons:minecraft',
+
+  // Testing
+  'jest': 'simple-icons:jest',
+  'vitest': 'simple-icons:vitest',
+  'cypress': 'simple-icons:cypress',
+  'playwright': 'simple-icons:playwright',
+  'jasmine': 'simple-icons:jasmine',
+  'karma': 'simple-icons:karma'
 };
 
 /**
@@ -190,27 +197,32 @@ function parseProjects() {
     // Technology Extraction
     const icons = [];
 
-    // 1. Direct Iconify Tags from Frontmatter
-    // This allows the user to "refer the official site" and just paste tags like "logos:react"
-    if (data.tags && Array.isArray(data.tags)) {
-      data.tags.forEach(tag => {
-        const trimmedTag = tag.trim();
-        // If it contains a colon, we assume it's a direct Iconify ID (e.g. logos:vue)
-        if (trimmedTag.includes(':')) {
-          if (!icons.includes(trimmedTag)) {
-            icons.push(trimmedTag);
-          }
-        } else {
-          // Otherwise, try to map the friendly name (e.g. "vue" -> "logos:vue")
-          const lowerTag = trimmedTag.toLowerCase();
-          if (techMap[lowerTag] && !icons.includes(techMap[lowerTag])) {
-            icons.push(techMap[lowerTag]);
+    // 1. Extract from Tags section in Markdown content
+    const tagsMatch = content.match(/\*\*Tags:\*\*([\s\S]*?)(?=\n\n|$)/i);
+    if (tagsMatch) {
+      const tagLines = tagsMatch[1].split('\n');
+      tagLines.forEach(line => {
+        const tagTextMatch = line.match(/^\s*-\s*(.*)/);
+        if (tagTextMatch) {
+          const tag = tagTextMatch[1].toLowerCase().trim().replace(/ /g, '-');
+          if (techMap[tag] && !icons.includes(techMap[tag])) {
+            icons.push(techMap[tag]);
           }
         }
       });
     }
 
-    // 2. Automated Discovery from Markdown Content
+    // 2. Fallback to Frontmatter tags
+    if (data.tags && Array.isArray(data.tags)) {
+      data.tags.forEach(t => {
+        const tag = t.toLowerCase().trim().replace(/ /g, '-');
+        if (techMap[tag] && !icons.includes(techMap[tag])) {
+          icons.push(techMap[tag]);
+        }
+      });
+    }
+
+    // 3. Automated Discovery from Markdown Content (existing logic, re-numbered)
     // This bridges natural language (e.g. "React.js") to Iconify IDs
     const techSearchAreaMatch = content.match(/\*\*(Short Description|Key Technologies\/Skills):\*\*([\s\S]*?)(?=\n\n|\*\*Impact\/Results:\*\*)/gi);
 

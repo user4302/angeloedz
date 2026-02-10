@@ -37,3 +37,25 @@ I made significant contributions to the Hyfen8 portal backend as a key developer
 - Private project - no public links available
 - Internal Git repository with comprehensive commit history
 - Docker deployment configurations available in project files
+
+**Tags:**
+- NodeJS
+- Express.js
+- REST-API
+- MongoDB
+- Mongoose
+- JWT
+- Authentication
+- Authorization
+- PDF-Generation
+- PDFKit
+- Email
+- Nodemailer
+- Sentry
+- Error-Monitoring
+- Business-Logic
+- Docker
+- Jest
+- Testing
+- Assessment
+- Scoring-Algorithms

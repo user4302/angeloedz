@@ -16,9 +16,13 @@
           v-for="icon in project.icons" 
           :key="icon" 
           class="tech-icon-wrapper"
-          :title="icon.split(':').pop()"
+          :title="icon"
         >
-          <Icon :icon="icon" class="tech-icon" />
+        <Icon 
+          :icon="icon" 
+          class="tech-icon"
+          :title="icon"
+        />
         </div>
       </div>
 
@@ -37,7 +41,8 @@
 </template>
 
 <script setup>
-import { computed, defineProps } from 'vue';
+/* global defineProps */
+import { computed } from 'vue';
 import { useStore } from 'vuex';
 import { marked } from 'marked';
 import { Icon } from '@iconify/vue';
@@ -149,12 +154,13 @@ h1 {
   width: 24px;
   height: 24px;
   display: flex;
-  fill: #e2e8f0;
+  filter: brightness(0) invert(1); /* Monochrome white */
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
-.tech-icon :deep(svg) {
-  width: 100%;
-  height: 100%;
+.tech-icon-wrapper:hover .tech-icon {
+  opacity: 1;
 }
 
 .description {

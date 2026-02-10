@@ -38,3 +38,22 @@ I designed and implemented a complete end-to-end translation pipeline that proce
 - [Mistral Model](https://huggingface.co/MaziyarPanahi/Mistral-7B-Instruct-v0.3-GGUF)
 - [Netlify](https://user4302-stardust.netlify.app/)
 - [Reader](https://gitlab.com/user4302_Projects/coding/next-js/stardust-reader)
+
+**Tags:**
+- Python
+- AI
+- Translation
+- German
+- English
+- Literature
+- Mistral-7B
+- text-generation-webui
+- OpenAI-API
+- Markdown
+- Chunking
+- Batch-Processing
+- CLI
+- argparse
+- File-System
+- Prompt-Engineering
+- Large-Language-Model

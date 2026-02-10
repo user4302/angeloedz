@@ -35,3 +35,19 @@ I designed and built the complete full-stack application from scratch, implement
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/next-js/gitlab-activity-visualizer)
 - [Netlify](https://user4302-gitlab-activity-visualizer.netlify.app)
+
+**Tags:**
+- NextJS
+- React
+- TypeScript
+- Tailwind-CSS
+- SVG
+- GitLab-API
+- Serverless
+- Netlify
+- API-Integration
+- Real-Time
+- Caching
+- Responsive-Design
+- Full-Stack
+- Web-Development

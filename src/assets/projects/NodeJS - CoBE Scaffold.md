@@ -38,3 +38,33 @@ I designed and implemented this complete modular infrastructure template from th
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/node-js/cobe-scaffold)
 - [Origin](https://gitlab.com/user4302_Projects/coding/node-js/cobe)
+
+**Tags:**
+- NodeJS
+- TypeScript
+- Express.js
+- REST-API
+- PostgreSQL
+- Prisma
+- MongoDB
+- Mongoose
+- Redis
+- Caching
+- MinIO
+- S3
+- Docker
+- Docker-Compose
+- CI/CD
+- GitLab
+- Passport.js
+- GitHub-OAuth
+- Jest
+- Testing
+- Security
+- Helmet
+- CORS
+- Rate-Limiting
+- Backend
+- API
+- Template
+- Scaffold

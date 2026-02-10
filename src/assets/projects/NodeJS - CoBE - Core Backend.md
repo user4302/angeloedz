@@ -39,3 +39,31 @@ I designed and implemented a complete modular backend architecture from scratch,
 - [GitLab](https://gitlab.com/user4302_Projects/coding/node-js/cobe)
 - [Prod](https://user4302.isupon.us/cobe/api/v1/health)
 - [Dev](https://user4302.isupon.us/cobe/api/dev/v1/health)
+
+**Tags:**
+- NodeJS
+- TypeScript
+- Express.js
+- REST-API
+- PostgreSQL
+- Prisma
+- MongoDB
+- Mongoose
+- Redis
+- Caching
+- MinIO
+- S3
+- Docker
+- Docker-Compose
+- CI/CD
+- GitLab
+- Passport.js
+- GitHub-OAuth
+- Jest
+- Testing
+- Security
+- Helmet
+- CORS
+- Rate-Limiting
+- Backend
+- API

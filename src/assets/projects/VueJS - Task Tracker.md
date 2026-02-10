@@ -34,3 +34,22 @@ I developed a complete task tracking application from scratch using Vue 3 and Vi
 **Links:**
 - [Gitlab](https://gitlab.com/user4302_Projects/coding/vue-js/task-tracker)
 - [Netlify](https://app.netlify.com/projects/user4302-task-tracker)
+
+**Tags:**
+- Vue
+- Vue.js
+- Vue-3
+- Composition-API
+- Options-API
+- Vue-Router
+- Vite
+- Component-Architecture
+- Event-Handling
+- State-Management
+- CSS
+- Scoped-Styles
+- ESLint
+- JSON-Server
+- Task-Management
+- CRUD
+- Productivity

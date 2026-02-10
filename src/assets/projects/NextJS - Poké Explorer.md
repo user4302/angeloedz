@@ -37,3 +37,19 @@ I built the entire Pokémon Explorer application from scratch, implementing a fu
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/next-js/poke-explorer)
 - [Netlify](https://user4302-poke-explorer.netlify.app/)
+
+**Tags:**
+- NextJS
+- React
+- TypeScript
+- TanStack-Query
+- Tailwind-CSS
+- React-Hooks
+- PokeAPI
+- REST-API
+- Server-Side-Rendering
+- Infinite-Scroll
+- Intersection-Observer
+- Accessibility
+- ARIA
+- Responsive-Design

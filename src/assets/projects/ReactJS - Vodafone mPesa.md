@@ -37,3 +37,28 @@ I made **223 commits** to this project, contributing primarily to the frontend R
 
 **Links:**
 - **Private project** - No public links available
+
+**Tags:**
+- React
+- Redux
+- Bootstrap
+- React-Bootstrap
+- React-Hook-Form
+- Yup
+- Validation
+- Jest
+- Testing
+- React-Testing-Library
+- REST-API
+- Axios
+- QR-Code
+- Zebra-Printer
+- ZPL
+- TypeScript
+- Mobile-Money
+- M-Pesa
+- Vodafone
+- Africa
+- Kenya
+- Tanzania
+- Role-Based-Access-Control

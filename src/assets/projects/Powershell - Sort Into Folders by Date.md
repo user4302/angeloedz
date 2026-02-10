@@ -31,3 +31,17 @@ I developed this PowerShell automation script to solve the problem of file disor
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/powershell/sort-into-folders-by-date)
+
+**Tags:**
+- PowerShell
+- File-Organization
+- Automation
+- File-System
+- Date-Time
+- Directory-Creation
+- File-Moving
+- Recursive
+- Error-Handling
+- Validation
+- Performance-Tracking
+- CLI

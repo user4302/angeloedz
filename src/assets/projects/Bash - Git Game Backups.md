@@ -33,3 +33,19 @@ I developed and implemented automated backup scripts for two popular game server
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/shell/game-backups)
+
+**Tags:**
+- Bash
+- Shell-Scripting
+- Git
+- Version-Control
+- tmux
+- Linux
+- System-Administration
+- Game-Servers
+- Minecraft
+- Valheim
+- Automation
+- Cron
+- Logging
+- File-Operations

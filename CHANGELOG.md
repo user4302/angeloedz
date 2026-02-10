@@ -32,6 +32,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Low contrast issues in markdown content display
 - Icon rendering inconsistencies across different browsers
 
+### Changed
+- Enhanced icon tooltips to display full Iconify identifiers for better clarity
+- Improved tech stack icon styling with monochrome white appearance and hover effects
+- Optimized component imports by leveraging Vue's auto-import functionality
+
 ### Features
 - **Markdown-Powered Content**: Effortlessly manage projects using Markdown files with build-time JSON indexing
 - **Image Optimization & Fallbacks**: High-performance image loading with lazy loading and automatic graceful fallbacks

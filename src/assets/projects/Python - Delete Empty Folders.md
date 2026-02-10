@@ -30,3 +30,16 @@ I developed this utility from scratch as a personal productivity tool, creating 
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/python/delete-empty-folders)
+
+**Tags:**
+- Python
+- File-System
+- Directory-Cleanup
+- CLI
+- OS-Module
+- Recursive
+- PyInstaller
+- Executable
+- Automation
+- Utilities
+- File-Operations

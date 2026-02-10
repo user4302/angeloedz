@@ -37,3 +37,22 @@ I was the primary developer for this XG DM firmware system, responsible for impl
 
 **Links:**
 - Private project - no public links
+
+**Tags:**
+- Python
+- UART
+- Serial-Communication
+- WebSocket
+- HTTP
+- Client
+- Server
+- Multi-Threading
+- Raspberry-Pi
+- NB-IoT
+- IoT
+- Device-Communication
+- YAML
+- Configuration
+- Firmware
+- Real-Time
+- Queue-Management

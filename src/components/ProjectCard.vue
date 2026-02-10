@@ -10,13 +10,13 @@
     
     <div class="card-content">
       <div class="icons-row">
-        <Icon
-          class="card-icon"
-          v-for="icon in data.icons"
-          :key="icon"
-          :icon="icon"
-        />
-      </div>
+      <Icon
+        class="card-icon"
+        v-for="icon in data.icons"
+        :key="icon"
+        :icon="icon"
+      />
+    </div>
 
       <h3>{{ data.title }}</h3>
       <p>{{ data.description }}</p>
@@ -116,11 +116,15 @@ export default {
   width: 20px;
   height: 20px;
   fill: #94a3b8;
-  transition: fill 0.2s;
+  transition: all 0.3s ease;
+  filter: brightness(0) invert(1) grayscale(1); /* Pure white icon */
+  opacity: 0.7;
 }
 
 .project-card:hover .card-icon {
-  fill: #f8fafc;
+  opacity: 1;
+  filter: brightness(0) invert(1) grayscale(1); /* Keep monochrome on hover */
+  transform: translateY(-2px);
 }
 
 .project-card:hover {

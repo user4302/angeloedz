@@ -36,3 +36,19 @@ I developed a comprehensive PowerShell script that automates the detection and c
 - [GitLab](https://gitlab.com/user4302_Projects/coding/powershell/fix-gamebar)
 - [Download](https://gitlab.com/user4302_Projects/coding/powershell/fix-gamebar/-/raw/main/Script/Fix-Gamebar.ps1)
 - [Installer](https://gitlab.com/user4302_Projects/coding/powershell/fix-gamebar/-/raw/main/install.ps1)
+
+**Tags:**
+- PowerShell
+- Windows
+- Xbox-Game-Bar
+- BcastDVR
+- Process-Management
+- Automation
+- CLI
+- UI
+- Gaming
+- Troubleshooting
+- svchost
+- Background-Jobs
+- Error-Handling
+- Installation

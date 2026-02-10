@@ -31,3 +31,18 @@ I developed a complete PowerShell automation script that provides interactive fi
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/powershell/sort-into-folders-of-x)
+
+**Tags:**
+- PowerShell
+- File-Organization
+- Automation
+- File-System
+- Recursive
+- CLI
+- Interactive
+- File-Operations
+- Folder-Creation
+- Script-Compilation
+- Executable
+- Error-Handling
+- Validation

@@ -37,3 +37,20 @@ I developed a complete modern banking landing page from scratch using React.js w
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/react-js/gen-bank)
 - [Netlify](https://user4302-gen-bank.netlify.app/)
+
+**Tags:**
+- React
+- Vite
+- Tailwind-CSS
+- PostCSS
+- Autoprefixer
+- Responsive-Design
+- Component-Architecture
+- Banking
+- Finance
+- Landing-Page
+- Marketing
+- Gradients
+- Animations
+- UI/UX
+- Web-Development

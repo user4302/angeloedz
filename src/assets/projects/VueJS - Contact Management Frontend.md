@@ -32,3 +32,21 @@ I developed a Vue.js 3 SPA using Vite as the build tool, implementing a contact 
 
 **Links:**
 - [Backend](obsidian://open?vault=me&file=Projects%2FSE%2FNodeJS%20-%20HubSpot%20CRM%20Integration%20API)
+
+**Tags:**
+- Vue
+- Vue.js
+- Vue-3
+- Composition-API
+- Vue-Router
+- Vite
+- Axios
+- SPA
+- Single-Page-Application
+- Component-Architecture
+- Form-Validation
+- Error-Handling
+- Responsive-CSS
+- Environment-Variables
+- CRM
+- HubSpot

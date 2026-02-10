@@ -34,3 +34,18 @@ I contributed to this project by implementing critical build fixes and dependenc
 
 **Links:**
 - Private project - no public links available
+
+**Tags:**
+- NextJS
+- Builder.io
+- React
+- TypeScript
+- Tailwind-CSS
+- Lottie
+- Lottie-React
+- Docker
+- Flowbite
+- Cookie-Consent
+- Headless-CMS
+- Animations
+- Containerization

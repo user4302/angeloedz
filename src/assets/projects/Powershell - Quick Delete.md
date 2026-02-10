@@ -32,3 +32,18 @@ I designed and implemented a complete Windows folder deletion utility consisting
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/powershell/quick-delete)
+
+**Tags:**
+- PowerShell
+- Windows
+- File-Deletion
+- Context-Menu
+- Registry
+- Environment-Variables
+- File-System
+- Shell-Integration
+- Error-Handling
+- Security
+- Administrator
+- Automation
+- Utilities

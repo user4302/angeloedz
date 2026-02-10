@@ -36,3 +36,19 @@ I made significant contributions to the project including: updating environment 
 **Links:**
 - Private project - no public links available
 - Repository appears to be private/internal
+
+**Tags:**
+- React
+- Gatsby
+- Static-Site-Generation
+- Sass
+- React-Hook-Form
+- Google-Analytics
+- Hotjar
+- Mailchimp
+- Recoil
+- State-Management
+- Marketing
+- Website
+- SEO
+- Environment-Configuration

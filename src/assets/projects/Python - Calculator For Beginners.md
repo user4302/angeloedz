@@ -34,3 +34,19 @@ I completely transformed this calculator from a basic implementation into a prof
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/python/calculator-for-beginners)
+
+**Tags:**
+- Python
+- Calculator
+- Scientific
+- CLI
+- Math
+- Trigonometry
+- Geometry
+- Input-Validation
+- Error-Handling
+- Menu-Interface
+- Help-System
+- Optimization
+- Algorithm
+- Educational

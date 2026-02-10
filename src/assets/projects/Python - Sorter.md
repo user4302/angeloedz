@@ -30,3 +30,18 @@ I developed a command-line file organization tool that takes user input for sour
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/python/sorter)
+
+**Tags:**
+- Python
+- File-Organization
+- Media-Files
+- Video
+- MP4
+- MKV
+- CLI
+- GUI
+- Tkinter
+- File-System
+- Sorting
+- Automation
+- File-Operations

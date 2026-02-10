@@ -30,3 +30,19 @@ I created a pair of Windows Registry files that modify the Windows Registry to a
 
 **Links:**
 - [Gitlab](https://gitlab.com/user4302_Projects/coding/windows-registry/context-run-ps1-as-admin)
+
+**Tags:**
+- Windows-Registry
+- Registry-Editor
+- .reg-files
+- Context-Menu
+- PowerShell
+- Administrator
+- Elevated-Privileges
+- UAC
+- System-Administration
+- Automation
+- Security
+- Windows
+- File-Associations
+- Shell-Integration

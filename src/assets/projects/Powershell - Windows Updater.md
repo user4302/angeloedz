@@ -34,3 +34,18 @@ I designed and implemented a complete Windows update management tool with an int
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/powershell/windows-updater)
+
+**Tags:**
+- PowerShell
+- Windows-Update
+- PSWindowsUpdate
+- System-Administration
+- Menu-Interface
+- CLI
+- Automation
+- Privilege-Elevation
+- Error-Handling
+- Logging
+- Security
+- Windows-API
+- Updates

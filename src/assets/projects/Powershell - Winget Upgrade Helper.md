@@ -35,3 +35,24 @@ I designed and implemented a comprehensive PowerShell-based package management t
 
 **Links:**
 - [Gitlab](https://gitlab.com/user4302_Projects/coding/powershell/winget-upgrade-helper)
+
+**Tags:**
+- PowerShell
+- Winget
+- Package-Management
+- Windows-Package-Manager
+- CLI
+- Menu-Interface
+- Modular-Architecture
+- CSV
+- Import-Export
+- Logging
+- Error-Handling
+- MSI
+- EXE
+- NSIS
+- Inno-Setup
+- MSIX
+- APPX
+- ZIP
+- Automation

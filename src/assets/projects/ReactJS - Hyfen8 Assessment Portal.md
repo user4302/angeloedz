@@ -34,3 +34,24 @@ I developed a full-featured assessment portal using React with TypeScript, imple
 
 **Links:**
 - Private project – no public links
+
+**Tags:**
+- React
+- TypeScript
+- Material-UI
+- MUI
+- Google-Analytics
+- GA4
+- Hotjar
+- Analytics
+- User-Behavior
+- Session-Recording
+- Heatmap
+- React-Router
+- React-Hook-Form
+- Form-Validation
+- Custom-Hooks
+- Sentry
+- Error-Monitoring
+- Assessment
+- Dashboard

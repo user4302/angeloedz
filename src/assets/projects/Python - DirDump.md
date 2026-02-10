@@ -34,3 +34,20 @@ I developed the complete XML Directory Dumper application from scratch, implemen
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/python/dirdump)
+
+**Tags:**
+- Python
+- XML
+- File-System
+- Directory-Tree
+- Windows-API
+- ctypes
+- WMI
+- Cross-Platform
+- pathlib
+- CLI
+- argparse
+- Volume-Information
+- Backup
+- Documentation
+- System-Auditing

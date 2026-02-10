@@ -30,3 +30,15 @@ I created a minimal Express.js server with a single POST endpoint at `/post` tha
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/node-js/simple-node-server)
+
+**Tags:**
+- NodeJS
+- Express.js
+- REST-API
+- JSON
+- Middleware
+- Nodemon
+- HTTP-Server
+- API-Development
+- Testing
+- Backend

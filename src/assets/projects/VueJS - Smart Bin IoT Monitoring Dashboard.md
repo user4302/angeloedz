@@ -35,3 +35,26 @@ I built the complete frontend monitoring dashboard including the main dashboard 
 **Links:**
 - Private project - no public links available
 - Internal GitLab repository: git.itelasoft.com.au:iot/mobitel/smart-bin
+
+**Tags:**
+- Vue
+- Vue.js
+- Nuxt.js
+- Vuex
+- State-Management
+- Vuetify
+- Material-Design
+- Google-Maps
+- Maps-API
+- ApexCharts
+- Data-Visualization
+- Socket.io
+- Real-Time
+- JWT
+- Authentication
+- Responsive-Design
+- IoT
+- Smart-Bin
+- Waste-Management
+- Dashboard
+- Monitoring

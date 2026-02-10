@@ -37,3 +37,23 @@ I developed a complete Vue.js 3 portfolio website from scratch, implementing a m
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/vue-js/angeloedz)
   [Netlify](https://user4302.netlify.app/)
+
+**Tags:**
+- Vue
+- Vue.js
+- Vue-3
+- Composition-API
+- Vuex
+- State-Management
+- Vue-Router
+- Axios
+- Simple-Icons
+- Vitest
+- Testing
+- Netlify
+- Deployment
+- CSS-Animations
+- Portfolio
+- Personal-Website
+- Resume
+- Software-Engineer

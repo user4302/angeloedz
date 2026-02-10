@@ -30,3 +30,18 @@ I created and configured Windows Registry Editor (.reg) files that modify the Wi
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/windows-registry/context-open-in-vs-code)
+
+**Tags:**
+- Windows-Registry
+- Registry-Editor
+- .reg-files
+- Context-Menu
+- Shell-Integration
+- VS-Code
+- Visual-Studio-Code
+- HKEY_CLASSES_ROOT
+- System-Configuration
+- Windows-Explorer
+- Developer-Tools
+- Productivity
+- Windows

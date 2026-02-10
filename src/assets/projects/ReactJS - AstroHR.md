@@ -48,4 +48,30 @@ I was primary frontend developer responsible for building and maintaining the ca
 - GitLab repository (internal to Itelasoft/Gigaclear)
 - Internal project management system references in commit messages
 
+**Tags:**
+- React
+- Material-UI
+- MUI
+- Formik
+- Yup
+- Form-Validation
+- Auth0
+- Authentication
+- Authorization
+- Axios
+- API
+- MySQL
+- Database
+- RBAC
+- Role-Based-Access-Control
+- JavaScript-Automation
+- SQL-Generation
+- HR
+- Onboarding
+- Bootstrap
+- CSS
+- Jest
+- Testing
+- React-Router
+
 This AccessRights automation solution is particularly impressive as it demonstrates your ability to identify systemic operational challenges and create scalable technical solutions that dramatically improve efficiency while maintaining data integrity and complex business logic requirements.

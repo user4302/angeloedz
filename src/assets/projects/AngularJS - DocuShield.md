@@ -31,3 +31,18 @@ I architected and configured the full Angular 20 project from the ground up, ado
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/angular-js/docushield)
+
+**Tags:**
+- Angular
+- Angular-20
+- TypeScript
+- SCSS
+- CSS
+- Jasmine
+- Karma
+- Angular-CLI
+- Testing
+- Responsive-Design
+- Web-Development
+- Frontend
+- UI/UX

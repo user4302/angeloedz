@@ -34,3 +34,19 @@ I developed a complete automation solution that handles the entire barcode gener
 
 **Links:**
 - [GitLab](https://gitlab.com/user4302_Projects/coding/python/bulk-barcode-generator)
+
+**Tags:**
+- Python
+- Barcode
+- PDF-Generation
+- API-Integration
+- HTTP-Requests
+- FPDF
+- File-System
+- Image-Processing
+- Multi-Threading
+- Multiprocessing
+- Progress-Bar
+- URL-Encoding
+- Event-Management
+- Automation

@@ -37,3 +37,19 @@ I developed a full-stack Next.js website featuring a responsive design with Tail
 **Links:**
 - [GitLab (private)](https://gitlab.com/user4302_Projects/coding/next-js/WildFrontiersSL)
 - [Netlify](https://wildfrontierssl.netlify.app/)
+
+**Tags:**
+- NextJS
+- React
+- TypeScript
+- Tailwind-CSS
+- Heroicons
+- React-Query
+- State-Management
+- Image-Optimization
+- Responsive-Design
+- Tourism
+- Adventure
+- AutoSlider
+- Navigation
+- Web-Development

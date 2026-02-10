@@ -35,3 +35,18 @@ I designed and implemented a complete monitoring stack including Prometheus for 
 
 **Links:**
 - None / Private project – no public links
+
+**Tags:**
+- Grafana
+- Prometheus
+- Blackbox-Exporter
+- Windows-Exporter
+- Monitoring
+- Alerting
+- Metrics
+- Visualization
+- YAML
+- JSON
+- System-Monitoring
+- Infrastructure
+- DevOps
