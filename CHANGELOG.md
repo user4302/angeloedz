@@ -28,6 +28,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enhance mobile navigation and responsive design consistency
 - Add scroll-to-top behavior for better navigation UX
 - Enhance link handling and UI consistency across project components
+- Technology icon tooltips with custom labels and smooth hover animations
+- Redesign of mobile navigation from bottom floating bar to top fixed header
+- Enhanced component interactions with cursor states and hover effects
+- Major UI overhaul for ContactForm and DownloadCV components
+- Custom circular resize handle with expand icon for contact form textarea
+- Full drag-to-resize functionality with mouse and touch support
+- Fixed PDF viewer header buttons to be properly sized circles
+- Improved mobile PDF viewer layout with full viewport and proper positioning
 - Add dynamic GitLab/GitHub icon detection based on repository URLs
 - Implement consistent link-2 icon for live demos across all components
 - Enhance projects parser to extract repository and live site URLs from markdown
