@@ -59,8 +59,8 @@
 
       <!-- Impact / Results -->
       <section v-if="sections['Impact/Results']" class="content-card impact-card">
-        <h2 class="section-title"><Icon icon="lucide:Zap" /> Impact & Results</h2>
-        <div class="card-body" v-html="renderMd(sections['Impact/Results'])"></div>
+        <h2 class="section-title"><Icon icon="lucide:target" /> Impact & Results</h2>
+        <div class="card-body impact-list" v-html="renderMd(sections['Impact/Results'])"></div>
       </section>
 
       <!-- Technologies Grid -->
@@ -90,8 +90,21 @@
       </section>
     </main>
 
+    <!-- Project Links footer for individual pages -->
+    <div class="project-links-footer">
+       <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="btn btn-github large">
+          <Icon icon="simple-icons:github" /> View Repository
+        </a>
+        <a v-if="project.liveSiteUrl" :href="project.liveSiteUrl" target="_blank" class="btn btn-live large">
+          <Icon icon="lucide:external-link" /> View Live Demo
+        </a>
+    </div>
+
     <!-- Sticky Bottom Nav for Mobile -->
     <div class="mobile-actions">
+      <router-link to="/" class="mobile-btn">
+        <Icon icon="lucide:arrow-left" />
+      </router-link>
       <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="mobile-btn">
         <Icon icon="simple-icons:github" />
       </a>
@@ -188,7 +201,7 @@ const leanRemainingContent = computed(() => {
 .project-view {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 20px 100px;
+  padding: 80px 20px 100px;
   color: #f8fafc;
 }
 
@@ -197,21 +210,28 @@ const leanRemainingContent = computed(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .back-link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #94a3b8;
+  gap: 10px;
+  color: #f8fafc;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
 }
 
 .back-link:hover {
-  color: #6366f1;
+  background: #6366f1;
+  border-color: #6366f1;
+  transform: translateX(-5px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .project-links {
@@ -223,16 +243,23 @@ const leanRemainingContent = computed(() => {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: 99px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s;
+  font-size: 0.95rem;
+}
+
+.btn.large {
+  padding: 14px 28px;
+  font-size: 1.05rem;
 }
 
 .btn-github {
-  background: #334155;
+  background: #1e293b;
   color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-live {
@@ -250,9 +277,9 @@ const leanRemainingContent = computed(() => {
 .project-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 60px;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .type-badge {
@@ -264,25 +291,26 @@ const leanRemainingContent = computed(() => {
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 20px;
-  background: linear-gradient(to right, #f8fafc, #94a3b8);
+  margin-bottom: 24px;
+  background: linear-gradient(to right, #ffffff 30%, #94a3b8);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-desc {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #94a3b8;
-  line-height: 1.6;
-  margin-bottom: 30px;
+  line-height: 1.7;
+  margin-bottom: 40px;
 }
 
 .tech-row {
@@ -291,54 +319,63 @@ h1 {
 }
 
 .hero-tech-icon {
-  width: 32px;
-  height: 32px;
-  background: #1e293b;
-  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #f8fafc;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
 }
 
 .project-banner {
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  height: 350px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  height: 400px;
 }
 
 /* Content Layout */
 .project-details {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 40px;
 }
 
 .content-card {
   background: #1e293b;
   border: 1px solid rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
-  padding: 30px;
-  transition: transform 0.3s;
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
 }
 
-.content-card:hover {
-  border-color: rgba(99, 102, 241, 0.2);
+.content-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, transparent 100%);
+  pointer-events: none;
 }
 
 .section-title {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.1rem;
+  gap: 12px;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #6366f1;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+  margin-bottom: 30px;
 }
 
 .card-body {
@@ -352,7 +389,50 @@ h1 {
 }
 
 .card-body :deep(li) {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+/* Impact List Styling */
+.impact-list :deep(ul) {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.impact-list :deep(li) {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px 24px;
+  border-radius: 12px;
+  border-left: 4px solid #6366f1;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 0;
+  transition: transform 0.2s;
+}
+
+.impact-list :deep(li:hover) {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.impact-list :deep(li::before) {
+  content: '✓';
+  background: #6366f1;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.4);
 }
 
 .grid-layout {
@@ -364,26 +444,47 @@ h1 {
 .chip-cloud {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .tech-chip {
   background: #334155;
   color: #f8fafc;
-  padding: 6px 14px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s;
+}
+
+.tech-chip:hover {
+  background: #475569;
+  border-color: #6366f1;
 }
 
 .tag-chip {
   color: #94a3b8;
   background: rgba(148, 163, 184, 0.05);
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-family: monospace;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: 'Fira Code', monospace;
+  transition: all 0.2s;
+}
+
+.tag-chip:hover {
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.project-links-footer {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Mobile Nav */
@@ -393,14 +494,15 @@ h1 {
   bottom: 20px;
   left: 20px;
   right: 20px;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(15, 23, 42, 0.9);
   backdrop-filter: blur(12px);
   padding: 12px;
   border-radius: 100px;
   z-index: 100;
   justify-content: center;
-  gap: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 .mobile-btn {
@@ -412,19 +514,20 @@ h1 {
   justify-content: center;
   text-decoration: none;
   color: white;
-  background: #334155;
+  background: rgba(255, 255, 255, 0.1);
   font-size: 1.5rem;
 }
 
 .mobile-btn.primary {
   background: #6366f1;
-  width: 120px;
+  width: calc(100% - 150px);
+  max-width: 150px;
   border-radius: 100px;
 }
 
 /* Loading State */
 .loading-state {
-  height: 60vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -433,17 +536,18 @@ h1 {
 }
 
 .pulse-loader {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: #6366f1;
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   animation: pulse 1.5s infinite;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
 }
 
 @keyframes pulse {
   0% { transform: scale(0.9); opacity: 0.7; }
-  50% { transform: scale(1.1); opacity: 0.3; }
+  50% { transform: scale(1.1); opacity: 0.2; }
   100% { transform: scale(0.9); opacity: 0.7; }
 }
 
@@ -452,6 +556,7 @@ h1 {
   .project-hero {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 40px;
   }
   
   .tech-row {
@@ -468,7 +573,7 @@ h1 {
   }
 
   h1 {
-    font-size: 2.25rem;
+    font-size: 2.75rem;
   }
 
   .mobile-actions {
@@ -477,6 +582,15 @@ h1 {
 
   .project-links {
     display: none;
+  }
+
+  .project-links-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn.large {
+    justify-content: center;
   }
 }
 </style>

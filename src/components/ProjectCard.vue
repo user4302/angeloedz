@@ -26,27 +26,28 @@
       <p class="card-description">{{ data.description }}</p>
       
       <div class="card-footer">
-        <div class="link-pill-group">
+        <div class="card-actions">
           <a
             v-if="data.gitRepoUrl"
             :href="data.gitRepoUrl"
             target="_blank"
             @click.stop
-            class="pill-link"
+            class="card-action-btn"
             title="Repository"
           >
             <Icon icon="simple-icons:github" />
+            <span>Repo</span>
           </a>
           <a
             v-if="data.liveSiteUrl"
             :href="data.liveSiteUrl"
             target="_blank"
             @click.stop
-            class="pill-link"
+            class="card-action-btn primary"
             title="Live Demo"
           >
-            <Icon icon="simple-icons:netlify" v-if="data.liveSiteUrl.includes('netlify')" />
-            <Icon icon="lucide:external-link" v-else />
+            <Icon icon="lucide:external-link" />
+            <span>Live</span>
           </a>
         </div>
         <span class="category-tag">{{ data.category }}</span>
@@ -190,27 +191,36 @@ export default {
   align-items: center;
 }
 
-.link-pill-group {
+.card-actions {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
-.pill-link {
+.card-action-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
+  gap: 6px;
+  padding: 6px 14px;
   background: #334155;
   color: #f8fafc;
-  border-radius: 50%;
-  transition: all 0.2s;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
   text-decoration: none;
+  transition: all 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.pill-link:hover {
+.card-action-btn.primary {
   background: #6366f1;
-  transform: scale(1.1);
+  color: white;
+  border-color: #6366f1;
+}
+
+.card-action-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .category-tag {

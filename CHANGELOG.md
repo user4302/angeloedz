@@ -22,6 +22,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Redesigned ProjectCard with overlay effects and icon-based navigation
 - Enhanced ProjectSection with pill filters and improved loading states
 - Complete ProjectView redesign with hero section and mobile navigation
+- Enhance project detail UX and navigation behavior
+- Add semantic target icon for Impact section with structured list styling
+- Implement project links footer with large action buttons
+- Enhance mobile navigation and responsive design consistency
+- Add scroll-to-top behavior for better navigation UX
 
 ### Changed
 - Converted `ProjectView.vue` to Composition API and added Markdown rendering
