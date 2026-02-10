@@ -1,37 +1,57 @@
 <template>
-  <div class="project-card">
-    <img :src="data.imageSrc" :alt="data.title" class="card-image" />
-    <span
-      class="card-icon"
-      v-for="icon in data.icons"
-      :key="icon"
-      v-html="getIconSvg(icon)"
-    ></span>
+  <div class="project-card" @click="openLink">
+    <div class="thumbnail-wrapper">
+      <ProjectThumbnail 
+        :src="data.imageSrc" 
+        :title="data.title" 
+        :alt="data.title" 
+      />
+    </div>
+    
+    <div class="card-content">
+      <div class="icons-row">
+        <span
+          class="card-icon"
+          v-for="icon in data.icons"
+          :key="icon"
+          v-html="getIconSvg(icon)"
+        ></span>
+      </div>
 
-    <h3>{{ data.title }}</h3>
-    <p>{{ data.description }}</p>
-    <div class="link-container">
-      <a
-        v-if="data.gitRepoUrl"
-        :href="data.gitRepoUrl"
-        target="_blank"
-        @click.stop
-        >Repo <span class="material-icons">open_in_new</span>
-      </a>
-      <a
-        v-if="data.liveSiteUrl"
-        :href="data.liveSiteUrl"
-        target="_blank"
-        @click.stop
-        >Live <span class="material-icons">open_in_new</span>
-      </a>
+      <h3>{{ data.title }}</h3>
+      <p>{{ data.description }}</p>
+      
+      <div class="link-container">
+        <a
+          v-if="data.gitRepoUrl"
+          :href="data.gitRepoUrl"
+          target="_blank"
+          @click.stop
+          class="link-action"
+          >Repo <span class="material-icons">open_in_new</span>
+        </a>
+        <a
+          v-if="data.liveSiteUrl"
+          :href="data.liveSiteUrl"
+          target="_blank"
+          @click.stop
+          class="link-action"
+          >Live <span class="material-icons">open_in_new</span>
+        </a>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import ProjectThumbnail from './ProjectThumbnail.vue';
+import * as simpleIcons from 'simple-icons';
+
 export default {
   name: 'ProjectCard',
+  components: {
+    ProjectThumbnail
+  },
   props: {
     /** @type {object} The project data to display. */
     data: {
@@ -51,12 +71,18 @@ export default {
     },
     /**
      * Retrieves the SVG path for a given Simple Icon key.
-     *
-     * @param {string} iconKey - The identifier of the icon (e.g., 'siReact').
-     * @returns {string} The SVG path string.
+     * Note: This assumes simple-icons is available globally or imported. 
+     * Since the previous code used `this.$icons`, we'll try to maintain that if it's a plugin.
+     * But better to be explicit if we can. 
+     * If `this.$icons` is established in main.js, we keep it. 
      */
     getIconSvg(iconKey) {
-      return this.$icons[iconKey]?.svg || '';
+      if (this.$icons && this.$icons[iconKey]) {
+        return this.$icons[iconKey].svg;
+      }
+      // Fallback if not in global properties
+      const icon = simpleIcons[iconKey]; // This might need Import if not global
+      return icon ? icon.svg : '';
     },
   },
 };
@@ -64,112 +90,118 @@ export default {
 
 <style scoped>
 .project-card {
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  margin: 10px;
+  margin: 15px;
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
   border: none;
   cursor: pointer;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  flex: 0 0 calc(33.33% - 20px);
+  transition: all 0.3s ease;
+  flex: 0 0 calc(33.33% - 30px);
   box-sizing: border-box;
-  background-color: var(--less-black);
+  background-color: #1e293b; /* Using a dark slate for better contrast */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.card-image {
+.thumbnail-wrapper {
   width: 100%;
   height: 200px;
-  object-fit: cover;
-  object-position: center;
+}
+
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: left; /* Ensure left alignment */
+}
+
+.icons-row {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 10px;
 }
 
 .card-icon {
   display: inline-flex;
-  padding: 10px;
-  width: 30px;
-  fill: var(--white-ish);
+  width: 20px;
+  height: 20px;
+  fill: #94a3b8;
+  transition: fill 0.2s;
+}
+
+.project-card:hover .card-icon {
+  fill: #f8fafc;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
 
 h3 {
-  font-size: 1.2rem;
-  margin: 10px 0;
+  font-size: 1.4rem;
+  margin: 0 0 8px 0;
+  color: #f8fafc;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 p {
-  font-size: 1rem;
-  margin: 10px 0;
+  font-size: 0.95rem;
+  margin: 0 0 20px 0;
+  color: #94a3b8;
+  line-height: 1.6;
+  flex-grow: 1;
 }
 
 .link-container {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 10px;
+  gap: 12px;
+  margin-top: auto;
 }
 
-a {
+.link-action {
   text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f8fafc;
+  background: #334155;
+  padding: 6px 12px;
+  border-radius: 6px;
   display: inline-flex;
   align-items: center;
+  transition: all 0.2s;
+  border: 1px solid transparent;
 }
 
-a:hover {
-  color: rgb(0, 185, 185);
+.link-action:hover {
+  background: #475569;
+  border-color: #38bdf8;
+  color: #38bdf8;
 }
 
 .material-icons {
-  font-size: 18px;
-  margin-left: 5px;
+  font-size: 14px;
+  margin-left: 6px;
 }
 
-@media (max-width: 768px) {
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
   .project-card {
-    flex: 0 0 calc(50% - 20px);
-    max-width: 100%;
-  }
-
-  h3 {
-    font-size: 1rem;
-  }
-
-  p {
-    font-size: 0.9rem;
-  }
-
-  .link-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  a {
-    margin-bottom: 5px;
+    flex: 0 0 calc(50% - 30px);
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .project-card {
     flex: 0 0 100%;
-    margin: 5px 0;
-  }
-
-  .card-image {
-    height: 150px;
-  }
-
-  h3 {
-    font-size: 0.9rem;
-  }
-
-  p {
-    font-size: 0.8rem;
+    max-width: 100%;
+    margin: 15px 0;
   }
 }
 </style>
+

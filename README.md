@@ -8,14 +8,9 @@
 
 ## Features ✨
 
+- **Markdown-Powered Projects**: Automatically parses Obsidian-ready `.md` files into the site at build time
+- **Image Optimization & Fallbacks**: Lazy-loaded thumbnails with Netlify CDN support and generated fallbacks for missing images
 - **Dynamic Project Showcase**: Display and filter projects by category (Frontend, Backend, Terminal, Scripting, Mobile)
-- **Interactive Hero Section**: Animated typing effects and smooth transitions
-- **Comprehensive Profile Sections**: Experience timeline, skills display, career goals, and testimonials
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Contact Integration**: Built-in contact form and CV download functionality
-- **Technology Icons**: Visual representation of tech stack using Simple Icons
-- **Single Page Application**: Smooth navigation with Vue Router
-- **State Management**: Organized project data with Vuex
 
 ## Tech Stack / Built With 🛠️
 
