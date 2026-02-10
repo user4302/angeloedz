@@ -16,13 +16,12 @@
           v-for="icon in project.icons" 
           :key="icon" 
           class="tech-icon-wrapper"
-          :title="icon"
+          :title="icon.split(':')[1]"
         >
-        <Icon 
-          :icon="icon" 
-          class="tech-icon"
-          :title="icon"
-        />
+          <Icon 
+            :icon="icon" 
+            class="tech-icon"
+          />
         </div>
       </div>
 

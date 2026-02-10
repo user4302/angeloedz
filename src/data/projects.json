@@ -30,8 +30,7 @@
     "category": "Scripting",
     "description": "This PowerShell automation script streamlines Android APK signing workflows by integrating with Uber APK Signer to digitally sign one or multiple APK files using a configured keystore. The tool solves the manual complexity of APK signing by providing an interactive interface that handles file selection, batch processing, backup management, and optional packaging into distributable ZIP archives. It preserves original filenames while maintaining organized folder structures for signed and packaged outputs.",
     "icons": [
-      "simple-icons:powershell",
-      "simple-icons:java"
+      "simple-icons:powershell"
     ],
     "content": "**Type:** Open-Source\n\n**Short Description:**\nThis PowerShell automation script streamlines Android APK signing workflows by integrating with Uber APK Signer to digitally sign one or multiple APK files using a configured keystore. The tool solves the manual complexity of APK signing by providing an interactive interface that handles file selection, batch processing, backup management, and optional packaging into distributable ZIP archives. It preserves original filenames while maintaining organized folder structures for signed and packaged outputs.\n\n**My Role & Contribution:**\nI designed and implemented a comprehensive PowerShell automation solution that handles the entire APK signing lifecycle from file selection through final packaging. The script includes robust error handling, backup mechanisms with timestamped folders, interactive user prompts for file selection, and seamless integration with external Java-based signing tools. I implemented modular functions for backup management, file operations, and ZIP packaging, along with detailed logging and user feedback throughout the process.\n\n**Key Technologies/Skills:**\n- PowerShell 5.0+ scripting and automation\n- Java Runtime Environment integration\n- Android APK signing and keystore management\n- Uber APK Signer tool integration\n- File system operations and backup strategies\n- ZIP archive creation and management\n- Interactive CLI development\n- Error handling and process management\n\n**Impact/Results:**\n- Automated what was previously a manual, error-prone APK signing process\n- Reduced signing time for multiple APKs from manual individual processing to batch automation\n- Implemented comprehensive backup system preventing data loss during file operations\n- Created reusable tool that can be deployed across different development environments\n- Streamlined the packaging workflow for APK distribution with optional ZIP archive creation\n\n**Visuals Needed:**\n- Main CLI interface showing APK selection prompts\n- Folder structure diagram showing signed/packaging folders and backup organization\n- Sample output showing successful signing process\n- Configuration setup screenshot showing keystore parameters\n- ZIP package creation workflow demonstration\n\n**Links:**\n- [GitLab](https://gitlab.com/user4302_Projects/coding/powershell/apk-signer-and-packager)\n- [Uber APK Signer GitHub](https://github.com/patrickfav/uber-apk-signer) (referenced dependency)\n\n**Tags:**\n- PowerShell\n- Automation\n- APK\n- Android\n- Signing\n- Java\n- Uber-APK-Signer\n- Keystore\n- File-Operations\n- Backup\n- ZIP\n- CLI\n- Error-Handling\n- Packaging"
   },
@@ -159,8 +158,7 @@
       "simple-icons:angular",
       "simple-icons:typescript",
       "simple-icons:sass",
-      "simple-icons:jasmine",
-      "simple-icons:karma"
+      "simple-icons:jasmine"
     ],
     "content": "**Type:** Personal\n\n**Short Description:**  \nDocuShield is a secure document sharing and editing platform built as a modern Angular web application using Angular 20. Leveraging the latest Angular CLI and standalone components architecture, it offers a responsive foundation with advanced UI/UX patterns tailored for collaborative document workflows, including real-time editing, access controls, and secure sharing features.\n\n**My Role & Contribution:**  \nI architected and configured the full Angular 20 project from the ground up, adopting standalone components and cutting-edge development practices. I implemented a robust TypeScript setup, SCSS-based styling, integrated testing frameworks, and ensured mobile-responsive designs. The app features a sleek landing page with CSS variables, gradient effects, and intuitive layouts optimized for document-centric user experiences.\n\n**Key Technologies/Skills:**\n- Angular 20 with Standalone Components\n- TypeScript 5.8.2\n- SCSS/CSS featuring modern variables and gradients\n- Jasmine & Karma for comprehensive unit testing\n- Angular CLI for scaffolding, builds, and workflows\n- Mobile-first responsive design principles\n- Optimized production builds with performance budgets\n\n**Impact/Results:**\n- Delivered a production-ready Angular 20 foundation for secure document collaboration\n- Streamlined modern workflows with automated testing and efficient builds\n- Designed a visually striking, responsive landing page using contemporary patterns\n- Fine-tuned build configurations for superior performance and bundle optimization\n\n**Visuals Needed:**\n- Screenshot of the landing page highlighting gradient designs and DocuShield branding*\n- Diagram of the project structure showcasing standalone components*\n- Live development server view (localhost:4200) demonstrating the app in action*\n- Production build output illustrating optimized bundle sizes*\n\n**Links:**\n- [GitLab](https://gitlab.com/user4302_Projects/coding/angular-js/docushield)\n\n**Tags:**\n- Angular\n- Angular-20\n- TypeScript\n- SCSS\n- CSS\n- Jasmine\n- Karma\n- Angular-CLI\n- Testing\n- Responsive-Design\n- Web-Development\n- Frontend\n- UI/UX"
   },
@@ -225,7 +223,6 @@
       "simple-icons:react",
       "simple-icons:mui",
       "simple-icons:formik",
-      "simple-icons:yup",
       "simple-icons:auth0",
       "simple-icons:mysql",
       "simple-icons:bootstrap",
@@ -371,7 +368,6 @@
       "simple-icons:nextdotjs",
       "simple-icons:react",
       "simple-icons:typescript",
-      "simple-icons:yup",
       "simple-icons:bootstrap",
       "simple-icons:tailwindcss"
     ],
@@ -387,7 +383,6 @@
       "simple-icons:react",
       "simple-icons:redux",
       "simple-icons:bootstrap",
-      "simple-icons:yup",
       "simple-icons:jest",
       "simple-icons:typescript",
       "simple-icons:git"
@@ -432,7 +427,6 @@
       "simple-icons:react",
       "simple-icons:typescript",
       "simple-icons:tailwindcss",
-      "simple-icons:zustand",
       "simple-icons:jest"
     ],
     "content": "**Type:** Personal\n\n**Short Description:**\nA premium web-based novel reader application built with Next.js 16, TypeScript, and Tailwind CSS. The application provides an immersive reading experience with realistic page-flip animations and a distraction-free ancient library aesthetic. It supports bilingual content (English/German), persistent reading progress, and dynamic book loading from a structured content management system.\n\n**My Role & Contribution:**\nI designed and built the complete novel reader application from scratch, implementing the core reading interface with react-pageflip animations, creating a responsive sidebar navigation system with table of contents and bookmarks, developing a bilingual content management system with automatic chapter discovery, establishing the ancient library parchment theme with serif typography, implementing persistent state management using Zustand and localStorage, creating a comprehensive test suite with Jest and React Testing Library, and writing detailed documentation including the Adding Books Guide.\n\n**Key Technologies/Skills:**\n- Next.js 16 with App Router\n- React 19 with TypeScript\n- Tailwind CSS 4 for styling\n- Zustand for state management\n- React PageFlip for animations\n- React Markdown with remark/rehype plugins\n- Jest and React Testing Library\n- Responsive design and mobile optimization\n- Filesystem-based content management\n\n**Impact/Results:**\n- Successfully launched a production-ready novel reader with comprehensive feature set\n- Implemented bilingual support for German and English content with automatic language detection\n- Created an intuitive content management system allowing easy addition of new books without code changes\n- Achieved responsive design optimized for both desktop and mobile reading experiences\n- Established comprehensive test coverage ensuring code reliability and maintainability\n\n**Visuals Needed:**\n- Main reading interface showing page-flip animation\n- Home page with book selection grid\n- Sidebar navigation with table of contents and bookmarks\n- Mobile responsive design demonstration\n- Language toggle functionality\n- Ancient library parchment theme showcase\n\n**Links:**\n- [GitLab](https://gitlab.com/user4302_Projects/coding/next-js/stardust-reader)\n- [Netlify](https://user4302-stardust.netlify.app/)\n- [Translation](https://gitlab.com/user4302_Projects/coding/python/stardust-books)\n\n**Tags:**\n- NextJS\n- React\n- TypeScript\n- Tailwind-CSS\n- Zustand\n- React-PageFlip\n- React-Markdown\n- Jest\n- React-Testing-Library\n- Responsive-Design\n- Mobile-Optimization\n- Content-Management\n- Bilingual\n- Animations"
@@ -447,7 +441,6 @@
       "simple-icons:nextdotjs",
       "simple-icons:react",
       "simple-icons:tailwindcss",
-      "simple-icons:zustand",
       "simple-icons:netlify",
       "simple-icons:lucide",
       "simple-icons:json",
@@ -794,7 +787,6 @@
       "simple-icons:nextdotjs",
       "simple-icons:react",
       "simple-icons:sanity",
-      "simple-icons:nextauth",
       "simple-icons:typescript",
       "simple-icons:tailwindcss",
       "simple-icons:lucide",

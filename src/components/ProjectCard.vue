@@ -9,14 +9,14 @@
     </div>
     
     <div class="card-content">
-      <div class="icons-row">
-      <Icon
-        class="card-icon"
-        v-for="icon in data.icons"
-        :key="icon"
-        :icon="icon"
-      />
-    </div>
+      <div class="icons-row" v-if="data.icons && data.icons.length">
+        <Icon
+          class="card-icon"
+          v-for="icon in data.icons"
+          :key="icon"
+          :icon="icon"
+        />
+      </div>
 
       <h3>{{ data.title }}</h3>
       <p>{{ data.description }}</p>

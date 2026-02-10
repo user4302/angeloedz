@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Comprehensive technology mapping with 100+ tech stack icons
 - Automatic technology detection from markdown content
 - Iconify integration for enhanced icon library support
+- Automated build-time icon validation via Iconify API to prevent broken mappings
 
 ### Changed
 - Converted `ProjectView.vue` to Composition API and added Markdown rendering
@@ -24,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Migrated from simple-icons to @iconify/vue for better performance
 - Enhanced markdown styling with improved contrast and readability
 - Improved responsive design for project detail pages
+- Implemented runtime icon visibility checks in `ProjectCard` and `ProjectView` to hide missing icons
+- Refactored `projects-parser.js` to support asynchronous validation against the Iconify API
 
 ### Fixed
 - Runtime error when encountering undefined image sources

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
+const axios = require('axios');
 
 const PROJECTS_DIR = path.join(__dirname, '../src/assets/projects');
 const OUTPUT_FILE = path.join(__dirname, '../src/data/projects.json');
@@ -127,9 +128,44 @@ const techMap = {
 };
 
 /**
+ * Validates which icons in the techMap actually exist on Iconify.
+ * @returns {Promise<Set<string>>} Set of valid icon slugs.
+ */
+async function getValidIconSlugs() {
+  console.log('Validating icons with Iconify API...');
+  const validSlugs = new Set();
+  const slugsByPrefix = {};
+
+  // Group slugs by prefix for bulk checking
+  Object.values(techMap).forEach(slug => {
+    const [prefix, name] = slug.split(':');
+    if (!slugsByPrefix[prefix]) slugsByPrefix[prefix] = new Set();
+    slugsByPrefix[prefix].add(name);
+  });
+
+  for (const prefix of Object.keys(slugsByPrefix)) {
+    const names = Array.from(slugsByPrefix[prefix]);
+    const url = `https://api.iconify.design/${prefix}.json?icons=${names.join(',')}`;
+
+    try {
+      const response = await axios.get(url);
+      if (response.data && response.data.icons) {
+        Object.keys(response.data.icons).forEach(name => {
+          validSlugs.add(`${prefix}:${name}`);
+        });
+      }
+    } catch (error) {
+      console.error(`Failed to validate icons for prefix ${prefix}:`, error.message);
+    }
+  }
+
+  return validSlugs;
+}
+
+/**
  * Parses all Markdown files in the projects directory and generates a JSON index.
  */
-function parseProjects() {
+async function parseProjects() {
   if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
   }
@@ -140,6 +176,7 @@ function parseProjects() {
     return;
   }
 
+  const validIconSlugs = await getValidIconSlugs();
   const files = fs.readdirSync(PROJECTS_DIR).filter(file => file.endsWith('.md'));
 
   const categoryMap = {
@@ -197,6 +234,14 @@ function parseProjects() {
     // Technology Extraction
     const icons = [];
 
+    // Helper to add validated icon
+    const addIcon = (tag) => {
+      const iconSlug = techMap[tag];
+      if (iconSlug && validIconSlugs.has(iconSlug) && !icons.includes(iconSlug)) {
+        icons.push(iconSlug);
+      }
+    };
+
     // 1. Extract from Tags section in Markdown content
     const tagsMatch = content.match(/\*\*Tags:\*\*([\s\S]*?)(?=\n\n|$)/i);
     if (tagsMatch) {
@@ -205,9 +250,7 @@ function parseProjects() {
         const tagTextMatch = line.match(/^\s*-\s*(.*)/);
         if (tagTextMatch) {
           const tag = tagTextMatch[1].toLowerCase().trim().replace(/ /g, '-');
-          if (techMap[tag] && !icons.includes(techMap[tag])) {
-            icons.push(techMap[tag]);
-          }
+          addIcon(tag);
         }
       });
     }
@@ -216,14 +259,11 @@ function parseProjects() {
     if (data.tags && Array.isArray(data.tags)) {
       data.tags.forEach(t => {
         const tag = t.toLowerCase().trim().replace(/ /g, '-');
-        if (techMap[tag] && !icons.includes(techMap[tag])) {
-          icons.push(techMap[tag]);
-        }
+        addIcon(tag);
       });
     }
 
-    // 3. Automated Discovery from Markdown Content (existing logic, re-numbered)
-    // This bridges natural language (e.g. "React.js") to Iconify IDs
+    // 3. Automated Discovery from Markdown Content
     const techSearchAreaMatch = content.match(/\*\*(Short Description|Key Technologies\/Skills):\*\*([\s\S]*?)(?=\n\n|\*\*Impact\/Results:\*\*)/gi);
 
     if (techSearchAreaMatch) {
@@ -231,12 +271,11 @@ function parseProjects() {
         const sortedKeys = Object.keys(techMap).sort((a, b) => b.length - a.length);
 
         for (const key of sortedKeys) {
-          const icon = techMap[key];
           const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
           const regex = new RegExp(`(?<![a-z0-9])${escapedKey}(?![a-z0-9])`, 'i');
 
-          if (regex.test(section) && !icons.includes(icon)) {
-            icons.push(icon);
+          if (regex.test(section)) {
+            addIcon(key);
           }
         }
       });
@@ -276,4 +315,7 @@ function parseProjects() {
   console.log(`Successfully parsed ${finalProjects.length} projects into ${OUTPUT_FILE}`);
 }
 
-parseProjects();
+parseProjects().catch(err => {
+  console.error('Extraction failed:', err);
+  process.exit(1);
+});
