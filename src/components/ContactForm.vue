@@ -27,9 +27,25 @@
             <label for="phone">Phone No. (optional)</label>
             <input type="tel" id="phone" v-model="phone" />
           </div>
-          <div>
+          <div class="textarea-container">
             <label for="message">Message</label>
-            <textarea id="message" v-model="message" required></textarea>
+            <div class="textarea-wrapper">
+              <textarea 
+                id="message" 
+                v-model="message" 
+                required
+                ref="messageTextarea"
+              ></textarea>
+              <div 
+                class="resize-handle" 
+                title="Drag to resize"
+                ref="resizeHandle"
+                @mousedown="startResize"
+                @touchstart="startResize"
+              >
+                <span class="material-icons">expand</span>
+              </div>
+            </div>
           </div>
           <button type="submit" :disabled="isLoading">Send</button>
           <div v-if="isLoading" class="loader">Loading...</div>
@@ -69,6 +85,9 @@ export default {
       message: '',
       errorMessage: '',
       errorResponse: '',
+      isResizing: false,
+      startY: 0,
+      startHeight: 0,
     };
   },
   methods: {
@@ -110,6 +129,37 @@ export default {
       } finally {
         this.isLoading = false;
       }
+    },
+    startResize(e) {
+      e.preventDefault();
+      
+      this.isResizing = true;
+      this.startY = e.clientY || e.touches[0].clientY;
+      this.startHeight = this.$refs.messageTextarea.offsetHeight;
+      
+      // Add global event listeners
+      document.addEventListener('mousemove', this.handleResize);
+      document.addEventListener('mouseup', this.stopResize);
+      document.addEventListener('touchmove', this.handleResize);
+      document.addEventListener('touchend', this.stopResize);
+    },
+    handleResize(e) {
+      if (!this.isResizing) return;
+      
+      const currentY = e.clientY || e.touches[0].clientY;
+      const deltaY = currentY - this.startY;
+      const newHeight = Math.max(120, this.startHeight + deltaY);
+      
+      this.$refs.messageTextarea.style.height = newHeight + 'px';
+    },
+    stopResize() {
+      this.isResizing = false;
+      
+      // Remove global event listeners
+      document.removeEventListener('mousemove', this.handleResize);
+      document.removeEventListener('mouseup', this.stopResize);
+      document.removeEventListener('touchmove', this.handleResize);
+      document.removeEventListener('touchend', this.stopResize);
     },
   },
 };
@@ -294,8 +344,54 @@ form textarea::placeholder {
 }
 
 form textarea {
-  resize: vertical;
+  resize: none;
   min-height: 120px;
+}
+
+.textarea-container {
+  margin-bottom: 20px;
+}
+
+.textarea-wrapper {
+  position: relative;
+}
+
+.resize-handle {
+  position: absolute;
+  bottom: -33px;
+  right: -16px;
+  width: 32px;
+  height: 32px;
+  background: #6366f1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: ns-resize;
+  transition: all 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.resize-handle:hover {
+  background: #8b5cf6;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.5);
+}
+
+.resize-handle:active {
+  transform: scale(0.95);
+}
+
+.resize-icon {
+  color: white;
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.resize-handle:hover .resize-icon {
+  transform: scale(1.2);
 }
 
 form button[type='submit'] {
@@ -416,5 +512,81 @@ form button[type='submit']:disabled {
 
 .contact-form::-webkit-scrollbar-thumb:hover {
   background: #8b5cf6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-form-overlay {
+    padding: 0;
+    align-items: center;
+  }
+
+  .contact-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1002;
+  }
+
+  .contact-form h2 {
+    position: static;
+    margin: 0;
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    color: #f8fafc !important;
+    background: none !important;
+    -webkit-text-fill-color: #f8fafc !important;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    z-index: 10;
+  }
+
+  .contact-form form {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+  }
+
+  .resize-handle {
+    width: 40px;
+    height: 40px;
+    bottom: -38px;
+    right: -20px;
+  }
+
+  .arrow-up,
+  .arrow-down {
+    border-left-width: 5px;
+    border-right-width: 5px;
+  }
+
+  .arrow-up {
+    border-bottom-width: 8px;
+  }
+
+  .arrow-down {
+    border-top-width: 8px;
+  }
 }
 </style>

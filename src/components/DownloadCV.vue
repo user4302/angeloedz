@@ -29,7 +29,7 @@
               title="Download CV"
               @click.stop
             >
-              <span class="material-icons">download</span>
+              <span class="material-icons">download</span>Download
             </a>
             <button class="close-button" @click="closeViewer" title="Close viewer">
               <span class="material-icons">close</span>
@@ -290,6 +290,33 @@ export default {
   font-size: 24px;
 }
 
+.viewer-header .btn-external {
+  width: 22px !important;
+  height: 22px !important;
+  padding: 8px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.viewer-header .btn-download {
+  width:120px !important;
+  padding: 8px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.viewer-header .btn-download .material-icons {
+  font-size: 24px;
+}
+
+.viewer-header .btn-download span:not(.material-icons) {
+  display: none;
+}
+
 .close-button {
   background-color: rgba(255, 255, 255, 0.05);
   color: #f8fafc;
@@ -407,36 +434,56 @@ export default {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .pdf-viewer-overlay {
+    padding: 0;
+    align-items: center; /* Center alignment is safer */
+  }
+
   .pdf-viewer-container {
-    height: 95vh;
-    border-radius: 12px;
+    position: fixed; /* Fixed to viewport to avoid 100vh issues */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    z-index: 1002;
   }
 
   .viewer-header {
     padding: 16px 20px;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     gap: 12px;
-    align-items: flex-start;
+    flex-shrink: 0; /* Prevent header shrinking */
   }
 
   .viewer-header h2 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .header-actions {
-    width: 100%;
+    width: auto;
     justify-content: flex-end;
     gap: 8px;
   }
 
   .btn-download,
   .btn-external {
-    display: none;
+    display: none !important;
   }
 
-  .btn-download {
-    padding: 8px 16px;
-    font-size: 0.85rem;
+  .viewer-header .btn-download {
+    display: none !important;
   }
 }
 </style>
