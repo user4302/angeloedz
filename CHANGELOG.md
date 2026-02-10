@@ -13,16 +13,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unique CSS/SVG fallbacks for projects without images
 - Tech stack icon visualization in project detail pages
 - Intelligent metadata extraction from Markdown text templates
+- Comprehensive technology mapping with 100+ tech stack icons
+- Automatic technology detection from markdown content
+- Iconify integration for enhanced icon library support
 
 ### Changed
 - Converted `ProjectView.vue` to Composition API and added Markdown rendering
 - Refined `ProjectCard.vue` UI/UX with left alignment and button-style action links
 - Updated `projects.js` store to handle dynamic JSON data
+- Migrated from simple-icons to @iconify/vue for better performance
+- Enhanced markdown styling with improved contrast and readability
+- Improved responsive design for project detail pages
 
 ### Fixed
 - Runtime error when encountering undefined image sources
 - Deprecated `simple-icons` import warnings
 - Missing projects issue by robustifying the parser for non-frontmatter files
+- Low contrast issues in markdown content display
+- Icon rendering inconsistencies across different browsers
 
 ### Features
 - **Markdown-Powered Content**: Effortlessly manage projects using Markdown files with build-time JSON indexing

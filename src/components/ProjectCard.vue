@@ -10,12 +10,12 @@
     
     <div class="card-content">
       <div class="icons-row">
-        <span
+        <Icon
           class="card-icon"
           v-for="icon in data.icons"
           :key="icon"
-          v-html="getIconSvg(icon)"
-        ></span>
+          :icon="icon"
+        />
       </div>
 
       <h3>{{ data.title }}</h3>
@@ -45,12 +45,13 @@
 
 <script>
 import ProjectThumbnail from './ProjectThumbnail.vue';
-import * as simpleIcons from 'simple-icons';
+import { Icon } from '@iconify/vue';
 
 export default {
   name: 'ProjectCard',
   components: {
-    ProjectThumbnail
+    ProjectThumbnail,
+    Icon
   },
   props: {
     /** @type {object} The project data to display. */
@@ -68,21 +69,6 @@ export default {
         name: 'ProjectView',
         params: { id: this.data.id },
       });
-    },
-    /**
-     * Retrieves the SVG path for a given Simple Icon key.
-     * Note: This assumes simple-icons is available globally or imported. 
-     * Since the previous code used `this.$icons`, we'll try to maintain that if it's a plugin.
-     * But better to be explicit if we can. 
-     * If `this.$icons` is established in main.js, we keep it. 
-     */
-    getIconSvg(iconKey) {
-      if (this.$icons && this.$icons[iconKey]) {
-        return this.$icons[iconKey].svg;
-      }
-      // Fallback if not in global properties
-      const icon = simpleIcons[iconKey]; // This might need Import if not global
-      return icon ? icon.svg : '';
     },
   },
 };

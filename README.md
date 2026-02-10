@@ -18,7 +18,7 @@
 ![Vuex](https://img.shields.io/badge/Vuex-4.1.0-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
 ![Vue Router](https://img.shields.io/badge/Vue%20Router-4.0.13-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
 ![Axios](https://img.shields.io/badge/Axios-1.8.4-5A29E4?style=flat-square&logo=axios&logoColor=white)
-![Simple Icons](https://img.shields.io/badge/Simple%20Icons-16.2.0-000000?style=flat-square&logo=simpleicons&logoColor=white)
+![Iconify](https://img.shields.io/badge/Iconify-5.0.0-000000?style=flat-square&logo=iconify&logoColor=white)
 ![Vitest](https://img.shields.io/badge/Vitest-3.2.4-6E9F18?style=flat-square&logo=vitest&logoColor=white)
 
 ## Prerequisites
@@ -163,6 +163,10 @@ No email or direct messaging support is available.
 
 ## Acknowledgments 🙏
 
-- Vue.js team for the excellent framework
-- Simple Icons for the comprehensive icon library
+- Vue.js 3 with Composition API
+- Vuex 4 for state management
+- Vue Router 4 for navigation
+- Iconify for comprehensive icon library
+- Axios for HTTP requests
+- Vitest for unit testing
 - Netlify for seamless deployment

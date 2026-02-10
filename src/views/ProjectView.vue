@@ -16,16 +16,16 @@
           v-for="icon in project.icons" 
           :key="icon" 
           class="tech-icon-wrapper"
-          :title="icon.replace('si', '')"
+          :title="icon.split(':').pop()"
         >
-          <span class="tech-icon" v-html="getIconSvg(icon)"></span>
+          <Icon :icon="icon" class="tech-icon" />
         </div>
       </div>
 
       <p class="description">{{ project.description }}</p>
       <div class="link-container">
-        <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="btn btn-github">GitHub Repository</a>
-        <a v-if="project.liveSiteUrl" :href="project.liveSiteUrl" target="_blank" class="btn btn-live">Live Site</a>
+        <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="btn btn-github">Repo</a>
+        <a v-if="project.liveSiteUrl" :href="project.liveSiteUrl" target="_blank" class="btn btn-live">Live</a>
       </div>
     </header>
 
@@ -40,30 +40,46 @@
 import { computed, defineProps } from 'vue';
 import { useStore } from 'vuex';
 import { marked } from 'marked';
-import * as simpleIcons from 'simple-icons'; // Import all icons
+import { Icon } from '@iconify/vue';
 import ProjectThumbnail from '@/components/ProjectThumbnail.vue';
 
+/**
+ * Component props for ProjectView
+ * @typedef {Object} ProjectViewProps
+ * @property {string|number} id - The unique identifier of the project to display
+ */
+
+/** @type {ProjectViewProps} */
 const props = defineProps({
   id: {
     type: [String, Number],
-    required: true
+    required: true,
+    validator: (value) => {
+      // Ensure the ID is a valid number or numeric string
+      const num = Number(value);
+      return !isNaN(num) && num > 0;
+    }
   }
 });
 
+/** @type {import('vuex').Store} */
 const store = useStore();
 
+/**
+ * Computed property that retrieves the project data from the store
+ * @returns {Object|null} The project object or null if not found
+ */
 const project = computed(() => {
-  return store.getters['projects/getProjectById'](props.id);
+  return store.getters['projects/getProjectById'](Number(props.id));
 });
 
+/**
+ * Computed property that converts markdown content to HTML
+ * @returns {string} The rendered HTML content
+ */
 const renderedContent = computed(() => {
   return project.value ? marked(project.value.content || '') : '';
 });
-
-const getIconSvg = (iconKey) => {
-  const icon = simpleIcons[iconKey];
-  return icon ? icon.svg : '';
-};
 </script>
 
 <style scoped>
@@ -179,42 +195,74 @@ h1 {
 
 /* Markdown Styling */
 .markdown-body {
-  line-height: 1.6;
-  color: #334155;
-  background: #f8fafc;
-  padding: 30px;
-  border-radius: 12px;
+  line-height: 1.7;
+  color: #1e293b; /* High contrast dark slate */
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
   border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  text-align: left; /* Strict left alignment */
+}
+
+/* Override global styles that cause low contrast */
+.markdown-body :deep(p),
+.markdown-body :deep(li),
+.markdown-body :deep(h1),
+.markdown-body :deep(h2),
+.markdown-body :deep(h3),
+.markdown-body :deep(h4),
+.markdown-body :deep(strong) {
+  color: #1e293b !important;
 }
 
 .markdown-body :deep(h2) {
-  margin-top: 1.5em;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid #e2e8f0;
+  margin-top: 2em;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid #f1f5f9;
+  font-size: 1.75rem;
+  font-weight: 700;
 }
 
 .markdown-body :deep(h3) {
-  margin-top: 1.2em;
+  margin-top: 1.5em;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.markdown-body :deep(ul), .markdown-body :deep(ol) {
+  padding-left: 20px;
+  margin-bottom: 1.5em;
+}
+
+.markdown-body :deep(li) {
+  margin-bottom: 8px;
 }
 
 .markdown-body :deep(pre) {
-  background: #1e293b;
+  background: #0f172a;
   color: #f8fafc;
-  padding: 16px;
-  border-radius: 8px;
+  padding: 20px;
+  border-radius: 12px;
   overflow-x: auto;
+  margin: 1.5em 0;
+  border: 1px solid #1e293b;
 }
 
 .markdown-body :deep(code) {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', 'Cascadia Code', monospace;
   background: #f1f5f9;
+  color: #475569 !important; /* Overriding global white */
   padding: 0.2em 0.4em;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-size: 0.9em;
 }
 
 .markdown-body :deep(pre code) {
   background: none;
+  color: inherit !important;
   padding: 0;
+  font-size: 0.85em;
 }
 
 .loading {
@@ -226,11 +274,15 @@ h1 {
 
 @media (max-width: 640px) {
   h1 {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
   
   .project-banner-container {
     height: 250px;
+  }
+
+  .markdown-body {
+    padding: 25px;
   }
 }
 </style>
