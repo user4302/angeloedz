@@ -6,6 +6,9 @@
         :title="data.title" 
         :alt="data.title" 
       />
+      <div class="card-overlay">
+        <span class="view-details">View Details</span>
+      </div>
     </div>
     
     <div class="card-content">
@@ -15,29 +18,38 @@
           v-for="icon in data.icons"
           :key="icon"
           :icon="icon"
+          :title="icon.split(':')[1]"
         />
       </div>
 
-      <h3>{{ data.title }}</h3>
-      <p>{{ data.description }}</p>
+      <h3 class="card-title">{{ data.title }}</h3>
+      <p class="card-description">{{ data.description }}</p>
       
-      <div class="link-container">
-        <a
-          v-if="data.gitRepoUrl"
-          :href="data.gitRepoUrl"
-          target="_blank"
-          @click.stop
-          class="link-action"
-          >Repo <span class="material-icons">open_in_new</span>
-        </a>
-        <a
-          v-if="data.liveSiteUrl"
-          :href="data.liveSiteUrl"
-          target="_blank"
-          @click.stop
-          class="link-action"
-          >Live <span class="material-icons">open_in_new</span>
-        </a>
+      <div class="card-footer">
+        <div class="link-pill-group">
+          <a
+            v-if="data.gitRepoUrl"
+            :href="data.gitRepoUrl"
+            target="_blank"
+            @click.stop
+            class="pill-link"
+            title="Repository"
+          >
+            <Icon icon="simple-icons:github" />
+          </a>
+          <a
+            v-if="data.liveSiteUrl"
+            :href="data.liveSiteUrl"
+            target="_blank"
+            @click.stop
+            class="pill-link"
+            title="Live Demo"
+          >
+            <Icon icon="simple-icons:netlify" v-if="data.liveSiteUrl.includes('netlify')" />
+            <Icon icon="lucide:external-link" v-else />
+          </a>
+        </div>
+        <span class="category-tag">{{ data.category }}</span>
       </div>
     </div>
   </div>
@@ -54,16 +66,12 @@ export default {
     Icon
   },
   props: {
-    /** @type {object} The project data to display. */
     data: {
       type: Object,
       required: true,
     },
   },
   methods: {
-    /**
-     * Navigates to the detailed project view.
-     */
     openLink() {
       this.$router.push({
         name: 'ProjectView',
@@ -76,122 +84,144 @@ export default {
 
 <style scoped>
 .project-card {
-  border-radius: 12px;
+  background: #1e293b;
+  border-radius: 16px;
   overflow: hidden;
-  margin: 15px;
-  width: 100%;
-  max-width: 350px;
-  border: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  height: 100%;
   cursor: pointer;
-  transition: all 0.3s ease;
-  flex: 0 0 calc(33.33% - 30px);
-  box-sizing: border-box;
-  background-color: #1e293b; /* Using a dark slate for better contrast */
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.thumbnail-wrapper {
-  width: 100%;
-  height: 200px;
-}
-
-.card-content {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  text-align: left; /* Ensure left alignment */
-}
-
-.icons-row {
-  margin-bottom: 12px;
-  display: flex;
-  gap: 10px;
-}
-
-.card-icon {
-  display: inline-flex;
-  width: 20px;
-  height: 20px;
-  fill: #94a3b8;
-  transition: all 0.3s ease;
-  filter: brightness(0) invert(1) grayscale(1); /* Pure white icon */
-  opacity: 0.7;
-}
-
-.project-card:hover .card-icon {
-  opacity: 1;
-  filter: brightness(0) invert(1) grayscale(1); /* Keep monochrome on hover */
-  transform: translateY(-2px);
+  position: relative;
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
-h3 {
-  font-size: 1.4rem;
-  margin: 0 0 8px 0;
-  color: #f8fafc;
-  font-weight: 700;
-  line-height: 1.2;
+.thumbnail-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
 }
 
-p {
-  font-size: 0.95rem;
-  margin: 0 0 20px 0;
-  color: #94a3b8;
-  line-height: 1.6;
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.view-details {
+  color: white;
+  font-weight: 600;
+  padding: 8px 20px;
+  border: 2px solid white;
+  border-radius: 99px;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .view-details {
+  transform: translateY(0);
+}
+
+.card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 
-.link-container {
+.icons-row {
   display: flex;
   gap: 12px;
-  margin-top: auto;
+  margin-bottom: 16px;
 }
 
-.link-action {
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 600;
+.card-icon {
+  width: 18px;
+  height: 18px;
+  color: #94a3b8;
+  filter: brightness(0) invert(1);
+  opacity: 0.6;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #f8fafc;
-  background: #334155;
-  padding: 6px 12px;
-  border-radius: 6px;
-  display: inline-flex;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+.link-pill-group {
+  display: flex;
+  gap: 8px;
+}
+
+.pill-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #334155;
+  color: #f8fafc;
+  border-radius: 50%;
   transition: all 0.2s;
-  border: 1px solid transparent;
+  text-decoration: none;
 }
 
-.link-action:hover {
-  background: #475569;
-  border-color: #38bdf8;
-  color: #38bdf8;
+.pill-link:hover {
+  background: #6366f1;
+  transform: scale(1.1);
 }
 
-.material-icons {
-  font-size: 14px;
-  margin-left: 6px;
-}
-
-/* Responsive Breakpoints */
-@media (max-width: 1024px) {
-  .project-card {
-    flex: 0 0 calc(50% - 30px);
-  }
-}
-
-@media (max-width: 640px) {
-  .project-card {
-    flex: 0 0 100%;
-    max-width: 100%;
-    margin: 15px 0;
-  }
+.category-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
 }
 </style>
 

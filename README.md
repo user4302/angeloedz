@@ -10,7 +10,10 @@
 
 - **Markdown-Powered Projects**: Automatically parses Obsidian-ready `.md` files into the site at build time
 - **Image Optimization & Fallbacks**: Lazy-loaded thumbnails with Netlify CDN support and generated fallbacks for missing images
-- **Dynamic Project Showcase**: Display and filter projects by category (Frontend, Backend, Terminal, Scripting, Mobile)
+- **Dynamic Project Showcase**: Display and filter projects by category with modern pill-style filters
+- **Enhanced Project Cards**: Interactive cards with hover overlays, icon-based navigation, and smooth transitions
+- **Responsive Project Details**: Hero sections, mobile navigation, and optimized content layouts
+- **Modern UI/UX**: Micro-interactions, loading states, and consistent design language
 
 ## Tech Stack / Built With 🛠️
 

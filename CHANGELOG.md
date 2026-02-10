@@ -17,6 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic technology detection from markdown content
 - Iconify integration for enhanced icon library support
 - Automated build-time icon validation via Iconify API to prevent broken mappings
+- Optimized icon tooltips to display clean technology names for better UX
+- Comprehensive UI/UX redesign of project components with modern interactions
+- Redesigned ProjectCard with overlay effects and icon-based navigation
+- Enhanced ProjectSection with pill filters and improved loading states
+- Complete ProjectView redesign with hero section and mobile navigation
 
 ### Changed
 - Converted `ProjectView.vue` to Composition API and added Markdown rendering
