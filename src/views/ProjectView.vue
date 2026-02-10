@@ -33,9 +33,9 @@
             v-for="icon in project.icons" 
             :key="icon" 
             class="hero-tech-icon"
-            :title="icon.split(':')[1]"
           >
             <Icon :icon="icon" />
+            <span class="tech-label">{{ formatTechName(icon) }}</span>
           </div>
         </div>
       </div>
@@ -197,6 +197,30 @@ const tagList = computed(() => {
 
 const renderMd = (text) => text ? marked(text) : '';
 
+const formatTechName = (slug) => {
+  if (!slug) return '';
+  const name = slug.split(':')[1] || slug;
+  // Prettify common slugs
+  const map = {
+    'vuedotjs': 'Vue.js',
+    'nodedotjs': 'Node.js',
+    'nextdotjs': 'Next.js',
+    'reactjs': 'React',
+    'tailwindcss': 'Tailwind CSS',
+    'gnubash': 'Bash',
+    'csharp': 'C#',
+    'cplusplus': 'C++',
+    'powershell': 'PowerShell',
+    'postgresql': 'PostgreSQL',
+    'mongodb': 'MongoDB',
+    'sqlite': 'SQLite',
+    'mysql': 'MySQL',
+    'javascript': 'JavaScript',
+    'typescript': 'TypeScript'
+  };
+  return map[name.toLowerCase()] || name.charAt(0).toUpperCase() + name.slice(1);
+};
+
 // Content that hasn't been parsed into specific cards
 const leanRemainingContent = computed(() => {
   if (!project.value) return '';
@@ -354,6 +378,53 @@ h1 {
   color: #f8fafc;
   border: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: default;
+  position: relative;
+}
+
+.tech-label {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #6366f1;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  pointer-events: none;
+}
+
+.tech-label::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #6366f1 transparent transparent transparent;
+}
+
+.hero-tech-icon:hover {
+  transform: translateY(-8px) scale(1.1);
+  background: rgba(99, 102, 241, 0.2);
+  border-color: #6366f1;
+  color: #6366f1;
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.hero-tech-icon:hover .tech-label {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .project-banner {

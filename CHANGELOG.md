@@ -32,6 +32,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implement consistent link-2 icon for live demos across all components
 - Enhance projects parser to extract repository and live site URLs from markdown
 - Improve button layouts with slot wrappers and grid systems
+- Enhance technology icon tooltips with custom labels and animations
+- Replace basic title tooltips with custom styled labels across components
+- Add formatTechName function to prettify technology names (Vue.js, Node.js, etc.)
+- Implement smooth hover animations with scaling and color transitions
 
 ### Changed
 - Converted `ProjectView.vue` to Composition API and added Markdown rendering

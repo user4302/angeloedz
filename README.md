@@ -15,6 +15,7 @@
 - **Responsive Project Details**: Hero sections, mobile navigation, optimized content layouts, and scroll-to-top behavior
 - **Modern UI/UX**: Micro-interactions, loading states, structured impact lists, and consistent design language
 - **Smart Link Handling**: Dynamic GitLab/GitHub icon detection and consistent navigation across all project components
+- **Enhanced Tooltips**: Custom-styled technology labels with smooth animations and prettified names
 
 ## Tech Stack / Built With 🛠️
 

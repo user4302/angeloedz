@@ -13,13 +13,17 @@
     
     <div class="card-content">
       <div class="icons-row" v-if="data.icons && data.icons.length">
-        <Icon
-          class="card-icon"
-          v-for="icon in data.icons"
-          :key="icon"
-          :icon="icon"
-          :title="icon.split(':')[1]"
-        />
+        <div 
+          v-for="icon in data.icons" 
+          :key="icon" 
+          class="card-tech-wrapper"
+        >
+          <Icon
+            class="card-icon"
+            :icon="icon"
+          />
+          <span class="tech-hover-label">{{ formatTechName(icon) }}</span>
+        </div>
       </div>
 
       <h3 class="card-title">{{ data.title }}</h3>
@@ -81,6 +85,29 @@ export default {
         name: 'ProjectView',
         params: { id: this.data.id },
       });
+    },
+    formatTechName(slug) {
+      if (!slug) return '';
+      const name = slug.split(':')[1] || slug;
+      // Prettify common slugs
+      const map = {
+        'vuedotjs': 'Vue.js',
+        'nodedotjs': 'Node.js',
+        'nextdotjs': 'Next.js',
+        'reactjs': 'React',
+        'tailwindcss': 'Tailwind CSS',
+        'gnubash': 'Bash',
+        'csharp': 'C#',
+        'cplusplus': 'C++',
+        'powershell': 'PowerShell',
+        'postgresql': 'PostgreSQL',
+        'mongodb': 'MongoDB',
+        'sqlite': 'SQLite',
+        'mysql': 'MySQL',
+        'javascript': 'JavaScript',
+        'typescript': 'TypeScript'
+      };
+      return map[name.toLowerCase()] || name.charAt(0).toUpperCase() + name.slice(1);
     },
   },
 };
@@ -159,12 +186,62 @@ export default {
   margin-bottom: 16px;
 }
 
+.card-tech-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tech-hover-label {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  background: #6366f1;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.tech-hover-label::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px;
+  border-style: solid;
+  border-color: #6366f1 transparent transparent transparent;
+}
+
 .card-icon {
   width: 18px;
   height: 18px;
   color: #94a3b8;
   filter: brightness(0) invert(1);
   opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+.card-tech-wrapper:hover .card-icon {
+  opacity: 1;
+  transform: scale(1.25);
+  filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+}
+
+.card-tech-wrapper:hover .tech-hover-label {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .card-title {
