@@ -49,6 +49,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add proper cursor states and interactive feedback across project cards
 - Enhance ContactForm and DownloadCV with modern UI and PDF viewer
 - Improve mobile navigation layout with backdrop blur and better spacing
+- Integrate Style Dictionary for design token management
+- Add design tokens CSS import to main application
+- Remove legacy NavBar component in favor of new navigation system
 
 ### Changed
 - Converted `ProjectView.vue` to Composition API and added Markdown rendering
