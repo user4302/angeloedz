@@ -1,0 +1,254 @@
+[
+  {
+    "title": "Advanced Scientific Calculator",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Angelo EDZ Portfolio Website",
+    "type": "Personal"
+  },
+  {
+    "title": "APK Signing and Packaging PowerShell Automation",
+    "type": "Open-Source"
+  },
+  {
+    "title": "AuthNote - User Authentication Note Management System",
+    "type": "Personal"
+  },
+  {
+    "title": "AutoHotkey v2 Productivity Automation Suite",
+    "type": "Open-Source"
+  },
+  {
+    "title": "BDO Ship Building Tracker",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Bulk Barcode Generator for Event Management",
+    "type": "Personal"
+  },
+  {
+    "title": "Canny Edge Detector Implementation",
+    "type": "University"
+  },
+  {
+    "title": "CoBE - Core Backend",
+    "type": "Personal"
+  },
+  {
+    "title": "CoBE Scaffold - Modular Node.js Infrastructure Template",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Directory Dumper - XML Tree Generator",
+    "type": "Open-Source"
+  },
+  {
+    "title": "DocuShield - Secure Document Sharing Platform",
+    "type": "Personal"
+  },
+  {
+    "title": "Empty Folder Deleter Utility",
+    "type": "Open-Source"
+  },
+  {
+    "title": "File Organization Automation Script",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Game Bar Fix - BcastDVR Cleanup Tool",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Game Server Backup Automation Scripts",
+    "type": "Open-Source"
+  },
+  {
+    "title": "GCMS (Gigaclear Compensation Management System) - HR Onboarding Platform",
+    "type": "Professional"
+  },
+  {
+    "title": "GenBank - Modern Banking Landing Page",
+    "type": "Personal"
+  },
+  {
+    "title": "Git Repository Manager (GRM)",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Git Repository Optimization Suite",
+    "type": "Open-Source"
+  },
+  {
+    "title": "GitLab Activity Visualizer",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Goro — Git Ops Repo Orchestrator",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Grafana Monitoring and Alerting System",
+    "type": "Professional"
+  },
+  {
+    "title": "Hyfen8 Assessment Portal",
+    "type": "Professional"
+  },
+  {
+    "title": "Hyfen8 Portal Backend API",
+    "type": "Professional"
+  },
+  {
+    "title": "Hyfen8 Website",
+    "type": "Professional"
+  },
+  {
+    "title": "iTelaSoft Builder CMS - Enterprise Website Platform",
+    "type": "Professional"
+  },
+  {
+    "title": "M-Pesa QR Code Management System",
+    "type": "Professional"
+  },
+  {
+    "title": "Mobitel Smart Parking Management System",
+    "type": "Professional"
+  },
+  {
+    "title": "Node.js HubSpot CRM Integration API",
+    "type": "Professional"
+  },
+  {
+    "title": "Novel Reader App - Ancient Library Edition",
+    "type": "Personal"
+  },
+  {
+    "title": "PanaPacks - Artisanal Food E-commerce Platform",
+    "type": "Professional"
+  },
+  {
+    "title": "Plex AniSync Automation Script",
+    "type": "Personal"
+  },
+  {
+    "title": "Plex-Trakt Sync Automation Script",
+    "type": "Personal"
+  },
+  {
+    "title": "Poké Explorer",
+    "type": "Personal"
+  },
+  {
+    "title": "PowerShell 7 Default Configuration Script",
+    "type": "Open-Source"
+  },
+  {
+    "title": "PowerShell Duplicate File Finder and Organizer",
+    "type": "Open-Source"
+  },
+  {
+    "title": "PowerShell Script Administrator Context Menu",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Python Virtual Environment Starter",
+    "type": "Personal"
+  },
+  {
+    "title": "Quick Delete - Windows Folder Deletion Utility",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Roll Length Calculator",
+    "type": "Personal"
+  },
+  {
+    "title": "SCPF (Supply Chain Finance Platform) Frontend",
+    "type": "Professional"
+  },
+  {
+    "title": "Simple Node.js API Server",
+    "type": "Personal"
+  },
+  {
+    "title": "Smart Bin IoT Backend API",
+    "type": "Professional"
+  },
+  {
+    "title": "Smart Bin IoT Monitoring Dashboard",
+    "type": "Professional"
+  },
+  {
+    "title": "Sort Into Folders of X",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Sorter",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Unknown",
+    "type": "Personal"
+  },
+  {
+    "title": "Unknown",
+    "type": ""
+  },
+  {
+    "title": "Unknown",
+    "type": ""
+  },
+  {
+    "title": "Vue Task Tracker",
+    "type": "Personal"
+  },
+  {
+    "title": "Vue.js CRM Contact Management Frontend",
+    "type": "Professional"
+  },
+  {
+    "title": "Wild Frontiers Sri Lanka - Adventure Tourism Website",
+    "type": "Professional"
+  },
+  {
+    "title": "Windows Registry Context Menu Integration for VS Code",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Windows Update Tool",
+    "type": "Open-Source"
+  },
+  {
+    "title": "Winget Upgrade Helper (WUH)",
+    "type": "Open-Source"
+  },
+  {
+    "title": "XG Controller UI - CMCT Frontend Platform",
+    "type": "Professional"
+  },
+  {
+    "title": "XG DM Device Migration Firmware",
+    "type": "Professional"
+  },
+  {
+    "title": "XG DM Firmware Raspberry Pi Communication System",
+    "type": "Professional"
+  },
+  {
+    "title": "XG VoLTE Test Suite Collection",
+    "type": "Professional"
+  },
+  {
+    "title": "YC Directory - Startup Pitch Platform",
+    "type": "Personal"
+  },
+  {
+    "title": "YouTube Brand Account Video Mover",
+    "type": "Personal"
+  },
+  {
+    "title": "Yuex Website - Builder.io Powered Next.js Application",
+    "type": "Professional"
+  }
+]
