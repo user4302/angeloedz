@@ -70,10 +70,129 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Low contrast issues in markdown content display
 - Icon rendering inconsistencies across different browsers
 
+## [1.4.0] - 2025-12-21
+
+### Added
+- Terminal category for projects
+- Vitest testing suite implementation
+- JSDoc documentation throughout the codebase
+- Multi language library project
+- Netlify build image update to Noble
+- Node.js version 22 support
+- Estraverse dependency to resolve build errors
+
 ### Changed
-- Enhanced icon tooltips to display full Iconify identifiers for better clarity
-- Improved tech stack icon styling with monochrome white appearance and hover effects
-- Optimized component imports by leveraging Vue's auto-import functionality
+- Updated project dependencies
+- Fixed icon naming conventions
+- Enhanced documentation
+
+## [1.3.0] - 2025-09-22
+
+### Added
+- CV download functionality
+- PDF viewer integration
+- Contact form with Formspree integration
+- Axios for HTTP requests
+
+### Changed
+- Multiple CV updates and improvements
+- Enhanced contact form styling
+- Improved mobile responsiveness
+
+## [1.2.0] - 2025-04-15
+
+### Added
+- Project showcase with multiple projects:
+  - Task Tracker
+  - Simple Node Server
+  - Git Repo Manager
+  - Winget Upgrade Helper
+  - Cron game Backup
+- Responsive design for mobile devices
+- Project filtering by category
+- Active state styling for current category
+- CV download component
+- Contact form integration
+
+### Changed
+- Replaced FontAwesome with Simple Icons
+- Updated project card styling
+- Improved image handling and sizing
+- Enhanced global styling system
+- Fixed various UI bugs and inconsistencies
+
+### Fixed
+- Click propagation issues on project cards
+- Missing git repo links handling
+- Mobile layout issues
+
+## [1.0.0] - 2025-04-14
+
+### Added
+- Vue Router and Vuex integration
+- Home page component
+- Project data store management
+- Project view functionality
+- Image utility for imports
+- Global CSS styling system
+
+### Changed
+- Migrated from Vue 2 to Vue 3
+- Updated project structure
+- Enhanced project card components
+- Improved banner styling and positioning
+
+## [0.6.0] - 2025-04-12
+
+### Added
+- Hero section with typing animation
+- Project grid display
+- Experience timeline
+- Skills section
+- Personal projects showcase
+- Career goals section
+- Testimonials section
+- Challenges and solutions section
+- Community involvement section
+- Dark theme implementation
+- Lazy loading for project cards
+- Hover effects and animations
+
+### Changed
+- Removed HelloWorld component
+- Updated button styling
+- Enhanced card borders and typography
+- Improved project category display
+
+### Fixed
+- Lazy loading scroll behavior
+- Project show/hide functionality
+
+## [0.5.0] - 2025-01-07
+
+### Changed
+- Updated project dependencies
+- Code cleanup and linting fixes
+- Removed unnecessary comments
+
+## [0.4.0] - 2021-11-03
+
+### Added
+- Contact form functionality
+- Form validation and error handling
+- User feedback for form submission
+
+### Fixed
+- Form submission bugs
+- Button styling issues
+- Contact form integration problems
+
+## [0.3.0] - 2021-10-27
+
+### Added
+- Initial Vue 2 setup with Vuetify
+- Basic project structure
+- Foundation for the portfolio website
 
 ### Features
 - **Markdown-Powered Content**: Effortlessly manage projects using Markdown files with build-time JSON indexing
@@ -93,7 +212,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Vue.js 3 with Composition API
 - Vuex 4 for state management
 - Vue Router 4 for navigation
-- Simple Icons integration
+- Iconify integration for icons
 - Axios for HTTP requests
 - Vitest for unit testing
 - Netlify deployment setup
