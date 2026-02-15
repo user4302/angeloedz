@@ -5,20 +5,199 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.0.0] - 2026-02-15 
 
 ### Added
-- Initial project setup with Vue.js 3
-- Portfolio website with multiple sections
-- Project showcase with filtering capabilities
-- Contact form and CV download functionality
-- Responsive design and animations
-- Vuex state management for projects
-- Vue Router for navigation
-- Testing setup with Vitest
-- Netlify deployment configuration
+- Build-time Markdown-to-JSON parsing logic for projects
+- `ProjectThumbnail.vue` component with lazy loading and Netlify CDN support
+- Unique CSS/SVG fallbacks for projects without images
+- Tech stack icon visualization in project detail pages
+- Intelligent metadata extraction from Markdown text templates
+- Comprehensive technology mapping with 100+ tech stack icons
+- Automatic technology detection from markdown content
+- Iconify integration for enhanced icon library support
+- Automated build-time icon validation via Iconify API to prevent broken mappings
+- Optimized icon tooltips to display clean technology names for better UX
+- Comprehensive UI/UX redesign of project components with modern interactions
+- Redesigned ProjectCard with overlay effects and icon-based navigation
+- Enhanced ProjectSection with pill filters and improved loading states
+- Complete ProjectView redesign with hero section and mobile navigation
+- Enhance project detail UX and navigation behavior
+- Add semantic target icon for Impact section with structured list styling
+- Implement project links footer with large action buttons
+- Enhance mobile navigation and responsive design consistency
+- Add scroll-to-top behavior for better navigation UX
+- Enhance link handling and UI consistency across project components
+- Technology icon tooltips with custom labels and smooth hover animations
+- Redesign of mobile navigation from bottom floating bar to top fixed header
+- Enhanced component interactions with cursor states and hover effects
+- Major UI overhaul for ContactForm and DownloadCV components
+- Custom circular resize handle with expand icon for contact form textarea
+- Full drag-to-resize functionality with mouse and touch support
+- Fixed PDF viewer header buttons to be properly sized circles
+- Improved mobile PDF viewer layout with full viewport and proper positioning
+- Add dynamic GitLab/GitHub icon detection based on repository URLs
+- Implement consistent link-2 icon for live demos across all components
+- Enhance projects parser to extract repository and live site URLs from markdown
+- Improve button layouts with slot wrappers and grid systems
+- Enhance technology icon tooltips with custom labels and animations
+- Replace basic title tooltips with custom styled labels across components
+- Add formatTechName function to prettify technology names (Vue.js, Node.js, etc.)
+- Implement smooth hover animations with scaling and color transitions
+- Redesign mobile navigation and enhance component interactions
+- Replace bottom floating nav with top fixed header for better mobile UX
+- Add proper cursor states and interactive feedback across project cards
+- Enhance ContactForm and DownloadCV with modern UI and PDF viewer
+- Improve mobile navigation layout with backdrop blur and better spacing
+- Integrate Style Dictionary for design token management
+- Add design tokens CSS import to main application
+- Remove legacy NavBar component in favor of new navigation system
+
+### Changed
+- Converted `ProjectView.vue` to Composition API and added Markdown rendering
+- Refined `ProjectCard.vue` UI/UX with left alignment and button-style action links
+- Updated `projects.js` store to handle dynamic JSON data
+- Migrated from simple-icons to @iconify/vue for better performance
+- Enhanced markdown styling with improved contrast and readability
+- Improved responsive design for project detail pages
+- Implemented runtime icon visibility checks in `ProjectCard` and `ProjectView` to hide missing icons
+- Refactored `projects-parser.js` to support asynchronous validation against the Iconify API
+
+### Fixed
+- Runtime error when encountering undefined image sources
+- Deprecated `simple-icons` import warnings
+- Missing projects issue by robustifying the parser for non-frontmatter files
+- Low contrast issues in markdown content display
+- Icon rendering inconsistencies across different browsers
+
+## [1.4.0] - 2025-12-21
+
+### Added
+- Terminal category for projects
+- Vitest testing suite implementation
+- JSDoc documentation throughout the codebase
+- Multi language library project
+- Netlify build image update to Noble
+- Node.js version 22 support
+- Estraverse dependency to resolve build errors
+
+### Changed
+- Updated project dependencies
+- Fixed icon naming conventions
+- Enhanced documentation
+
+## [1.3.0] - 2025-09-22
+
+### Added
+- CV download functionality
+- PDF viewer integration
+- Contact form with Formspree integration
+- Axios for HTTP requests
+
+### Changed
+- Multiple CV updates and improvements
+- Enhanced contact form styling
+- Improved mobile responsiveness
+
+## [1.2.0] - 2025-04-15
+
+### Added
+- Project showcase with multiple projects:
+  - Task Tracker
+  - Simple Node Server
+  - Git Repo Manager
+  - Winget Upgrade Helper
+  - Cron game Backup
+- Responsive design for mobile devices
+- Project filtering by category
+- Active state styling for current category
+- CV download component
+- Contact form integration
+
+### Changed
+- Replaced FontAwesome with Simple Icons
+- Updated project card styling
+- Improved image handling and sizing
+- Enhanced global styling system
+- Fixed various UI bugs and inconsistencies
+
+### Fixed
+- Click propagation issues on project cards
+- Missing git repo links handling
+- Mobile layout issues
+
+## [1.0.0] - 2025-04-14
+
+### Added
+- Vue Router and Vuex integration
+- Home page component
+- Project data store management
+- Project view functionality
+- Image utility for imports
+- Global CSS styling system
+
+### Changed
+- Migrated from Vue 2 to Vue 3
+- Updated project structure
+- Enhanced project card components
+- Improved banner styling and positioning
+
+## [0.6.0] - 2025-04-12
+
+### Added
+- Hero section with typing animation
+- Project grid display
+- Experience timeline
+- Skills section
+- Personal projects showcase
+- Career goals section
+- Testimonials section
+- Challenges and solutions section
+- Community involvement section
+- Dark theme implementation
+- Lazy loading for project cards
+- Hover effects and animations
+
+### Changed
+- Removed HelloWorld component
+- Updated button styling
+- Enhanced card borders and typography
+- Improved project category display
+
+### Fixed
+- Lazy loading scroll behavior
+- Project show/hide functionality
+
+## [0.5.0] - 2025-01-07
+
+### Changed
+- Updated project dependencies
+- Code cleanup and linting fixes
+- Removed unnecessary comments
+
+## [0.4.0] - 2021-11-03
+
+### Added
+- Contact form functionality
+- Form validation and error handling
+- User feedback for form submission
+
+### Fixed
+- Form submission bugs
+- Button styling issues
+- Contact form integration problems
+
+## [0.3.0] - 2021-10-27
+
+### Added
+- Initial Vue 2 setup with Vuetify
+- Basic project structure
+- Foundation for the portfolio website
 
 ### Features
+- **Markdown-Powered Content**: Effortlessly manage projects using Markdown files with build-time JSON indexing
+- **Image Optimization & Fallbacks**: High-performance image loading with lazy loading and automatic graceful fallbacks
+- **Dynamic Project Showcase**: Display and filter projects by category (Frontend, Backend, Terminal, Scripting, Mobile)
 - Hero section with typing animation
 - Project grid display with technology icons
 - Experience timeline
@@ -33,7 +212,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Vue.js 3 with Composition API
 - Vuex 4 for state management
 - Vue Router 4 for navigation
-- Simple Icons integration
+- Iconify integration for icons
 - Axios for HTTP requests
 - Vitest for unit testing
 - Netlify deployment setup

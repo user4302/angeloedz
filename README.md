@@ -8,14 +8,15 @@
 
 ## Features ✨
 
-- **Dynamic Project Showcase**: Display and filter projects by category (Frontend, Backend, Terminal, Scripting, Mobile)
-- **Interactive Hero Section**: Animated typing effects and smooth transitions
-- **Comprehensive Profile Sections**: Experience timeline, skills display, career goals, and testimonials
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Contact Integration**: Built-in contact form and CV download functionality
-- **Technology Icons**: Visual representation of tech stack using Simple Icons
-- **Single Page Application**: Smooth navigation with Vue Router
-- **State Management**: Organized project data with Vuex
+- **Markdown-Powered Projects**: Automatically parses Obsidian-ready `.md` files into the site at build time
+- **Image Optimization & Fallbacks**: Lazy-loaded thumbnails with Netlify CDN support and generated fallbacks for missing images
+- **Dynamic Project Showcase**: Display and filter projects by category with modern pill-style filters
+- **Enhanced Project Cards**: Interactive cards with hover overlays, icon-based navigation, and smooth transitions
+- **Responsive Project Details**: Hero sections, mobile navigation with top fixed header, optimized content layouts, and scroll-to-top behavior
+- **Modern UI/UX**: Micro-interactions, loading states, structured impact lists, and consistent design language
+- **Smart Link Handling**: Dynamic GitLab/GitHub icon detection and consistent navigation across all project components
+- **Enhanced Tooltips**: Custom-styled technology labels with smooth animations and prettified names
+- **Mobile-First Design**: Optimized mobile navigation, PDF viewer integration, and responsive component interactions
 
 ## Tech Stack / Built With 🛠️
 
@@ -23,7 +24,7 @@
 ![Vuex](https://img.shields.io/badge/Vuex-4.1.0-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
 ![Vue Router](https://img.shields.io/badge/Vue%20Router-4.0.13-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
 ![Axios](https://img.shields.io/badge/Axios-1.8.4-5A29E4?style=flat-square&logo=axios&logoColor=white)
-![Simple Icons](https://img.shields.io/badge/Simple%20Icons-16.2.0-000000?style=flat-square&logo=simpleicons&logoColor=white)
+![Iconify](https://img.shields.io/badge/Iconify-5.0.0-000000?style=flat-square&logo=iconify&logoColor=white)
 ![Vitest](https://img.shields.io/badge/Vitest-3.2.4-6E9F18?style=flat-square&logo=vitest&logoColor=white)
 
 ## Prerequisites
@@ -168,6 +169,10 @@ No email or direct messaging support is available.
 
 ## Acknowledgments 🙏
 
-- Vue.js team for the excellent framework
-- Simple Icons for the comprehensive icon library
+- Vue.js 3 with Composition API
+- Vuex 4 for state management
+- Vue Router 4 for navigation
+- Iconify for comprehensive icon library
+- Axios for HTTP requests
+- Vitest for unit testing
 - Netlify for seamless deployment

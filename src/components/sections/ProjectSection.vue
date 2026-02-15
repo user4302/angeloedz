@@ -1,21 +1,33 @@
 <template>
-  <div class="section">
-    <div class="section-buttons">
-      <button
-        v-for="category in categories"
-        :key="category"
-        @click="filterCategory(category)"
-        :class="{ active: category === currentCategory }"
-      >
-        {{ category }}
-      </button>
+  <div class="project-section">
+    <div class="filter-container">
+      <div class="pill-group">
+        <button
+          v-for="category in categories"
+          :key="category"
+          @click="filterCategory(category)"
+          :class="{ active: category === currentCategory }"
+          class="pill-button"
+        >
+          {{ category }}
+        </button>
+      </div>
     </div>
-    <div class="card-container" ref="cardContainer">
+
+    <div class="card-grid" ref="cardContainer">
       <ProjectCard
         v-for="(card, index) in visibleCards"
-        :key="index"
+        :key="`${card.id}-${index}`"
         :data="card"
+        :class="{ 'fade-in': card.fadeIn }"
       />
+    </div>
+
+    <!-- Infinite Scroll Sentinel -->
+    <div v-show="hasMore" class="scroll-sentinel" ref="loadMoreTrigger">
+      <div class="loader-dots" v-if="loadingMore">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </div>
 </template>
@@ -29,149 +41,209 @@ export default {
   components: {
     ProjectCard,
   },
-  /**
-   * Component data.
-   *
-   * @returns {object} Initial data state.
-   */
   data() {
     return {
-      /** @type {string[]} List of available project categories. */
       categories: ['Frontend', 'Backend', 'Scripting', 'Terminal', 'Mobile'],
-      /** @type {object[]} List of projects currently visible in the UI. */
       visibleCards: [],
-      /** @type {string} The currently selected filter category. */
       currentCategory: 'Frontend',
-      /** @type {number} Number of cards to load at once. */
-      cardsPerLoad: 3, 
+      cardsPerLoad: 8,
+      loadingMore: false,
+      observer: null,
     };
   },
   computed: {
-    ...mapGetters('projects', ['getProjectById', 'getProjects']),
+    ...mapGetters('projects', ['getProjects']),
+    filteredProjects() {
+      return this.getProjects.filter(p => p.category === this.currentCategory);
+    },
+    hasMore() {
+      return this.visibleCards.length < this.filteredProjects.length;
+    }
   },
   methods: {
-    /**
-     * Fetches and logs a project by its ID.
-     *
-     * @param {number} id - The ID of the project to fetch.
-     */
-    fetchProject(id) {
-      const project = this.getProjectById(id);
-      console.log(project);
-    },
-    /**
-     * Filters the displayed projects by the selected category.
-     *
-     * @param {string} category - The category to filter by.
-     */
     filterCategory(category) {
+      if (this.currentCategory === category) return;
       this.currentCategory = category;
-      this.loadCards();
+      this.loadInitialCards();
     },
-    /**
-     * Initially loads the first set of projects for the current category.
-     */
-    loadCards() {
-      const filteredCards = this.getProjects.filter(
-        (card) => card.category === this.currentCategory
-      );
-      this.visibleCards = filteredCards
+    loadInitialCards() {
+      this.visibleCards = this.filteredProjects
         .slice(0, this.cardsPerLoad)
         .map((card) => ({ ...card, fadeIn: true }));
     },
-    /**
-     * Window scroll event handler for infinite scrolling.
-     */
-    handleScroll() {
-      const cardContainer = this.$refs.cardContainer;
-      if (!cardContainer) return;
+    initObserver() {
+      if (this.observer) this.observer.disconnect();
 
-      const containerBottom = cardContainer.getBoundingClientRect().bottom;
-      const windowHeight = window.innerHeight;
-      const threshold = 100;
+      this.observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !this.loadingMore && this.hasMore) {
+          this.loadMoreCards();
+        }
+      }, {
+        rootMargin: '200px', // Trigger before it actually hits the screen
+      });
 
-      if (containerBottom <= windowHeight + threshold) {
-        this.loadMoreCards();
+      if (this.$refs.loadMoreTrigger) {
+        this.observer.observe(this.$refs.loadMoreTrigger);
       }
     },
-    /**
-     * Loads the next set of projects for the current category.
-     */
     loadMoreCards() {
-      const filteredCards = this.getProjects.filter(
-        (card) => card.category === this.currentCategory
-      );
+      if (this.loadingMore || !this.hasMore) return;
+      
+      this.loadingMore = true;
       const currentLength = this.visibleCards.length;
-      const moreCards = filteredCards
+      const nextBatch = this.filteredProjects
         .slice(currentLength, currentLength + this.cardsPerLoad)
         .map((card) => ({ ...card, fadeIn: false }));
-      this.visibleCards = this.visibleCards.concat(moreCards);
 
+      if (nextBatch.length === 0) {
+        this.loadingMore = false;
+        return;
+      }
+
+      // Small delay for smooth transition feel
       setTimeout(() => {
-        moreCards.forEach((card) => (card.fadeIn = true));
-      }, 100);
+        this.visibleCards = [...this.visibleCards, ...nextBatch];
+        setTimeout(() => {
+          nextBatch.forEach(c => c.fadeIn = true);
+          this.loadingMore = false;
+        }, 50);
+      }, 200);
     },
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
-    this.loadCards();
+    this.loadInitialCards();
+    this.initObserver();
+  },
+  updated() {
+    // Re-bind observer if sentinel was re-added to DOM
+    if (this.hasMore && this.$refs.loadMoreTrigger) {
+      this.observer.observe(this.$refs.loadMoreTrigger);
+    }
   },
   beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    if (this.observer) this.observer.disconnect();
   },
 };
 </script>
 
 <style scoped>
-.section {
-  padding: 20px;
+.project-section {
+  padding: 60px 20px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.section-buttons {
+.filter-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
-.section-buttons button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
+.pill-group {
+  display: flex;
+  background: rgba(30, 41, 59, 0.5);
+  padding: 6px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pill-button {
+  padding: 10px 24px;
+  border-radius: 999px;
   border: none;
-  border-radius: 4px;
+  background: transparent;
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.section-buttons button.active {
-  border: 2px solid white;
+.pill-button:hover {
+  color: #f8fafc;
 }
 
-.card-container {
+.pill-button.active {
+  background: #6366f1;
+  color: white;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.scroll-sentinel {
+  height: 1px; /* Minimal height to trigger observer without adding blank space */
+  width: 100%;
+  margin-top: 20px;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .section-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .section-buttons button {
-    margin: 5px 0;
-    width: 80%;
-  }
-
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-  }
+.loader-dots {
+  padding: 20px 0;
+  display: flex;
+  gap: 8px;
 }
 
-@media (max-width: 480px) {
-  .section-buttons button {
-    font-size: 0.9rem;
+.loader-dots span {
+  width: 10px;
+  height: 10px;
+  background: #6366f1;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.loader-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loader-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+:deep(.project-card) {
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+:deep(.project-card.fade-in) {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .project-section {
+    padding: 40px 15px;
+  }
+  
+  .pill-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 20px;
+  }
+  
+  .pill-button {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 </style>
