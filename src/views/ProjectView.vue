@@ -246,6 +246,7 @@ const leanRemainingContent = computed(() => {
   margin: 0 auto;
   padding: 80px 20px 100px;
   color: #f8fafc;
+  overflow-x: hidden;
 }
 
 /* Top Navigation */
@@ -355,6 +356,8 @@ h1 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .hero-desc {
@@ -660,14 +663,20 @@ h1 {
 
 /* Responsive */
 @media (max-width: 900px) {
+  .project-view {
+    padding-top: 60px;
+  }
+
   .project-hero {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 40px;
+    gap: 30px;
+    margin-bottom: 40px;
   }
   
   .tech-row {
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .grid-layout {
@@ -676,11 +685,18 @@ h1 {
 
   .project-banner {
     order: -1;
-    height: 300px;
+    height: auto;
+    aspect-ratio: 16/10;
+    min-height: 200px;
   }
 
   h1 {
-    font-size: 2.75rem;
+    font-size: 2.2rem;
+  }
+
+  .hero-desc {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
   }
 
   .mobile-header {
@@ -698,16 +714,37 @@ h1 {
   .project-links-footer {
     flex-direction: column;
     align-items: stretch;
+    margin-top: 40px;
   }
 
   .btn.large {
     justify-content: center;
+    width: 100%;
+    min-width: unset;
   }
 
   /* Hide floating Contact and CV buttons on mobile */
   :deep(.floating-contact-icon),
   :deep(.floating-cv-icon) {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .project-view {
+    padding: 60px 16px 80px;
+  }
+
+  .content-card {
+    padding: 24px 20px;
+  }
+
+  .project-banner {
+    aspect-ratio: 4/3;
   }
 }
 </style>

@@ -1,4 +1,4 @@
-# Angelo EDZ Portfolio v2.0.1
+# Angelo EDZ Portfolio v2.0.2
 
 🚀 Personal portfolio website showcasing software engineering projects and skills
 
