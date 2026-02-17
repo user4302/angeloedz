@@ -7,3 +7,8 @@
   # Specify the newer build image to resolve the Focal deprecation.
   # Netlify uses 'ubuntu-24.04' for Noble.
   NETLIFY_BUILD_IMAGE = "ubuntu-24.04"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

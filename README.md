@@ -1,4 +1,4 @@
-# Angelo EDZ Portfolio
+# Angelo EDZ Portfolio v2.0.1
 
 🚀 Personal portfolio website showcasing software engineering projects and skills
 
@@ -149,7 +149,10 @@ The project is configured for Netlify deployment:
 3. Set publish directory: `dist`
 4. Set Node.js version: `22`
 
-The `netlify.toml` file contains the deployment configuration.
+The `netlify.toml` file contains the deployment configuration, including:
+- Build image specification (Ubuntu 24.04)
+- SPA routing redirect to handle client-side navigation
+- All requests are redirected to `/index.html` with 200 status for proper Vue Router functionality
 
 ## Contributing 🤝
 
