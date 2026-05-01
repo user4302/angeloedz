@@ -22,6 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Consolidated duplicate modal styles into shared Modals.css, reducing code duplication by ~400+ lines
 - Updated DownloadCV and ContactForm components to use shared modal class structure
 - Updated component imports to use dedicated CSS files and removed scoped style blocks
+- Extracted ProjectSection.vue CSS to dedicated src/styles/ProjectSection.css file
+- Added availableCategories computed property to filter categories with projects
+- Updated desktop pills and mobile dropdown to only show categories that have projects
 
 ## [3.0.0] - 2026-05-01
 
