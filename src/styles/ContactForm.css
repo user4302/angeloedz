@@ -11,23 +11,18 @@
   background-color: rgba(15, 23, 42, 0.85);
 }
 
-/* Contact form container extends modal-container */
-.contact-form {
-  position: relative;
-  padding: 40px;
-  width: 90%;
-  max-width: 500px;
-  max-height: 85vh;
+/* Contact content area */
+.contact-content {
+  padding: 32px;
   overflow-y: auto;
 }
 
-/* Contact form specific title */
-.contact-form h2 {
-  font-size: 2rem;
-  margin: 0 0 30px 0;
+.contact-content form {
+  width: 100%;
+  margin: 0 auto;
 }
 
-form div {
+.contact-content form div {
   margin-bottom: 20px;
 }
 
@@ -42,9 +37,10 @@ form label {
   letter-spacing: 0.05em;
 }
 
-form input,
-form textarea {
+.contact-content form input,
+.contact-content form textarea {
   width: 100%;
+  max-width: 100%;
   padding: 12px 16px;
   box-sizing: border-box;
   background-color: #0f172a;
@@ -132,6 +128,10 @@ form button[type='submit'] {
   letter-spacing: 0.05em;
   border-radius: 12px;
   padding: 14px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 form button[type='submit']:active:not(:disabled) {
@@ -167,75 +167,16 @@ form button[type='submit']:disabled {
   font-size: 0.9rem;
 }
 
-.success-message {
-  text-align: center;
-  color: #f8fafc;
-  font-size: 1.5rem;
-  font-weight: 700;
-  animation: fadeIn 0.5s ease-in-out;
-  background: #1e293b;
-  padding: 60px 40px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-}
+/* Success message uses shared styles */
+/* .success-message and .success-icon handled by Modals.css */
 
-/* Success message uses shared scaleIn animation */
-.success-icon {
-  font-size: 80px;
-  color: #10b981;
-  animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  display: block;
-  margin-bottom: 20px;
-}
-
-/* Custom scrollbar for form */
-.contact-form::-webkit-scrollbar {
-  width: 8px;
-}
-
-.contact-form::-webkit-scrollbar-track {
-  background: #0f172a;
-  border-radius: 10px;
-}
-
-.contact-form::-webkit-scrollbar-thumb {
-  background: #6366f1;
-  border-radius: 10px;
-}
-
-.contact-form::-webkit-scrollbar-thumb:hover {
-  background: #8b5cf6;
-}
-
-/* Contact Form Responsive - overrides shared modal responsive */
+/* Contact Form Responsive - matches CV modal responsive */
 @media (max-width: 768px) {
-  .contact-form h2 {
-    position: static;
-    margin: 0;
-    padding: 16px 20px;
+  .contact-header h2 {
     font-size: 1.1rem;
-    background: rgba(15, 23, 42, 0.6);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    min-height: 56px;
-    color: #f8fafc !important;
-    background: none !important;
-    -webkit-text-fill-color: #f8fafc !important;
   }
 
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 16px;
-    z-index: 10;
-  }
-
-  .contact-form form {
-    flex: 1;
-    overflow-y: auto;
+  .contact-content {
     padding: 24px;
   }
 

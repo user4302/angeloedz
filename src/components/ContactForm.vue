@@ -8,52 +8,59 @@
       <span class="material-icons">mail</span>
     </button>
 
-    <div class="modal-overlay contact-form-overlay" v-if="isVisible">
-      <div class="modal-container contact-form" v-if="!isSubmitted">
-        <button class="close-button" @click="closeForm" :disabled="isLoading">
-          <span class="material-icons">close</span>
-        </button>
-        <h2>Contact Me</h2>
-        <form @submit.prevent="submitForm">
-          <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" v-model="name" required />
+    <div class="modal-overlay contact-form-overlay" v-if="isVisible" @click.self="closeForm">
+      <div class="modal-container contact-form modal-large modal-custom-scrollbar" v-if="!isSubmitted">
+        <div class="modal-header contact-header">
+          <h2>Contact Me</h2>
+          <div class="header-actions">
+            <button class="close-button" @click="closeForm" :disabled="isLoading" title="Close form">
+              <span class="material-icons">close</span>
+            </button>
           </div>
-          <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" v-model="email" required />
-          </div>
-          <div>
-            <label for="phone">Phone No. (optional)</label>
-            <input type="tel" id="phone" v-model="phone" />
-          </div>
-          <div class="textarea-container">
-            <label for="message">Message</label>
-            <div class="textarea-wrapper">
-              <textarea 
-                id="message" 
-                v-model="message" 
-                required
-                ref="messageTextarea"
-              ></textarea>
-              <div 
-                class="resize-handle" 
-                title="Drag to resize"
-                ref="resizeHandle"
-                @mousedown="startResize"
-                @touchstart="startResize"
-              >
-                <span class="material-icons">expand</span>
+        </div>
+        
+        <div class="modal-content contact-content">
+          <form @submit.prevent="submitForm">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" v-model="name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" v-model="email" required />
+            </div>
+            <div>
+              <label for="phone">Phone No. (optional)</label>
+              <input type="tel" id="phone" v-model="phone" />
+            </div>
+            <div class="textarea-container">
+              <label for="message">Message</label>
+              <div class="textarea-wrapper">
+                <textarea 
+                  id="message" 
+                  v-model="message" 
+                  required
+                  ref="messageTextarea"
+                ></textarea>
+                <div 
+                  class="resize-handle" 
+                  title="Drag to resize"
+                  ref="resizeHandle"
+                  @mousedown="startResize"
+                  @touchstart="startResize"
+                >
+                  <span class="material-icons">expand</span>
+                </div>
               </div>
             </div>
-          </div>
-          <button type="submit" :disabled="isLoading" class="btn-primary">Send</button>
-          <div v-if="isLoading" class="loader">Loading...</div>
-          <div v-if="errorMessage" class="error-message">
-            <p>{{ errorMessage }}</p>
-            <p>{{ errorResponse }}</p>
-          </div>
-        </form>
+            <button type="submit" :disabled="isLoading" class="btn-primary">Send</button>
+            <div v-if="isLoading" class="loader">Loading...</div>
+            <div v-if="errorMessage" class="error-message">
+              <p>{{ errorMessage }}</p>
+              <p>{{ errorResponse }}</p>
+            </div>
+          </form>
+        </div>
       </div>
       <div v-else class="modal-container success-message">
         <span class="material-icons success-icon">check_circle</span>

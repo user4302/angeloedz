@@ -9,14 +9,14 @@
     </button>
 
     <div class="modal-overlay pdf-viewer-overlay" v-if="isVisible" @click.self="closeViewer">
-      <div class="modal-container pdf-viewer-container">
+      <div class="modal-container pdf-viewer-container modal-large modal-custom-scrollbar">
         <div class="modal-header viewer-header">
           <h2>Curriculum Vitae</h2>
           <div class="header-actions">
             <a 
               :href="pdfPath" 
               target="_blank"
-              class="btn-secondary btn-external"
+              class="btn-large btn-large-secondary btn-external"
               title="Open in new tab"
               @click.stop
             >
@@ -25,7 +25,7 @@
             <a 
               :href="pdfPath" 
               download="ANGELO_E_DE_ZOYSA_CV.pdf"
-              class="btn-primary btn-download"
+              class="btn-large btn-large-primary btn-download"
               title="Download CV"
               @click.stop
             >
@@ -50,7 +50,7 @@
             <a 
               :href="pdfPath" 
               download="ANGELO_E_DE_ZOYSA_CV.pdf"
-              class="btn-download-large"
+              class="btn-large btn-large-primary btn-download-large"
             >
               <span class="material-icons">download</span>
               Download CV
@@ -58,7 +58,7 @@
             <a 
               :href="pdfPath" 
               target="_blank"
-              class="btn-external-large"
+              class="btn-large btn-large-secondary btn-external-large"
             >
               <span class="material-icons">open_in_new</span>
               Open in Browser

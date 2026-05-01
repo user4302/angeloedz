@@ -280,6 +280,96 @@
   }
 }
 
+/* Large Modal Container Size */
+.modal-large {
+  max-width: 1000px;
+  height: 90vh;
+  max-height: 900px;
+}
+
+/* Large Button Styles */
+.btn-large {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  font-size: 1.1rem;
+}
+
+.btn-large-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+}
+
+.btn-large-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.6);
+  filter: brightness(1.1);
+}
+
+.btn-large-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-large-secondary:hover {
+  background: #6366f1;
+  border-color: #6366f1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+}
+
+.btn-large .material-icons {
+  font-size: 24px;
+}
+
+/* Success Message */
+.success-message {
+  text-align: center;
+  color: #f8fafc;
+  font-size: 1.5rem;
+  font-weight: 700;
+  animation: fadeIn 0.5s ease-in-out;
+  background: #1e293b;
+  padding: 60px 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.success-icon {
+  font-size: 80px;
+  color: #10b981;
+  animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Custom Scrollbar */
+.modal-custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-custom-scrollbar::-webkit-scrollbar-track {
+  background: #0f172a;
+  border-radius: 10px;
+}
+
+.modal-custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 10px;
+}
+
+.modal-custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
+
 /* Responsive Mobile Styles */
 @media (max-width: 768px) {
   .modal-overlay {
