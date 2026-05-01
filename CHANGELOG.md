@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Refactored
+
+### Changed
+
+## [3.1.0] - 2026-05-01
+
+### Added
+
 - Implemented structured 2-row button layout system for ProjectCard component with consistent Live button positioning
 - Added dynamic repo button sizing with icon-only display when both GitHub and GitLab are present
 - Enhanced link labeling to show specific repo names ("GitHub"/"GitLab") instead of generic "Repo"
