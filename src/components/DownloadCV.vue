@@ -14,6 +14,7 @@
           <h2>Curriculum Vitae</h2>
           <div class="header-actions">
             <a 
+              v-if="!isMobile"
               :href="pdfPath" 
               target="_blank"
               class="btn-large btn-large-secondary btn-external"
@@ -23,6 +24,7 @@
               <span class="material-icons">open_in_new</span>
             </a>
             <a 
+              v-if="!isMobile"
               :href="pdfPath" 
               download="ANGELO_E_DE_ZOYSA_CV.pdf"
               class="btn-large btn-large-primary btn-download"
