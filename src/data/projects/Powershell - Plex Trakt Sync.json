@@ -22,7 +22,7 @@
     ]
   },
   "content": {
-    "title": "Plex-Trakt Sync Automation Script",
+    "title": "Plex Trakt Sync",
     "short_description": "Automated watched status synchronization between Plex and Trakt.tv.",
     "description": "This PowerShell automation script integrates Plex Media Server with Trakt.tv synchronization service. The script monitors Plex streaming activity and automatically triggers plextraktsync synchronization when appropriate, ensuring that watched status and play progress are consistently updated between the two platforms without interrupting active streaming sessions.",
     "role": "I designed and implemented a PowerShell automation script that intelligently manages Plex-Trakt synchronization timing. The script checks for active Plex streaming sessions and uses a file-based flag system to control when synchronization occurs, preventing interruptions during playback while ensuring timely updates when streaming stops."

@@ -1,0 +1,203 @@
+/* Contact Form Component Styles */
+/* Import shared modal styles from Modals.css */
+
+/* Contact-specific floating button positioning */
+.floating-contact-icon {
+  right: 80px;
+}
+
+/* Contact-specific overlay with lighter background */
+.contact-form-overlay {
+  background-color: rgba(15, 23, 42, 0.85);
+}
+
+/* Contact content area */
+.contact-content {
+  padding: 32px;
+  overflow-y: auto;
+}
+
+.contact-content form {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contact-content form div {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-content form input,
+.contact-content form textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  background-color: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  color: #f8fafc;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+  border-width: 2px;
+  border-color: #6366f1;
+  outline: none;
+  background-color: #1e293b;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #64748b;
+}
+
+form textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.textarea-container {
+  margin-bottom: 20px;
+}
+
+.textarea-wrapper {
+  position: relative;
+}
+
+.resize-handle {
+  position: absolute;
+  bottom: -33px;
+  right: -16px;
+  width: 32px;
+  height: 32px;
+  background: #6366f1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: ns-resize;
+  transition: all 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.resize-handle:hover {
+  background: #8b5cf6;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.5);
+}
+
+.resize-handle:active {
+  transform: scale(0.95);
+}
+
+.resize-icon {
+  color: white;
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.resize-handle:hover .resize-icon {
+  transform: scale(1.2);
+}
+
+/* Submit button extends btn-primary with form-specific styles */
+form button[type='submit'] {
+  width: auto;
+  min-width: 140px;
+  height: auto;
+  margin: 20px auto 0;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 12px;
+  padding: 14px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+form button[type='submit']:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+form button[type='submit']:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loader uses shared pulse animation */
+.loader {
+  margin-top: 16px;
+  text-align: center;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  animation: pulse 1.5s infinite;
+}
+
+.error-message {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+}
+
+.error-message p {
+  margin: 4px 0;
+  text-align: center;
+  color: #fca5a5;
+  font-size: 0.9rem;
+}
+
+/* Success message uses shared styles */
+/* .success-message and .success-icon handled by Modals.css */
+
+/* Contact Form Responsive - matches CV modal responsive */
+@media (max-width: 768px) {
+  .contact-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .contact-content {
+    padding: 24px;
+  }
+
+  .resize-handle {
+    width: 40px;
+    height: 40px;
+    bottom: -38px;
+    right: -20px;
+  }
+
+  .arrow-up,
+  .arrow-down {
+    border-left-width: 5px;
+    border-right-width: 5px;
+  }
+
+  .arrow-up {
+    border-bottom-width: 8px;
+  }
+
+  .arrow-down {
+    border-top-width: 8px;
+  }
+}

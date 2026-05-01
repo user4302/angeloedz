@@ -22,7 +22,7 @@
     ]
   },
   "content": {
-    "title": "Game Bar Fix - BcastDVR Cleanup Tool",
+    "title": "Fix-Gamebar",
     "short_description": "Utility to resolve Game Bar recording issues.",
     "description": "A PowerShell utility designed to resolve Xbox Game Bar recording issues by detecting and terminating stuck BcastDVRUserService processes. The tool provides detailed process analysis with professional UI feedback, automatically cleaning problematic background services that interfere with Windows gaming features. It offers a user-friendly solution for common Game Bar recording failures without requiring administrator privileges.",
     "role": "I developed a comprehensive PowerShell script that automates the detection and cleanup of problematic BcastDVRUserService processes. I implemented a professional command-line interface with colored output, spinner animations, and detailed process reporting including PID, CPU usage, memory consumption, and start time. I created multiple installation methods including a one-click installer, PowerShell profile integration, and PATH configuration. I also established proper project documentation with README, changelog, contributing guidelines, and security policy."

@@ -34,7 +34,7 @@
     ]
   },
   "content": {
-    "title": "CoBE - Core Backend",
+    "title": "CoBE",
     "short_description": "Modular monolithic platform with Prisma/Mongoose.",
     "description": "A production-ready, modular monolithic Node.js backend application built with TypeScript that provides a comprehensive foundation for scalable web applications. The project integrates multiple databases (PostgreSQL via Prisma, MongoDB via Mongoose), caching with Redis, S3-compatible object storage with MinIO, and includes robust authentication, security middleware, and a complete CI/CD pipeline with Docker containerization for both development and production environments.",
     "role": "I designed and implemented a complete modular backend architecture from scratch, creating a scalable foundation that balances monolithic simplicity with microservice-like modularity. I established the entire technology stack integration including dual database support (PostgreSQL and MongoDB), Redis caching layer, MinIO object storage, and comprehensive security middleware. I built a complete CI/CD pipeline with GitLab that supports automated testing, building, and deployment to both development and production environments with proper environment isolation. I created Docker containerization strategies for both development (with hot reloading) and production (optimized builds), implemented comprehensive health monitoring systems, and established a modular folder structure that allows for easy extension and potential future microservice extraction."

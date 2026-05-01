@@ -18,7 +18,7 @@
     ]
   },
   "content": {
-    "title": "Flowboard - Advanced Project Management Platform",
+    "title": "Flowboard",
     "short_description": "Flowboard is a modern, feature-rich project management application inspired by Trello, built with React, Next.js, and TypeScript. It provides teams with a flexible workspace to organize tasks through multiple view modes including Kanban boards, Timeline (Gantt-style), Calendar, and Table views.",
     "description": "Flowboard is a comprehensive project management solution that offers teams multiple ways to visualize and organize their work. The application features four switchable views (Kanban, Timeline, Calendar, Table), advanced drag-and-drop functionality, real-time collaboration capabilities, and robust data management. Built with modern web technologies, it provides a responsive, accessible interface that works seamlessly across devices while maintaining data persistence and offering extensive customization options.",
     "role": "As the lead developer and architect, I designed and built the entire Flowboard platform from scratch. I implemented the complete React/Next.js application architecture, created all four view modes (Kanban, Timeline, Calendar, Table), developed the sophisticated drag-and-drop system using @dnd-kit, and built the board sharing and collaboration features. I handled the full-stack development including state management with Zustand, UI component design with Radix primitives, form validation with React Hook Form and Zod, and responsive styling with Tailwind CSS. I also managed the deployment process to Netlify and ensured the application met production-ready standards for performance and accessibility."

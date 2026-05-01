@@ -1,9 +1,10 @@
 <template>
   <div class="project-section">
     <div class="filter-container">
-      <div class="pill-group">
+      <!-- Desktop: Horizontal Pills -->
+      <div class="pill-group desktop-only">
         <button
-          v-for="category in categories"
+          v-for="category in availableCategories"
           :key="category"
           @click="filterCategory(category)"
           :class="{ active: category === currentCategory }"
@@ -11,6 +12,30 @@
         >
           {{ category }}
         </button>
+      </div>
+      
+      <!-- Mobile: Custom Dropdown -->
+      <div class="mobile-dropdown mobile-only">
+        <div class="custom-dropdown" :class="{ 'is-open': isDropdownOpen }">
+          <button 
+            @click="toggleDropdown"
+            class="dropdown-trigger"
+          >
+            {{ currentCategory }}
+            <Icon icon="lucide:chevron-down" class="dropdown-arrow" />
+          </button>
+          <div class="dropdown-menu" v-show="isDropdownOpen">
+            <button
+              v-for="category in availableCategories"
+              :key="category"
+              @click="selectCategory(category)"
+              :class="{ 'active': category === currentCategory }"
+              class="dropdown-option"
+            >
+              {{ category }}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -34,12 +59,15 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { Icon } from '@iconify/vue';
 import ProjectCard from '@/components/ProjectCard.vue';
+import '@/styles/ProjectSection.css';
 
 export default {
   name: 'ProjectSection',
   components: {
     ProjectCard,
+    Icon,
   },
   data() {
     return {
@@ -49,6 +77,7 @@ export default {
       cardsPerLoad: 8,
       loadingMore: false,
       observer: null,
+      isDropdownOpen: false,
     };
   },
   computed: {
@@ -58,6 +87,11 @@ export default {
     },
     hasMore() {
       return this.visibleCards.length < this.filteredProjects.length;
+    },
+    availableCategories() {
+      return this.categories.filter(category => 
+        this.getProjects.some(p => p.metadata.category === category)
+      );
     }
   },
   methods: {
@@ -109,6 +143,25 @@ export default {
         }, 50);
       }, 200);
     },
+    toggleDropdown() {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    },
+    selectCategory(category) {
+      this.currentCategory = category;
+      this.isDropdownOpen = false;
+      this.loadInitialCards();
+    },
+  },
+  watch: {
+    currentCategory() {
+      this.loadInitialCards();
+    },
+    availableCategories() {
+      // If current category becomes unavailable, switch to first available one
+      if (!this.availableCategories.includes(this.currentCategory) && this.availableCategories.length > 0) {
+        this.currentCategory = this.availableCategories[0];
+      }
+    }
   },
   mounted() {
     this.loadInitialCards();
@@ -126,124 +179,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.project-section {
-  padding: 60px 20px 80px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.filter-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
-}
-
-.pill-group {
-  display: flex;
-  background: rgba(30, 41, 59, 0.5);
-  padding: 6px;
-  border-radius: 999px;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.pill-button {
-  padding: 10px 24px;
-  border-radius: 999px;
-  border: none;
-  background: transparent;
-  color: #94a3b8;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.pill-button:hover {
-  color: #f8fafc;
-}
-
-.pill-button.active {
-  background: #6366f1;
-  color: white;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 30px;
-  width: 100%;
-}
-
-.scroll-sentinel {
-  height: 1px; /* Minimal height to trigger observer without adding blank space */
-  width: 100%;
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.loader-dots {
-  padding: 20px 0;
-  display: flex;
-  gap: 8px;
-}
-
-.loader-dots span {
-  width: 10px;
-  height: 10px;
-  background: #6366f1;
-  border-radius: 50%;
-  animation: bounce 1.4s infinite ease-in-out both;
-}
-
-.loader-dots span:nth-child(1) { animation-delay: -0.32s; }
-.loader-dots span:nth-child(2) { animation-delay: -0.16s; }
-
-@keyframes bounce {
-  0%, 80%, 100% { transform: scale(0); }
-  40% { transform: scale(1); }
-}
-
-@keyframes fadeInScale {
-  from { opacity: 0; transform: scale(0.95) translateY(10px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-:deep(.project-card) {
-  opacity: 0;
-  transform: scale(0.95) translateY(10px);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-:deep(.project-card.fade-in) {
-  opacity: 1;
-  transform: scale(1) translateY(0);
-}
-
-/* Responsive Overrides */
-@media (max-width: 768px) {
-  .project-section {
-    padding: 40px 15px;
-  }
-  
-  .pill-group {
-    flex-wrap: wrap;
-    justify-content: center;
-    border-radius: 20px;
-  }
-  
-  .pill-button {
-    padding: 8px 16px;
-    font-size: 0.85rem;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-</style>

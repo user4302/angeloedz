@@ -36,7 +36,7 @@
     ]
   },
   "content": {
-    "title": "CoBE Scaffold - Modular Node.js Infrastructure Template",
+    "title": "CoBE - Scaffold",
     "short_description": "Rapid generation of production-ready APIs.",
     "description": "Cobe Scaffold is a production-ready, modular monolithic Node.js backend template designed to accelerate development of new backend services. It provides a comprehensive foundation with dual database support (PostgreSQL and MongoDB), Redis caching, S3-compatible storage, authentication systems, and a complete CI/CD pipeline. The project solves the problem of repeatedly setting up backend infrastructure by offering a standardized, customizable starting point that can be cloned and configured for new projects.",
     "role": "I designed and implemented this complete modular infrastructure template from the ground up, including the Express.js application architecture, dual database integration with Prisma and Mongoose, Redis caching and session management, MinIO S3-compatible storage integration, GitHub OAuth authentication with Passport.js, comprehensive Docker containerization, GitLab CI/CD pipeline configuration, extensive testing suite with Jest, security middleware implementation, and detailed documentation. I also created the automated setup scripts and deployment configurations for both development and production environments."

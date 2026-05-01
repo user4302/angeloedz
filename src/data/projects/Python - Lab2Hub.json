@@ -16,7 +16,7 @@
     ]
   },
   "content": {
-    "title": "GitLab to GitHub Mirror Manager",
+    "title": "Lab2Hub",
     "short_description": "A comprehensive Python CLI tool that automates GitLab to GitHub repository mirroring with bidirectional synchronization, interactive project selection, and state persistence.",
     "description": "I designed and implemented the complete mirroring system from scratch, including the modular architecture with separate configuration, CLI, and manager components. I built the interactive console interface using console-menu, implemented comprehensive error handling for API operations, created the JSON registry system for state persistence, and established the 2-way synchronization workflow that adds local git remotes for bidirectional development.",
     "role": "I designed and implemented the complete Lab2Hub mirroring system as the sole developer, creating the entire Python CLI application from scratch. I built the modular architecture with separate configuration, CLI, and manager components, implemented the interactive console interface using console-menu, and developed comprehensive error handling for all API operations. I created the JSON registry system for state persistence and established the 2-way synchronization workflow that adds local git remotes for bidirectional development. I also integrated both GitLab and GitHub APIs, implemented environment variable configuration management, and ensured the tool follows Python best practices with proper testing and documentation."

@@ -65,10 +65,45 @@ const optimizedSrc = computed(() => {
 
 const initials = computed(() => {
   const words = props.title.split(' ');
+  
+  // Helper function to get the first alphabetical character from a string
+  const getFirstAlpha = (str) => {
+    for (let i = 0; i < str.length; i++) {
+      const char = str[i];
+      if (/[a-zA-Z]/.test(char)) {
+        return char.toUpperCase();
+      }
+    }
+    return '';
+  };
+  
   if (words.length >= 2) {
-    return (words[0][0] + words[1][0]).toUpperCase();
+    const firstChar = getFirstAlpha(words[0]);
+    const secondChar = getFirstAlpha(words[1]);
+    
+    // If we got both characters, use them
+    if (firstChar && secondChar) {
+      return firstChar + secondChar;
+    }
+    
+    // If we only got one character, find the next alphabetical character from the title
+    if (firstChar) {
+      const remainingTitle = words.slice(1).join(' ');
+      const nextChar = getFirstAlpha(remainingTitle);
+      return nextChar ? firstChar + nextChar : firstChar;
+    }
   }
-  return props.title.slice(0, 2).toUpperCase();
+  
+  // Fallback: get first two alphabetical characters from the entire title
+  const result = [];
+  for (let i = 0; i < props.title.length && result.length < 2; i++) {
+    const char = props.title[i];
+    if (/[a-zA-Z]/.test(char)) {
+      result.push(char.toUpperCase());
+    }
+  }
+  
+  return result.join('');
 });
 
 // Generate a deterministic color based on the title

@@ -23,7 +23,7 @@
     ]
   },
   "content": {
-    "title": "GenBank - Modern Banking Landing Page",
+    "title": "GenBank",
     "short_description": "Modern banking UI landing page.",
     "description": "GenBank is a modern, responsive banking landing page built with React.js and Tailwind CSS. The project showcases a next-generation payment method platform with a sleek, professional design featuring gradient effects, animations, and comprehensive banking service sections. It serves as a marketing website to attract potential customers with its contemporary UI and user experience.",
     "role": "I developed a complete modern banking landing page from scratch using React.js with Vite as the build tool. I implemented a component-based architecture with reusable UI components including Hero section, Navbar, Stats, Business features, Billing information, Card deals, Testimonials, Client logos, CTA, and Footer. I integrated Tailwind CSS for responsive styling with custom gradient effects and animations, and created a cohesive design system with consistent spacing, typography, and color schemes."

@@ -22,7 +22,7 @@
     ]
   },
   "content": {
-    "title": "PowerShell Script Administrator Context Menu",
+    "title": "Context run PS1 as Admin",
     "short_description": "Adds 'Run as Administrator' option for .ps1 files.",
     "description": "This project provides Windows Registry modification scripts that add an administrative \"Run with PowerShell as Administrator\" context menu option for PowerShell script files (.ps1). The solution enables users to execute PowerShell scripts with elevated privileges directly from the right-click context menu, streamlining administrative workflows and eliminating the need to manually open PowerShell as an administrator first.",
     "role": "I created a pair of Windows Registry files that modify the Windows Registry to add and remove an administrative context menu option for PowerShell scripts. The implementation includes proper registry keys for both the Microsoft.PowerShellScript.1 and SystemFileAssociations\\.ps1 file types, ensuring comprehensive coverage across different Windows file association scenarios."

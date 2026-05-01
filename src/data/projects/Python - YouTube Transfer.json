@@ -24,7 +24,7 @@
     ]
   },
   "content": {
-    "title": "YouTube Brand Account Video Mover",
+    "title": "YouTube Transfer",
     "short_description": "Authenticated brand account video migration tool.",
     "description": "This Python script automates transferring YouTube videos between Brand Accounts by downloading videos using yt-dlp with cookie-based authentication and uploading them via the YouTube Data API. The tool solves the problem of manually migrating video content between YouTube channels, supporting private videos and batch operations through flexible input sources.",
     "role": "I designed and implemented a complete video transfer automation system that handles authenticated downloads, OAuth-based uploads, and flexible configuration management. The solution includes automatic cookie export, multiple input source support, CLI arguments with environment variable overrides, and robust error handling for production use."

@@ -21,7 +21,7 @@
     ]
   },
   "content": {
-    "title": "Quick Delete - Windows Folder Deletion Utility",
+    "title": "Quick Delete",
     "short_description": "Fast and secure folder deletion through right-click context menu.",
     "description": "Quick Delete is a Windows PowerShell utility that provides fast and secure folder deletion through a right-click context menu. The project solves the common problem of slow or unreliable Windows file deletion by implementing a robust PowerShell script that handles locked files and directories. It allows users to safely delete folders with confirmation prompts and proper error handling.",
     "role": "I designed and implemented a complete Windows folder deletion utility consisting of two main PowerShell scripts. The main script ([quick_delete.ps1](cci:7://file:///d:/Projects/Powershell/quick-delete/quick_delete.ps1:0:0-0:0)) handles the actual folder deletion with safety checks and error handling, while the setup script ([quick_delete_setup.ps1](cci:7://file:///d:/Projects/Powershell/quick-delete/quick_delete_setup.ps1:0:0-0:0)) automates the installation process by adding the script to the Windows PATH and creating a right-click context menu entry. I also included a custom icon file for better user experience."

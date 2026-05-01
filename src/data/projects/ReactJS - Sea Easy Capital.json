@@ -28,7 +28,7 @@
     ]
   },
   "content": {
-    "title": "SCPF (Supply Chain Finance Platform) Frontend",
+    "title": "Sea Easy Capital",
     "short_description": "The SCPF Frontend is a React-based web application for Lilardia Capital's supply chain finance platform",
     "description": "The SCPF Frontend is a React-based web application for Lilardia Capital's supply chain finance platform. It provides a comprehensive interface for managing financing schemes, purchaser portfolios, early payment requests, receivables, and integrations with financial services like Wise and Xero. The platform enables businesses to optimize cash flow through invoice financing and automated payment processing.",
     "role": "I contributed extensively to bug fixes and feature improvements across the platform, resolving over 50 specific bugs across purchaser portfolios, financing schemes, early payment requests, and integration modules. I enhanced user interface components by updating tooltips, error messages, and form validations in purchaser portfolio management, while developing and maintaining Wise and Xero integration features including token validation, profile management, and payment processing. Additionally, I improved code quality through cleanup operations, removing console logs and commented code, and added feature enhancements such as new validation rules for Chinese mobile numbers and SWIFT codes, implemented conditional field disabling, and updated country selection logic."

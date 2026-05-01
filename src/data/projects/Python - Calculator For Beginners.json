@@ -22,8 +22,8 @@
     ]
   },
   "content": {
-    "title": "Advanced Scientific Calculator",
-    "short_description": "CLI tool with 15+ mathematical operations.",
+    "title": "Calculator for Beginners",
+    "short_description": "Advanced scientific calculator CLI tool with 15+ mathematical operations.",
     "description": "A comprehensive Python CLI scientific calculator that provides 15+ mathematical operations ranging from basic arithmetic to advanced trigonometry and geometry. The application features a professional user interface with categorized menus, comprehensive error handling, and an interactive help system. It serves as both a practical mathematical tool and an educational resource for learning Python programming best practices.",
     "role": "I completely transformed this calculator from a basic implementation into a professional-grade scientific calculator. I replaced all manual mathematical algorithm implementations with optimized built-in Python functions (math.lcm, math.gcd, math.hypot, etc.), dramatically improving performance and code maintainability. I implemented comprehensive input validation systems with triangle inequality theorem validation, created a professional categorized menu system with visual formatting, and built an interactive help system with detailed operation examples. I also added robust error handling with specific error messages and visual indicators, organized the code into logical sections with comprehensive docstrings, and created extensive documentation including performance comparisons and usage examples."
   },

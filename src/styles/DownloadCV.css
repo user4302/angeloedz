@@ -1,0 +1,89 @@
+/* Download CV Component Styles */
+/* Import shared modal styles from Modals.css */
+
+/* CV-specific floating button positioning */
+.floating-cv-icon {
+  right: 20px;
+}
+
+/* CV-specific overlay with darker background */
+.pdf-viewer-overlay {
+  background-color: rgba(15, 23, 42, 0.9);
+}
+
+/* Download button extends btn-primary */
+.btn-download .material-icons {
+  font-size: 20px;
+}
+
+/* External button extends btn-secondary */
+.btn-external .material-icons {
+  font-size: 24px;
+}
+
+/* CV-specific header button sizing */
+.viewer-header .btn-external {
+  width: 22px !important;
+  height: 22px !important;
+  padding: 8px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.viewer-header .btn-download {
+  width: 120px !important;
+  padding: 8px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.viewer-header .btn-download .material-icons {
+  font-size: 24px;
+}
+
+.viewer-header .btn-download span:not(.material-icons) {
+  display: none;
+}
+
+/* PDF-specific content styles */
+.pdf-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.mobile-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  color: #cbd5e1;
+}
+
+.fallback-icon {
+  font-size: 80px;
+  color: #6366f1;
+  margin-bottom: 20px;
+}
+
+.mobile-fallback p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #94a3b8;
+}
+
+/* Mobile fallback button spacing */
+.mobile-fallback .btn-download-large {
+  margin-bottom: 16px;
+}
+
+.mobile-fallback .btn-external-large {
+  margin-top: 0;
+}
+

@@ -7,6 +7,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+### Refactored
+
+### Changed
+
+## [3.1.0] - 2026-05-01
+
+### Added
+
+- Implemented structured 2-row button layout system for ProjectCard component with consistent Live button positioning
+- Added dynamic repo button sizing with icon-only display when both GitHub and GitLab are present
+- Enhanced link labeling to show specific repo names ("GitHub"/"GitLab") instead of generic "Repo"
+- Added secondary row layout for additional project links with responsive grid behavior
+- Created shared modal styles system with enhanced floating button glow effects
+
+### Refactored
+
+- Modularized component CSS by splitting monolithic 1500+ line components.css into 4 component-specific files
+- Created ContactForm.css, DownloadCV.css, ProjectCard.css, and ProjectView.css for better maintainability
+- Consolidated duplicate modal styles into shared Modals.css, reducing code duplication by ~400+ lines
+- Updated DownloadCV and ContactForm components to use shared modal class structure
+- Updated component imports to use dedicated CSS files and removed scoped style blocks
+- Extracted ProjectSection.vue CSS to dedicated src/styles/ProjectSection.css file
+- Added availableCategories computed property to filter categories with projects
+- Updated desktop pills and mobile dropdown to only show categories that have projects
+
+### Changed
+
+- Simplified project titles for better readability by removing redundant prefixes
+
 ## [3.0.0] - 2026-05-01
 
 ### Changed

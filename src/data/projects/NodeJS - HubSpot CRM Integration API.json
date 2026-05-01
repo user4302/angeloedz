@@ -22,7 +22,7 @@
     ]
   },
   "content": {
-    "title": "Node.js HubSpot CRM Integration API",
+    "title": "HubSpot CRM Integration API",
     "short_description": "This is a Node. js Express REST API server that serves as the backend for CRM contact management",
     "description": "This is a Node.js Express REST API server that serves as the backend for CRM contact management. The API integrates directly with HubSpot's CRM platform to create and retrieve contacts, providing secure endpoints for frontend applications. It implements proper error handling, CORS configuration, and environment-based security practices.",
     "role": "I developed a complete Express.js REST API with HubSpot CRM integration, implementing secure contact creation and listing endpoints. I configured CORS for development environments, implemented comprehensive error handling for API failures, and set up environment variable management for sensitive data like API tokens. I also created multiple server implementations to demonstrate different architectural approaches."

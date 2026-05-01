@@ -22,7 +22,7 @@
     ]
   },
   "content": {
-    "title": "Bulk Barcode Generator for Event Management",
+    "title": "Bulk Barcode Generator",
     "short_description": "Automated identification material generator for events.",
     "description": "This Python script automates the generation of barcode images and PDF documents for event attendee management. It processes name lists, generates barcode images using an external API service, organizes them by gender into separate folders, and compiles them into printable PDF documents with a 2x5 grid layout per page. The tool is designed to streamline the process of creating identification materials for conferences, events, or organizational gatherings.",
     "role": "I developed a complete automation solution that handles the entire barcode generation workflow from input to final PDF output. I implemented API integration with free-barcode.com, file system management for organized storage, image processing and downloading, and PDF generation with precise layout positioning. The script includes progress tracking, error handling, and automated folder creation to ensure smooth operation."

@@ -24,7 +24,7 @@
     ]
   },
   "content": {
-    "title": "AuthNote - User Authentication Note Management System",
+    "title": "AuthNote",
     "short_description": "Flask-based secure note management system.",
     "description": "AuthNote is a web-based note management application built with Flask that provides user authentication and personalized note storage. The application allows users to create secure accounts, log in, and manage their personal notes with full CRUD operations. It solves the problem of note organization by providing a simple, secure platform where each user's notes are isolated and protected through authentication.",
     "role": "I developed a complete full-stack web application implementing user authentication, database modeling, and note management functionality. I designed and built the Flask application architecture using blueprints for modular organization, implemented SQLAlchemy models for user and note data persistence, created secure password hashing with Werkzeug, and developed responsive frontend templates using Bootstrap. I also integrated Flask-Login for session management and implemented AJAX functionality for dynamic note deletion."

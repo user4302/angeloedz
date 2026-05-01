@@ -15,7 +15,7 @@
     ]
   },
   "content": {
-    "title": "TikTok Unfollow Automation Tool",
+    "title": "TikTok Unfollow",
     "short_description": "A browser-based Tampermonkey userscript for intelligent TikTok account management that extracts following lists and analyzes account activity patterns to help users make informed unfollowing decisions.",
     "description": "I developed a complete browser-based automation solution that replaces a previous Python-based system. I created a sophisticated Tampermonkey userscript with an intuitive UI panel, localStorage persistence, and intelligent account analysis features. The tool includes sidebar following list extraction, post timestamp analysis, comprehensive error handling, and safety features to prevent account restrictions.",
     "role": "I developed this complete browser automation solution as the sole creator, migrating from a previous Python-based system to a more efficient Tampermonkey userscript. I designed and implemented the entire userscript architecture including the intelligent UI panel, localStorage data persistence system, and sophisticated account analysis algorithms. I created the DOM manipulation logic for extracting TikTok following lists, developed the timestamp parsing system that handles multiple date formats, and implemented comprehensive safety features including rate limiting and human behavior simulation to prevent account restrictions. I also built the robust error handling system with fallback selectors and created the real-time progress tracking interface."

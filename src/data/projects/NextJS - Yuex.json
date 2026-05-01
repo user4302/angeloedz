@@ -21,7 +21,7 @@
     ]
   },
   "content": {
-    "title": "Yuex Website - Builder.io Powered Next.js Application",
+    "title": "Yuex Website",
     "short_description": "This is a modern Next. js website project that leverages Builder",
     "description": "This is a modern Next.js website project that leverages Builder.io for headless content management, enabling dynamic page creation and editing capabilities. The application uses React 18 with TypeScript, Tailwind CSS for styling, and includes advanced features like Lottie animations, cookie consent management, and containerized deployment through Docker.",
     "role": "I contributed to this project by implementing critical build fixes and dependency management. Specifically, I resolved build failures that occurred after Lottie animation integration by updating Docker configurations and package dependencies. I also managed version control operations including reverting problematic changes and ensuring stable deployment configurations."
