@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0] - 2026-05-01
+
 ### Changed
 
 - **BREAKING**: Migrated project data structure from flat JSON to nested format with metadata, content, project_details, and assets sections
