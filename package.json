@@ -1,14 +1,11 @@
 {
   "name": "user4302",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "parse:projects": "node scripts/projects-parser.js",
-    "prebuild": "npm run parse:projects",
-    "preserve": "npm run parse:projects"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@iconify/vue": "^5.0.0",

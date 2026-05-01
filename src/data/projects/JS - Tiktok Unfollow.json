@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "id": 65,
+    "slug": "tiktok-unfollow",
+    "category": "Frontend",
+    "type": "Personal",
+    "tags": [
+      "browser-automation",
+      "tampermonkey",
+      "tiktok",
+      "userscript",
+      "account-management",
+      "javascript",
+      "dom-manipulation"
+    ]
+  },
+  "content": {
+    "title": "TikTok Unfollow Automation Tool",
+    "short_description": "A browser-based Tampermonkey userscript for intelligent TikTok account management that extracts following lists and analyzes account activity patterns to help users make informed unfollowing decisions.",
+    "description": "I developed a complete browser-based automation solution that replaces a previous Python-based system. I created a sophisticated Tampermonkey userscript with an intuitive UI panel, localStorage persistence, and intelligent account analysis features. The tool includes sidebar following list extraction, post timestamp analysis, comprehensive error handling, and safety features to prevent account restrictions.",
+    "role": "I developed this complete browser automation solution as the sole creator, migrating from a previous Python-based system to a more efficient Tampermonkey userscript. I designed and implemented the entire userscript architecture including the intelligent UI panel, localStorage data persistence system, and sophisticated account analysis algorithms. I created the DOM manipulation logic for extracting TikTok following lists, developed the timestamp parsing system that handles multiple date formats, and implemented comprehensive safety features including rate limiting and human behavior simulation to prevent account restrictions. I also built the robust error handling system with fallback selectors and created the real-time progress tracking interface."
+  },
+  "project_details": {
+    "achievements": [
+      "Successfully migrated from Python-based to browser-only solution, eliminating external dependencies",
+      "Implemented intelligent account analysis with timestamp parsing for multiple date formats",
+      "Created comprehensive safety features including rate limiting and human behavior simulation",
+      "Developed robust error handling with fallback selectors for various TikTok page layouts",
+      "Built intuitive UI with real-time progress tracking and data visualization"
+    ],
+    "technologies": [
+      "JavaScript/ES6+ (Userscript Development)",
+      "Tampermonkey Extension API",
+      "DOM Manipulation & Event Handling",
+      "LocalStorage Data Persistence",
+      "CSS Selectors & Element Detection",
+      "Browser Automation Patterns",
+      "Rate Limiting & Safety Algorithms",
+      "UI/UX Design for Browser Extensions"
+    ]
+  },
+  "assets": {
+    "icons": [
+      "simple-icons:javascript",
+      "simple-icons:tiktok"
+    ],
+    "screenshots": [
+      "Main control panel interface showing extracted accounts table",
+      "Sidebar following list extraction in action",
+      "Account analysis results with timestamp data",
+      "Browser extension installation and activation screenshots",
+      "Rate limiting and safety monitoring dashboard"
+    ],
+    "links": [
+      {
+        "name": "Gitlab",
+        "url": "https://gitlab.com/user4302_Projects/coding/javascript/tiktok-unfollow"
+      }
+    ]
+  }
+}

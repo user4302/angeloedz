@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "id": 30,
+    "slug": "hubspot-crm-integration-api",
+    "category": "Backend",
+    "type": "Professional",
+    "tags": [
+      "NodeJS",
+      "Express.js",
+      "REST-API",
+      "HubSpot",
+      "CRM",
+      "API-Integration",
+      "CORS",
+      "Environment-Variables",
+      "dotenv",
+      "Error-Handling",
+      "Authentication",
+      "Security",
+      "JSON",
+      "Backend"
+    ]
+  },
+  "content": {
+    "title": "Node.js HubSpot CRM Integration API",
+    "short_description": "This is a Node. js Express REST API server that serves as the backend for CRM contact management",
+    "description": "This is a Node.js Express REST API server that serves as the backend for CRM contact management. The API integrates directly with HubSpot's CRM platform to create and retrieve contacts, providing secure endpoints for frontend applications. It implements proper error handling, CORS configuration, and environment-based security practices.",
+    "role": "I developed a complete Express.js REST API with HubSpot CRM integration, implementing secure contact creation and listing endpoints. I configured CORS for development environments, implemented comprehensive error handling for API failures, and set up environment variable management for sensitive data like API tokens. I also created multiple server implementations to demonstrate different architectural approaches."
+  },
+  "project_details": {
+    "achievements": [
+      "Successfully integrated with HubSpot's CRM API for real-time data synchronization",
+      "Implemented secure API practices with environment-based token management",
+      "Created robust error handling for common CRM scenarios",
+      "Established scalable backend architecture for CRM operations"
+    ],
+    "technologies": [
+      "Node.js Express.js for REST API development",
+      "HubSpot API client library integration",
+      "CORS configuration for cross-origin requests",
+      "Environment variable management with dotenv",
+      "Error handling and HTTP status codes",
+      "Body parsing middleware",
+      "API authentication and security",
+      "JSON response formatting"
+    ]
+  },
+  "assets": {
+    "icons": [
+      "simple-icons:nodedotjs",
+      "simple-icons:json",
+      "simple-icons:express"
+    ],
+    "screenshots": [
+      "API endpoint documentation",
+      "HubSpot integration workflow diagram",
+      "Error handling flowchart",
+      "Server architecture overview"
+    ],
+    "links": []
+  }
+}

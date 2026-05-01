@@ -1,4 +1,4 @@
-# Angelo EDZ Portfolio v2.0.2
+# Angelo EDZ Portfolio v3.0.0
 
 🚀 Personal portfolio website showcasing software engineering projects and skills
 
@@ -8,13 +8,13 @@
 
 ## Features ✨
 
-- **Markdown-Powered Projects**: Automatically parses Obsidian-ready `.md` files into the site at build time
+- **Nested Project Structure**: Rich JSON-based project data with metadata, content, project_details, and assets sections
+- **Dynamic Project Loading**: Individual JSON files loaded at runtime for better scalability and maintainability
 - **Image Optimization & Fallbacks**: Lazy-loaded thumbnails with Netlify CDN support and generated fallbacks for missing images
 - **Dynamic Project Showcase**: Display and filter projects by category with modern pill-style filters
 - **Enhanced Project Cards**: Interactive cards with hover overlays, icon-based navigation, and smooth transitions
-- **Responsive Project Details**: Hero sections, mobile navigation with top fixed header, optimized content layouts, and scroll-to-top behavior
-- **Modern UI/UX**: Micro-interactions, loading states, structured impact lists, and consistent design language
-- **Smart Link Handling**: Dynamic GitLab/GitHub icon detection and consistent navigation across all project components
+- **Structured Project Details**: Hero sections, role descriptions, achievements, technologies, and screenshots with mobile-optimized layouts
+- **Smart Link Handling**: Dynamic link rendering with automatic icon detection for GitLab, GitHub, Netlify, and Vercel
 - **Enhanced Tooltips**: Custom-styled technology labels with smooth animations and prettified names
 - **Mobile-First Design**: Optimized mobile navigation, PDF viewer integration, and responsive component interactions
 
@@ -38,7 +38,7 @@
 ```bash
 # Clone the repository
 git clone https://gitlab.com/Angelo_E_DZ/coding/vue-js/angeloedz.git angeloedz
- 
+
 # Navigate to the project directory
 cd angeloedz
 
@@ -71,6 +71,8 @@ angeloedz-vue/
 │   │   ├── DownloadCV.vue
 │   │   ├── NavBar.vue
 │   │   └── ProjectCard.vue
+│   ├── data/              # Project data
+│   │   └── projects/      # Individual project JSON files
 │   ├── plugins/           # Vue plugins
 │   ├── router/            # Vue Router configuration
 │   ├── store/             # Vuex store modules
@@ -86,6 +88,40 @@ angeloedz-vue/
 ├── netlify.toml          # Netlify deployment configuration
 ├── package.json          # Project dependencies and scripts
 └── README.md             # This file
+```
+
+## Project Data Format 📄
+
+Projects are stored as individual JSON files in `src/data/projects/` with a nested structure:
+
+```json
+{
+  "metadata": {
+    "id": 1,
+    "slug": "project-name",
+    "category": "Frontend",
+    "type": "Open-Source",
+    "tags": ["vue", "javascript"]
+  },
+  "content": {
+    "title": "Project Title",
+    "short_description": "Brief summary",
+    "description": "Detailed description",
+    "role": "Developer's role and contribution"
+  },
+  "project_details": {
+    "achievements": ["Key achievement 1", "Key achievement 2"],
+    "technologies": ["Vue.js 3", "TypeScript", "Vuex"]
+  },
+  "assets": {
+    "icons": ["simple-icons:vuedotjs", "simple-icons:typescript"],
+    "screenshots": ["Main view", "Component structure"],
+    "links": [
+      { "name": "GitLab", "url": "https://gitlab.com/..." },
+      { "name": "netlify", "url": "https://project.netlify.app" }
+    ]
+  }
+}
 ```
 
 ## Configuration 🔧
@@ -150,6 +186,7 @@ The project is configured for Netlify deployment:
 4. Set Node.js version: `22`
 
 The `netlify.toml` file contains the deployment configuration, including:
+
 - Build image specification (Ubuntu 24.04)
 - SPA routing redirect to handle client-side navigation
 - All requests are redirected to `/index.html` with 200 status for proper Vue Router functionality

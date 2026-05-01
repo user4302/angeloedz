@@ -3,8 +3,8 @@
     <div class="thumbnail-wrapper">
       <ProjectThumbnail 
         :src="data.imageSrc" 
-        :title="data.title" 
-        :alt="data.title" 
+        :title="data.content.title" 
+        :alt="data.content.title" 
       />
       <div class="card-overlay">
         <span class="view-details">View Details</span>
@@ -12,9 +12,9 @@
     </div>
     
     <div class="card-content">
-      <div class="icons-row" v-if="data.icons && data.icons.length">
+      <div class="icons-row" v-if="data.assets.icons && data.assets.icons.length">
         <div 
-          v-for="icon in data.icons" 
+          v-for="icon in data.assets.icons" 
           :key="icon" 
           class="card-tech-wrapper"
         >
@@ -26,35 +26,22 @@
         </div>
       </div>
 
-      <h3 class="card-title">{{ data.title }}</h3>
-      <p class="card-description">{{ data.description }}</p>
+      <h3 class="card-title">{{ data.content.title }}</h3>
+      <p class="card-description">{{ data.content.short_description || data.content.description }}</p>
       
       <div class="card-footer">
         <div class="card-actions">
-          <div class="action-slot">
+          <div class="action-slot" v-for="link in data.assets.links" :key="link.name || link.url">
             <a
-              v-if="data.gitRepoUrl"
-              :href="data.gitRepoUrl"
+              :href="link.url"
               target="_blank"
               @click.stop
               class="card-action-btn"
-              :title="data.gitRepoUrl.includes('gitlab.com') ? 'GitLab Repository' : 'GitHub Repository'"
+              :class="{ primary: isLiveLink(link.name) }"
+              :title="link.name || 'Link'"
             >
-              <Icon :icon="data.gitRepoUrl.includes('gitlab.com') ? 'simple-icons:gitlab' : 'simple-icons:github'" />
-              <span>Repo</span>
-            </a>
-          </div>
-          <div class="action-slot">
-            <a
-              v-if="data.liveSiteUrl"
-              :href="data.liveSiteUrl"
-              target="_blank"
-              @click.stop
-              class="card-action-btn primary"
-              title="Live Demo"
-            >
-              <Icon icon="lucide:link-2" />
-              <span>Live</span>
+              <Icon :icon="getLinkIcon(link.name)" />
+              <span>{{ getLinkLabel(link.name) }}</span>
             </a>
           </div>
         </div>
@@ -83,7 +70,7 @@ export default {
     openLink() {
       this.$router.push({
         name: 'ProjectView',
-        params: { id: this.data.id },
+        params: { slug: this.data.metadata.slug },
       });
     },
     formatTechName(slug) {
@@ -108,6 +95,30 @@ export default {
         'typescript': 'TypeScript'
       };
       return map[name.toLowerCase()] || name.charAt(0).toUpperCase() + name.slice(1);
+    },
+    getLinkIcon(linkName) {
+      if (!linkName) return 'lucide:link-2';
+      const lowerName = linkName.toLowerCase();
+      if (lowerName.includes('gitlab')) return 'simple-icons:gitlab';
+      if (lowerName.includes('github')) return 'simple-icons:github';
+      if (lowerName.includes('netlify')) return 'simple-icons:netlify';
+      if (lowerName.includes('vercel')) return 'simple-icons:vercel';
+      return 'lucide:link-2';
+    },
+    getLinkLabel(linkName) {
+      if (!linkName) return 'Link';
+      const lowerName = linkName.toLowerCase();
+      if (lowerName.includes('gitlab') || lowerName.includes('github')) return 'Repo';
+      if (lowerName.includes('netlify') || lowerName.includes('vercel')) return 'Live';
+      return linkName;
+    },
+    isLiveLink(linkName) {
+      if (!linkName) return false;
+      const lowerName = linkName.toLowerCase();
+      return lowerName.includes('netlify') || 
+             lowerName.includes('vercel') || 
+             lowerName.includes('live') || 
+             lowerName.includes('demo');
     },
   },
 };

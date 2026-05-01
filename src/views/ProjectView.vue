@@ -6,16 +6,10 @@
         <Icon icon="lucide:arrow-left" /> Back
       </router-link>
       <div class="project-links">
-        <div class="link-slot">
-          <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="btn btn-github">
-            <Icon :icon="project.gitRepoUrl.includes('gitlab.com') ? 'simple-icons:gitlab' : 'simple-icons:github'" />
-            Repository
-          </a>
-        </div>
-        <div class="link-slot">
-          <a v-if="project.liveSiteUrl" :href="project.liveSiteUrl" target="_blank" class="btn btn-live">
-            <Icon icon="lucide:link-2" />
-            Live Demo
+        <div class="link-slot" v-for="link in projectLinks" :key="link.name || link.url">
+          <a :href="link.url" target="_blank" class="btn btn-github">
+            <Icon :icon="getLinkIcon(link.name)" />
+            {{ link.name || 'Link' }}
           </a>
         </div>
       </div>
@@ -24,13 +18,17 @@
     <!-- Hero Header -->
     <header class="project-hero">
       <div class="hero-content">
-        <div class="type-badge" v-if="sections['Type']">{{ sections['Type'] }}</div>
-        <h1>{{ project.title }}</h1>
-        <p class="hero-desc" v-if="project.description">{{ project.description }}</p>
+        <div class="type-badge" v-if="project.metadata.type">
+          {{ project.metadata.type }}
+        </div>
+        <h1>{{ project.content.title }}</h1>
+        <p class="hero-desc" v-if="project.content.short_description">
+          {{ project.content.short_description }}
+        </p>
         
-        <div class="tech-row" v-if="project.icons && project.icons.length">
+        <div class="tech-row" v-if="project.assets.icons && project.assets.icons.length">
           <div 
-            v-for="icon in project.icons" 
+            v-for="icon in project.assets.icons" 
             :key="icon" 
             class="hero-tech-icon"
           >
@@ -43,87 +41,91 @@
       <div class="project-banner">
         <ProjectThumbnail 
           :src="project.imageSrc" 
-          :title="project.title" 
-          :alt="project.title" 
+          :title="project.content.title" 
+          :alt="project.content.title" 
         />
       </div>
     </header>
 
     <!-- Structured Content -->
     <main class="project-details">
-      <!-- Short Description -->
-      <section v-if="sections['Short Description']" class="content-card">
+      <!-- Description -->
+      <section v-if="project.content.description" class="content-card">
         <h2 class="section-title"><Icon icon="lucide:info" /> Overview</h2>
-        <div class="card-body" v-html="renderMd(sections['Short Description'])"></div>
+        <div class="card-body">{{ project.content.description }}</div>
       </section>
 
       <!-- Role & Contribution -->
-      <section v-if="sections['My Role & Contribution']" class="content-card">
+      <section v-if="project.content.role" class="content-card">
         <h2 class="section-title"><Icon icon="lucide:user" /> My Role & Contribution</h2>
-        <div class="card-body" v-html="renderMd(sections['My Role & Contribution'])"></div>
+        <div class="card-body">{{ project.content.role }}</div>
       </section>
 
       <!-- Impact / Results -->
-      <section v-if="sections['Impact/Results']" class="content-card impact-card">
+      <section v-if="project.project_details.achievements && project.project_details.achievements.length" class="content-card impact-card">
         <h2 class="section-title"><Icon icon="lucide:target" /> Impact & Results</h2>
-        <div class="card-body impact-list" v-html="renderMd(sections['Impact/Results'])"></div>
+        <div class="card-body impact-list">
+          <ul>
+            <li v-for="achievement in project.project_details.achievements" :key="achievement">
+              {{ achievement }}
+            </li>
+          </ul>
+        </div>
       </section>
 
       <!-- Technologies Grid -->
       <div class="grid-layout">
-        <section v-if="techList.length" class="content-card tech-card">
+        <section v-if="project.project_details.technologies && project.project_details.technologies.length" class="content-card tech-card">
           <h2 class="section-title"><Icon icon="lucide:cpu" /> Key Technologies</h2>
           <div class="chip-cloud">
-            <span v-for="tech in techList" :key="tech" class="tech-chip">
+            <span v-for="tech in project.project_details.technologies" :key="tech" class="tech-chip">
               {{ tech }}
             </span>
           </div>
         </section>
 
-        <section v-if="tagList.length" class="content-card tag-card">
+        <section v-if="project.metadata.tags && project.metadata.tags.length" class="content-card tag-card">
           <h2 class="section-title"><Icon icon="lucide:tag" /> Tags</h2>
           <div class="chip-cloud">
-            <span v-for="tag in tagList" :key="tag" class="tag-chip">
+            <span v-for="tag in project.metadata.tags" :key="tag" class="tag-chip">
               #{{ tag }}
             </span>
           </div>
         </section>
       </div>
 
-      <!-- Visuals / Final Content -->
-      <section v-if="leanRemainingContent" class="content-card remaining-content">
-        <div class="card-body" v-html="renderMd(leanRemainingContent)"></div>
+      <!-- Visuals Needed -->
+      <section v-if="project.assets.screenshots && project.assets.screenshots.length" class="content-card">
+        <h2 class="section-title"><Icon icon="lucide:image" /> Visuals Needed</h2>
+        <div class="card-body">
+          <ul>
+            <li v-for="screenshot in project.assets.screenshots" :key="screenshot">
+              {{ screenshot }}
+            </li>
+          </ul>
+        </div>
       </section>
     </main>
 
-    <!-- Project Links footer for individual pages -->
+    <!-- Project Links footer -->
     <div class="project-links-footer">
-      <div class="link-slot">
-        <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="btn btn-github large">
-          <Icon :icon="project.gitRepoUrl.includes('gitlab.com') ? 'simple-icons:gitlab' : 'simple-icons:github'" />
-          View Repository
-        </a>
-      </div>
-      <div class="link-slot">
-        <a v-if="project.liveSiteUrl" :href="project.liveSiteUrl" target="_blank" class="btn btn-live large">
-          <Icon icon="lucide:link-2" />
-          View Live Demo
+      <div class="link-slot" v-for="link in projectLinks" :key="link.name || link.url">
+        <a :href="link.url" target="_blank" class="btn btn-github large">
+          <Icon :icon="getLinkIcon(link.name)" />
+          View {{ link.name || 'Link' }}
         </a>
       </div>
     </div>
 
-    <!-- Sticky Top Nav for Mobile -->
+    <!-- Mobile Navigation -->
     <div class="mobile-header">
       <router-link to="/" class="mobile-nav-btn back-btn" title="Back to projects">
         <Icon icon="lucide:arrow-left" />
       </router-link>
       
       <div class="mobile-nav-actions">
-        <a v-if="project.gitRepoUrl" :href="project.gitRepoUrl" target="_blank" class="mobile-nav-btn" title="Repository">
-          <Icon :icon="project.gitRepoUrl.includes('gitlab.com') ? 'simple-icons:gitlab' : 'simple-icons:github'" />
-        </a>
-        <a v-if="project.liveSiteUrl" :href="project.liveSiteUrl" target="_blank" class="mobile-nav-btn" title="Live Demo">
-          <Icon icon="lucide:link-2" />
+        <a v-for="link in projectLinks" :key="link.name || link.url" :href="link.url" target="_blank" class="mobile-nav-btn" :title="link.name || 'Link'">
+          <Icon :icon="getLinkIcon(link.name)" />
         </a>
       </div>
     </div>
@@ -143,62 +145,31 @@
 /* global defineProps */
 import { computed } from 'vue';
 import { useStore } from 'vuex';
-import { marked } from 'marked';
 import { Icon } from '@iconify/vue';
 import ProjectThumbnail from '@/components/ProjectThumbnail.vue';
 
 const props = defineProps({
-  id: {
-    type: [String, Number],
+  slug: {
+    type: String,
     required: true,
   }
 });
 
 const store = useStore();
-const project = computed(() => store.getters['projects/getProjectById'](Number(props.id)));
+const project = computed(() => store.getters['projects/getProjectBySlug'](props.slug));
 
-// Section Parsing Logic
-const sections = computed(() => {
-  if (!project.value || !project.value.content) return {};
-  
-  const content = project.value.content;
-  const headings = [
-    'Type',
-    'Short Description',
-    'My Role & Contribution',
-    'Key Technologies/Skills',
-    'Impact/Results',
-    'Visuals Needed',
-    'Links',
-    'Tags'
-  ];
+// Extract links from assets
+const projectLinks = computed(() => store.getters['projects/getProjectLinksBySlug'](props.slug));
 
-  const parsed = {};
-  headings.forEach(heading => {
-    const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(`\\*\\*${escaped}:\\*\\*\\s*([\\s\\S]*?)(?=\\n\\s*\\*\\*|$)`, 'i');
-    const match = content.match(regex);
-    if (match) {
-      parsed[heading] = match[1].trim();
-    }
-  });
-
-  return parsed;
-});
-
-const techList = computed(() => {
-  const text = sections.value['Key Technologies/Skills'];
-  if (!text) return [];
-  return text.split('\n').map(l => l.replace(/^\s*-\s*/, '').trim()).filter(Boolean);
-});
-
-const tagList = computed(() => {
-  const text = sections.value['Tags'];
-  if (!text) return [];
-  return text.split('\n').map(l => l.replace(/^\s*-\s*/, '').trim()).filter(Boolean);
-});
-
-const renderMd = (text) => text ? marked(text) : '';
+const getLinkIcon = (linkName) => {
+  if (!linkName) return 'lucide:link-2';
+  const lowerName = linkName.toLowerCase();
+  if (lowerName.includes('gitlab')) return 'simple-icons:gitlab';
+  if (lowerName.includes('github')) return 'simple-icons:github';
+  if (lowerName.includes('netlify')) return 'simple-icons:netlify';
+  if (lowerName.includes('vercel')) return 'simple-icons:vercel';
+  return 'lucide:link-2';
+};
 
 const formatTechName = (slug) => {
   if (!slug) return '';
@@ -223,21 +194,6 @@ const formatTechName = (slug) => {
   };
   return map[name.toLowerCase()] || name.charAt(0).toUpperCase() + name.slice(1);
 };
-
-// Content that hasn't been parsed into specific cards
-const leanRemainingContent = computed(() => {
-  if (!project.value) return '';
-  let content = project.value.content;
-  
-  // Remove already parsed sections to avoid duplication
-  Object.keys(sections.value).forEach(heading => {
-    const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(`\\*\\*${escaped}:\\*\\*\\s*[\\s\\S]*?(?=\\n\\s*\\*\\*|$)`, 'i');
-    content = content.replace(regex, '');
-  });
-
-  return content.trim();
-});
 </script>
 
 <style scoped>

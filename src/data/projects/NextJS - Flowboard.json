@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "id": 66,
+    "slug": "flowboard",
+    "category": "Frontend",
+    "type": "Open-Source",
+    "tags": [
+      "project-management",
+      "kanban-board",
+      "timeline-view",
+      "collaboration",
+      "drag-and-drop",
+      "react",
+      "nextjs",
+      "typescript",
+      "tailwindcss",
+      "zustand"
+    ]
+  },
+  "content": {
+    "title": "Flowboard - Advanced Project Management Platform",
+    "short_description": "Flowboard is a modern, feature-rich project management application inspired by Trello, built with React, Next.js, and TypeScript. It provides teams with a flexible workspace to organize tasks through multiple view modes including Kanban boards, Timeline (Gantt-style), Calendar, and Table views.",
+    "description": "Flowboard is a comprehensive project management solution that offers teams multiple ways to visualize and organize their work. The application features four switchable views (Kanban, Timeline, Calendar, Table), advanced drag-and-drop functionality, real-time collaboration capabilities, and robust data management. Built with modern web technologies, it provides a responsive, accessible interface that works seamlessly across devices while maintaining data persistence and offering extensive customization options.",
+    "role": "As the lead developer and architect, I designed and built the entire Flowboard platform from scratch. I implemented the complete React/Next.js application architecture, created all four view modes (Kanban, Timeline, Calendar, Table), developed the sophisticated drag-and-drop system using @dnd-kit, and built the board sharing and collaboration features. I handled the full-stack development including state management with Zustand, UI component design with Radix primitives, form validation with React Hook Form and Zod, and responsive styling with Tailwind CSS. I also managed the deployment process to Netlify and ensured the application met production-ready standards for performance and accessibility."
+  },
+  "project_details": {
+    "achievements": [
+      "Successfully deployed production-ready project management platform",
+      "Implemented efficient drag-and-drop system with optimistic updates",
+      "Created four distinct view modes for different project workflows",
+      "Built board sharing system with invitation-based collaboration",
+      "Achieved responsive design optimized for desktop and mobile",
+      "Established robust data persistence with localStorage"
+    ],
+    "technologies": [
+      "Next.js 16 with App Router",
+      "TypeScript 5 for type safety",
+      "React 19 with modern patterns",
+      "Zustand state management",
+      "@dnd-kit drag-and-drop library",
+      "Tailwind CSS 4 styling",
+      "Radix UI component primitives",
+      "React Hook Form with Zod validation",
+      "Framer Motion animations",
+      "Jest testing framework",
+      "Netlify deployment"
+    ]
+  },
+  "assets": {
+    "icons": [
+      "simple-icons:nextdotjs",
+      "simple-icons:react",
+      "simple-icons:typescript",
+      "simple-icons:tailwindcss"
+    ],
+    "screenshots": [
+      "Main application interface with all four view modes",
+      "Kanban board drag-and-drop demonstration",
+      "Timeline/Gantt view with zoom levels",
+      "Calendar view with task overflow modal",
+      "Board sharing and collaboration interface",
+      "Card modal with rich editing capabilities",
+      "Mobile responsive design showcase"
+    ],
+    "links": [
+      {
+        "name": "GitLab",
+        "url": "https://gitlab.com/user4302_Projects/coding/next-js/flowboard"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/user4302/flowboard"
+      },
+      {
+        "name": "netlify",
+        "url": "https://flowboard-user4302.netlify.app/"
+      }
+    ]
+  }
+}
