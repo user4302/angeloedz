@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "id": 1,
+    "slug": "test-project",
+    "category": "Frontend",
+    "type": "Open-Source",
+    "tags": ["vue", "test", "migration"]
+  },
+  "content": {
+    "title": "Test Project for Migration",
+    "short_description": "A test project to verify the nested structure migration works correctly.",
+    "description": "This is a detailed description of the test project used to validate that our Vue.js application can properly handle the new nested project structure with metadata, content, project_details, and assets sections.",
+    "role": "I created this test project to validate the migration from flat to nested structure."
+  },
+  "project_details": {
+    "achievements": [
+      "Successfully migrated to nested structure",
+      "Validated all component updates",
+      "Ensured backward compatibility"
+    ],
+    "technologies": [
+      "Vue.js 3",
+      "Vite",
+      "TypeScript",
+      "Vuex"
+    ]
+  },
+  "assets": {
+    "icons": [
+      "simple-icons:vuedotjs",
+      "simple-icons:typescript",
+      "simple-icons:vite"
+    ],
+    "screenshots": [
+      "Main project view",
+      "Component structure",
+      "Data flow diagram"
+    ],
+    "links": [
+      {
+        "name": "GitLab",
+        "url": "https://gitlab.com/test/project"
+      },
+      {
+        "name": "netlify",
+        "url": "https://test-project.netlify.app"
+      }
+    ]
+  }
+}

@@ -54,7 +54,7 @@ export default {
   computed: {
     ...mapGetters('projects', ['getProjects']),
     filteredProjects() {
-      return this.getProjects.filter(p => p.category === this.currentCategory);
+      return this.getProjects.filter(p => p.metadata.category === this.currentCategory);
     },
     hasMore() {
       return this.visibleCards.length < this.filteredProjects.length;

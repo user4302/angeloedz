@@ -5,9 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- **BREAKING**: Migrated project data structure from flat JSON to nested format with metadata, content, project_details, and assets sections
+- Replaced static projects.json import with dynamic file loading using require.context for better scalability
+- Completely refactored ProjectView.vue to use nested structure and eliminated markdown parsing dependency
+- Updated ProjectSection.vue category filtering to access project.metadata.category
+- Refactored ProjectCard.vue to use nested properties and dynamic link rendering from assets.links array
+- Enhanced store module with comprehensive getters for nested data access (getProjectLinks, getProjectTechnologies, getProjectTags, etc.)
+- Removed obsolete prebuild/preserve scripts from package.json that ran the markdown parser
+- Improved JSDoc documentation throughout project store module for better code clarity
+
+### Added
+
+- Support for rich nested project structure with metadata, content, project_details, and assets sections
+- Dynamic link handling with automatic icon detection for GitLab, GitHub, Netlify, and Vercel
+- Enhanced project detail sections for achievements, technologies, screenshots, and structured role descriptions
+- Comprehensive getters for accessing nested project data throughout the application
+
+### Removed
+
+- Markdown parsing logic from ProjectView.vue as content is now structured in JSON
+- Dependency on marked library for project content rendering
+- Legacy projects-parser.js script workflow (no longer needed with nested JSON structure)
+
 ## [2.0.2] - 2026-02-17
 
 ### Changed
+
 - Enhanced mobile responsiveness in ProjectView with improved layout, spacing, and breakpoints
 - Added better text wrapping and overflow handling for mobile devices
 - Improved responsive design for tablets and mobile screens
@@ -15,11 +42,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.0.1] - 2026-02-17
 
 ### Added
+
 - SPA routing redirect configuration in netlify.toml to handle client-side routing
 
-## [2.0.0] - 2026-02-15 
+## [2.0.0] - 2026-02-15
 
 ### Added
+
 - Build-time Markdown-to-JSON parsing logic for projects
 - `ProjectThumbnail.vue` component with lazy loading and Netlify CDN support
 - Unique CSS/SVG fallbacks for projects without images
@@ -66,6 +95,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove legacy NavBar component in favor of new navigation system
 
 ### Changed
+
 - Converted `ProjectView.vue` to Composition API and added Markdown rendering
 - Refined `ProjectCard.vue` UI/UX with left alignment and button-style action links
 - Updated `projects.js` store to handle dynamic JSON data
@@ -76,6 +106,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Refactored `projects-parser.js` to support asynchronous validation against the Iconify API
 
 ### Fixed
+
 - Runtime error when encountering undefined image sources
 - Deprecated `simple-icons` import warnings
 - Missing projects issue by robustifying the parser for non-frontmatter files
@@ -85,6 +116,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.4.0] - 2025-12-21
 
 ### Added
+
 - Terminal category for projects
 - Vitest testing suite implementation
 - JSDoc documentation throughout the codebase
@@ -94,6 +126,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Estraverse dependency to resolve build errors
 
 ### Changed
+
 - Updated project dependencies
 - Fixed icon naming conventions
 - Enhanced documentation
@@ -101,12 +134,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.3.0] - 2025-09-22
 
 ### Added
+
 - CV download functionality
 - PDF viewer integration
 - Contact form with Formspree integration
 - Axios for HTTP requests
 
 ### Changed
+
 - Multiple CV updates and improvements
 - Enhanced contact form styling
 - Improved mobile responsiveness
@@ -114,6 +149,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.2.0] - 2025-04-15
 
 ### Added
+
 - Project showcase with multiple projects:
   - Task Tracker
   - Simple Node Server
@@ -127,6 +163,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Contact form integration
 
 ### Changed
+
 - Replaced FontAwesome with Simple Icons
 - Updated project card styling
 - Improved image handling and sizing
@@ -134,6 +171,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed various UI bugs and inconsistencies
 
 ### Fixed
+
 - Click propagation issues on project cards
 - Missing git repo links handling
 - Mobile layout issues
@@ -141,6 +179,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-04-14
 
 ### Added
+
 - Vue Router and Vuex integration
 - Home page component
 - Project data store management
@@ -149,6 +188,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Global CSS styling system
 
 ### Changed
+
 - Migrated from Vue 2 to Vue 3
 - Updated project structure
 - Enhanced project card components
@@ -157,6 +197,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.6.0] - 2025-04-12
 
 ### Added
+
 - Hero section with typing animation
 - Project grid display
 - Experience timeline
@@ -171,18 +212,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Hover effects and animations
 
 ### Changed
+
 - Removed HelloWorld component
 - Updated button styling
 - Enhanced card borders and typography
 - Improved project category display
 
 ### Fixed
+
 - Lazy loading scroll behavior
 - Project show/hide functionality
 
 ## [0.5.0] - 2025-01-07
 
 ### Changed
+
 - Updated project dependencies
 - Code cleanup and linting fixes
 - Removed unnecessary comments
@@ -190,11 +234,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.4.0] - 2021-11-03
 
 ### Added
+
 - Contact form functionality
 - Form validation and error handling
 - User feedback for form submission
 
 ### Fixed
+
 - Form submission bugs
 - Button styling issues
 - Contact form integration problems
@@ -202,11 +248,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.3.0] - 2021-10-27
 
 ### Added
+
 - Initial Vue 2 setup with Vuetify
 - Basic project structure
 - Foundation for the portfolio website
 
 ### Features
+
 - **Markdown-Powered Content**: Effortlessly manage projects using Markdown files with build-time JSON indexing
 - **Image Optimization & Fallbacks**: High-performance image loading with lazy loading and automatic graceful fallbacks
 - **Dynamic Project Showcase**: Display and filter projects by category (Frontend, Backend, Terminal, Scripting, Mobile)
@@ -221,6 +269,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Community involvement section
 
 ### Technical
+
 - Vue.js 3 with Composition API
 - Vuex 4 for state management
 - Vue Router 4 for navigation
