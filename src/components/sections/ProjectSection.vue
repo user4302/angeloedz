@@ -1,7 +1,8 @@
 <template>
   <div class="project-section">
     <div class="filter-container">
-      <div class="pill-group">
+      <!-- Desktop: Horizontal Pills -->
+      <div class="pill-group desktop-only">
         <button
           v-for="category in categories"
           :key="category"
@@ -11,6 +12,30 @@
         >
           {{ category }}
         </button>
+      </div>
+      
+      <!-- Mobile: Custom Dropdown -->
+      <div class="mobile-dropdown mobile-only">
+        <div class="custom-dropdown" :class="{ 'is-open': isDropdownOpen }">
+          <button 
+            @click="toggleDropdown"
+            class="dropdown-trigger"
+          >
+            {{ currentCategory }}
+            <Icon icon="lucide:chevron-down" class="dropdown-arrow" />
+          </button>
+          <div class="dropdown-menu" v-show="isDropdownOpen">
+            <button
+              v-for="category in categories"
+              :key="category"
+              @click="selectCategory(category)"
+              :class="{ 'active': category === currentCategory }"
+              class="dropdown-option"
+            >
+              {{ category }}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -34,12 +59,14 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { Icon } from '@iconify/vue';
 import ProjectCard from '@/components/ProjectCard.vue';
 
 export default {
   name: 'ProjectSection',
   components: {
     ProjectCard,
+    Icon,
   },
   data() {
     return {
@@ -49,6 +76,7 @@ export default {
       cardsPerLoad: 8,
       loadingMore: false,
       observer: null,
+      isDropdownOpen: false,
     };
   },
   computed: {
@@ -109,6 +137,19 @@ export default {
         }, 50);
       }, 200);
     },
+    toggleDropdown() {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    },
+    selectCategory(category) {
+      this.currentCategory = category;
+      this.isDropdownOpen = false;
+      this.loadInitialCards();
+    },
+  },
+  watch: {
+    currentCategory() {
+      this.loadInitialCards();
+    }
   },
   mounted() {
     this.loadInitialCards();
@@ -146,6 +187,7 @@ export default {
   border-radius: 999px;
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
 }
 
 .pill-button {
@@ -224,26 +266,119 @@ export default {
   transform: scale(1) translateY(0);
 }
 
-/* Responsive Overrides */
+/* Custom Mobile Dropdown Styles */
+.mobile-dropdown {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.custom-dropdown {
+  position: relative;
+  min-width: 200px;
+}
+
+.dropdown-trigger {
+  width: 100%;
+  background: rgba(30, 41, 59, 0.5);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s;
+}
+
+.dropdown-trigger:hover {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.custom-dropdown.is-open .dropdown-trigger {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s;
+  font-size: 1.2rem;
+}
+
+.custom-dropdown.is-open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-option {
+  width: 100%;
+  background: transparent;
+  color: #94a3b8;
+  border: none;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.dropdown-option:hover {
+  background: rgba(99, 102, 241, 0.1);
+  color: #f8fafc;
+}
+
+.dropdown-option.active {
+  background: #6366f1;
+  color: white;
+}
+
+/* Responsive Visibility */
 @media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+  
+  .mobile-only {
+    display: flex;
+  }
+
   .project-section {
     padding: 40px 15px;
-  }
-  
-  .pill-group {
-    flex-wrap: wrap;
-    justify-content: center;
-    border-radius: 20px;
-  }
-  
-  .pill-button {
-    padding: 8px 16px;
-    font-size: 0.85rem;
   }
 
   .card-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-only {
+    display: flex;
+  }
+  
+  .mobile-only {
+    display: none;
   }
 }
 </style>
