@@ -40,7 +40,7 @@
         <div class="pdf-content">
           <iframe 
             v-if="!isMobile"
-            :src="pdfPath" 
+            :src="pdfPath + '#view=FitH&toolbar=0&navpanes=0&scrollbar=0'" 
             class="pdf-iframe"
             title="CV PDF Viewer"
           ></iframe>
