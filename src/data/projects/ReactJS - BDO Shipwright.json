@@ -24,7 +24,7 @@
     ]
   },
   "content": {
-    "title": "BDO Ship Building Tracker",
+    "title": "BDO Shipwright",
     "short_description": "A lightweight and responsive web application designed to help Black Desert Online players track their ship building progress",
     "description": "A lightweight and responsive web application designed to help Black Desert Online players track their ship building progress. The application provides an intuitive card-based interface for monitoring ship upgrades, material collection, and crafting requirements. It features visual progression tracking, interactive ship trees with connecting lines, and comprehensive data management capabilities including import/export functionality and local storage persistence.",
     "role": "I designed and developed this complete React-based web application from scratch, implementing the entire frontend architecture including the ship tracking system, material management interface, and data persistence layer. I created the TypeScript type definitions, component structure, and state management system, along with implementing features like goal setting, processing requirements tracking, and responsive design. I also established the development workflow with Vite, ESLint configuration, and version management."

@@ -22,7 +22,7 @@
     ]
   },
   "content": {
-    "title": "PanaPacks - Artisanal Food E-commerce Platform",
+    "title": "PanaPacks",
     "short_description": "PanaPacks is a production-ready static food e-commerce website built with Next",
     "description": "PanaPacks is a production-ready static food e-commerce website built with Next.js, featuring 25 premium artisanal food products. The platform provides a complete shopping experience with dynamic product filtering, persistent cart functionality, and seamless checkout integration. It's designed as a modern, mobile-first e-commerce solution optimized for performance and SEO through static site generation.",
     "role": "I built this complete e-commerce platform from scratch, implementing the full shopping cart system with Zustand state management, creating responsive React components with Tailwind CSS styling, and setting up the static site generation configuration. I developed the product catalog with 25 curated food items, implemented advanced filtering and sorting capabilities, and integrated Netlify Forms for order processing. I also designed the modern glassmorphism UI and ensured the entire application is optimized for static deployment."

@@ -22,7 +22,7 @@
     ]
   },
   "content": {
-    "title": "YC Directory - Startup Pitch Platform",
+    "title": "YC Directory",
     "short_description": "Startup pitch platform with Sanity CMS and GitHub OAuth.",
     "description": "YC Directory is a modern web platform that enables entrepreneurs to submit startup pitches, connect with fellow founders, and gain visibility through virtual competitions. The application provides a searchable directory of startup ideas where users can browse, filter by category, and view detailed pitch information. It features user authentication via GitHub, content management through Sanity CMS, and a responsive interface built with Next.js and Tailwind CSS.",
     "role": "I developed a full-stack startup directory platform with Next.js 15, implementing server-side rendering, authentication flows, and real-time content management. I created the core components including startup cards, search functionality, and detailed pitch views. I integrated Sanity CMS for content management, set up GitHub OAuth authentication with NextAuth, and designed a modern UI using Tailwind CSS with custom utility classes. The project includes proper TypeScript typing, responsive design, and optimized performance features."

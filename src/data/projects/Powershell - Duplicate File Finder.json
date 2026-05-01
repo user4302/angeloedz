@@ -22,7 +22,7 @@
     ]
   },
   "content": {
-    "title": "PowerShell Duplicate File Finder and Organizer",
+    "title": "Duplicate File Finder",
     "short_description": "High-speed filesystem cleaning tool with parallel hashing.",
     "description": "A PowerShell script that efficiently identifies and manages duplicate files within specified directories. The tool uses file hashing to detect exact duplicates and provides an automated solution for organizing them while preserving folder structure. It features intelligent caching to avoid reprocessing unchanged files and utilizes parallel processing for optimal performance on large file collections.",
     "role": "I developed a comprehensive PowerShell-based duplicate file detection and management system from scratch. The implementation includes advanced features like CSV-based hash caching with automatic cleanup, parallel file hashing using runspaces for multi-core optimization, and intelligent duplicate file organization that preserves original directory structures. I also built in robust progress tracking, verbose logging capabilities, and a safe preview mode that allows users to review actions before executing file moves."

@@ -20,7 +20,7 @@
     ]
   },
   "content": {
-    "title": "Python Virtual Environment Starter",
+    "title": "Start Python VENV",
     "short_description": "Automated virtual environment management.",
     "description": "This project provides an automated Python virtual environment management script that detects and activates existing virtual environments or creates new ones when needed. The tool simplifies Python development workflow by handling virtual environment setup and activation in a single command, ensuring developers always work within isolated Python environments.",
     "role": "I converted the original batch script to Python, enhancing the virtual environment management system with improved error handling and cross-platform compatibility. The implementation includes automatic detection of existing virtual environments at a predefined path, creation of new environments when missing, and immediate activation to streamline the development setup process."

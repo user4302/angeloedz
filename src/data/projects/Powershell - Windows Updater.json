@@ -21,7 +21,7 @@
     ]
   },
   "content": {
-    "title": "Windows Update Tool",
+    "title": "Windows Updater",
     "short_description": "Menu-driven interface for system maintenance.",
     "description": "A PowerShell-based menu-driven tool for managing Windows updates with a clean, user-friendly interface. The tool provides a simple way to check for, review, and install Windows updates with options for automatic reboot management. It leverages the PSWindowsUpdate module to provide comprehensive update management capabilities through an intuitive text-based menu system.",
     "role": "I designed and implemented a complete Windows update management tool with an interactive menu system. I built the core functionality including update checking with formatted table display, selective installation options, reboot management, automatic elevation handling, and dependency management for the PSWindowsUpdate module. I created a user-friendly interface with proper error handling and clear output formatting."

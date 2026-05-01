@@ -25,7 +25,7 @@
     ]
   },
   "content": {
-    "title": "Vue Task Tracker",
+    "title": "Task Tracker",
     "short_description": "Reactive task management experiment.",
     "description": "This is a task management application built with Vue 3 that allows users to create, track, and manage daily tasks. The application provides an intuitive interface for adding tasks with reminders, setting due dates, and organizing tasks efficiently. It demonstrates modern Vue.js development practices with component-based architecture and reactive state management.",
     "role": "I developed a complete task tracking application from scratch using Vue 3 and Vite. I implemented the core functionality including task creation, deletion, and reminder toggling with a clean component-based architecture. I designed and built all UI components including forms, task cards, and interactive elements with proper event handling and state management."

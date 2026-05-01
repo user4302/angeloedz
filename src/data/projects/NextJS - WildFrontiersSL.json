@@ -22,7 +22,7 @@
     ]
   },
   "content": {
-    "title": "Wild Frontiers Sri Lanka - Adventure Tourism Website",
+    "title": "Wild Frontiers SL",
     "short_description": "Wild Frontiers Sri Lanka is a comprehensive adventure tourism website showcasing wilderness camping and adventure experiences across three main loc...",
     "description": "Wild Frontiers Sri Lanka is a comprehensive adventure tourism website showcasing wilderness camping and adventure experiences across three main locations in Sri Lanka. The platform presents various outdoor activities including camping, hiking, mountain biking, rock climbing, and team-building expeditions. It serves as a digital brochure and booking information hub for adventure seekers looking to explore Sri Lanka's natural wilderness through organized outdoor experiences.",
     "role": "I developed a full-stack Next.js website featuring a responsive design with Tailwind CSS, implementing custom React components including an auto-image slider, navigation system, and dynamic content management. I created the complete site architecture with routing for multiple pages (home, about, packages, contact), integrated TypeScript for type safety, and established a scalable component structure with reusable UI elements."

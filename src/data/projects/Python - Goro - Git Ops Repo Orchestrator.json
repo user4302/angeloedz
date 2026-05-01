@@ -1,7 +1,7 @@
 {
   "metadata": {
     "id": 22,
-    "slug": "goro-git-ops-repo-orchestrator",
+    "slug": "goro",
     "category": "Terminal",
     "type": "Open-Source",
     "tags": [
@@ -24,8 +24,8 @@
     ]
   },
   "content": {
-    "title": "Goro — Git Ops Repo Orchestrator",
-    "short_description": "Blazing-fast Textual TUI for managing dozens of Git repos.",
+    "title": "Goro",
+    "short_description": "Git Ops Repo Orchestrator - Blazing-fast Textual TUI for managing dozens of Git repos.",
     "description": "Goro is a blazing-fast Textual TUI for managing and syncing dozens of Git repositories simultaneously. It provides an intuitive interface for bulk Git operations across multiple repositories, solving the problem of managing complex workspaces with many projects. The tool combines the convenience of a terminal user interface with powerful Git automation capabilities.",
     "role": "I designed and built the complete Goro application from scratch, including the Textual TUI framework, CLI interface, configuration management system, and Git operation automation. I implemented the core repository management features, created responsive UI components with custom CSS styling, developed async Git command execution, and established the project structure with proper packaging and distribution setup."
   },

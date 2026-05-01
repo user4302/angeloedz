@@ -21,7 +21,7 @@
     ]
   },
   "content": {
-    "title": "Windows Registry Context Menu Integration for VS Code",
+    "title": "Context Open in VS Code",
     "short_description": "Context menu integration for folders.",
     "description": "This project provides Windows Registry scripts to add \"Open with VS Code\" context menu options for directories and folder backgrounds. The solution enables users to quickly open any folder in Visual Studio Code directly from Windows Explorer by right-clicking, improving workflow efficiency for developers who frequently work with code repositories.",
     "role": "I created and configured Windows Registry Editor (.reg) files that modify the Windows Registry to integrate Visual Studio Code into the system context menu. The implementation includes both addition and removal scripts, providing a complete solution for managing this system integration with proper registry key creation and deletion commands."

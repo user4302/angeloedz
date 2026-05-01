@@ -1,7 +1,7 @@
 {
   "metadata": {
     "id": 35,
-    "slug": "pok-explorer",
+    "slug": "pokedex",
     "category": "Frontend",
     "type": "Personal",
     "tags": [
@@ -22,7 +22,7 @@
     ]
   },
   "content": {
-    "title": "Poké Explorer",
+    "title": "Pokedex",
     "short_description": "Infinite-scroll Pokémon database using PokeAPI.",
     "description": "A modern Next.js web application that allows users to explore the complete Pokémon database through an intuitive interface. The application features real-time search functionality with debounced input, infinite scrolling for seamless browsing, and detailed Pokémon information pages. It provides an engaging way to discover and learn about different Pokémon species using data from the official PokeAPI.",
     "role": "I built the entire Pokémon Explorer application from scratch, implementing a full-stack React solution with modern web development practices. I created the responsive UI components using Tailwind CSS, implemented infinite scroll functionality with React Query, built a custom debounced search hook, and developed dynamic routing for individual Pokémon detail pages. I also established proper TypeScript type definitions for API responses and ensured accessibility throughout the application."

@@ -16,7 +16,7 @@
     ]
   },
   "content": {
-    "title": "Markdown to PDF Converter",
+    "title": "MD to PDF Converter",
     "short_description": "A modern web-based tool that converts Markdown files to professional PDF format with clean styling and instant processing.",
     "description": "I designed and built the complete Markdown to PDF Converter application from scratch, implementing the full frontend interface with React and TypeScript, creating the markdown-to-HTML conversion API endpoint, and developing sophisticated client-side PDF generation using browser print functionality. I engineered advanced features including toggleable page breaks with multiple implementation methods, custom diagonal watermarks with single or tiled patterns, and responsive print styling that ensures consistent typography across all paper sizes.",
     "role": "As the sole developer of this project, I designed and built the complete Markdown to PDF Converter application from the ground up. I implemented the full frontend interface using React and TypeScript, created the markdown-to-HTML conversion system using Marked.js, and developed sophisticated client-side PDF generation using browser print functionality. I engineered advanced features including toggleable page breaks with multiple implementation methods, custom diagonal watermarks with single or tiled patterns, and responsive print styling that ensures consistent typography across all paper sizes. I also managed the complete deployment process to Netlify and optimized the application for performance and user privacy with client-side processing."

@@ -26,6 +26,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added availableCategories computed property to filter categories with projects
 - Updated desktop pills and mobile dropdown to only show categories that have projects
 
+### Changed
+
+- Simplified project titles for better readability by removing redundant prefixes
+
 ## [3.0.0] - 2026-05-01
 
 ### Changed

@@ -22,7 +22,7 @@
     ]
   },
   "content": {
-    "title": "APK Signing and Packaging PowerShell Automation",
+    "title": "APK Signing and Packager",
     "short_description": "Streamlined mobile app development utility.",
     "description": "This PowerShell automation script streamlines Android APK signing workflows by integrating with Uber APK Signer to digitally sign one or multiple APK files using a configured keystore. The tool solves the manual complexity of APK signing by providing an interactive interface that handles file selection, batch processing, backup management, and optional packaging into distributable ZIP archives. It preserves original filenames while maintaining organized folder structures for signed and packaged outputs.",
     "role": "I designed and implemented a comprehensive PowerShell automation solution that handles the entire APK signing lifecycle from file selection through final packaging. The script includes robust error handling, backup mechanisms with timestamped folders, interactive user prompts for file selection, and seamless integration with external Java-based signing tools. I implemented modular functions for backup management, file operations, and ZIP packaging, along with detailed logging and user feedback throughout the process."

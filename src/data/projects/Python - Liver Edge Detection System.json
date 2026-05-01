@@ -23,7 +23,7 @@
     ]
   },
   "content": {
-    "title": "Canny Edge Detector Implementation",
+    "title": "Liver Edge Detection System",
     "short_description": "Complete algorithm implementation for image processing.",
     "description": "This project implements a complete Canny edge detection algorithm from scratch for image processing applications. The project provides a Python class-based implementation that performs noise reduction, gradient calculation, non-maximum suppression, double thresholding, and hysteresis edge tracking. It includes utilities for loading and visualizing grayscale images, with demonstration notebooks showing the edge detection pipeline and additional image alignment tasks.",
     "role": "I implemented the complete CannyEdgeDetector class with all five core algorithmic components: Gaussian smoothing for noise reduction, Sobel filters for gradient computation, non-maximum suppression for edge thinning, dual thresholding for edge classification, and hysteresis tracking for final edge connectivity. I also created supporting utility functions for image loading, RGB to grayscale conversion, and visualization, along with comprehensive Jupyter notebook demonstrations."

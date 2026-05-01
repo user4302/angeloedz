@@ -1,7 +1,7 @@
 {
   "metadata": {
     "id": 54,
-    "slug": "winget-upgrade-helper",
+    "slug": "winget-helper",
     "category": "Scripting",
     "type": "Open-Source",
     "tags": [
@@ -27,7 +27,7 @@
     ]
   },
   "content": {
-    "title": "Winget Upgrade Helper (WUH)",
+    "title": "Winget Helper (WUH)",
     "short_description": "Comprehensive package management suite for Windows.",
     "description": "A powerful PowerShell module that simplifies Windows package management using winget with an intuitive interface and advanced features. The tool provides a modular architecture with user-friendly menu system, batch operations, comprehensive logging, and support for multiple installer types. It streamlines the process of checking for updates, downloading packages, and managing software installations on Windows systems.",
     "role": "I designed and implemented a comprehensive PowerShell-based package management tool that enhances the Windows Package Manager (winget) experience. I created a modular architecture with 26 separate function files organized into logical categories (Logging, Helpers, PackageManagement, Menu), developed an interactive menu system with 11 different options, implemented support for multiple installer types (MSI, EXE, NSIS, Inno Setup, MSIX/APPX, ZIP), and built features like CSV import/export for batch operations, comprehensive logging with rotation, and automatic PowerShell 7 detection and execution."

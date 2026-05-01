@@ -31,7 +31,7 @@
     ]
   },
   "content": {
-    "title": "M-Pesa QR Code Management System",
+    "title": "Vodafone M-Pesa",
     "short_description": "The M-Pesa QR Code Management System is a comprehensive REST API and web application for generating, managing, and decoding QR codes for Vodafone's...",
     "description": "The M-Pesa QR Code Management System is a comprehensive REST API and web application for generating, managing, and decoding QR codes for Vodafone's M-Pesa mobile money service. The system supports both dynamic and static QR code generation with customizable templates, bulk processing capabilities, and integrates with Zebra printer functionality for physical QR code printing. It serves merchants and businesses in African markets (primarily Kenya and Tanzania) for mobile payment processing.",
     "role": "I made **223 commits** to this project, contributing primarily to the frontend React web application. My key contributions include developing configurable QR specification UI with multi-step forms for market-specific QR formats (OATL-22070), implementing a comprehensive template system with creation, editing, and deactivation functionality complete with validation and unit tests, and enhancing the user interface through role-based access control, market selection modals, and user management features. I also implemented QR code download functionality supporting multiple formats (PNG/PDF) and size selection, wrote comprehensive unit tests for components like ConfirmationModal, form validations, and QR specification steps, resolved numerous UI alignment issues, validation bugs, and performance optimizations, and contributed to the zebra-printer-web component for browser-based printing functionality."

@@ -26,8 +26,8 @@
     ]
   },
   "content": {
-    "title": "Angelo EDZ Portfolio Website",
-    "short_description": "Official portfolio built with Vue 3.",
+    "title": "user4302",
+    "short_description": "Angelo EDZ Portfolio Website.",
     "description": "This is a personal portfolio website for Angelo EDZ, a Software Engineer. The project serves as an online resume and showcase of technical skills, featuring project demonstrations, experience timeline, and professional background. It provides visitors with a comprehensive view of the developer's capabilities and completed work across multiple technologies and domains.",
     "role": "I developed a complete Vue.js 3 portfolio website from scratch, implementing a modular component architecture with Vuex state management for project data. I created multiple reusable sections including hero animation, project showcase with filtering, experience timeline, skills display, and contact functionality. I integrated Simple Icons for technology stack visualization and implemented responsive design with custom CSS animations and typing effects."
   },
