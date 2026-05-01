@@ -6,10 +6,10 @@
         <Icon icon="lucide:arrow-left" /> Back
       </router-link>
       <div class="project-links">
-        <div class="link-slot" v-for="link in projectLinks" :key="link.name">
+        <div class="link-slot" v-for="link in projectLinks" :key="link.name || link.url">
           <a :href="link.url" target="_blank" class="btn btn-github">
             <Icon :icon="getLinkIcon(link.name)" />
-            {{ link.name }}
+            {{ link.name || 'Link' }}
           </a>
         </div>
       </div>
@@ -109,10 +109,10 @@
 
     <!-- Project Links footer -->
     <div class="project-links-footer">
-      <div class="link-slot" v-for="link in projectLinks" :key="link.name">
+      <div class="link-slot" v-for="link in projectLinks" :key="link.name || link.url">
         <a :href="link.url" target="_blank" class="btn btn-github large">
           <Icon :icon="getLinkIcon(link.name)" />
-          View {{ link.name }}
+          View {{ link.name || 'Link' }}
         </a>
       </div>
     </div>
@@ -124,7 +124,7 @@
       </router-link>
       
       <div class="mobile-nav-actions">
-        <a v-for="link in projectLinks" :key="link.name" :href="link.url" target="_blank" class="mobile-nav-btn" :title="link.name">
+        <a v-for="link in projectLinks" :key="link.name || link.url" :href="link.url" target="_blank" class="mobile-nav-btn" :title="link.name || 'Link'">
           <Icon :icon="getLinkIcon(link.name)" />
         </a>
       </div>
@@ -162,10 +162,12 @@ const project = computed(() => store.getters['projects/getProjectById'](Number(p
 const projectLinks = computed(() => store.getters['projects/getProjectLinks'](Number(props.id)));
 
 const getLinkIcon = (linkName) => {
-  if (linkName.toLowerCase().includes('gitlab')) return 'simple-icons:gitlab';
-  if (linkName.toLowerCase().includes('github')) return 'simple-icons:github';
-  if (linkName.toLowerCase().includes('netlify')) return 'simple-icons:netlify';
-  if (linkName.toLowerCase().includes('vercel')) return 'simple-icons:vercel';
+  if (!linkName) return 'lucide:link-2';
+  const lowerName = linkName.toLowerCase();
+  if (lowerName.includes('gitlab')) return 'simple-icons:gitlab';
+  if (lowerName.includes('github')) return 'simple-icons:github';
+  if (lowerName.includes('netlify')) return 'simple-icons:netlify';
+  if (lowerName.includes('vercel')) return 'simple-icons:vercel';
   return 'lucide:link-2';
 };
 

@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "id": 6,
+    "slug": "bdo-shipwright",
+    "category": "Frontend",
+    "type": "Open-Source",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "CSS-Modules",
+      "Local-Storage",
+      "JSON",
+      "Import-Export",
+      "Responsive-Design",
+      "Component-Architecture",
+      "State-Management",
+      "React-Hooks",
+      "Gaming",
+      "Black-Desert-Online",
+      "Ship-Building",
+      "Progress-Tracking",
+      "Web-Application"
+    ]
+  },
+  "content": {
+    "title": "BDO Ship Building Tracker",
+    "short_description": "A lightweight and responsive web application designed to help Black Desert Online players track their ship building progress",
+    "description": "A lightweight and responsive web application designed to help Black Desert Online players track their ship building progress. The application provides an intuitive card-based interface for monitoring ship upgrades, material collection, and crafting requirements. It features visual progression tracking, interactive ship trees with connecting lines, and comprehensive data management capabilities including import/export functionality and local storage persistence.",
+    "role": "I designed and developed this complete React-based web application from scratch, implementing the entire frontend architecture including the ship tracking system, material management interface, and data persistence layer. I created the TypeScript type definitions, component structure, and state management system, along with implementing features like goal setting, processing requirements tracking, and responsive design. I also established the development workflow with Vite, ESLint configuration, and version management."
+  },
+  "project_details": {
+    "achievements": [
+      "Streamlined ship building progression tracking for BDO players with an intuitive interface",
+      "Eliminated manual spreadsheet tracking by providing automated progress monitoring",
+      "Enhanced gaming experience through visual feedback and goal-setting capabilities",
+      "Improved data portability with import/export functionality for progress backup",
+      "Achieved responsive design ensuring accessibility across all device types"
+    ],
+    "technologies": [
+      "React 19 with TypeScript",
+      "Vite for development and building",
+      "CSS Modules for styling",
+      "Local Storage API for data persistence",
+      "JSON data management and import/export functionality",
+      "Responsive web design principles",
+      "Component-based architecture",
+      "State management with React hooks"
+    ]
+  },
+  "assets": {
+    "icons": [
+      "simple-icons:react",
+      "simple-icons:typescript",
+      "simple-icons:json"
+    ],
+    "screenshots": [
+      "Main ship list interface showing card-based layout",
+      "Ship details view with progress tracking and material requirements",
+      "Processing popup for material crafting requirements",
+      "Goal ship selection interface",
+      "Mobile responsive layout demonstration",
+      "Progress tracking visual indicators and completion badges"
+    ],
+    "links": [
+      {
+        "name": "Gitlab",
+        "url": "https://gitlab.com/user4302_Projects/coding/react-js/bdo-shipwright"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/user4302/bdo-shipwright"
+      },
+      {
+        "name": "Netlify",
+        "url": "https://bdo-shipwright-user4302.netlify.app/"
+      }
+    ]
+  }
+}

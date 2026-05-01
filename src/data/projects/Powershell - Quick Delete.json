@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "id": 40,
+    "slug": "quick-delete",
+    "category": "Scripting",
+    "type": "Open-Source",
+    "tags": [
+      "PowerShell",
+      "Windows",
+      "File-Deletion",
+      "Context-Menu",
+      "Registry",
+      "Environment-Variables",
+      "File-System",
+      "Shell-Integration",
+      "Error-Handling",
+      "Security",
+      "Administrator",
+      "Automation",
+      "Utilities"
+    ]
+  },
+  "content": {
+    "title": "Quick Delete - Windows Folder Deletion Utility",
+    "short_description": "Fast and secure folder deletion through right-click context menu.",
+    "description": "Quick Delete is a Windows PowerShell utility that provides fast and secure folder deletion through a right-click context menu. The project solves the common problem of slow or unreliable Windows file deletion by implementing a robust PowerShell script that handles locked files and directories. It allows users to safely delete folders with confirmation prompts and proper error handling.",
+    "role": "I designed and implemented a complete Windows folder deletion utility consisting of two main PowerShell scripts. The main script ([quick_delete.ps1](cci:7://file:///d:/Projects/Powershell/quick-delete/quick_delete.ps1:0:0-0:0)) handles the actual folder deletion with safety checks and error handling, while the setup script ([quick_delete_setup.ps1](cci:7://file:///d:/Projects/Powershell/quick-delete/quick_delete_setup.ps1:0:0-0:0)) automates the installation process by adding the script to the Windows PATH and creating a right-click context menu entry. I also included a custom icon file for better user experience."
+  },
+  "project_details": {
+    "achievements": [
+      "Provides users with a one-click solution for deleting stubborn folders that Windows Explorer cannot remove",
+      "Eliminates the need for manual command-line operations or third-party tools",
+      "Includes safety mechanisms with confirmation prompts to prevent accidental deletions",
+      "Successfully integrates with Windows shell for seamless user experience"
+    ],
+    "technologies": [
+      "PowerShell Scripting",
+      "Windows Registry Manipulation",
+      "Windows Environment Variables",
+      "File System Operations",
+      "Windows Context Menu Integration",
+      "Error Handling and User Input Validation",
+      "Windows Security (Administrator Privileges)"
+    ]
+  },
+  "assets": {
+    "icons": [
+      "simple-icons:powershell",
+      "simple-icons:windows"
+    ],
+    "screenshots": [
+      "Right-click context menu showing \"Quick Delete\" option",
+      "Confirmation dialog during deletion process",
+      "Success/error message screenshots",
+      "Before/after comparison of folder deletion",
+      "Setup script execution screenshots"
+    ],
+    "links": [
+      {
+        "name": "GitLab",
+        "url": "https://gitlab.com/user4302_Projects/coding/powershell/quick-delete"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/user4302/quick-delete"
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "id": 67,
+    "slug": "mdtopdf",
+    "category": "Frontend",
+    "type": "Personal",
+    "tags": [
+      "web-development",
+      "nextjs",
+      "react",
+      "typescript",
+      "pdf-generation",
+      "markdown",
+      "tailwindcss",
+      "netlify"
+    ]
+  },
+  "content": {
+    "title": "Markdown to PDF Converter",
+    "short_description": "A modern web-based tool that converts Markdown files to professional PDF format with clean styling and instant processing.",
+    "description": "I designed and built the complete Markdown to PDF Converter application from scratch, implementing the full frontend interface with React and TypeScript, creating the markdown-to-HTML conversion API endpoint, and developing sophisticated client-side PDF generation using browser print functionality. I engineered advanced features including toggleable page breaks with multiple implementation methods, custom diagonal watermarks with single or tiled patterns, and responsive print styling that ensures consistent typography across all paper sizes.",
+    "role": "As the sole developer of this project, I designed and built the complete Markdown to PDF Converter application from the ground up. I implemented the full frontend interface using React and TypeScript, created the markdown-to-HTML conversion system using Marked.js, and developed sophisticated client-side PDF generation using browser print functionality. I engineered advanced features including toggleable page breaks with multiple implementation methods, custom diagonal watermarks with single or tiled patterns, and responsive print styling that ensures consistent typography across all paper sizes. I also managed the complete deployment process to Netlify and optimized the application for performance and user privacy with client-side processing."
+  },
+  "project_details": {
+    "achievements": [
+      "Successfully deployed live application with instant PDF conversion capabilities",
+      "Implemented complete client-side processing ensuring user privacy - no data leaves the browser",
+      "Created professional PDF output with responsive typography that scales properly across A4, A3, Tabloid and other paper sizes",
+      "Developed advanced watermark system supporting both single centered and tiled 6×6 grid patterns with custom text",
+      "Built comprehensive page break control supporting HTML style attributes, CSS classes, and horizontal rule methods"
+    ],
+    "technologies": [
+      "Next.js 16.2.1 with React 19.2.4",
+      "TypeScript for type-safe development",
+      "Tailwind CSS v4 for modern styling",
+      "Marked.js for GitHub-flavored markdown parsing",
+      "Client-side PDF generation using browser print API",
+      "Netlify serverless deployment and optimization",
+      "Responsive design with glassmorphism UI patterns",
+      "Print media queries and CSS typography optimization"
+    ]
+  },
+  "assets": {
+    "icons": [
+      "simple-icons:nextdotjs",
+      "simple-icons:react",
+      "simple-icons:typescript",
+      "simple-icons:markdown"
+    ],
+    "screenshots": [
+      "Main converter interface showing markdown input area and settings panel",
+      "Settings panel demonstrating page break and watermark toggle controls",
+      "PDF output example showing professional typography and watermark placement",
+      "Mobile responsive design showing interface adaptation",
+      "Before/after comparison of markdown input vs PDF output"
+    ],
+    "links": [
+      {
+        "name": "GitLab",
+        "url": "https://gitlab.com/user4302_Projects/coding/next-js/mdtopdf"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/user4302/mdtopdf"
+      },
+      {
+        "name": "Netlify",
+        "url": "https://mdtopdf-user4302.netlify.app/"
+      }
+    ]
+  }
+}

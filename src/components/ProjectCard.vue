@@ -31,14 +31,14 @@
       
       <div class="card-footer">
         <div class="card-actions">
-          <div class="action-slot" v-for="link in data.assets.links" :key="link.name">
+          <div class="action-slot" v-for="link in data.assets.links" :key="link.name || link.url">
             <a
               :href="link.url"
               target="_blank"
               @click.stop
               class="card-action-btn"
               :class="{ primary: isLiveLink(link.name) }"
-              :title="link.name"
+              :title="link.name || 'Link'"
             >
               <Icon :icon="getLinkIcon(link.name)" />
               <span>{{ getLinkLabel(link.name) }}</span>
@@ -97,22 +97,28 @@ export default {
       return map[name.toLowerCase()] || name.charAt(0).toUpperCase() + name.slice(1);
     },
     getLinkIcon(linkName) {
-      if (linkName.toLowerCase().includes('gitlab')) return 'simple-icons:gitlab';
-      if (linkName.toLowerCase().includes('github')) return 'simple-icons:github';
-      if (linkName.toLowerCase().includes('netlify')) return 'simple-icons:netlify';
-      if (linkName.toLowerCase().includes('vercel')) return 'simple-icons:vercel';
+      if (!linkName) return 'lucide:link-2';
+      const lowerName = linkName.toLowerCase();
+      if (lowerName.includes('gitlab')) return 'simple-icons:gitlab';
+      if (lowerName.includes('github')) return 'simple-icons:github';
+      if (lowerName.includes('netlify')) return 'simple-icons:netlify';
+      if (lowerName.includes('vercel')) return 'simple-icons:vercel';
       return 'lucide:link-2';
     },
     getLinkLabel(linkName) {
-      if (linkName.toLowerCase().includes('gitlab') || linkName.toLowerCase().includes('github')) return 'Repo';
-      if (linkName.toLowerCase().includes('netlify') || linkName.toLowerCase().includes('vercel')) return 'Live';
+      if (!linkName) return 'Link';
+      const lowerName = linkName.toLowerCase();
+      if (lowerName.includes('gitlab') || lowerName.includes('github')) return 'Repo';
+      if (lowerName.includes('netlify') || lowerName.includes('vercel')) return 'Live';
       return linkName;
     },
     isLiveLink(linkName) {
-      return linkName.toLowerCase().includes('netlify') || 
-             linkName.toLowerCase().includes('vercel') || 
-             linkName.toLowerCase().includes('live') || 
-             linkName.toLowerCase().includes('demo');
+      if (!linkName) return false;
+      const lowerName = linkName.toLowerCase();
+      return lowerName.includes('netlify') || 
+             lowerName.includes('vercel') || 
+             lowerName.includes('live') || 
+             lowerName.includes('demo');
     },
   },
 };

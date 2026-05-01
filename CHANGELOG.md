@@ -25,11 +25,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enhanced project detail sections for achievements, technologies, screenshots, and structured role descriptions
 - Comprehensive getters for accessing nested project data throughout the application
 
+### Fixed
+
+- Added null/undefined safety checks to prevent toLowerCase() errors in ProjectCard and ProjectView components
+- Updated template keys and fallback text to handle missing link names gracefully
+
 ### Removed
 
 - Markdown parsing logic from ProjectView.vue as content is now structured in JSON
 - Dependency on marked library for project content rendering
 - Legacy projects-parser.js script workflow (no longer needed with nested JSON structure)
+- Old flat projects.json file and test-project.json after migration to individual files
+- 61 obsolete markdown project files from src/assets/projects/ directory
 
 ## [2.0.2] - 2026-02-17
 
