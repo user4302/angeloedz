@@ -31,18 +31,73 @@
       
       <div class="card-footer">
         <div class="card-actions">
-          <div class="action-slot" v-for="link in data.assets.links" :key="link.name || link.url">
-            <a
-              :href="link.url"
-              target="_blank"
-              @click.stop
-              class="card-action-btn"
-              :class="{ primary: isLiveLink(link.name) }"
-              :title="link.name || 'Link'"
-            >
-              <Icon :icon="getLinkIcon(link.name)" />
-              <span>{{ getLinkLabel(link.name) }}</span>
-            </a>
+          <!-- Row 1: 2 segments -->
+          <div class="primary-actions">
+            <!-- Segment 1: Repo(s) -->
+            <div class="repo-segment">
+              <template v-if="hasBothRepos">
+                <a
+                  :href="getRepoLink('gitlab').url"
+                  target="_blank"
+                  @click.stop
+                  class="card-action-btn icon-only"
+                  title="GitLab Repository"
+                >
+                  <Icon :icon="getLinkIcon('gitlab')" />
+                </a>
+                <a
+                  :href="getRepoLink('github').url"
+                  target="_blank"
+                  @click.stop
+                  class="card-action-btn icon-only"
+                  title="GitHub Repository"
+                >
+                  <Icon :icon="getLinkIcon('github')" />
+                </a>
+              </template>
+              <template v-else-if="hasSingleRepo">
+                <a
+                  :href="getSingleRepoLink().url"
+                  target="_blank"
+                  @click.stop
+                  class="card-action-btn"
+                  :title="getSingleRepoLink().name"
+                >
+                  <Icon :icon="getLinkIcon(getSingleRepoLink().name)" />
+                  <span>{{ getLinkLabel(getSingleRepoLink().name) }}</span>
+                </a>
+              </template>
+            </div>
+
+            <!-- Segment 2: Live button (always same position) -->
+            <div v-if="hasLiveLink" class="live-segment">
+              <a
+                :href="getLiveLink().url"
+                target="_blank"
+                @click.stop
+                class="card-action-btn primary"
+                :title="getLiveLink().name"
+              >
+                <Icon :icon="getLinkIcon(getLiveLink().name)" />
+                <span>{{ getLinkLabel(getLiveLink().name) }}</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Row 2: 2 segments for other links -->
+          <div v-if="hasSecondaryLinks" class="secondary-actions">
+            <div v-for="link in getSecondaryLinks()" :key="link.name || link.url" class="secondary-segment">
+              <a
+                :href="link.url"
+                target="_blank"
+                @click.stop
+                class="card-action-btn secondary"
+                :title="link.name || 'Link'"
+              >
+                <Icon :icon="getLinkIcon(link.name)" />
+                <span>{{ getLinkLabel(link.name) }}</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -65,6 +120,27 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  computed: {
+    hasBothRepos() {
+      const links = this.data.assets.links || [];
+      const hasGitLab = links.some(link => link.name && link.name.toLowerCase().includes('gitlab'));
+      const hasGitHub = links.some(link => link.name && link.name.toLowerCase().includes('github'));
+      return hasGitLab && hasGitHub;
+    },
+    hasSingleRepo() {
+      const links = this.data.assets.links || [];
+      const hasGitLab = links.some(link => link.name && link.name.toLowerCase().includes('gitlab'));
+      const hasGitHub = links.some(link => link.name && link.name.toLowerCase().includes('github'));
+      return (hasGitLab || hasGitHub) && !this.hasBothRepos;
+    },
+    hasLiveLink() {
+      const links = this.data.assets.links || [];
+      return links.some(link => this.isLiveLink(link.name));
+    },
+    hasSecondaryLinks() {
+      return this.getSecondaryLinks().length > 0;
+    }
   },
   methods: {
     openLink() {
@@ -108,7 +184,8 @@ export default {
     getLinkLabel(linkName) {
       if (!linkName) return 'Link';
       const lowerName = linkName.toLowerCase();
-      if (lowerName.includes('gitlab') || lowerName.includes('github')) return 'Repo';
+      if (lowerName.includes('gitlab')) return 'GitLab';
+      if (lowerName.includes('github')) return 'GitHub';
       if (lowerName.includes('netlify') || lowerName.includes('vercel')) return 'Live';
       return linkName;
     },
@@ -119,6 +196,30 @@ export default {
              lowerName.includes('vercel') || 
              lowerName.includes('live') || 
              lowerName.includes('demo');
+    },
+    getRepoLink(type) {
+      const links = this.data.assets.links || [];
+      return links.find(link => link.name && link.name.toLowerCase().includes(type));
+    },
+    getSingleRepoLink() {
+      const links = this.data.assets.links || [];
+      return links.find(link => link.name && (
+        link.name.toLowerCase().includes('gitlab') || 
+        link.name.toLowerCase().includes('github')
+      ));
+    },
+    getLiveLink() {
+      const links = this.data.assets.links || [];
+      return links.find(link => this.isLiveLink(link.name));
+    },
+    getSecondaryLinks() {
+      const links = this.data.assets.links || [];
+      return links.filter(link => {
+        const lowerName = link.name ? link.name.toLowerCase() : '';
+        return !lowerName.includes('gitlab') && 
+               !lowerName.includes('github') && 
+               !this.isLiveLink(link.name);
+      });
     },
   },
 };
@@ -287,10 +388,46 @@ export default {
 }
 
 .card-actions {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 10px;
   width: 100%;
+}
+
+.primary-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+}
+
+.repo-segment {
+  display: flex;
+  gap: 10px;
+}
+
+.repo-segment:has(.icon-only) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.live-segment {
+  display: flex;
+}
+
+.secondary-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+}
+
+.secondary-actions:has(.secondary-segment:only-child) {
+  grid-template-columns: 1fr;
+}
+
+.secondary-segment {
+  display: flex;
 }
 
 .action-slot {
@@ -318,16 +455,28 @@ export default {
   z-index: 5;
 }
 
-.card-action-btn.primary {
-  background: #6366f1;
-  color: white;
-  border-color: #6366f1;
+.card-action-btn.secondary {
+  background: #475569;
+  font-size: 0.8rem;
+}
+
+.card-action-btn.icon-only {
+  padding: 6px;
+  justify-content: center;
+  min-width: auto;
+  max-width: 45px;
 }
 
 .card-action-btn:hover {
   transform: translateY(-2px);
   filter: brightness(1.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-action-btn.primary {
+  background: #6366f1;
+  color: white;
+  border-color: #6366f1;
 }
 
 .card-action-btn:active {
