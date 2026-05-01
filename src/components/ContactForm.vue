@@ -1,18 +1,18 @@
 <template>
   <div>
     <button 
-      :class="['contact-trigger-btn', { 'floating-contact-icon': !isMobileBar, 'mobile-btn-style': isMobileBar }]" 
+      :class="['trigger-btn floating-btn', { 'floating-contact-icon': !isMobileBar, 'mobile-btn-style': isMobileBar }]" 
       @click="openForm"
       :title="isMobileBar ? 'Contact Me' : ''"
     >
       <span class="material-icons">mail</span>
     </button>
 
-    <div class="contact-form-overlay" v-if="isVisible">
-      <div class="contact-form" v-if="!isSubmitted">
-        <span class="close-button material-icons" @click="closeForm" :disabled="isLoading">
-          close
-        </span>
+    <div class="modal-overlay contact-form-overlay" v-if="isVisible">
+      <div class="modal-container contact-form" v-if="!isSubmitted">
+        <button class="close-button" @click="closeForm" :disabled="isLoading">
+          <span class="material-icons">close</span>
+        </button>
         <h2>Contact Me</h2>
         <form @submit.prevent="submitForm">
           <div>
@@ -47,7 +47,7 @@
               </div>
             </div>
           </div>
-          <button type="submit" :disabled="isLoading">Send</button>
+          <button type="submit" :disabled="isLoading" class="btn-primary">Send</button>
           <div v-if="isLoading" class="loader">Loading...</div>
           <div v-if="errorMessage" class="error-message">
             <p>{{ errorMessage }}</p>
@@ -55,7 +55,7 @@
           </div>
         </form>
       </div>
-      <div v-else class="success-message">
+      <div v-else class="modal-container success-message">
         <span class="material-icons success-icon">check_circle</span>
         <p>Form submitted</p>
       </div>

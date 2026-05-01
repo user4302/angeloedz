@@ -2,8 +2,9 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import './global.css';
+import './tokens.css';
+import './styles/Modals.css';
 import store from './store';
-import './tokens.css'
 
 createApp(App)
   .use(router)

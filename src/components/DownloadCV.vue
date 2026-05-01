@@ -1,22 +1,22 @@
 <template>
   <div>
     <button 
-      :class="['cv-trigger-btn', { 'floating-cv-icon': !isMobileBar, 'mobile-btn-style': isMobileBar }]" 
+      :class="['trigger-btn floating-btn', { 'floating-cv-icon': !isMobileBar, 'mobile-btn-style': isMobileBar }]" 
       @click="openViewer"
       :title="isMobileBar ? 'View CV' : ''"
     >
       <span class="material-icons">description</span>
     </button>
 
-    <div class="pdf-viewer-overlay" v-if="isVisible" @click.self="closeViewer">
-      <div class="pdf-viewer-container">
-        <div class="viewer-header">
+    <div class="modal-overlay pdf-viewer-overlay" v-if="isVisible" @click.self="closeViewer">
+      <div class="modal-container pdf-viewer-container">
+        <div class="modal-header viewer-header">
           <h2>Curriculum Vitae</h2>
           <div class="header-actions">
             <a 
               :href="pdfPath" 
               target="_blank"
-              class="btn-external"
+              class="btn-secondary btn-external"
               title="Open in new tab"
               @click.stop
             >
@@ -25,7 +25,7 @@
             <a 
               :href="pdfPath" 
               download="ANGELO_E_DE_ZOYSA_CV.pdf"
-              class="btn-download"
+              class="btn-primary btn-download"
               title="Download CV"
               @click.stop
             >
@@ -37,7 +37,7 @@
           </div>
         </div>
 
-        <div class="pdf-content">
+        <div class="modal-content pdf-content">
           <iframe 
             v-if="!isMobile"
             :src="pdfPath + '#view=FitH&toolbar=0&navpanes=0&scrollbar=0'" 

@@ -13,11 +13,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added dynamic repo button sizing with icon-only display when both GitHub and GitLab are present
 - Enhanced link labeling to show specific repo names ("GitHub"/"GitLab") instead of generic "Repo"
 - Added secondary row layout for additional project links with responsive grid behavior
+- Created shared modal styles system with enhanced floating button glow effects
 
 ### Refactored
 
 - Modularized component CSS by splitting monolithic 1500+ line components.css into 4 component-specific files
 - Created ContactForm.css, DownloadCV.css, ProjectCard.css, and ProjectView.css for better maintainability
+- Consolidated duplicate modal styles into shared Modals.css, reducing code duplication by ~400+ lines
+- Updated DownloadCV and ContactForm components to use shared modal class structure
 - Updated component imports to use dedicated CSS files and removed scoped style blocks
 
 ## [3.0.0] - 2026-05-01

@@ -1,167 +1,39 @@
 /* Download CV Component Styles */
-.cv-trigger-btn {
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  outline: none;
-  background: transparent;
-  padding: 0;
-}
+/* Import shared modal styles from Modals.css */
 
+/* CV-specific floating button positioning */
 .floating-cv-icon {
-  position: fixed;
-  bottom: 20px;
   right: 20px;
-  color: white;
-  padding: 14px;
-  border-radius: 50%;
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  text-align: center;
-  z-index: 1000;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
 }
 
-.floating-cv-icon:hover {
-  transform: translateY(-4px) scale(1.1);
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.6);
-}
-
-.floating-cv-icon .material-icons {
-  font-size: 24px;
-}
-
+/* CV-specific overlay with darker background */
 .pdf-viewer-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-color: rgba(15, 23, 42, 0.9);
-  backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1001;
-  animation: fadeIn 0.3s ease;
-  padding: 20px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
+/* PDF viewer container extends modal-container */
 .pdf-viewer-container {
-  background: #1e293b;
-  width: 100%;
   max-width: 1000px;
   height: 90vh;
   max-height: 900px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.viewer-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 32px;
-  background: rgba(15, 23, 42, 0.6);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
+/* Viewer header extends modal-header */
 .viewer-header h2 {
   font-size: 1.5rem;
-  font-weight: 800;
-  color: #f8fafc;
-  margin: 0;
-  background: linear-gradient(to right, #ffffff 30%, #94a3b8);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
-.header-actions {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.btn-download {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
-  border-radius: 10px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-  font-size: 0.95rem;
-}
-
-.btn-download:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.5);
-  filter: brightness(1.1);
-}
-
+/* Download button extends btn-primary */
 .btn-download .material-icons {
   font-size: 20px;
 }
 
-.btn-external {
-  background-color: rgba(255, 255, 255, 0.05);
-  color: #f8fafc;
-  border-radius: 50%;
-  padding: 10px 12px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.btn-external:hover {
-  background-color: #6366f1;
-  color: white;
-  transform: translateY(-2px);
-  border-color: #6366f1;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
-}
-
+/* External button extends btn-secondary */
 .btn-external .material-icons {
   font-size: 24px;
 }
 
+/* CV-specific header button sizing */
 .viewer-header .btn-external {
   width: 22px !important;
   height: 22px !important;
@@ -173,7 +45,7 @@
 }
 
 .viewer-header .btn-download {
-  width:120px !important;
+  width: 120px !important;
   padding: 8px !important;
   display: flex;
   justify-content: center;
@@ -189,15 +61,7 @@
   display: none;
 }
 
-.pdf-content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  background: #0f172a;
-}
-
+/* PDF-specific content styles */
 .pdf-iframe {
   width: 100%;
   height: 100%;
@@ -278,57 +142,3 @@
   font-size: 24px;
 }
 
-/* Download CV Responsive */
-@media (max-width: 768px) {
-  .pdf-viewer-overlay {
-    padding: 0;
-    align-items: center;
-  }
-
-  .pdf-viewer-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    max-height: none;
-    border-radius: 0;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    z-index: 1002;
-  }
-
-  .viewer-header {
-    padding: 16px 20px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-  }
-
-  .viewer-header h2 {
-    font-size: 1.1rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .header-actions {
-    width: auto;
-    justify-content: flex-end;
-    gap: 8px;
-  }
-
-  .btn-download,
-  .btn-external {
-    display: none !important;
-  }
-
-  .viewer-header .btn-download {
-    display: none !important;
-  }
-}
