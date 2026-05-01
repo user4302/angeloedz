@@ -17,6 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enhanced store module with comprehensive getters for nested data access (getProjectLinks, getProjectTechnologies, getProjectTags, etc.)
 - Removed obsolete prebuild/preserve scripts from package.json that ran the markdown parser
 - Improved JSDoc documentation throughout project store module for better code clarity
+- **BREAKING**: Replaced numeric ID-based project URLs with SEO-friendly slug-based URLs (/project/slug instead of /project/id)
+- Updated router configuration to use slug parameter for project routes
+- Modified ProjectCard component to navigate using project slugs instead of numeric IDs
+- Updated ProjectView component to accept slug prop and use slug-based store getters
+- Added comprehensive slug-based getters in projects store module while maintaining backward compatibility
 
 ### Added
 

@@ -70,7 +70,7 @@ export default {
     openLink() {
       this.$router.push({
         name: 'ProjectView',
-        params: { id: this.data.metadata.id },
+        params: { slug: this.data.metadata.slug },
       });
     },
     formatTechName(slug) {

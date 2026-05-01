@@ -149,17 +149,17 @@ import { Icon } from '@iconify/vue';
 import ProjectThumbnail from '@/components/ProjectThumbnail.vue';
 
 const props = defineProps({
-  id: {
-    type: [String, Number],
+  slug: {
+    type: String,
     required: true,
   }
 });
 
 const store = useStore();
-const project = computed(() => store.getters['projects/getProjectById'](Number(props.id)));
+const project = computed(() => store.getters['projects/getProjectBySlug'](props.slug));
 
 // Extract links from assets
-const projectLinks = computed(() => store.getters['projects/getProjectLinks'](Number(props.id)));
+const projectLinks = computed(() => store.getters['projects/getProjectLinksBySlug'](props.slug));
 
 const getLinkIcon = (linkName) => {
   if (!linkName) return 'lucide:link-2';

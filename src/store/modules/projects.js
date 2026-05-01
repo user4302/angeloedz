@@ -43,10 +43,17 @@ const getters = {
   getProjectById: (state) => (id) => {
     return state.projects.find((project) => project.metadata.id === Number(id));
   },
+  getProjectBySlug: (state) => (slug) => {
+    return state.projects.find((project) => project.metadata.slug === slug);
+  },
   getProjects: (state) => state.projects,
   // Enhanced getters for nested structure
   getProjectTitle: (state) => (id) => {
     const project = state.projects.find((p) => p.metadata.id === id);
+    return project?.content?.title || "";
+  },
+  getProjectTitleBySlug: (state) => (slug) => {
+    const project = state.projects.find((p) => p.metadata.slug === slug);
     return project?.content?.title || "";
   },
   getProjectDescription: (state) => (id) => {
@@ -55,36 +62,74 @@ const getters = {
       project?.content?.short_description || project?.content?.description || ""
     );
   },
+  getProjectDescriptionBySlug: (state) => (slug) => {
+    const project = state.projects.find((p) => p.metadata.slug === slug);
+    return (
+      project?.content?.short_description || project?.content?.description || ""
+    );
+  },
   getProjectIcons: (state) => (id) => {
     const project = state.projects.find((p) => p.metadata.id === id);
+    return project?.assets?.icons || [];
+  },
+  getProjectIconsBySlug: (state) => (slug) => {
+    const project = state.projects.find((p) => p.metadata.slug === slug);
     return project?.assets?.icons || [];
   },
   getProjectLinks: (state) => (id) => {
     const project = state.projects.find((p) => p.metadata.id === id);
     return project?.assets?.links || [];
   },
+  getProjectLinksBySlug: (state) => (slug) => {
+    const project = state.projects.find((p) => p.metadata.slug === slug);
+    return project?.assets?.links || [];
+  },
   getProjectTechnologies: (state) => (id) => {
     const project = state.projects.find((p) => p.metadata.id === id);
+    return project?.project_details?.technologies || [];
+  },
+  getProjectTechnologiesBySlug: (state) => (slug) => {
+    const project = state.projects.find((p) => p.metadata.slug === slug);
     return project?.project_details?.technologies || [];
   },
   getProjectAchievements: (state) => (id) => {
     const project = state.projects.find((p) => p.metadata.id === id);
     return project?.project_details?.achievements || [];
   },
+  getProjectAchievementsBySlug: (state) => (slug) => {
+    const project = state.projects.find((p) => p.metadata.slug === slug);
+    return project?.project_details?.achievements || [];
+  },
   getProjectTags: (state) => (id) => {
     const project = state.projects.find((p) => p.metadata.id === id);
+    return project?.metadata?.tags || [];
+  },
+  getProjectTagsBySlug: (state) => (slug) => {
+    const project = state.projects.find((p) => p.metadata.slug === slug);
     return project?.metadata?.tags || [];
   },
   getProjectRole: (state) => (id) => {
     const project = state.projects.find((p) => p.metadata.id === id);
     return project?.content?.role || "";
   },
+  getProjectRoleBySlug: (state) => (slug) => {
+    const project = state.projects.find((p) => p.metadata.slug === slug);
+    return project?.content?.role || "";
+  },
   getProjectType: (state) => (id) => {
     const project = state.projects.find((p) => p.metadata.id === id);
     return project?.metadata?.type || "";
   },
+  getProjectTypeBySlug: (state) => (slug) => {
+    const project = state.projects.find((p) => p.metadata.slug === slug);
+    return project?.metadata?.type || "";
+  },
   getProjectScreenshots: (state) => (id) => {
     const project = state.projects.find((p) => p.metadata.id === id);
+    return project?.assets?.screenshots || [];
+  },
+  getProjectScreenshotsBySlug: (state) => (slug) => {
+    const project = state.projects.find((p) => p.metadata.slug === slug);
     return project?.assets?.screenshots || [];
   },
 };
